@@ -1,7 +1,12 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+import bg from "../../public/phon.png"
+import Image from 'next/image'
 const inter = Inter({ subsets: ['latin'] })
+import MovingCircle from './components/mouse/Mouse.jsx'
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,8 +15,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+		<html lang='en' className=' elem '>
+			{/* <MovingCircle /> */}
+			<body className={inter.className}>
+				<div className='elem lg:min-h-screen  relative scroll flex flex-col justify-between '>
+					<Image
+						src={bg}
+						alt='bg'
+						fill
+						priority={true}
+						className='object-cover opacity-[0.8%]  '
+					/>
+					<Header />
+					{children}
+					<Footer />
+				</div>
+			</body>
+		</html>
+	)
 }
