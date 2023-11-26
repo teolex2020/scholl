@@ -10,8 +10,7 @@ const gentium = Gentium_Book_Plus({
 
 export default function Home() {
 	return (
-		<div className='container mx-auto elem bg-blur pb-24 relative '>
-		
+		<div className='container mx-auto elem bg-blur py-5 lg:pb-24 mt-0 lg:mt-24 relative '>
 			<div className='flex justify-between flex-col lg:flex-row items-center lg:gap-48 '>
 				<div className=' flex lg:flex-1 h-48 lg:h-[450px] w-96  relative justify-center '>
 					<div className='absolute ml-28  bg-blue-300 w-96 h-full blur-3xl rounded-full opacity-[15%]'></div>
@@ -29,7 +28,7 @@ export default function Home() {
 				<div className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5'>
 					<div className={`text-4xl  ${gentium.className} py-6   `}>
 						<p className='text-2xl'>Школа политического анализа</p>{' '}
-						<p className='text-[#f0fc4b]'> Руслана Бортника</p>
+						<p className='colorgold'> Руслана Бортника</p>
 					</div>
 					25-летний опыт информационно-политического анализа и компаний,
 					уникальная авторская методология, крутые примеры и глобальные клиенты,

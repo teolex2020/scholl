@@ -27,7 +27,8 @@ export default function RootLayout({ children }) {
 						className='object-cover opacity-[0.8%]  '
 					/>
 					<Header />
-					{children}
+					<div className='flex-1'> {children}</div>
+
 					<Footer />
 				</div>
 			</body>

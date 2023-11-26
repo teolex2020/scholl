@@ -18,9 +18,9 @@ const gentium = Gentium_Book_Plus({
 const Header = () => {
 
   return (
-		<header className='container mx-auto '>
-			<div className='flex  justify-between h-32 items-center '>
-				{' '}
+		<header className='container mx-auto px-[5%] lg:px-0'>
+			<div className='flex  justify-between h-[65px] lg:h-32 items-center '>
+
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>
 						<Image

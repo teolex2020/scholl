@@ -14,10 +14,14 @@
 
 html {
   /* overflow: hidden; */
+
   height: 100%;
+  /* width: 100%; */
   box-sizing: border-box;
   touch-action: manipulation;
   font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 0;
+  /* padding-left: 5%;
+ padding-right: 5%; */
 }
 
 html,
@@ -189,4 +193,8 @@ padding: 5px;
   overflow: hidden; /* Щоб вміст не виходив за межі нахиленого блоку */
   background-color: #f3f3f3; /* Ваш колір фону */
   /* Додаткові стилі */
+}
+
+.colorgold {
+  color:#e2a550
 }

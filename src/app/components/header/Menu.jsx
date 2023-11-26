@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, {useState} from 'react'
 import { Gentium_Book_Plus } from 'next/font/google'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -19,24 +19,27 @@ const menu = [
 	{
 		id: 2,
 		title: 'Встречи',
-		url: '/ ',
+		url: '/meeting ',
 	},
 	{
 		id: 3,
 		title: 'Мозговые штурмы',
-		url: '/ ',
+		url: '/brainstorm ',
 	},
 	{
 		id: 4,
 		title: 'контакты',
-		url: '/ ',
+		url: '/contact ',
 	},
 ]
 
 const Menu = () => {
 
+
+
 	  const pathname = usePathname()
 
+console.log("path",pathname)
 
 
 
@@ -45,14 +48,14 @@ const Menu = () => {
 			<ul
 				className={` border-2 rounded-3xl border-zinc-700/50 px-10 py-2 flex space-x-5 xl:space-x-16  ${gentium.className} uppercase`}
 			>
-				{menu.map((e) => (
-					<Link key={e.id} href={e.url}>
+				{menu.map((item) => (
+					<Link key={item.id} href={item.url}>
 						<li
-							className={` ${
-								pathname === e.url && ' underline underline-offset-[14px]'
-							}  cursor-pointer  duration-300 hover:underline underline-offset-[14px] `}
+							className={`${
+								pathname === item.url ? 'underline underline-offset-[14px]' : ''
+							} cursor-pointer  duration-300 hover:underline underline-offset-[14px]`}
 						>
-							{e.title}
+							{item.title}
 						</li>
 					</Link>
 				))}
