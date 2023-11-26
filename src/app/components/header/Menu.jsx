@@ -19,17 +19,17 @@ const menu = [
 	{
 		id: 2,
 		title: 'Встречи',
-		url: '/meeting ',
+		url: '/meeting',
 	},
 	{
 		id: 3,
 		title: 'Мозговые штурмы',
-		url: '/brainstorm ',
+		url: '/brainstorm',
 	},
 	{
 		id: 4,
 		title: 'контакты',
-		url: '/contact ',
+		url: '/contact',
 	},
 ]
 
@@ -39,7 +39,7 @@ const Menu = () => {
 
 	  const pathname = usePathname()
 
-console.log("path",pathname)
+// console.log(typeof pathname)
 
 
 
@@ -52,7 +52,7 @@ console.log("path",pathname)
 					<Link key={item.id} href={item.url}>
 						<li
 							className={`${
-								pathname === item.url ? 'underline underline-offset-[14px]' : ''
+								pathname === item.url? 'underline underline-offset-[14px]' : ''
 							} cursor-pointer  duration-300 hover:underline underline-offset-[14px]`}
 						>
 							{item.title}
