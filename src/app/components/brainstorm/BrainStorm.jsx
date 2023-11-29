@@ -53,7 +53,7 @@ const BrainStorm
 	}
 	return (
 		<div className='flex  items-center flex-col  px-[5%]'>
-			<div className='text-2xl lg:text-3xl py-10'>
+			<div className='text-2xl lg:text-3xl py-10 text-center '>
 				Записаться на мозговой штурм *
 			</div>
 			<div className='flex gap-10 flex-col lg:flex-row  w-full'>

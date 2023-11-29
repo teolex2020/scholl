@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from 'react'
+import React from 'react'
 
 import Image from 'next/image'
 import {
@@ -51,7 +51,7 @@ const ContactComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className='flex-1 relative h-full w-full flex justify-end '>
+				<div className='flex-1 relative h-[420px] w-full flex justify-end p-5 lg:p-0'>
 					<div className='absolute top-0 bottom-0 left-0 right-0 bg-[#12181d]/30'></div>
 					<Image
 						src='/darkmap.jpg'
@@ -59,7 +59,7 @@ const ContactComponent = () => {
 						width={1000}
 						height={1000}
 						priority
-						className='object-contain '
+						className='object-cover '
 					/>
 				</div>
 			</div>

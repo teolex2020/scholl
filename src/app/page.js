@@ -1,7 +1,7 @@
 import Image from 'next/image'
 // import MovingCircle from './components/mouse/Mouse.jsx'
 import { Gentium_Book_Plus } from 'next/font/google'
-
+import Link from 'next/link'
 
 const gentium = Gentium_Book_Plus({
 	weight: '400',
@@ -26,9 +26,9 @@ export default function Home() {
 					/>
 				</div>
 				<div className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5'>
-					<div className={`text-4xl  ${gentium.className} py-6   `}>
+					<div className={` ${gentium.className} py-6   `}>
 						<p className='text-2xl'>Школа политического анализа</p>{' '}
-						<p className='colorgold'> Руслана Бортника</p>
+						<p className='colorgold text-5xl '> Руслана Бортника</p>
 					</div>
 					25-летний опыт информационно-политического анализа и компаний,
 					уникальная авторская методология, крутые примеры и глобальные клиенты,
@@ -37,11 +37,11 @@ export default function Home() {
 					нестандартно мыслить и действовать в угоду своим интересам, понимать
 					суть происходящих политически, социальных и економических процессов,
 					принимать правильные жизненные решения!
-					<button
-						className={`mt-10 border-2 rounded-3xl border-zinc-700/50  justify-center py-2 flex space-x-16 ${gentium.className}  duration-300 hover:bg-blur z-10 `}
-					>
-						<p className=' text-xl uppercase'>Больше...</p>
-					</button>
+					<Link href='/course'>
+						<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10 w-full'>
+							<p className=' text-xl uppercase'>Наши курсы</p>
+						</button>
+					</Link>
 				</div>
 			</div>
 		</div>

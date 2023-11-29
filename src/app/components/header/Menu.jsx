@@ -1,5 +1,5 @@
 'use client'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Gentium_Book_Plus } from 'next/font/google'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -34,14 +34,9 @@ const menu = [
 ]
 
 const Menu = () => {
+	const pathname = usePathname()
 
-
-
-	  const pathname = usePathname()
-
-// console.log(typeof pathname)
-
-
+	
 
 	return (
 		<div className='hidden lg:flex flex-1 lg:text-lg  xl:ml-14 z-30'>
@@ -52,7 +47,7 @@ const Menu = () => {
 					<Link key={item.id} href={item.url}>
 						<li
 							className={`${
-								pathname === item.url? 'underline underline-offset-[14px]' : ''
+								pathname === item.url ? 'underline underline-offset-[14px]' : ''
 							} cursor-pointer  duration-300 hover:underline underline-offset-[14px]`}
 						>
 							{item.title}
