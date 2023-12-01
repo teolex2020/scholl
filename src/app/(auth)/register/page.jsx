@@ -43,7 +43,7 @@ const Register = () => {
 	}
 
 	return (
-		<div className='flex justify-center items-center   '>
+		<div className='flex justify-center items-center h-screen lg:h-full  '>
 			<ToastContainer position='top-right' autoClose={1000} />
 			<div className=' flex flex-col gap-3 items-center p-5 '>
 				<Formik

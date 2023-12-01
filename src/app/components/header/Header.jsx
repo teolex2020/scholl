@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import {  Gentium_Book_Plus } from 'next/font/google'
@@ -26,7 +27,8 @@ const mobilemenu = useSelector((state) => state.counter.mobilemenu)
 
 
   return (
-		<header className='container mx-auto px-[5%] lg:px-0'>
+		<header className='container mx-auto px-[5%] lg:px-0 z-40'>
+			
 			{mobilemenu && <MobileMenu />}
 			<div className='flex  justify-between h-[65px] lg:h-32 items-center '>
 				<Link href='/'>

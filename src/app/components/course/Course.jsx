@@ -43,7 +43,7 @@ const Accordion = ({ title, children }) => {
 	const toggleOpen = () => setIsOpen(!isOpen)
 
 	return (
-		<div className=' flex gap-5 items-start flex-col '>
+		<div className=' flex gap-5 items-start flex-col text-left'>
 			<div className='cursor-pointer flex gap-3' onClick={toggleOpen}>
 				<div>
 					<ChevronDoubleDownIcon
@@ -73,7 +73,7 @@ const Course = () => {
 	return (
 		<div className='container mx-auto my-4 p-4  rounded flex flex-col gap-1 '>
 			<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row'>
-				<div className='text-2xl lg:text-4xl flex-1  flex items-center justify-center p-10 flex-col'>
+				<div className='text-xl lg:text-4xl flex-1  flex items-center justify-center p-10 flex-col'>
 					<h2 className='text-left font-semibold'>
 						{' '}
 						Основы практического политического анализа: как отличать правду от
@@ -101,13 +101,13 @@ const Course = () => {
 						</span>{' '}
 					</div>
 					<div>
-						<button className='mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-xl lg:text-2xl px-10'>
+						<button className='mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10'>
 							Купить курс сейчас
 						</button>
 					</div>
 				</div>
 				<div className='flex-2'>
-					<div className='w-full  flex justify-center relative mt-10'>
+					<div className='w-full  flex justify-center relative mt-10 w-'>
 						<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
 						<Image
@@ -120,7 +120,7 @@ const Course = () => {
 					</div>
 				</div>
 			</div>
-			<div className='border p-2 text-xl border-zinc-500/50 my-3 rounded-sm bg-blur'>
+			<div className='border p-2 lg:text-xl border-zinc-500/50 my-3 rounded-sm bg-blur'>
 				<div className='space-y-3'>
 					<p className='text-2xl font-semibold'>
 						Что вы узнаете, окончив курс:
@@ -132,7 +132,7 @@ const Course = () => {
 			</div>
 			<div className='flex flex-col lg:flex-row'>
 				<div
-					className='flex flex-col text-xl  gap-3 w-full mx-auto mt-10 text-start flex-1 '
+					className='flex flex-col lg:text-xl  gap-3 w-full mx-auto mt-10 text-start flex-1 '
 					onClick={toggleOpen}
 				>
 					<div>
@@ -201,7 +201,7 @@ const Course = () => {
 			</div>
 			{/* <ImageCarousel /> */}
 			<hr className='opacity-10 my-5' />
-			<div className='mb-14 text-xl'>
+			<div className='mb-14 lg:text-xl flex flex-col '>
 				<div>
 					<div className='text-2xl mb-5'>Частые вопросы:</div>
 				</div>

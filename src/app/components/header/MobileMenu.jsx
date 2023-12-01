@@ -1,10 +1,12 @@
-"use client"
+'use client'
 import React from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+
 import { useSelector, useDispatch } from 'react-redux'
 import { MobileMenus } from '@/store/features/counterSlice'
-
+import Image from 'next/image'
+import { Authuser } from '@/store/features/counterSlice'
+import { getAuth, signOut } from 'firebase/auth'
 
 const menu = [
 	{
@@ -31,10 +33,26 @@ const menu = [
 ]
 
 const MobileMenu = () => {
-  	const mobilemenu = useSelector((state) => state.counter.mobilemenu)
-  	const pathname = usePathname()
-    const dispatch=useDispatch()
-  return (
+	const mobilemenu = useSelector((state) => state.counter.mobilemenu)
+	const authuser = useSelector((state) => state.counter.authuser)
+
+	const dispatch = useDispatch()
+
+
+
+	const singout = () => {
+		const auth = getAuth()
+		signOut(auth)
+			.then(() => {
+				console.log('Sign-out successful.')
+				dispatch(Authuser(false))
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+	}
+
+	return (
 		<div className='absolute bg-menublur mt-16 w-screen h-screen top-0 -right-30 z-50 md:hidden '>
 			<div className=' items-center   gap-10 text-xl mt-[10%] '>
 				<ul
@@ -47,16 +65,43 @@ const MobileMenu = () => {
 							onClick={() => dispatch(MobileMenus(mobilemenu))}
 						>
 							<li
-								className={`${
-									pathname === item.url
-										? 'underline underline-offset-[14px]'
-										: ''
-								} cursor-pointer  duration-300 hover:underline underline-offset-[14px]`}
+								className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center`}
 							>
 								{item.title}
 							</li>
 						</Link>
 					))}
+					<div className='relative '>
+						{authuser ? (
+							<div className={` cursor-pointer relative`}>
+								<Link href='/cabinet/1'>
+									<div
+										onClick={() => dispatch(MobileMenus(mobilemenu))}
+										className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center`}
+									>
+										<div>Мой кабинет</div>
+									</div>
+								</Link>
+
+								<div
+									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-20`}
+									onClick={() => singout()
+									}
+								>
+									<div>Выход</div>
+								</div>
+							</div>
+						) : (
+							<Link href='/login'>
+								<button
+									onClick={() => dispatch(MobileMenus(mobilemenu))}
+									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-20`}
+								>
+									<p className='duration-300  text-lg'>Вoйти</p>
+								</button>
+							</Link>
+						)}
+					</div>
 				</ul>
 			</div>
 		</div>

@@ -16,7 +16,7 @@ import { useSelector } from 'react-redux'
 const Login = () => {
 // useEffect(() => {
 // 	if (user === null) {
-// 		redirect('/login')
+// 		redirect('/')
 // 	}
 // }, [user])
 
@@ -55,7 +55,7 @@ const Login = () => {
 	}
 
 	return (
-		<div className='flex justify-center items-center   '>
+		<div className='flex justify-center items-center  h-screen lg:h-full'>
 			<ToastContainer position='top-right' autoClose={1000} />
 			<div className=' flex flex-col gap-3 items-center p-5 '>
 				<Formik
@@ -72,7 +72,7 @@ const Login = () => {
 					})}
 					onSubmit={sign}
 				>
-					<Form className='flex flex-col w-[300px] gap-5 lg:mt-32'>
+					<Form className='flex flex-col w-[300px] gap-5 lg:mt-32 '>
 						<div className='relative group '>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
 								{true ? 'Email' : 'Електронна пошта'}

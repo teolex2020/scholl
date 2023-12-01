@@ -1,5 +1,10 @@
 import React from 'react'
-import Meeting from '../components/meeting/Meeting'
+
+import dynamic from 'next/dynamic'
+const Meeting = dynamic(() => import('../components/meeting/Meeting.jsx'), {
+	loading: () => <div className='w-full text-center '></div>,
+})
+
 
 const page = () => {
   return (

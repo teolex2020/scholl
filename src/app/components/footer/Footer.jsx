@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-		<div className='  lg:container flex justify-between h-8 lg:mx-auto px-10'>
+		<div className='  lg:container flex justify-between items-center h-10 lg:mx-auto px-10'>
 			<div className='flex gap-4'>
 				©2023{' '}
 				<p className='hidden lg:flex'>

@@ -90,14 +90,13 @@ const Meeting = () => {
 							</p>
 							<select
 								name='question'
-								className='bg-transparent border-2 border-zinc-700/50 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-zinc-700 decoration-transparent '
+								defaultValue='4' // Встановіть defaultValue замість використання selected на <option>
+								className='bg-transparent border-2 border-zinc-700/50 rounded-sm px-3 outline-none text-slate-200 h-12 w-full text-sm group-hover:border-zinc-700 decoration-transparent'
 							>
 								<option value='1'>Тарас Шевченко</option>
 								<option value='2'>Леся Українка</option>
 								<option value='3'>Іван Франко</option>
-								<option selected value='4'>
-									Григорій Квітка-Основ&apos;яненко
-								</option>
+								<option value='4'>Григорій Квітка-Основ&apos;яненко</option>
 							</select>
 						</div>
 

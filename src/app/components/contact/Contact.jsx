@@ -54,7 +54,7 @@ const ContactComponent = () => {
 				<div className='flex-1 relative h-[420px] w-full flex justify-end p-5 lg:p-0'>
 					<div className='absolute top-0 bottom-0 left-0 right-0 bg-[#12181d]/30'></div>
 					<Image
-						src='/darkmap.jpg'
+						src='/darkmap.webp'
 						alt=''
 						width={1000}
 						height={1000}

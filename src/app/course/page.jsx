@@ -1,6 +1,10 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
+const Course = dynamic(() => import('../components/course/Course.jsx'), {
+	loading: () => <div className='w-full text-center '></div>,
+})
 
-import Course from '../components/course/Course'
+
 
 
 const page = () => {

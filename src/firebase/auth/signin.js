@@ -2,6 +2,8 @@ import firebase_app from '../config'
 import { signInWithEmailAndPassword, getAuth } from 'firebase/auth'
 
 const auth = getAuth(firebase_app)
+const user = auth.currentUser
+console.log(user)
 
 export default async function signIn(email, password) {
 	let result = null,
