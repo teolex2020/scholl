@@ -17,7 +17,7 @@ const List = () => {
 				</div>
 				<div>
 					<button
-						className={` border-2 rounded-3xl border-zinc-700/50  justify-center py-3 flex space-x-16 duration-300 hover:bg-blur  px-10 my-5`}
+						className={` border-2 rounded-3xl border-zinc-700/50  justify-center py-3 flex  duration-300 hover:bg-blur  px-10 my-5 text-sm`}
 					>
 						Редактировать данные
 					</button>{' '}

@@ -13,10 +13,10 @@ const Meeting = () => {
 
 		emailjs
 			.sendForm(
-				'airevolution',
-				'template_mo5n94a',
+				process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
+				process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
 				form.current,
-				'pehBhqPxgcjMnVfpZ'
+				process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY
 			)
 			.then(
 				() => {
@@ -73,7 +73,7 @@ const Meeting = () => {
 					>
 						<div className='relative group '>
 							<p className='absolute -top-3 left-4 text-zinc-300   px-3 flex justify-center text-[14px]  bg-[#11171c] rounded-2xl'>
-								Ваше имя
+								Your Name
 							</p>
 							<input
 								type='text'
@@ -84,7 +84,7 @@ const Meeting = () => {
 								className='bg-transparent border-2 border-zinc-700/50 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-zinc-700 decoration-transparent '
 							/>
 						</div>
-						<div className='relative group '>
+						{/* <div className='relative group '>
 							<p className='absolute -top-3 left-4 text-zinc-300   px-3 flex justify-center text-[14px]  bg-[#11171c] rounded-2xl'>
 								Выберите автора
 							</p>
@@ -98,7 +98,7 @@ const Meeting = () => {
 								<option value='3'>Іван Франко</option>
 								<option value='4'>Григорій Квітка-Основ&apos;яненко</option>
 							</select>
-						</div>
+						</div> */}
 
 						<div className='relative group '>
 							<p className='absolute -top-3 left-4 text-zinc-300   w-16 flex justify-center text-[14px]  bg-[#11171c] rounded-2xl'>

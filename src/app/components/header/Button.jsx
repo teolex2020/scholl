@@ -8,6 +8,7 @@ ChevronDownIcon
 } from '@heroicons/react/24/solid'
 import Popup from './Popup'
 import { PopupMenu } from '@/store/features/counterSlice'
+import user from "../../../../public/user.png"
 
 
 const Button = ({font}) => {
@@ -25,12 +26,19 @@ dispatch(PopupMenu(popupmenu))
 		<div className='relative '>
 			{popupmenu && <Popup />}
 
-			{true ? (
+			{authuser ? (
 				<div
 					className={`border-2 rounded-3xl border-zinc-700/50 w-12 h-12 flex  bg-blur cursor-pointer relative`}
 					onClick={popup}
 				>
-					<Image src='/user.png' fill alt='user' priority />
+					<Image
+						src={user}
+						fill
+						alt='user'
+						sizes='(min-width: 808px) 50vw, 100vw'
+						priority
+						className='object-cover'
+					/>
 					<div className='-bottom-1 -right-1 absolute border border-zinc-700/50 rounded-full bg-zinc-500'>
 						<ChevronDownIcon className='h-4 w-4 ' />
 					</div>

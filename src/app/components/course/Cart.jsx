@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { ClockIcon, VideoCameraIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
-
+import course from "../../../../public/course.png"
 const Cart = () => {
   return (
 		<div className='flex-1 flex justify-center '>
@@ -11,11 +11,13 @@ const Cart = () => {
 					<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
 					<Image
-						src='/course.png'
+						src={course}
+						sizes='(min-width: 808px) 50vw, 100vw'
 						width={150}
 						height={150}
 						alt=''
-						className='rounded-full'
+						className='rounded-full, object-cover'
+						priority
 					/>
 				</div>
 				<div className='flex justify-center items-center gap-6 font-semibold colorgold mt-6'>

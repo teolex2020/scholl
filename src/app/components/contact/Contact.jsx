@@ -11,7 +11,7 @@ import {
 const ContactComponent = () => {
 
 	return (
-		<div className='container mx-auto'>
+		<div className='container mx-auto px-[3%]'>
 			<h1 className='text-xl md:text-4xl lg:my-16 text-center text-white py-5 lg:py-0'>
 				Связаться с нами
 			</h1>

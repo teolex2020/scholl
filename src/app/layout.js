@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
 		<html lang='en' className=' elem '>
 			{/* <MovingCircle /> */}
 			<body className={inter.className}>
-				<div className='elem lg:min-h-screen  relative scroll flex flex-col justify-between '>
+				<div className='elem lg:min-h-screen  relative scroll flex flex-col justify-between px-[3%]'>
 					<Image
 						src={bg}
 						alt='bg'

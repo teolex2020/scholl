@@ -1,10 +1,17 @@
-
-"use client"
+'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { CheckIcon, ChevronDoubleDownIcon, FireIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
+import {
+	CheckIcon,
+	ChevronDoubleDownIcon,
+	FireIcon,
+	AcademicCapIcon,
+} from '@heroicons/react/24/solid'
 import ImageCarousel from './Carousel'
 import Cart from './Cart'
+import Lector from './Lector'
+import course from "../../../../public/course.png"
+
 
 const listStart = [
 	{
@@ -36,24 +43,22 @@ const ListItem = ({ title }) => (
 	</div>
 )
 
-
 const Accordion = ({ title, children }) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const toggleOpen = () => setIsOpen(!isOpen)
 
 	return (
-		<div className=' flex gap-5 items-start flex-col text-left'>
-			<div className='cursor-pointer flex gap-3' onClick={toggleOpen}>
+		<div className=' flex gap-5 items-start flex-col text-left cursor-pointer  z-10'>
+			<div className=' flex gap-3 ' onClick={toggleOpen}>
 				<div>
 					<ChevronDoubleDownIcon
 						className={`h-6 w-6 text-green-500 duration-700 ease-in-out ${
-							isOpen ? 'rotate-180 du' : 'rotate-0 '
+							isOpen ? 'rotate-180 ' : 'rotate-0 '
 						}`}
 					/>
 				</div>
-
-				{title}
+				<div className=''>{title}</div>
 			</div>
 			<div
 				className={`transition-all duration-700 ease-in-out
@@ -65,11 +70,8 @@ const Accordion = ({ title, children }) => {
 	)
 }
 
-
 const Course = () => {
-	  const [isOpen, setIsOpen] = useState(false)
 
-		const toggleOpen = () => setIsOpen(!isOpen)
 	return (
 		<div className='container mx-auto my-4 p-4  rounded flex flex-col gap-1 '>
 			<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row'>
@@ -89,16 +91,19 @@ const Course = () => {
 							</p>
 						</div>
 					</div>
-					<div className='text-sm pt-5 w-full text-start flex items-center gap-3'>
-						{' '}
-						<div>
-							{' '}
-							<AcademicCapIcon className='h-6 w-6 text-green-500' />
+					<div className='text-sm pt-5 w-full text-start '>
+						<div className='flex items-center gap-3 relative group cursor-pointer w-fit'>
+							<div className='hidden group-hover:block duration-300 fixed  bottom-0 left-0 right-0 bg-[#12181d]  p-10 border rounded-md lg:text-base z-50 max-w-3xl'>
+								<Lector />
+							</div>
+							<div>
+								<AcademicCapIcon className='h-6 w-6 text-green-500' />
+							</div>
+							Преподаватель:
+							<span className='uppercase underline cursor-pointer '>
+								Бортник Руслан
+							</span>
 						</div>
-						Преподаватель:{' '}
-						<span className='uppercase underline cursor-pointer '>
-							Бортник Руслан
-						</span>{' '}
 					</div>
 					<div>
 						<button className='mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10'>
@@ -111,11 +116,13 @@ const Course = () => {
 						<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
 						<Image
-							src='/course.png'
-							width={500}
-							height={500}
+							src={course}
+							width='500'
+							height='500'
+							sizes='(min-width: 808px) 50vw, 100vw'
 							alt=''
-							className='rounded-full'
+							className='rounded-full, object-cover'
+							priority
 						/>
 					</div>
 				</div>
@@ -131,10 +138,7 @@ const Course = () => {
 				</div>
 			</div>
 			<div className='flex flex-col lg:flex-row'>
-				<div
-					className='flex flex-col lg:text-xl  gap-3 w-full mx-auto mt-10 text-start flex-1 '
-					onClick={toggleOpen}
-				>
+				<div className='flex flex-col lg:text-xl  gap-3 w-full mx-auto mt-10 text-start flex-1 '>
 					<div>
 						<p className='text-2xl mb-7'>Программа курса: </p>
 					</div>
@@ -193,9 +197,12 @@ const Course = () => {
 				<div>
 					<Image
 						src='/certificat.png'
-						width={300}
+						width='300'
 						height={300}
+						sizes='(min-width: 808px) 50vw, 100vw'
 						alt='certificat'
+						className='object-cover'
+						priority
 					/>
 				</div>
 			</div>

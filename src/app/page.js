@@ -2,6 +2,7 @@ import Image from 'next/image'
 // import MovingCircle from './components/mouse/Mouse.jsx'
 import { Gentium_Book_Plus } from 'next/font/google'
 import Link from 'next/link'
+import bg from "../../public/bg.png"
 
 const gentium = Gentium_Book_Plus({
 	weight: '400',
@@ -16,13 +17,12 @@ export default function Home() {
 					<div className='absolute ml-28  bg-blue-300 w-96 h-full blur-3xl rounded-full opacity-[15%]'></div>
 					<div className='absolute bg-blue-200 w-48 h-48 ml-32 blur-3xl rounded-full opacity-[25%]'></div>
 					<Image
-						src='/bg.png'
-						alt='logo '
+						src={bg}
+						alt='trees '
 						fill
 						sizes='(min-width: 808px) 50vw, 100vw'
-						style={{
-							objectFit: 'cover', // cover, contain, none
-						}}
+						className="object-cover"
+						priority
 					/>
 				</div>
 				<div className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5'>

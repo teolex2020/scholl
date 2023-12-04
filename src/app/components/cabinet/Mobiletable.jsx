@@ -10,7 +10,6 @@ const Mobiletable = () => {
 			<table className='table-fixed '>
 				<thead className='text-sm'>
 					<tr className='h-10 '>
-						
 						<th>
 							{' '}
 							<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
@@ -33,9 +32,10 @@ const Mobiletable = () => {
 				</thead>
 				<tbody className=''>
 					<tr className=' h-20'>
-					
-						<td className='w-96 text-center'>
-							Fundamentals of practical political analysis
+						<td className='w-72'>
+							<div className='w-full flex justify-center pl-5'>
+								<div>Fundamentals of practical political analysis</div>
+							</div>
 						</td>
 						<td className='w-32 text-center'>
 							<button className='bg-green-700 text-sm rounded-sm px-2 py-1'>

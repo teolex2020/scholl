@@ -27,8 +27,7 @@ const mobilemenu = useSelector((state) => state.counter.mobilemenu)
 
 
   return (
-		<header className='container mx-auto px-[5%] lg:px-0 z-40'>
-			
+		<header className='container mx-auto   z-40'>
 			{mobilemenu && <MobileMenu />}
 			<div className='flex  justify-between h-[65px] lg:h-32 items-center '>
 				<Link href='/'>
@@ -38,6 +37,8 @@ const mobilemenu = useSelector((state) => state.counter.mobilemenu)
 							alt='logo '
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
+							className='object-cover'
+							priority
 						/>
 					</div>
 				</Link>

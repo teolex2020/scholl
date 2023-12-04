@@ -23,7 +23,7 @@ const Popup = () => {
 		document.addEventListener('mousedown', handleClickOutside)
 
 		return () => document.removeEventListener('mousedown', handleClickOutside)
-	}, [popupRef])
+	}, [popupRef, dispatch, popupmenu])
 
 	const singout = () => {
 		const auth = getAuth()
