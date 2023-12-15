@@ -1,9 +1,10 @@
 "use client"
 import React from 'react'
 import { VideoCameraIcon } from '@heroicons/react/24/solid'
-
+import { useTranslations } from 'next-intl'
 
 const Mobiletable = () => {
+		const t = useTranslations('Cabinetdata')
   return (
 		<div>
 			{' '}
@@ -13,21 +14,21 @@ const Mobiletable = () => {
 						<th>
 							{' '}
 							<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
-								Тема лекции
+								{t('theme')}
 							</div>
 						</th>
 						<th>
 							{' '}
 							<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
-								Статус
+								{t('paid')}
 							</div>
 						</th>
 
-						<th className='w-24 '>
+						{/* <th className='w-24 '>
 							<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
 								Видео
 							</div>
-						</th>
+						</th> */}
 					</tr>
 				</thead>
 				<tbody className=''>
@@ -43,9 +44,9 @@ const Mobiletable = () => {
 							</button>
 						</td>
 
-						<td className=' pl-8 '>
+						{/* <td className=' pl-8 '>
 							<VideoCameraIcon className='h-6 w-6 fill-green-700' />
-						</td>
+						</td> */}
 					</tr>
 				</tbody>
 			</table>

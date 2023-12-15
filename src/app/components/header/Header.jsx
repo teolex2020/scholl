@@ -4,7 +4,7 @@ import Image from 'next/image'
 import {  Gentium_Book_Plus } from 'next/font/google'
 import Menu from './Menu'
 import Language from './Language'
-import Link from 'next/link'
+import { Link } from '@/navigation'
 import logo from "../../../../public/logo.png"
 import Button from './Button.jsx'
 import MobileButon from './MobileButon'
@@ -27,9 +27,9 @@ const mobilemenu = useSelector((state) => state.counter.mobilemenu)
 
 
   return (
-		<header className='container mx-auto   z-40'>
+		<div className='container mx-auto   z-40'>
 			{mobilemenu && <MobileMenu />}
-			<div className='flex  justify-between h-[65px] lg:h-32 items-center '>
+			<div className='flex  justify-between h-[65px] lg:h-32 items-center  '>
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>
 						<Image
@@ -44,14 +44,17 @@ const mobilemenu = useSelector((state) => state.counter.mobilemenu)
 				</Link>
 				<MobileButon />
 				<Menu />
-				<div className='lg:flex z-30 items-center space-x-10 hidden '>
-					<Language />
-					<Button font={gentium.className} />
+			
+				<Language />
+				<div className='lg:flex hidden z-30 items-center mx-5 '>
+				
+						<Button font={gentium.className} />
+				
 				</div>
 			</div>
 
 			<hr className='opacity-10' />
-		</header>
+		</div>
 	)
 }
 

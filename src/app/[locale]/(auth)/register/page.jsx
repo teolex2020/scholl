@@ -6,21 +6,21 @@ import * as Yup from 'yup'
 import { useRouter, redirect } from 'next/navigation'
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { EyeSlashIcon } from '@heroicons/react/24/solid'
-import signUp from '../../../firebase/auth/singup.js'
-import { auth, Providers } from '../../../firebase/config.js'
+import signUp from '../../../../firebase/auth/singup.js'
+import { auth, Providers } from '../../../../firebase/config.js'
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
 
 const Register = () => {
-	// useEffect(() => {
-	// 	if (user === null) {
-	// 		redirect('/login')
-	// 	}
-	// }, [user])
+	const id = useSelector((state) => state.counter.id)
+	useEffect(() => {
+		if (id) {
+			redirect('/')
+		}
+	}, [id])
 
-	// const language = useSelector((state) => state.counter.language)
 	const [inputType, setInputType] = useState(true)
 
 	const router = useRouter()
@@ -28,11 +28,7 @@ const Register = () => {
 	const signupWithGoogle = () => {
 		signInWithPopup(auth, Providers)
 			.then((result) => {
-				// This gives you a Google Access Token. You can use it to access the Google API.
-				const credential = GoogleAuthProvider.credentialFromResult(result)
-				const token = credential.accessToken
-				// The signed-in user info.
-				const user = result.user
+			
 				toast.success('Success Notification !')
 				return router.push('/')
 			})

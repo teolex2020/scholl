@@ -2,7 +2,7 @@ import React from 'react'
 
 import dynamic from 'next/dynamic'
 const BrainStorm = dynamic(
-	() => import('../components/brainstorm/BrainStorm.jsx'),
+	() => import('../../components/brainstorm/BrainStorm.jsx'),
 	{
 		loading: () => <div className='w-full text-center '></div>,
 	}

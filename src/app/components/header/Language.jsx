@@ -1,23 +1,24 @@
 "use client"
-import React, {useState} from 'react'
+import {  useTransition } from 'react'
 import { Gentium_Book_Plus } from 'next/font/google'
+
+import { useLocale, useTranslations } from 'next-intl'
+import { usePathname, useRouter } from '@/navigation'
 
 const lang = [
 	{
-		id: 1,
-		title: `Uk`,
-		},
+		id: `uk`,
+		title: `uk`,
+	},
 
 	{
-		id: 2,
-		title: 'En',
-		},
-	{
-		id: 3,
-		title: 'Ru',
-		
+		id: 'en',
+		title: 'en',
 	},
-	
+	{
+		id: 'ru',
+		title: 'ru',
+	},
 ]
 
 const gentium = Gentium_Book_Plus({
@@ -26,13 +27,24 @@ const gentium = Gentium_Book_Plus({
 })
 
 const Language = () => {
-  	const [active, setActive] = useState(2)
 
-		const activeclass = (e) => {
-			setActive(e)
-		}
+	//  const t = useTranslations('LocaleSwitcher')
+	
+ const [isPending, startTransition] = useTransition()
+	const locale = useLocale()
+	const router = useRouter()
+	const pathname = usePathname()
+
+function onSelectChange(event) {
+	// const nextLocale = event.currentTarget.getAttribute('data-value')
+	startTransition(() => {
+		router.replace(pathname, { locale: event })
+	})
+
+}
+  	
   return (
-		<div className='cursor-pointer text-sm z-20'>
+		<div className='cursor-pointer text-sm z-20 mr-32 lg:mr-0'>
 			<ul
 				className={` flex items-center space-x-3  ${gentium.className} uppercase`}
 			>
@@ -40,9 +52,10 @@ const Language = () => {
 					<li
 						key={e.id}
 						className={`${
-							active === e.id && ' text-xl'
+							locale === e.id && ' text-xl'
 						} cursor-pointer  duration-300  `}
-						onClick={() => activeclass(e.id)}
+						// onClick={() => dispatch(Languages(e.id))}
+						onClick={() => onSelectChange(e.id)}
 					>
 						{e.title}
 					</li>

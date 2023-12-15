@@ -4,9 +4,10 @@ import Image from 'next/image'
 import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useTranslations } from 'next-intl'
 
-const BrainStorm
- = () => {
+const BrainStorm = () => {
+	const t = useTranslations('Brainstorm')
 	const form = useRef()
 
 	const sendEmail = (e) => {
@@ -54,7 +55,7 @@ const BrainStorm
 	return (
 		<div className='flex  items-center flex-col  px-[5%]'>
 			<div className='text-2xl lg:text-3xl py-10 text-center '>
-				Записаться на мозговой штурм *
+				{t('title')} *
 			</div>
 			<div className='flex gap-10 flex-col lg:flex-row  w-full'>
 				<div className='flex-1 justify-center flex  '>
@@ -126,17 +127,9 @@ const BrainStorm
 					</form>
 				</div>
 			</div>
-			<div className='text-[12px]'>
-				* Этот раздел для тех, кто хочет осмыслит сложный проблемы и найти
-				решения для своего бизнеса, политической карьеры или репутации. Вы
-				можете попросить эксперта (или нескольких) проанализировать Ваши идеи,
-				выдвинуть свои, обсудить Ваши вопросы и проблемы (онлайн или офлайн).
-				Этот режим работы конфиденциальный и может быть инициирован только по
-				желанию заказчика
-			</div>
+			<div className='text-[12px]'>* {t('description')}</div>
 		</div>
 	)
 }
 
 export default BrainStorm
-

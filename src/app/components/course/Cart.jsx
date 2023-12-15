@@ -2,7 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import { ClockIcon, VideoCameraIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
 import course from "../../../../public/course.png"
+import { useTranslations } from 'next-intl'
+
+
 const Cart = () => {
+	const t = useTranslations('Card')
   return (
 		<div className='flex-1 flex justify-center '>
 			{' '}
@@ -21,30 +25,30 @@ const Cart = () => {
 					/>
 				</div>
 				<div className='flex justify-center items-center gap-6 font-semibold colorgold mt-6'>
-					<p className=' text-xl'>Цена</p>
+					<p className=' text-xl'>{t('price')}</p>
 					<p className=' text-5xl'>11 $</p>
 				</div>
 
 				<div className='text-sm text-start px-10 mt-5 flex flex-col gap-3'>
 					<div>
-						<p>Курс включает в себя:</p>
+						<p>{t('course')}</p>
 					</div>
 					<div className='flex gap-3 items-center'>
 						<ClockIcon className='h-4 w-4 ' />
-						<p>27 часов лекций</p>
+						<p>27 {t('time')}</p>
 					</div>
 					<div className='flex gap-3 items-center'>
 						<VideoCameraIcon className='h-4 w-4 ' />
-						<p>видеоматериалы</p>
+						<p> {t('video')}</p>
 					</div>
 					<div className='flex gap-3 items-center'>
 						<AcademicCapIcon className='h-4 w-4 ' />
-						<p>сертификат</p>
+						<p> {t('certificate')}</p>
 					</div>
 
 					<div className='w-full flex justify-center '>
 						<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10'>
-							Купить
+							{t('button')}
 						</button>
 					</div>
 				</div>

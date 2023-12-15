@@ -4,8 +4,10 @@ import Image from 'next/image'
 import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useTranslations } from 'next-intl'
 
 const Meeting = () => {
+		const t = useTranslations('Meeting')
   const form = useRef()
 
 	const sendEmail = (e) => {
@@ -52,7 +54,7 @@ const Meeting = () => {
 	}
   return (
 		<div className='flex  items-center flex-col  px-[5%]'>
-			<div className='text-2xl lg:text-3xl py-10'>Записаться на встречу *</div>
+			<div className='text-2xl lg:text-3xl py-10'>{t('title')} *</div>
 			<div className='flex gap-10 flex-col lg:flex-row  w-full'>
 				<div className='flex-1 justify-center flex  '>
 					<div className='  w-96 lg:w-full h-48 lg:h-96 relative  z-10 '>
@@ -138,13 +140,7 @@ const Meeting = () => {
 					</form>
 				</div>
 			</div>
-			<div className='text-[12px]'>
-				* Здесь Вы можете записаться на встречу с авторами курсов для делового
-				знакомства и консультаций (онлайн и офлайн), попросить коротких советов,
-				или более детально проговорить материалы курсов с их авторами,
-				ознакомится с материалами уже проведённых мероприятий. Этот режим работы
-				конфиденциальный и может быть инициирован только по желанию заказчика.
-			</div>
+			<div className='text-[12px]'>* {t('description')}</div>
 		</div>
 	)
 }

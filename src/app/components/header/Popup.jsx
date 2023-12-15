@@ -6,12 +6,13 @@ import {
 import { getAuth, signOut } from 'firebase/auth'
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
-import { PopupMenu, Authuser } from '@/store/features/counterSlice'
-
+import { PopupMenu } from '@/store/features/counterSlice'
+import { useTranslations } from 'next-intl'
 const Popup = () => {
+		const t = useTranslations('Popup')
 	const dispatch = useDispatch()
 	const popupmenu = useSelector((state) => state.counter.popupmenu)
-	//  const documentClickHandler = useRef()
+
 	const popupRef = useRef()
 
 	useEffect(() => {
@@ -29,8 +30,11 @@ const Popup = () => {
 		const auth = getAuth()
 		signOut(auth)
 			.then(() => {
-				console.log('Sign-out successful.')
-				dispatch(Authuser(false))
+		
+		
+			
+			
+					dispatch(PopupMenu(popupmenu))
 			})
 			.catch((error) => {
 				console.log(error)
@@ -54,7 +58,7 @@ const Popup = () => {
 					<div>
 						<BuildingLibraryIcon className='w-5 h-5' />
 					</div>
-					<div>Мой кабинет</div>
+					<div>{t('title')}</div>
 				</div>
 			</Link>
 
@@ -65,7 +69,7 @@ const Popup = () => {
 				<div>
 					<ArrowRightOnRectangleIcon className='w-5 h-5' />
 				</div>
-				<div>Выход</div>
+				<div>{t('button')}</div>
 			</div>
 		</div>
 	)

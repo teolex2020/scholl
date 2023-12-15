@@ -1,5 +1,10 @@
+
+
+const withNextIntl = require('next-intl/plugin')()
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const nextConfig = withNextIntl({
 	reactStrictMode: true,
 
 	// see https://nextjs.org/docs/api-reference/next.config.js/headers
@@ -33,6 +38,9 @@ const nextConfig = {
 			},
 		]
 	},
-}
+	images: {
+		domains: ['firebasestorage.googleapis.com'],
+	},
+})
 
 module.exports = nextConfig

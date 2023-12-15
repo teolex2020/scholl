@@ -1,26 +1,108 @@
 'use client'
-import React from 'react'
+import React, {useEffect , useState} from 'react'
 import Desctop from './Desctop'
 import Mobiletable from './Mobiletable'
+import Image from 'next/image'
+import {
+	PhoneIcon,
+	EnvelopeOpenIcon
+	
+} from '@heroicons/react/24/solid'
+import Link from 'next/link'
+import { doc,  getDoc } from 'firebase/firestore'
+import { db } from '@/firebase/config'
+import { useSelector } from 'react-redux'
+import { redirect } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 const List = () => {
+	const id = useSelector((state) => state.counter.id)
+	const[data, setData]=useState()
+const t = useTranslations('Cabinet')
+
+
+useEffect(()=>{
+	if (id) {
+redirect("/login")
+	}
+},[id])
+
+	useEffect(()=>{
+		if (id?.length !== 0) {
+			const fetchUserData = async () => {
+				const userDocRef = doc(db, 'users', id)
+
+				try {
+					const docSnap = await getDoc(userDocRef)
+
+					if (docSnap.exists()) {
+						setData(docSnap.data())
+					} else {
+						console.log('No such user!')
+					}
+				} catch (error) {
+					console.error('Error fetching user: ', error)
+				}
+			}
+
+			fetchUserData()
+		}
+		
+	},[id])
+
+
+
+	
+	
 	return (
-		<div className='h-full flex lg:gap-10 items-center lg:items-start lg:justify-between flex-col lg:flex-row container mx-auto'>
+		<div className='h-full flex  items-center lg:items-start lg:justify-between flex-col lg:flex-row container mx-auto'>
 			<div className='w-96 h-full lg:bg-blur flex flex-2 flex-col items-center py-5 gap-5 rounded-xl lg:m-10'>
-				<p className='text-2xl'>Личная информация</p>
+				<p className='text-2xl'>{t('title')}</p>
 				<div className=''>
-					<div className='w-24 h-24 lg:w-48 lg:h-48 rounded-full bg-blur'></div>
+					<div className='w-24 h-24 lg:w-48 lg:h-48 rounded-full bg-blur relative'>
+						<Image
+							src={data?.img ? data?.img : '/notphoto.jpg'}
+							fill
+							alt='nonimage'
+							className='rounded-full, object-cover rounded-full '
+							priority
+							sizes='(min-width: 808px) 50vw, 100vw'
+						/>
+					</div>
 				</div>
-				<div className='flex gap-3 text-xl'>
-					<p>Ivan</p>
-					<p>Ivanov</p>
+				<div className='flex flex-col gap-5'>
+					<div className='flex gap-3 text-xl'>
+						<p>{data?.lastName ? data?.lastName : 'Your'}</p>
+						<p>{data?.firstName ? data?.firstName : 'Name'}</p>
+					</div>
+
+					<div className='flex gap-3 text-sm'>
+						<div className='flex items-center space-x-3 uppercase'>
+							<EnvelopeOpenIcon className='h-5 w-5 ' />
+						</div>
+						<div className=''>
+							<p>{data?.email ? data?.email : 'email@email.com'}</p>
+						</div>
+					</div>
+					<div className='flex gap-3 text-sm'>
+						<div className='flex items-center space-x-3 uppercase'>
+							<PhoneIcon className='h-5 w-5 ' />
+						</div>
+						<div className=''>
+							<p>{data?.phone ? data?.phone : '099-999-99-99'}</p>
+						</div>
+					</div>
 				</div>
+
 				<div>
-					<button
-						className={` border-2 rounded-3xl border-zinc-700/50  justify-center py-3 flex  duration-300 hover:bg-blur  px-10 my-5 text-sm`}
-					>
-						Редактировать данные
-					</button>{' '}
+					<Link href='/infouser'>
+						{' '}
+						<button
+							className={` border-2 rounded-3xl border-zinc-700/50  justify-center py-3 flex  duration-300 hover:bg-blur  px-10 my-5 text-sm`}
+						>
+							{t('button')}
+						</button>{' '}
+					</Link>
 				</div>
 			</div>
 			<hr className='opacity-10 w-full py-3 lg:hidden' />

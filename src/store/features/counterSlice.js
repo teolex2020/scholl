@@ -1,10 +1,15 @@
+
 import { createSlice } from '@reduxjs/toolkit'
 
+
+
 const initialState = {
-	authuser: '',
-	mobilemenu: false,
-	popupmenu: false,
-	language: true,
+	authUser: false,
+	mobileMenu: false,
+	popupMenu: false,
+	language: `uk`,
+	id: '',
+	loading: true,
 }
 
 export const dataSlice = createSlice({
@@ -12,19 +17,26 @@ export const dataSlice = createSlice({
 	initialState,
 	reducers: {
 		Authuser: (state, action) => {
-			state.authuser = action.payload
+			state.authUser = action.payload
 		},
 		MobileMenus: (state, action) => {
 			state.mobilemenu = !action.payload
 		},
 		Languages: (state, action) => {
-			state.language = !action.payload
+			state.language = action.payload
 		},
 		PopupMenu: (state, action) => {
 			state.popupmenu = !action.payload
 		},
+		Id: (state, action) => {
+			state.id = action.payload
+		},
+		Loading: (state, action) => {
+			state.loading = action.payload
+		},
 	},
 })
 
-export const { Authuser, MobileMenus, Languages, PopupMenu } = dataSlice.actions
+export const { Authuser, MobileMenus, Languages, PopupMenu, Id, Loading } =
+	dataSlice.actions
 export default dataSlice.reducer

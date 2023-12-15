@@ -1,56 +1,58 @@
 'use client'
-import  { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
-import signIn from '../../../firebase/auth/signin'
+import signIn from '../../../../firebase/auth/signin'
 import { useRouter, redirect } from 'next/navigation'
 import Link from 'next/link'
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { EyeSlashIcon } from '@heroicons/react/24/solid'
-import { auth, Providers } from '../../../firebase/config.js'
+import { auth, Providers } from '../../../../firebase/config.js'
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { Id } from '@/store/features/counterSlice'
 
 const Login = () => {
-// useEffect(() => {
-// 	if (user === null) {
-// 		redirect('/')
-// 	}
-// }, [user])
+	const id = useSelector((state) => state.counter.id)
+
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		if (id) {
+			redirect('/')
+		}
+	}, [id])
 
 	const [inputType, setInputType] = useState(true)
-	const language = useSelector((state) => state.counter.language)
+
 	const router = useRouter()
 
 	const sign = async (values) => {
 		let { email, password } = values
 		const { result, error } = await signIn(email, password)
-
+		dispatch(Id(result?.user?.uid))
 		if (error) {
 			console.log('erre', error)
-			return toast.error('User not registered')
+			return toast.error('User not login')
 		}
 		toast.success('Success Notification !')
-		console.log(result)
+
 		return router.push('/')
 	}
 
 	const signupWithGoogle = () => {
 		signInWithPopup(auth, Providers)
 			.then((result) => {
-				// This gives you a Google Access Token. You can use it to access the Google API.
-				const credential = GoogleAuthProvider.credentialFromResult(result)
-				const token = credential.accessToken
-				// The signed-in user info.
-				const user = result.user
+				dispatch(Id(result?.user?.uid))
+
 				toast.success('Success Notification !')
 				return router.push('/')
 			})
 			.catch((error) => {
 				// Handle Errors here.
-				toast.error('User not registered')
+				toast.error('User not login')
 			})
 	}
 

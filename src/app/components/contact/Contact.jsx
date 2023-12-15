@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import {
 	PhoneIcon, EnvelopeOpenIcon, MapPinIcon
@@ -9,11 +9,11 @@ import {
 
 
 const ContactComponent = () => {
-
+	const t = useTranslations('Contact')
 	return (
 		<div className='container mx-auto px-[3%]'>
 			<h1 className='text-xl md:text-4xl lg:my-16 text-center text-white py-5 lg:py-0'>
-				Связаться с нами
+				{t('title')}
 			</h1>
 			<div className='flex items-center gap-10 flex-col lg:flex-row lg:border border-zinc-700/50 rounded-sm '>
 				<div className='flex   relative w-96 h-full  px-10  '>

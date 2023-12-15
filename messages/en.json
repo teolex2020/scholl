@@ -1,0 +1,93 @@
+{
+	"Header": {
+		"button": "Sign in"
+	},
+	"Popup": {
+		"button": "Log out",
+		"title": "My account"
+	},
+	"Menu": {
+		"course": "Courses",
+		"meeting": "Meetings",
+		"brainstorm": "Brainstorming",
+		"contact": "Contacts"
+	},
+	"StartPage": {
+		"title": "School of Political Analysis",
+		"name": "Rusala Bortnik",
+		"descriptions": "25 years of experience in information and political analysis and companies, a unique author's methodology, cool examples and global clients, success and fame in a hostile environment! With us, you will gain true Freedom in society and open the way to personal Success - learn to think outside the box and act in the interests of your interests, understand the essence of ongoing political, social and economic processes, make the right life decisions!",
+		"button": "our courses"
+	},
+	"Course": {
+		"title": "Fundamentals of Practical Political Analysis: How to Distinguish Truth from Lies and Make the Right Decisions",
+		"descriptions": "The political analysis and forecasting course will help you acquire the most important knowledge and skills in public life that you can apply when working on practical and complex projects.",
+		"lector": "Bortnik Ruslan",
+		"lectorname": "Teacher:",
+		"button": "Buy the course now",
+		"aftercourse": "After completing the course, you will learn how to",
+		"intro1": "Critically evaluate information, arguments and policies. Developing critical thinking skills is central to political analysis.",
+		"intro2": "Better understand and analyze public policy, assess its impact on society.",
+		"intro3": "Model complex political processes.",
+		"intro4": "Analyze specific historical and contemporary political events, case studies and real-world scenarios.",
+		"courseprogram": "Course Program",
+		"Introduction": "Introduction. Concerns everyone. Miranda's lessons. (1 hour)",
+		"Deconstruction": "Deconstruction of the information flow (16 hours):",
+		"intro5": "- principles and objectives of political analysis, obviously incomprehensible things, Dr. House's criminal doctrine (2 hours);",
+		"intro6": "- subjects and objects (difficulties in determining the real object of analysis) (1 hour);",
+		"intro7": "- information processing technologies (visualization, perception problems, verification, classification, structuring), reference points of the information flow (2 hours);",
+		"intro8": "- logical analysis and matrix method (1 hour);",
+		"intro9": "- situational analysis, induction and deduction (1 hour);",
+		"intro10": "- mental experiment and political modeling (2 hours); ",
+		"intro11": "- comparative analysis (1 hour);",
+		"Reconstruction": "Reconstruction of information. Functional design of information flows (design and modeling of information flows) (9 hours):",
+		"intro12": "- logical synthesis (1 hour);",
+		"intro13": "- elements of game theory (1 hour);",
+		"intro14": "- political modeling and design (1 hour);",
+		"intro15": "- political forecasting (1 hour);",
+		"intro16": "- visualization (1 hour);",
+		"intro17": "- testing and interpretation (1 hour);",
+		"intro18": "- textology (1 hour);",
+		"intro19": "- case studies (2 hours).",
+		"Conclusion": "Conclusions. On the way to consciously binding freedom (2 hours).",
+		"Certificat": "After completing the course you will receive a certificate",
+		"Questions": "Frequently asked questions:",
+		"Quiz1": "How does the training take place?",
+		"answer1": "All our courses are held offline, as well as online on a special educational platform. You can study at your own pace from anywhere in the world with internet access.",
+		"Quiz2": "What payment methods are available?",
+		"answer2": "We accept VISA, MasterCard, and payment via PayPal is also possible.",
+		"Quiz3": "Is it possible to receive a certificate or diploma after completing the courses?",
+		"answer3": "Yes, upon completion of the course you can receive a named certificate of training.",
+		"there": "Here you will find courses, classes, trainings and lectures from Ruslan Bortnik and other famous scientists and experts from Ukraine and abroad."
+	},
+	"Card": {
+		"price": "Price",
+		"time": "hours of lectures",
+		"video": "video materials",
+		"certificate": "certificate",
+		"button": "Buy",
+		"course": "The course consists of:"
+	},
+	"Meeting": {
+		"title": "Schedule a meeting",
+		"description": "Here you can schedule a meeting with the course authors for business networking and consultations (online and offline), ask for short advice or discuss the course materials in more detail with their authors, get acquainted with the materials of events already held. This mode of operation is confidential and can only be initiated at the customer's request."
+	},
+	"Brainstorm": {
+		"title": "Schedule a brainstorming session",
+		"description": "This section is for those who want to comprehend complex issues and find solutions for their business, political career or reputation. You can ask an expert (or several) to analyze your ideas, put forward their own, discuss your questions and problems (online or offline). This mode of operation is confidential and can only be initiated at the customer's request."
+	},
+	"Contact": {
+		"title": "Contact us"
+	},
+	"Cabinet": {
+		"title": "Personal information",
+		"button": "Edit data"
+	},
+	"Cabinetdata": {
+		"name": "Name",
+		"theme": "Lecture theme",
+		"paid": "Status"
+	},
+	"Foot": {
+		"name": "Ruslan Bortnik's School of Political Analysis"
+	}
+}
