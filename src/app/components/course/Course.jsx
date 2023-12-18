@@ -10,8 +10,9 @@ import {
 import { useTranslations } from 'next-intl'
 import Cart from './Cart'
 import Lector from './Lector'
-import course from "../../../../public/course.png"
-
+import course from "../../../../public/assets/course.png"
+import certificat from "../../../../public/assets/certificat.png"
+import { useRouter } from '@/navigation'
 
 const listStart = [
 	{
@@ -67,7 +68,7 @@ const Accordion = ({ title, children }) => {
 }
 
 const Course = () => {
-
+const router = useRouter()
 		const t = useTranslations('Course')
 
 	return (
@@ -100,21 +101,20 @@ const Course = () => {
 						</div>
 					</div>
 					<div>
-						<button className='mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10'>
+						<button className='mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10'  onClick={()=>router.push("/payment")}>
 							{t('button')}
 						</button>
 					</div>
 				</div>
 				<div className='flex-2'>
-					<div className='w-full  flex justify-center relative mt-10 w-'>
+					<div className='w-80 h-64 mx-auto lg:w-[500px] lg:h-80 flex justify-center relative mt-10 '>
 						<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
 						<Image
-							src={course}
-							width='500'
-							height='500'
+							src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742114/course_um7hml.png'
+							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
-							alt=''
+							alt='course'
 							className='rounded-full, object-cover'
 							priority
 						/>
@@ -160,20 +160,17 @@ const Course = () => {
 					</Accordion>
 					<Accordion title={`${t('Conclusion')}`}></Accordion>
 				</div>
-				<Cart
-				
-				/>
+				<Cart />
 			</div>
 			<hr className='opacity-10 my-5' />
 			<div className='flex flex-col items-center gap-6'>
 				<div className='text-2xl'>{t('Certificat')}</div>
-				<div>
+				<div className='w-[266px] h-96 relative'>
 					<Image
-						src='/certificat.png'
-						width='300'
-						height={300}
+						src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742111/certificat_piyuo8.png'
+						fill
 						sizes='(min-width: 808px) 50vw, 100vw'
-						alt='certificat'
+						alt='certificate'
 						className='object-cover'
 						priority
 					/>

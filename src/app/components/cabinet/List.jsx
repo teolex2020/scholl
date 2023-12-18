@@ -8,24 +8,39 @@ import {
 	EnvelopeOpenIcon
 	
 } from '@heroicons/react/24/solid'
-import Link from 'next/link'
+
 import { doc,  getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/config'
 import { useSelector } from 'react-redux'
-import { redirect } from 'next/navigation'
+import {  useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
+import notphoto from "../../../../public/assets/notphoto.jpg"
+import { getAuth } from 'firebase/auth'
+import firebase_app from '@/firebase/config'
 
 const List = () => {
 	const id = useSelector((state) => state.counter.id)
 	const[data, setData]=useState()
 const t = useTranslations('Cabinet')
+const router = useRouter()
+const auth = getAuth(firebase_app)
 
 
-useEffect(()=>{
-	if (id) {
-redirect("/login")
-	}
-},[id])
+useEffect(() => {
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			if (user?.emailVerified) {
+
+			router.push('/login')
+
+				// Диспатч Redux Action тут
+			} else {
+				console.log('User is not logged in')
+			}
+		})
+
+		// return () => unsubscribe()
+	})
+
 
 	useEffect(()=>{
 		if (id?.length !== 0) {
@@ -60,14 +75,25 @@ redirect("/login")
 				<p className='text-2xl'>{t('title')}</p>
 				<div className=''>
 					<div className='w-24 h-24 lg:w-48 lg:h-48 rounded-full bg-blur relative'>
-						<Image
-							src={data?.img ? data?.img : '/notphoto.jpg'}
-							fill
-							alt='nonimage'
-							className='rounded-full, object-cover rounded-full '
-							priority
-							sizes='(min-width: 808px) 50vw, 100vw'
-						/>
+						{data?.img ? (
+							<Image
+								src={data?.img}
+								fill
+								alt='nonimage'
+								className='rounded-full, object-cover rounded-full '
+								priority
+								sizes='(min-width: 808px) 50vw, 100vw'
+							/>
+						) : (
+							<Image
+								src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742137/notphoto_ziwbqm.jpg'
+								fill
+								alt='nonimage'
+								className='rounded-full, object-cover rounded-full '
+								priority
+								sizes='(min-width: 808px) 50vw, 100vw'
+							/>
+						)}
 					</div>
 				</div>
 				<div className='flex flex-col gap-5'>
@@ -95,14 +121,12 @@ redirect("/login")
 				</div>
 
 				<div>
-					<Link href='/infouser'>
-						{' '}
-						<button
-							className={` border-2 rounded-3xl border-zinc-700/50  justify-center py-3 flex  duration-300 hover:bg-blur  px-10 my-5 text-sm`}
-						>
-							{t('button')}
-						</button>{' '}
-					</Link>
+					<button
+						onClick={() => router.push('/infouser')}
+						className={` border-2 rounded-3xl border-zinc-700/50  justify-center py-3 flex  duration-300 hover:bg-blur  px-10 my-5 text-sm min-w-[200px]`}
+					>
+						{t('button')}
+					</button>{' '}
 				</div>
 			</div>
 			<hr className='opacity-10 w-full py-3 lg:hidden' />

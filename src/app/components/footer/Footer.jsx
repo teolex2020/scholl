@@ -16,7 +16,7 @@ const Footer = () => {
 				©2023 <p className='hidden lg:flex'>{t('name')}</p>
 			</div>
 			<div className='flex flex-row space-x-6 justify-center'>
-				<a href='#'>
+				<a href='/'>
 					<div className=' relative w-5 h-5 '>
 						<Image
 							src={facebook}
@@ -28,7 +28,7 @@ const Footer = () => {
 					</div>
 				</a>
 
-				<a href='#'>
+				<a href='/'>
 					<div className='relative  w-5 h-5 '>
 						<Image
 							src={youtube}
@@ -40,7 +40,7 @@ const Footer = () => {
 						/>
 					</div>
 				</a>
-				<a href='#'>
+				<a href='/'>
 					<div className=' relative  w-5 h-5 '>
 						<Image
 							src={tiktok}

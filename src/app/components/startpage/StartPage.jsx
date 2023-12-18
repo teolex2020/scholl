@@ -1,8 +1,7 @@
 "use client"
 import React from 'react'
-import { useTranslations } from 'next-intl'
 import ButtonStartPage from '../helper/ButtonStartPage'
-import bg from "../../../../public/bg.png"
+import bg from "../../../../public/assets/bg.png"
 import Image from 'next/image'
 import { Gentium_Book_Plus } from 'next/font/google'
 
@@ -12,7 +11,7 @@ import { Gentium_Book_Plus } from 'next/font/google'
  })
 
 const StartPage = ({title, name, descriptions, button}) => {
-	//  const t = useTranslations('StartPage')
+
 	return (
 		<div className='container mx-auto elem bg-blur py-5 lg:pb-24 mt-0 lg:mt-24 relative '>
 			<div className='flex justify-between flex-col lg:flex-row items-center lg:gap-48 '>
@@ -20,7 +19,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 					<div className='absolute ml-28  bg-blue-300 w-96 h-full blur-3xl rounded-full opacity-[15%]'></div>
 					<div className='absolute bg-blue-200 w-48 h-48 ml-32 blur-3xl rounded-full opacity-[25%]'></div>
 					<Image
-						src={bg}
+						src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742094/bg_h4hr1y.png'
 						alt='trees '
 						fill
 						sizes='(min-width: 808px) 50vw, 100vw'

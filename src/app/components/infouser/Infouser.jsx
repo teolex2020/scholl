@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
 import { getDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { useRouter, redirect } from 'next/navigation'
-
+import notphoto from "../../../../public/assets/notfound.png"
 const Infouser = () => {
 	const id = useSelector((state) => state.counter.id)
 		const [data, setData] = useState()
@@ -175,7 +175,9 @@ useEffect(() => {
 											) : (
 												<Image
 													src={
-														file ? URL.createObjectURL(file) : '/notphoto.jpg'
+														file
+															? URL.createObjectURL(file)
+															: 'https://res.cloudinary.com/dentkbzne/image/upload/v1702742137/notphoto_ziwbqm.jpg'
 													}
 													width={100}
 													height={100}

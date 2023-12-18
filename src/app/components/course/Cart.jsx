@@ -1,24 +1,25 @@
+"use Client"
 import React from 'react'
 import Image from 'next/image'
 import { ClockIcon, VideoCameraIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
-import course from "../../../../public/course.png"
+import course from "../../../../public/assets/course.png"
 import { useTranslations } from 'next-intl'
-
+import { useRouter } from '@/navigation'
 
 const Cart = () => {
+	const router = useRouter()
 	const t = useTranslations('Card')
   return (
 		<div className='flex-1 flex justify-center '>
 			{' '}
 			<div className='w-80 bg-blur  rounded-md p-5 h-[430px]'>
-				<div className='w-full  flex justify-center relative mt-1'>
+				<div className='w-32 h-24 mx-auto  flex justify-center relative mt-1'>
 					<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
 					<Image
-						src={course}
+						src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742114/course_um7hml.png'
 						sizes='(min-width: 808px) 50vw, 100vw'
-						width={150}
-						height={150}
+						fill
 						alt=''
 						className='rounded-full, object-cover'
 						priority
@@ -47,7 +48,7 @@ const Cart = () => {
 					</div>
 
 					<div className='w-full flex justify-center '>
-						<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10'>
+						<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10 min-w-[200px]' onClick={()=>router.push("/payment")}>
 							{t('button')}
 						</button>
 					</div>

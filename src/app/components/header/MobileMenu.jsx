@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useSelector, useDispatch } from 'react-redux'
 import { MobileMenus } from '@/store/features/counterSlice'
 
-import { Authuser, Id } from '@/store/features/counterSlice'
+
 import { getAuth, signOut } from 'firebase/auth'
 
 const menu = [

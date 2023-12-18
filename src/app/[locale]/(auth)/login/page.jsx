@@ -8,22 +8,22 @@ import Link from 'next/link'
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { EyeSlashIcon } from '@heroicons/react/24/solid'
 import { auth, Providers } from '../../../../firebase/config.js'
-import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { signInWithPopup } from 'firebase/auth'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { Id } from '@/store/features/counterSlice'
 
 const Login = () => {
-	const id = useSelector((state) => state.counter.id)
+	const authUser= useSelector((state) => state.counter.authUser)
 
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		if (id) {
+		if (authUser) {
 			redirect('/')
 		}
-	}, [id])
+	}, [authUser])
 
 	const [inputType, setInputType] = useState(true)
 
@@ -77,7 +77,7 @@ const Login = () => {
 					<Form className='flex flex-col w-[300px] gap-5 lg:mt-32 '>
 						<div className='relative group '>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
-								{true ? 'Email' : 'Електронна пошта'}
+								Email
 							</p>
 							<Field
 								name='email'
@@ -90,7 +90,7 @@ const Login = () => {
 						</div>
 						<div className='relative group'>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c]  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
-								{true ? 'Password' : 'Пароль'}
+								Password
 							</p>
 							<div
 								onClick={() => setInputType(!inputType)}
@@ -115,7 +115,7 @@ const Login = () => {
 							type='submit'
 							className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full   hover:border-blue-200/80 z-10'
 						>
-							{true ? 'Sign In' : 'Увійти'}
+							Sign In
 						</button>
 					</Form>
 				</Formik>
@@ -128,15 +128,26 @@ const Login = () => {
 					onClick={signupWithGoogle}
 					className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full  hover:border-blue-200/80 z-10'
 				>
-					{true ? 'Sign In with Google' : 'Увійти за допомогою Google'}
+					Sign In with Google
 				</button>
 				<div className='flex space-x-3'>
-					<p className='text-slate-400 text-[10px]'>
-						{true ? 'Dont have an account?' : 'Не маєте аккаунту?'}
-					</p>
+					<p className='text-slate-400 text-[10px]'>Dont have an account?</p>
 					<Link className='text-blue-200/80 text-[10px] z-10' href='/register'>
-						{true ? 'Sign Up' : 'Зареєструватися'}
+						Sign Up
 					</Link>
+				</div>
+				<div className='text-[10px] text-slate-400 z-10'>
+					By clicking continue, you agree to our
+					<div>
+						<Link href='#'>
+							<span className='underline cursor-pointer'>Terms of Service    </span>
+						</Link>
+						and{' '}
+						<Link href='#'>
+							<span className='underline cursor-pointer'> Privacy Policy.</span>
+						</Link>
+						
+					</div>
 				</div>
 			</div>
 		</div>

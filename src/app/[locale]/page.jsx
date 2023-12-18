@@ -14,6 +14,10 @@ const StartPage = dynamic(
 )
 
  const Home = ({ params: { locale } }) => {
+
+const data = (global).payload
+console.log("cach",data)
+
 	 unstable_setRequestLocale(locale)
 		const t = useTranslations('StartPage')
 		return (

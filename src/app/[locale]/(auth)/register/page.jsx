@@ -79,7 +79,7 @@ const Register = () => {
 					<Form className='flex flex-col w-[300px] gap-5 lg:mt-32'>
 						<div className='relative group'>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
-								{true ? 'Username' : "Ім'я користувача"}
+								Username
 							</p>
 							<Field
 								name='name'
@@ -92,7 +92,7 @@ const Register = () => {
 						</div>
 						<div className='relative group'>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2  flex justify-center text-[14px] group-hover:text-blue-200/80'>
-								{true ? 'Email' : 'Електронна пошта'}
+							Email
 							</p>
 							<Field
 								name='email'
@@ -131,7 +131,7 @@ const Register = () => {
 							type='submit'
 							className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full   hover:border-blue-200/80 z-10'
 						>
-							{true ? 'Sign Up' : 'Зареєструватися'}
+						Sign Up
 						</button>
 					</Form>
 				</Formik>
@@ -143,16 +143,30 @@ const Register = () => {
 					onClick={signupWithGoogle}
 					className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full  hover:border-blue-200/80 z-10'
 				>
-					{true ? '	Sign In with Google' : 'Зареєструватися за допомогою Google'}
+			Sign In with Google
 				</button>
 
 				<div className='flex space-x-3'>
 					<p className='text-slate-400 text-[10px]'>
-						{true ? 'Already registered?' : 'Вже маєте аккаунт?'}
+					Already registered?
 					</p>
 					<Link className='text-blue-200/80 text-[10px] z-10' href='/login'>
-						{true ? 'Sign In' : 'Увійти'}
+						Sign In
 					</Link>
+				</div>
+				<div className='text-[10px] text-slate-400 z-10'>
+					By clicking continue, you agree to our
+					<div>
+						<Link href='#'>
+							<span className='underline cursor-pointer'>
+								Terms of Service{' '}
+							</span>
+						</Link>
+						and{' '}
+						<Link href='#'>
+							<span className='underline cursor-pointer'> Privacy Policy.</span>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>

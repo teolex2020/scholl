@@ -6,12 +6,14 @@ import {
 import { getAuth, signOut } from 'firebase/auth'
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
-import { PopupMenu } from '@/store/features/counterSlice'
+import { PopupMenu, Authuser } from '@/store/features/counterSlice'
 import { useTranslations } from 'next-intl'
 const Popup = () => {
-		const t = useTranslations('Popup')
+	const t = useTranslations('Popup')
 	const dispatch = useDispatch()
 	const popupmenu = useSelector((state) => state.counter.popupmenu)
+	const id = useSelector((state) => state.counter.id)
+	console.log(id)
 
 	const popupRef = useRef()
 
@@ -30,11 +32,8 @@ const Popup = () => {
 		const auth = getAuth()
 		signOut(auth)
 			.then(() => {
-		
-		
-			
-			
-					dispatch(PopupMenu(popupmenu))
+				dispatch(PopupMenu(popupmenu))
+					dispatch(Authuser(false))
 			})
 			.catch((error) => {
 				console.log(error)
@@ -50,7 +49,7 @@ const Popup = () => {
 			className='absolute hidden lg:block right-0  top-14 w-48 shadow1 rounded-md p-5 z-50 bg-menublur'
 			ref={popupRef}
 		>
-			<Link href='/cabinet/1'>
+			<Link href={`/cabinet/${id}`}>
 				<div
 					className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
 					onClick={popup}

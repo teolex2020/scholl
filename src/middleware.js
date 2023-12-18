@@ -6,17 +6,14 @@ export default createMiddleware({
 	defaultLocale: 'uk',
 })
 
+
 export const config = {
+	images: {
+		domains: ['localhost'],
+	},
 	matcher: [
-		// Enable a redirect to a matching locale at the root
 		'/',
-
-		// Set a cookie to remember the previous locale for
-		// all requests that have a locale prefix
 		'/(uk|en|ru)/:path*',
-
-		// Enable redirects that add missing locales
-		// (e.g. `/pathnames` -> `/en/pathnames`)
-		'/((?!_next|_next/image|images|_vercel|favicon.ico|public|assets|public/assets).*)',
+		'/((?!_next|_next/public|_next/static|_next/static/media|_vercel|next|favicon.ico|public|assets|public/assets).*)',
 	],
 }
