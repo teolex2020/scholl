@@ -34,7 +34,7 @@ export const MyComponent = () => {
 	}, [auth, dispatch])
 }
 
-export async function Providers({ children }) {
+export async function Providers({ children={} }) {
 
 
 	return (

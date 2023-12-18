@@ -4,15 +4,15 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import Image from 'next/image'
-import Link from 'next/link'
+
 import { storage, db, auth } from '@/firebase/config'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
 import { getDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'
-import { useRouter, redirect } from 'next/navigation'
-import notphoto from "../../../../public/assets/notfound.png"
+import { useRouter} from 'next/navigation'
+// import notphoto from "../../../../public/assets/notfound.png"
 const Infouser = () => {
 	const id = useSelector((state) => state.counter.id)
 		const [data, setData] = useState()
@@ -20,7 +20,7 @@ const Infouser = () => {
 
 	useEffect(() => {
 		if (id.length === 0) {
-			redirect('/login')
+			router.back()
 		}
 	})
 
@@ -65,7 +65,7 @@ const Infouser = () => {
 									}
 									toast.success('Success !')
 									setTimeout(() => {
-										router.push('/cabinet/1')
+										router.back()
 									}, 2000)
 							}, )
 						}
@@ -126,12 +126,12 @@ useEffect(() => {
 			<div className=' w-full h-full flex justify-center items-center pointer-events-auto overflow-scroll'>
 				{' '}
 				<div className=' z-30 relative max-w-md lg:w-1/3 md:w-2/4 w-96 p-10 rounded-lg  h-fit sm:mt-10 shadow1'>
-					<Link href='/cabinet/1'>
-						{' '}
-						<button className='absolute top-2 right-2 '>
-							<XMarkIcon className='h-6 w-6 stroke-slate-600 fill-none stroke-[1.4px]' />
-						</button>
-					</Link>
+					<button
+						className='absolute top-2 right-2 '
+						onClick={() => router.back()}
+					>
+						<XMarkIcon className='h-6 w-6 stroke-slate-600 fill-none stroke-[1.4px]' />
+					</button>
 
 					<div className=''>
 						<Formik
@@ -164,7 +164,7 @@ useEffect(() => {
 										<label htmlFor='file' className=''>
 											{!file ? (
 												<Image
-													src={data?.img}
+													src={data?.img || 'https://res.cloudinary.com/dentkbzne/image/upload/v1702742137/notphoto_ziwbqm.jpg'}
 													width={100}
 													height={100}
 													alt='nonimage'

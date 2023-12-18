@@ -28,17 +28,17 @@ const auth = getAuth(firebase_app)
 
 useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
-			if (user?.emailVerified) {
+			if (user?.emailVerified !==true) {
 
 			router.push('/login')
 
 				// Диспатч Redux Action тут
 			} else {
-				console.log('User is not logged in')
+				console.log('User is logged in')
 			}
 		})
 
-		// return () => unsubscribe()
+		return () => unsubscribe()
 	})
 
 
@@ -122,7 +122,7 @@ useEffect(() => {
 
 				<div>
 					<button
-						onClick={() => router.push('/infouser')}
+						onClick={() => router.push(`/infouser/${id}`)}
 						className={` border-2 rounded-3xl border-zinc-700/50  justify-center py-3 flex  duration-300 hover:bg-blur  px-10 my-5 text-sm min-w-[200px]`}
 					>
 						{t('button')}
