@@ -12,8 +12,10 @@ import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
+import { useTranslations } from 'next-intl'
 
 const Register = () => {
+	const t = useTranslations('Login')
 	const id = useSelector((state) => state.counter.id)
 	useEffect(() => {
 		if (id) {
@@ -79,7 +81,7 @@ const Register = () => {
 					<Form className='flex flex-col w-[300px] gap-5 lg:mt-32'>
 						<div className='relative group'>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
-								Username
+								{t('user')}
 							</p>
 							<Field
 								name='name'
@@ -92,7 +94,7 @@ const Register = () => {
 						</div>
 						<div className='relative group'>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2  flex justify-center text-[14px] group-hover:text-blue-200/80'>
-							Email
+								{t('email')}
 							</p>
 							<Field
 								name='email'
@@ -105,7 +107,7 @@ const Register = () => {
 						</div>
 						<div className='relative group '>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
-								{true ? 'Password' : 'Пароль'}
+								{t('password')}
 							</p>
 							<div
 								onClick={() => setInputType(!inputType)}
@@ -131,7 +133,7 @@ const Register = () => {
 							type='submit'
 							className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full   hover:border-blue-200/80 z-10'
 						>
-						Sign Up
+							{t('signup')}
 						</button>
 					</Form>
 				</Formik>
@@ -143,28 +145,24 @@ const Register = () => {
 					onClick={signupWithGoogle}
 					className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full  hover:border-blue-200/80 z-10'
 				>
-			Sign In with Google
+					{t('signingoogle')}
 				</button>
 
 				<div className='flex space-x-3'>
-					<p className='text-slate-400 text-[10px]'>
-					Already registered?
-					</p>
+					<p className='text-slate-400 text-[10px]'> {t('already')}</p>
 					<Link className='text-blue-200/80 text-[10px] z-10' href='/login'>
-						Sign In
+						{t('signin')}
 					</Link>
 				</div>
 				<div className='text-[10px] text-slate-400 z-10'>
-					By clicking continue, you agree to our
+					{t('agree')}
 					<div>
-						<Link href='#'>
-							<span className='underline cursor-pointer'>
-								Terms of Service{' '}
-							</span>
+						<Link href='/teamofservise'>
+							<span className='underline cursor-pointer'>{t('service')}</span>
 						</Link>
-						and{' '}
-						<Link href='#'>
-							<span className='underline cursor-pointer'> Privacy Policy.</span>
+						<span> & </span>{' '}
+						<Link href='/privatpolicy'>
+							<span className='underline cursor-pointer'>{t('policy')}</span>
 						</Link>
 					</div>
 				</div>

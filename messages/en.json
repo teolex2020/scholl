@@ -89,5 +89,18 @@
 	},
 	"Foot": {
 		"name": "Ruslan Bortnik's School of Political Analysis"
+	},
+	"Login": {
+		"user": "Login",
+		"email": "Email",
+		"password": "Password",
+		"signin": "Sign In",
+		"signingoogle": "Sign In with Google",
+		"accoun": "Dont have an account?",
+		"signup": "Sign Up",
+		"agree": "By clicking continue, you agree to our",
+		"service": "Terms of Service",
+		"policy": " Privacy Policy.",
+		"already": "Already registered?"
 	}
 }

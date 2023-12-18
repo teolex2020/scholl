@@ -13,8 +13,10 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { Id } from '@/store/features/counterSlice'
+import { useTranslations } from 'next-intl'
 
-const Login = () => {
+const Login = () => {	
+	const t = useTranslations('Login')
 	const authUser= useSelector((state) => state.counter.authUser)
 
 	const dispatch = useDispatch()
@@ -77,7 +79,7 @@ const Login = () => {
 					<Form className='flex flex-col w-[300px] gap-5 lg:mt-32 '>
 						<div className='relative group '>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
-								Email
+								{t('email')}
 							</p>
 							<Field
 								name='email'
@@ -90,7 +92,7 @@ const Login = () => {
 						</div>
 						<div className='relative group'>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c]  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
-								Password
+								{t('password')}
 							</p>
 							<div
 								onClick={() => setInputType(!inputType)}
@@ -115,7 +117,7 @@ const Login = () => {
 							type='submit'
 							className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full   hover:border-blue-200/80 z-10'
 						>
-							Sign In
+							{t('signin')}
 						</button>
 					</Form>
 				</Formik>
@@ -128,25 +130,24 @@ const Login = () => {
 					onClick={signupWithGoogle}
 					className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full  hover:border-blue-200/80 z-10'
 				>
-					Sign In with Google
+					{t('signingoogle')}
 				</button>
 				<div className='flex space-x-3'>
-					<p className='text-slate-400 text-[10px]'>Dont have an account?</p>
+					<p className='text-slate-400 text-[10px]'>{t('accoun')}</p>
 					<Link className='text-blue-200/80 text-[10px] z-10' href='/register'>
-						Sign Up
+						{t('signup')}
 					</Link>
 				</div>
 				<div className='text-[10px] text-slate-400 z-10'>
-					By clicking continue, you agree to our
+					{t('agree')}
 					<div>
-						<Link href='#'>
-							<span className='underline cursor-pointer'>Terms of Service    </span>
+						<Link href='/teamofservise'>
+							<span className='underline cursor-pointer'>{t('service')}</span>
 						</Link>
-						and{' '}
-						<Link href='#'>
-							<span className='underline cursor-pointer'> Privacy Policy.</span>
+						<span> & </span>{' '}
+						<Link href='/privatpolicy'>
+							<span className='underline cursor-pointer'> {t('policy')}</span>
 						</Link>
-						
 					</div>
 				</div>
 			</div>
