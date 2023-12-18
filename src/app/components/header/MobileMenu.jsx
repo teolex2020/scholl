@@ -44,6 +44,7 @@ const MobileMenu = () => {
 	const singout = () => {
 		const auth = getAuth()
 		signOut(auth)
+		dispatch(MobileMenus(mobilemenu))
 			.then(() => {
 				// dispatch(Authuser(localStorage.removeItem('user')))
 				// dispatch(Id(localStorage.removeItem('token')))
@@ -76,7 +77,7 @@ const MobileMenu = () => {
 					<div className='relative '>
 						{id ? (
 							<div className={` cursor-pointer relative`}>
-								<Link href='/cabinet/1'>
+								<Link href={`/cabinet/${id}`}>
 									<div
 										onClick={() => dispatch(MobileMenus(mobilemenu))}
 										className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center`}
@@ -86,19 +87,19 @@ const MobileMenu = () => {
 								</Link>
 
 								<div
-									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-20`}
+									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-20 `}
 									onClick={() => singout()}
 								>
 									<div>{b('button')}</div>
 								</div>
 							</div>
 						) : (
-							<Link href='/login'>
+							<Link href='/login' className=''>
 								<button
 									onClick={() => dispatch(MobileMenus(mobilemenu))}
 									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-20`}
 								>
-									<p className='duration-300  text-lg'>{b('button1')}</p>
+									<p className='duration-300  text-lg'>{b('buton')}</p>
 								</button>
 							</Link>
 						)}
