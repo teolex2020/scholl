@@ -8,7 +8,7 @@ const MobileButon = () => {
   const mobilemenu = useSelector((state) => state.counter.mobilemenu)
   return (
 		<div
-			className='w-10 h-10 lg:hidden block  fixed top-3 right-3 z-50'
+			className='w-10 h-10 lg:hidden block  fixed top-3 right-12 z-50'
 			onClick={() => dispatch(MobileMenus(mobilemenu))}
 		>
 			<svg

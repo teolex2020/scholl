@@ -50,16 +50,22 @@ const Accordion = ({ title, children }) => {
 			<div className=' flex gap-3 ' onClick={toggleOpen}>
 				<div>
 					<ChevronDoubleDownIcon
-						className={`h-6 w-6 text-green-500 duration-700 ease-in-out ${
-							isOpen ? 'rotate-180 ' : 'rotate-0 '
+						className={`h-6 w-6 text-green-500  ${
+							isOpen
+								? 'rotate-180 transition duration-700 ease-in-out'
+								: 'rotate-0 transition duration-700 ease-in-out'
 						}`}
 					/>
 				</div>
 				<div className='text-lg'>{title}</div>
 			</div>
 			<div
-				className={`transition-all duration-700 ease-in-out text-base
- ${isOpen ? 'max-h-96 ' : 'max-h-0 '} overflow-hidden`}
+				className={` text-base
+ ${
+		isOpen
+			? 'h-fit transition duration-700 ease-in-out'
+			: 'h-0 transition duration-700 ease-in-out'
+ } overflow-hidden`}
 			>
 				{isOpen && children}
 			</div>
@@ -101,7 +107,10 @@ const router = useRouter()
 						</div>
 					</div>
 					<div>
-						<button className='mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10'  onClick={()=>router.push("/payment")}>
+						<button
+							className=' mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10'
+							onClick={() => router.push('/payment')}
+						>
 							{t('button')}
 						</button>
 					</div>

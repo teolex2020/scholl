@@ -1,5 +1,9 @@
 import React from 'react'
-import Payment from '@/app/components/payment/Payment'
+import dynamic from 'next/dynamic'
+const Payment = dynamic(() => import('@/app/components/payment/Payment'), {
+	loading: () => <div className='w-full text-center '></div>,
+})
+
 
 const page = () => {
   return (

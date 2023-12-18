@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 import { Providers } from '@/store/provider'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation' 
-import { locales } from '@/navigation'
+import Chat from '../components/chat/Chat'
 
 
 
@@ -55,6 +55,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 					<Providers>
 						<NextIntlClientProvider locale={locale} messages={messages}>
 							<Header />
+							<Chat/>
 							<div className='flex-1 flex-grow'> {children}</div>
 							<Footer />
 						</NextIntlClientProvider>

@@ -12,6 +12,7 @@
     "@emailjs/browser": "^3.11.0",
     "@heroicons/react": "^2.0.18",
     "@reduxjs/toolkit": "^1.9.7",
+    "ai": "^2.2.29",
     "clsx": "^2.0.0",
     "firebase": "^10.7.0",
     "formik": "^2.4.5",

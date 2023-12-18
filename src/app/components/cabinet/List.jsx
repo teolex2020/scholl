@@ -18,6 +18,7 @@ import notphoto from "../../../../public/assets/notphoto.jpg"
 import { getAuth } from 'firebase/auth'
 import firebase_app from '@/firebase/config'
 
+
 const List = () => {
 	const id = useSelector((state) => state.counter.id)
 	const[data, setData]=useState()
@@ -70,7 +71,8 @@ const auth = getAuth(firebase_app)
 	
 	
 	return (
-		<div className='h-full flex  items-center lg:items-start lg:justify-between flex-col lg:flex-row container mx-auto'>
+		<div className='h-full flex  items-center lg:items-start lg:justify-between flex-col lg:flex-row container mx-auto relative'>
+			
 			<div className='w-96 h-full lg:bg-blur flex flex-2 flex-col items-center py-5 gap-5 rounded-xl lg:m-10'>
 				<p className='text-2xl'>{t('title')}</p>
 				<div className=''>
