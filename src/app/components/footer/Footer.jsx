@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import youtube from "../../../../public/assets/YouTube.svg"
-import tiktok from '../../../../public/assets/TikTok.svg'
 import facebook from '../../../../public/assets/Facebook.svg'
 import link from "../../../../public/assets/LinkedIn.svg"
 import x from '../../../../public/assets/Twitter.svg'
