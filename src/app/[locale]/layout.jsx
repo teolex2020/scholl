@@ -55,7 +55,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 					<Providers>
 						<NextIntlClientProvider locale={locale} messages={messages}>
 							<Header />
-							<Chat/>
+							<Chat lang={locale} />
 							<div className='flex-1 flex-grow'> {children}</div>
 							<Footer />
 						</NextIntlClientProvider>

@@ -61,7 +61,7 @@ const Register = () => {
 						password: Yup.string()
 							.required('No password provided.')
 							.min(8, 'Should be 8 chars minimum.')
-							.matches(/[a-zA-Z]/, 'Only contain Latin letters.'),
+							,
 					})}
 					onSubmit={async (values, { setSubmitting, resetForm }) => {
 						let { email, password } = values

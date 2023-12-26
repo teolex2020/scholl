@@ -19,9 +19,19 @@ const Infouser = () => {
 	const router = useRouter()
 
 	useEffect(() => {
-		if (id.length === 0) {
-			router.back()
-		}
+		setTimeout(() => {
+			const unsubscribe = auth.onAuthStateChanged((user) => {
+				if (user?.emailVerified !== true) {
+					router.push('/login')
+
+					// Диспатч Redux Action тут
+				} else {
+					console.log('User is logged in')
+				}
+			})
+
+			return () => unsubscribe()
+		}, 600)
 	})
 
 	const [file, setFile] = useState('')

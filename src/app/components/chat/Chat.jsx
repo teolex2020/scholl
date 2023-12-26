@@ -1,34 +1,69 @@
 'use client'
-import React, {useState} from 'react'
-import { useCompletion } from 'ai/react'
+import { useRef, useEffect, useState } from 'react'
+import { useChat } from 'ai/react'
 import { ToastContainer, toast } from 'react-toastify'
-import { ArrowLeftIcon} from '@heroicons/react/24/solid'
+
+import {
+	PaperAirplaneIcon,
+	ArrowLeftIcon,
+	ArrowPathIcon,
+	StopIcon,
+} from '@heroicons/react/24/solid'
 import { Gentium_Book_Plus } from 'next/font/google'
 import Image from 'next/image'
+import Message from './Message'
+import { useTranslations } from 'next-intl'
+import GrowingTextArea from './Textarea'
+import Select from 'react-select'
+import { prompts } from './prompt'
+
 const gentium = Gentium_Book_Plus({
 	weight: '400',
 	subsets: ['latin'],
 })
 
-const Chat = () => {
-    const {
-			completion,
-			input,
-			stop,
-			isLoading,
-			handleInputChange,
-			handleSubmit,
-		} = useCompletion({
-		  onFinish: () => {
-        // do something with the completion result
-        toast.success("Successfully generated completion!");}
-		})
+const Chat = ({ lang }) => {
+	const [active, setActive] = useState(true)
+	const [selectedOption, setSelectedOption] = useState()
+	const [prompt, setPrompt] = useState()
 
-const [active, setActive] = useState(true)    
-const buttonpopup = () => {
-  setActive(!active)
-}
+	useEffect( () => {
+		
+		const data =  prompts.filter((item) => item.id === lang)
+	
+		setPrompt(data[0]?.prompt)
+	}, [lang])
 
+	
+	//
+
+	const {
+		messages,
+		input,
+		handleInputChange,
+		handleSubmit,
+		isLoading,
+		error,
+		reload,
+		stop,
+	} = useChat({ body: { prompt } })
+
+	const buttonpopup = () => {
+		setActive(!active)
+	}
+
+	const t = useTranslations('Chat')
+	const messagesEndRef = useRef(null)
+	const options = [
+		{
+			value: '1',
+			label: t('theme1'),
+		},
+	]
+
+	useEffect(() => {
+		messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+	}, [messages])
 
 	return (
 		<div
@@ -39,7 +74,10 @@ const buttonpopup = () => {
 			}`}
 		>
 			<ToastContainer position='top-right' autoClose={1000} />
-			<div className='w-full px-1 absolute top-3 cursor-pointer group' onClick={buttonpopup}>
+			<div
+				className='w-full px-1 absolute top-3 cursor-pointer group'
+				onClick={buttonpopup}
+			>
 				<div className=' flex  h-10  w-8  relative justify-center  '>
 					<div className='absolute  bg-blue-300 w-20 h-full blur-3xl rounded-full opacity-[15%]'></div>
 					<div className='absolute bg-blue-200 w-20 h-20  blur-3xl rounded-full opacity-[25%]'></div>
@@ -62,33 +100,81 @@ const buttonpopup = () => {
 					<ArrowLeftIcon className='h-5 w-5 stroke-slate-100 fill-none stroke-[1.4px] ' />
 				</button>
 			</div>
-			{/* <div className=' flex  h-36  w-48  relative justify-center  '>
-				<div className='absolute  bg-blue-300 w-48 h-full blur-3xl rounded-full opacity-[15%]'></div>
-				<div className='absolute bg-blue-200 w-48 h-48  blur-3xl rounded-full opacity-[25%]'></div>
-				<Image
-					src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742094/bg_h4hr1y.png'
-					alt='trees '
-					fill
-					sizes='(min-width: 808px) 50vw, 100vw'
-					className='object-cover'
-					priority
-				/>
-			</div> */}
-			<div className={` ${gentium.className} text-2xl px-10 text-center `}>
-				<p> Твой ИИ </p>
-				<p> проводник по курсам</p>
+
+			<div
+				className={` ${gentium.className} text-2xl px-10 lg:pt-10 text-center text-[#e2a550]`}
+			>
+				<p className='text-4xl font-semibold'>{t('title1')} </p>
+				<p>{t('title2')} </p>
 			</div>
 			<div className=' h-full w-full px-10 '>
-				<div className='my-6'>{completion}</div>
+				<div className='max-w-md '>
+					<Select
+						placeholder={`${t('theme')}`}
+						defaultValue={selectedOption}
+						onChange={setSelectedOption}
+						options={options}
+						className='text-black bg-black basic-single'
+						instanceId={'wsad123wqwe'} // виправляє помилку
+					/>
+				</div>
+				<div className='my-6 max-h-[400px]  lg:max-h-[550px] elem scroll overflow-y-scroll'>
+					{messages.length !== 0
+						? messages.map((e, i) => (
+								<Message key={i} role={e.role} content={e.content} />
+						  ))
+						: ''}
+					{isLoading ? (
+						<div className='w-full h-full flex justify-center items-center loaders'></div>
+					) : (
+						''
+					)}
+
+					<div ref={messagesEndRef} />
+					<div className='w-full h-full flex justify-center items-center'>
+						{error?.message}
+					</div>
+				</div>
 			</div>
 			<div className='flex items-start w-full'>
-				<form onSubmit={handleSubmit} className='w-full p-5 ml-6'>
-					<input
-						className='w-full  bottom-0 border border-gray-300 rounded p-2 shadow-xl'
-						value={input}
-						placeholder='Задай вопрос ...'
-						onChange={handleInputChange}
-					/>
+				<form
+					onSubmit={handleSubmit}
+					className={`w-full p-5 ${active && 'ml-6'}`}
+				>
+					<div className='flex w-full justify-end gap-5 px-5 py-2'>
+						<div
+							className=' flex justify-end  cursor-pointer'
+							onClick={() => stop()}
+						>
+							<StopIcon className='h-6 w-6 stroke-slate-100 fill-slate-100 stroke-[1px] ' />
+						</div>
+						<div
+							className=' flex justify-end  cursor-pointer'
+							onClick={() => reload()}
+						>
+							<ArrowPathIcon className='h-6 w-6 stroke-slate-100 fill-none stroke-[1px] ' />
+						</div>
+					</div>
+
+					<div className='group w-full py-1 flex items-center rounded-3xl bg-white elem scroll shadow-md z-20'>
+						<GrowingTextArea
+							onChange={handleInputChange}
+							value={input}
+							className=' w-full  max-w-3xl
+							 text-black bottom-0  rounded-lg  p-2 border-none outline-none px-5  max-h-[200px] scroll overflow-y-scroll'
+						/>
+						<button
+							type='submit'
+							className='relative   py-2 text-[#a1a1a1] text-base   rounded-r-md  hover:text-white w-20  flex justify-center items-center '
+						>
+							{' '}
+							{isLoading ? (
+								<div className='loader  '></div>
+							) : (
+								<PaperAirplaneIcon className='h-6 w-6 -rotate-12 stroke-[#12181c] fill-[#12181c]  ' />
+							)}
+						</button>
+					</div>
 				</form>
 			</div>
 		</div>

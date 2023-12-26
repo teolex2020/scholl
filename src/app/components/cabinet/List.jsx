@@ -27,20 +27,21 @@ const router = useRouter()
 const auth = getAuth(firebase_app)
 
 
-// useEffect(() => {
-// 		const unsubscribe = auth.onAuthStateChanged((user) => {
-// 			if (user?.emailVerified !==true) {
+useEffect(() => {
+	setTimeout(() => {
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			if (user?.emailVerified !==true) {
 
-// 			router.push('/login')
+			router.push('/login')
 
-// 				// Диспатч Redux Action тут
-// 			} else {
-// 				console.log('User is logged in')
-// 			}
-// 		})
+				// Диспатч Redux Action тут
+			} else {
+				console.log('User is logged in')
+			}
+		})
 
-// 		return () => unsubscribe()
-// 	})
+		return () => unsubscribe()
+},600) 	})
 
 
 	useEffect(()=>{
@@ -54,6 +55,7 @@ const auth = getAuth(firebase_app)
 					if (docSnap.exists()) {
 						setData(docSnap.data())
 					} else {
+						
 						console.log('No such user!')
 					}
 				} catch (error) {

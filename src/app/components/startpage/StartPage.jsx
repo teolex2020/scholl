@@ -27,7 +27,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 						priority
 					/>
 				</div>
-				<div className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5'>
+				<div className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5 mr-10'>
 					<div className={` ${gentium.className} py-6   `}>
 						<p className='text-2xl'>{title}</p>{' '}
 						<p className='colorgold text-5xl '> {name}</p>

@@ -24,8 +24,7 @@ const ContactComponent = () => {
 								<p className='colorgold text-xl font-semibold'>Phone</p>
 							</div>
 							<div className='lg:pl-20 pt-3'>
-								<p>+38(099)-999-99-99</p>
-								<p>+38(099)-999-99-99</p>
+								<p>+38(093)-757-75-65</p>
 							</div>
 						</div>
 						<div>
@@ -34,8 +33,8 @@ const ContactComponent = () => {
 								<p className='colorgold text-xl font-semibold'>Email</p>
 							</div>
 							<div className='lg:pl-20 pt-3'>
-								<p>school@school.com</p>
-								<p>school@school.com</p>
+								<p>bortnikschool@gmail.com</p>
+								<p>rbrtnk@gmail.com</p>
 							</div>
 						</div>
 						<div>
@@ -46,7 +45,7 @@ const ContactComponent = () => {
 							<div className='lg:pl-20 pt-3'>
 								<p>Address</p>
 								<p>Ukraine, Kiev</p>
-								<p>str. Godjosdjsodj</p>
+								
 							</div>
 						</div>
 					</div>

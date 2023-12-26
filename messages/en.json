@@ -103,5 +103,13 @@
 		"service": "Terms of Service",
 		"policy": " Privacy Policy.",
 		"already": "Already registered?"
+	},
+	"Chat": {
+		"title1": "Your AI guide",
+		"title2": "to our courses and lectures",
+		"questions": "Hello, how can I help you?",
+		"placeholder": "Your message...",
+		"theme": "Choose a topic for discussion",
+		"theme1": "Fundamentals of practical political analysis: how to distinguish truth from lies and make the right decisions."
 	}
 }

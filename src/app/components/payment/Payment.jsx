@@ -39,12 +39,17 @@ const Payment = () => {
 						<Formik
 							enableReinitialize={true}
 							initialValues={{
+								email: '',
 								cardnumber: `${''}`,
 								nameoncard: `${''}`,
 								expiryMonth: `${''}`,
 								cvc: `${''}`,
 							}}
 							validationSchema={Yup.object({
+								email: Yup.string()
+									.max(30, 'Must be 30 characters or less')
+									.email('Invalid email address')
+									.required('Please enter your email'),
 								cardnumber: Yup.string()
 									.required('Required')
 									.matches(/^[0-9]+$/, 'Must be only digits')
@@ -76,6 +81,34 @@ const Payment = () => {
 							<Form className='flex flex-col  mx-auto gap-6  justify-start relative'>
 								<div className='relative group '>
 									<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
+										Full name
+									</p>
+									<Field
+										placeholder='Alex Alex'
+										name='nameoncard'
+										type='text'
+										className='bg-inherit border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-blue-200/80 decoration-transparent '
+									/>
+									<ErrorMessage name='nameoncard'>
+										{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
+									</ErrorMessage>
+								</div>
+								<div className='relative group '>
+									<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
+										Email
+									</p>
+									<Field
+										placeholder='gmail@gmail.com'
+										name='email'
+										type='email'
+										className='bg-inherit border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-blue-200/80 decoration-transparent '
+									/>
+									<ErrorMessage name='email'>
+										{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
+									</ErrorMessage>
+								</div>
+								<div className='relative group '>
+									<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
 										Card number
 									</p>
 									<Field
@@ -88,20 +121,7 @@ const Payment = () => {
 										{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
 									</ErrorMessage>
 								</div>
-								<div className='relative group '>
-									<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
-										Name on card
-									</p>
-									<Field
-										placeholder='Alex Alex'
-										name='nameoncard'
-										type='text'
-										className='bg-inherit border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-blue-200/80 decoration-transparent '
-									/>
-									<ErrorMessage name='nameoncard'>
-										{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
-									</ErrorMessage>
-								</div>
+
 								<div className='flex gap-3'>
 									<div className='relative group '>
 										<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
