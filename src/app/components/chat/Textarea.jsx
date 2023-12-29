@@ -13,11 +13,11 @@ const GrowingTextArea = (props) => {
 		}
 	}, [textAreaValue, props.value])
 
-	const handleInputChange = (event) => {
-		props.onChange
-			? props.onChange(event)
-			: setTextAreaValue(event.target.value)
-	}
+const handleInputChange = (event) => {
+	props.onChange
+		? props.onChange(event)
+		: setTextAreaValue((prev) => event.target.value)
+}
 
 	const handleContentKeyDown = (e) => {
 		if (e.key === 'Enter' && !e.shiftKey) {
@@ -30,6 +30,13 @@ const GrowingTextArea = (props) => {
 		}
 	}
 
+	const handleInput = () => {
+		if (textAreaRef.current) {
+			textAreaRef.current.style.height = 'auto'
+			textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
+		}
+	}
+
 	return (
 		<textarea
 			{...props}
@@ -37,6 +44,7 @@ const GrowingTextArea = (props) => {
 			value={props.value ?? textAreaValue}
 			onChange={handleInputChange}
 			onKeyDown={handleContentKeyDown}
+			onInput={handleInput}
 			style={{ resize: 'none' }}
 			rows={1}
 		/>

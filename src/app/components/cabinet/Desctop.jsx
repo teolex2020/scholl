@@ -48,15 +48,15 @@ const Desctop = () => {
 						<td className=' text-center '>1.</td>
 
 						<td className='text-sm text-center  '>
-							<div className=''> Бортник Руслан</div>
-							<div className='text-[10px]'> политолог</div>
+							<div className=''> ...</div>
+							<div className='text-[10px]'> .....</div>
 						</td>
 						<td className=' text-sm'>
-							Fundamentals of practical political analysis
+							....
 						</td>
 						<td className='w-32 text-center'>
 							<button className='bg-green-700 text-sm rounded-sm px-2 py-1'>
-								Оплаченно
+								....
 							</button>
 						</td>
 

@@ -27,7 +27,7 @@ const Cart = () => {
 				</div>
 				<div className='flex justify-center items-center gap-6 font-semibold colorgold mt-6'>
 					<p className=' text-xl'>{t('price')}</p>
-					<p className=' text-5xl'>11 $</p>
+					<p className=' text-5xl'>4999 ₴</p>
 				</div>
 
 				<div className='text-sm text-start px-10 mt-5 flex flex-col gap-3'>
@@ -48,7 +48,10 @@ const Cart = () => {
 					</div>
 
 					<div className='w-full flex justify-center '>
-						<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10 min-w-[200px]' onClick={()=>router.push("/payment")}>
+						<button
+							className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10 min-w-[200px]'
+							onClick={() => router.push('/payment')}
+						>
 							{t('button')}
 						</button>
 					</div>

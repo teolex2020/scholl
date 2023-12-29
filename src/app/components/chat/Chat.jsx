@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useEffect, useState } from 'react'
+import { useMemo, useRef, useEffect, useState } from 'react'
 import { useChat } from 'ai/react'
 import { ToastContainer, toast } from 'react-toastify'
 
@@ -7,7 +7,7 @@ import {
 	PaperAirplaneIcon,
 	ArrowLeftIcon,
 	ArrowPathIcon,
-	StopIcon,
+	StopCircleIcon,
 } from '@heroicons/react/24/solid'
 import { Gentium_Book_Plus } from 'next/font/google'
 import Image from 'next/image'
@@ -25,17 +25,15 @@ const gentium = Gentium_Book_Plus({
 const Chat = ({ lang }) => {
 	const [active, setActive] = useState(true)
 	const [selectedOption, setSelectedOption] = useState()
-	const [prompt, setPrompt] = useState()
+	// const prompt = prompts.find((item) => item.id === lang)?.prompt
 
-	useEffect( () => {
-		
-		const data =  prompts.filter((item) => item.id === lang)
-	
-		setPrompt(data[0]?.prompt)
+
+
+	const prompt = useMemo(() => {
+		return prompts.find((item) => item.id === lang)?.prompt
 	}, [lang])
 
 	
-	//
 
 	const {
 		messages,
@@ -146,7 +144,7 @@ const Chat = ({ lang }) => {
 							className=' flex justify-end  cursor-pointer'
 							onClick={() => stop()}
 						>
-							<StopIcon className='h-6 w-6 stroke-slate-100 fill-slate-100 stroke-[1px] ' />
+							<StopCircleIcon className='h-6 w-6 stroke-slate-100 fill-slate-100 stroke-[1px] ' />
 						</div>
 						<div
 							className=' flex justify-end  cursor-pointer'
