@@ -50,7 +50,7 @@ const Cart = () => {
 					<div className='w-full flex justify-center '>
 						<button
 							className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10 min-w-[200px]'
-							onClick={() => router.push('/payment')}
+							onClick={() => router.push('/')}
 						>
 							{t('button')}
 						</button>

@@ -43,7 +43,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 		<html className=' elem ' lang={locale}>
 			{/* <MovingCircle /> */}
 			<body className={inter.className}>
-				<main className='elem lg:min-h-screen  relative scroll flex flex-col justify-between px-[3%]'>
+				<main className='elem lg:min-h-screen  relative scroll flex flex-col justify-between px-[3%] '>
 					<Image
 						src={bg}
 						alt='bg'
