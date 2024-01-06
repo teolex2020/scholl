@@ -91,22 +91,14 @@ const ImagePopup = () => {
 	}
 
 	return (
-		<div className='fixed right-0 left-0 bottom-0 top-0 bg-[#12181d] z-[100] flex justify-center items-center'>
-			{loading && <Loader />}
-
-			<ToastContainer
-				position='top-center'
-				autoClose={5000}
-				hideProgressBar={false}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-				theme='light'
-			/>
+		<div className=' bg-[#12181d] z-50 flex justify-center items-center border rounded-lg max-w-lg border-slate-500 relative'>
 			<div className='border-2 border-slate-500  p-14  rounded-lg relative'>
+				{loading && (
+					<div className=' absolute top-0 left-0 right-0 bottom-0 w-full h-full flex justify-center items-center bg-[#12181d]/95 z-50'>
+						<div className='loader'></div>
+					</div>
+				)}
+
 				<div>
 					<button className='absolute top-2 right-10 sm:right-2 '>
 						<XMarkIcon
