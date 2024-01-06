@@ -106,7 +106,7 @@ const ImagePopup = () => {
 				pauseOnHover
 				theme='light'
 			/>
-			<div className='border-2 border-slate-500  p-20  rounded-lg relative'>
+			<div className='border-2 border-slate-500  p-14  rounded-lg relative'>
 				<div>
 					<button className='absolute top-2 right-10 sm:right-2 '>
 						<XMarkIcon
