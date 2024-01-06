@@ -91,8 +91,8 @@ const ImagePopup = () => {
 	}
 
 	return (
-		<div className=' bg-[#12181d] z-50 flex justify-center items-center border rounded-lg max-w-lg border-slate-500 relative'>
-			<div className='border-2 border-slate-500  p-14  rounded-lg relative'>
+		<div className=' z-[60]  flex justify-center lg:items-center max-w-lg relative'>
+			<div className='border-2 border-slate-500 bg-[#12181d] p-14 h-96 rounded-lg relative mt-5'>
 				{loading && (
 					<div className=' absolute top-0 left-0 right-0 bottom-0 w-full h-full flex justify-center items-center bg-[#12181d]/95 z-50'>
 						<div className='loader'></div>
@@ -100,7 +100,7 @@ const ImagePopup = () => {
 				)}
 
 				<div>
-					<button className='absolute top-2 right-10 sm:right-2 '>
+					<button className='absolute top-2 right-2 lg:right-10 sm:right-2 '>
 						<XMarkIcon
 							className='h-6 w-6 stroke-slate-600 fill-none stroke-[1.4px]'
 							onClick={() => dispatch(Avatar(avatar))}
