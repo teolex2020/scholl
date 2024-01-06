@@ -5,26 +5,31 @@ import Mobiletable from './Mobiletable'
 import Image from 'next/image'
 import {
 	PhoneIcon,
-	EnvelopeOpenIcon
+	EnvelopeOpenIcon, CameraIcon
 	
 } from '@heroicons/react/24/solid'
 
 import { doc,  getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/config'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {  useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
-import notphoto from "../../../../public/assets/notphoto.jpg"
 import { getAuth } from 'firebase/auth'
 import firebase_app from '@/firebase/config'
-
+import ImagePopup from './ImagePopup'
+import { Avatar } from '@/store/features/counterSlice'
 
 const List = () => {
 	const id = useSelector((state) => state.counter.id)
+	const avatar = useSelector((state) => state.counter.avatar)
+	const dispatch = useDispatch()
 	const[data, setData]=useState()
+
 const t = useTranslations('Cabinet')
 const router = useRouter()
 const auth = getAuth(firebase_app)
+
+
 
 
 useEffect(() => {
@@ -69,16 +74,24 @@ useEffect(() => {
 	},[id])
 
 
-
+const changeImage = ()=>{
+	dispatch(Avatar(avatar))
+}
 	
 	
 	return (
 		<div className='h-full flex  items-center lg:items-start lg:justify-between flex-col lg:flex-row container mx-auto relative'>
-			
+			{avatar && <ImagePopup />}
 			<div className='w-96 h-full lg:bg-blur flex flex-2 flex-col items-center py-5 gap-5 rounded-xl lg:m-10'>
 				<p className='text-2xl'>{t('title')}</p>
 				<div className=''>
 					<div className='w-24 h-24 lg:w-48 lg:h-48 rounded-full bg-blur relative'>
+						<div
+							className='flex items-center justify-center border-2 border-zinc-400 rounded-full w-10 h-10 bg-white z-50 absolute bottom-0 right-0 cursor-pointer'
+							onClick={changeImage}
+						>
+							<CameraIcon className='h-8 w-8 fill-black' />
+						</div>
 						{data?.img ? (
 							<Image
 								src={data?.img}

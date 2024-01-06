@@ -13,7 +13,7 @@ import { Gentium_Book_Plus } from 'next/font/google'
 const StartPage = ({title, name, descriptions, button}) => {
 
 	return (
-		<div className='container mx-auto elem bg-blur py-5 lg:pb-24 mt-0 lg:mt-24 relative '>
+		<div className='container mx-auto elem bg-blur my-10 py-5 lg:pb-24 mt-0 lg:mt-24 relative '>
 			<div className='flex justify-between flex-col lg:flex-row items-center lg:gap-48 '>
 				<div className=' flex lg:flex-1 h-48 lg:h-[450px] w-96  relative justify-center '>
 					<div className='absolute ml-28  bg-blue-300 w-96 h-full blur-3xl rounded-full opacity-[15%]'></div>

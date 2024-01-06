@@ -10,6 +10,7 @@ const initialState = {
 	language: `uk`,
 	id: '',
 	loading: true,
+	avatar:false,
 }
 
 export const dataSlice = createSlice({
@@ -34,9 +35,12 @@ export const dataSlice = createSlice({
 		Loading: (state, action) => {
 			state.loading = action.payload
 		},
+		Avatar: (state, action) => {
+			state.avatar = !action.payload
+		},
 	},
 })
 
-export const { Authuser, MobileMenus, Languages, PopupMenu, Id, Loading } =
+export const { Authuser, MobileMenus, Languages, PopupMenu, Id, Loading, Avatar } =
 	dataSlice.actions
 export default dataSlice.reducer
