@@ -76,11 +76,14 @@ const Accordion = ({ title, children }) => {
 const blockAnimation = {
 	hidden: {
 		y: 100,
+
 		opacity: 0,
+		scale: 0,
 	},
 	visible: (custom) => ({
 		y: 0,
 		opacity: 1,
+		scale: 1,
 		transition: { delay: custom * 0.2, duration: 0.8, bounce: 0.4 },
 	}),
 }
