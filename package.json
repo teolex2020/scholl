@@ -16,6 +16,7 @@
     "clsx": "^2.0.0",
     "firebase": "^10.7.0",
     "formik": "^2.4.5",
+    "framer-motion": "^10.17.9",
     "js-cookie": "^3.0.5",
     "next": "^14.0.4",
     "next-intl": "^3.3.2",

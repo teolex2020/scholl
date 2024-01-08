@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import {
 	CheckIcon,
@@ -72,12 +73,29 @@ const Accordion = ({ title, children }) => {
 	)
 }
 
+const blockAnimation = {
+	hidden: {
+		y: 100,
+		opacity: 0,
+	},
+	visible: (custom) => ({
+		y: 0,
+		opacity: 1,
+		transition: { delay: custom * 0.2, duration: 0.8, bounce: 0.4 },
+	}),
+}
+
 const Course = () => {
 const router = useRouter()
 		const t = useTranslations('Course')
 
 	return (
-		<div className='container mx-auto mb-4 p-4  rounded flex flex-col gap-1 '>
+		<motion.div
+			initial='hidden'
+			whileInView='visible'
+					viewport={{ amount: 0.2, once: true }}
+			className='container mx-auto mb-4 p-4  rounded flex flex-col gap-1 '
+		>
 			<div className='w-full text-center text-xs text-zinc-500 py-2'>
 				<p>{t('there')}</p>
 			</div>
@@ -129,15 +147,29 @@ const router = useRouter()
 					</div>
 				</div>
 			</div>
-			<div className='border p-2 lg:text-xl border-zinc-500/50 my-3 rounded-md bg-blur'>
+			<motion.div
+				custom={1}
+				initial='hidden'
+				whileInView='visible'
+							viewport={{ amount: 0.2, once: true }}
+				variants={blockAnimation}
+				className='border p-2 lg:text-xl border-zinc-500/50 my-3 rounded-md bg-blur'
+			>
 				<div className='space-y-3'>
 					<p className='text-2xl font-semibold'>{t('aftercourse')}</p>
 					{listStart.map((item, index) => (
 						<ListItem key={index} title={t(item.title)} />
 					))}
 				</div>
-			</div>
-			<div className='flex flex-col lg:flex-row'>
+			</motion.div>
+			<motion.div
+				custom={2}
+				initial='hidden'
+				whileInView='visible'
+							viewport={{ amount: 0.2, once: true }}
+				variants={blockAnimation}
+				className='flex flex-col lg:flex-row'
+			>
 				<div className='flex flex-col lg:text-xl  gap-3 w-full mx-auto mt-10 text-start flex-1 '>
 					<div>
 						<p className='text-2xl mb-7'> {t('courseprogram')}:</p>
@@ -169,9 +201,16 @@ const router = useRouter()
 					<Accordion title={`${t('Conclusion')}`}></Accordion>
 				</div>
 				<Cart />
-			</div>
+			</motion.div>
 			<hr className='opacity-10 my-5' />
-			<div className='flex flex-col items-center gap-6'>
+			<motion.div
+				custom={3}
+				initial='hidden'
+				whileInView='visible'
+					viewport={{ amount: 0.2, once: true }}
+				variants={blockAnimation}
+				className='flex flex-col items-center gap-6'
+			>
 				<div className='text-2xl'>{t('Certificat')}</div>
 				<div className='w-[266px] h-96 relative'>
 					<Image
@@ -183,10 +222,17 @@ const router = useRouter()
 						priority
 					/>
 				</div>
-			</div>
+			</motion.div>
 			{/* <ImageCarousel /> */}
 			<hr className='opacity-10 my-5' />
-			<div className='mb-14 lg:text-xl flex flex-col '>
+			<motion.div
+				
+				initial='hidden'
+				whileInView='visible'
+							viewport={{ amount: 0.2, once: true }}
+				variants={blockAnimation}
+				className='mb-14 lg:text-xl flex flex-col '
+			>
 				<div>
 					<div className='text-2xl mb-5'>{t('Questions')}</div>
 				</div>
@@ -220,9 +266,9 @@ const router = useRouter()
 						</li>
 					</ul>
 				</Accordion>
-			</div>
+			</motion.div>
 			<hr className='opacity-10 my-5' />
-		</div>
+		</motion.div>
 	)
 }
 
