@@ -14,6 +14,11 @@ const menu = [
 		title: 'course',
 		url: '/course',
 	},
+	{
+		id: 5,
+		title: 'trainings',
+		url: '/trainings',
+	},
 
 	{
 		id: 2,
