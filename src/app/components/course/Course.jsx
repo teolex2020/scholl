@@ -10,8 +10,7 @@ import {
 import { useTranslations } from 'next-intl'
 import Cart from './Cart'
 import Lector from './Lector'
-import course from "../../../../public/assets/course.png"
-import certificat from "../../../../public/assets/certificat.png"
+
 import { useRouter } from '@/navigation'
 
 const listStart = [
@@ -82,7 +81,7 @@ const router = useRouter()
 			<div className='w-full text-center text-xs text-zinc-500 py-2'>
 				<p>{t('there')}</p>
 			</div>
-			<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row'>
+			<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row rounded-md'>
 				<div className='text-xl lg:text-3xl flex-1  flex items-center justify-center p-10 flex-col'>
 					<h2 className='text-left font-semibold'>{t('title')}</h2>
 					<div className='skewed-section mt-10 '>
@@ -115,7 +114,7 @@ const router = useRouter()
 						</button>
 					</div>
 				</div>
-				<div className='flex-2'>
+				<div className='flex-2 '>
 					<div className='w-80 h-64 mx-auto lg:w-[500px] lg:h-80 flex justify-center relative mt-10 '>
 						<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
@@ -130,7 +129,7 @@ const router = useRouter()
 					</div>
 				</div>
 			</div>
-			<div className='border p-2 lg:text-xl border-zinc-500/50 my-3 rounded-sm bg-blur'>
+			<div className='border p-2 lg:text-xl border-zinc-500/50 my-3 rounded-md bg-blur'>
 				<div className='space-y-3'>
 					<p className='text-2xl font-semibold'>{t('aftercourse')}</p>
 					{listStart.map((item, index) => (

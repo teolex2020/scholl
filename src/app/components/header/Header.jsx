@@ -26,9 +26,9 @@ useEffect(() => {
 
 
 	return (
-		<div className='container mx-auto   z-40'>
+		<div className='lg:container w-full mx-auto   z-40'>
 			{mobilemenu && <MobileMenu />}
-			<div className='flex  justify-between h-[65px] lg:h-32 items-center  '>
+			<div className='flex  justify-between h-[65px] lg:h-24 items-center  '>
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>
 						<Image

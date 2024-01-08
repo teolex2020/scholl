@@ -9,6 +9,7 @@
 	},
 	"Menu": {
 		"course": "Courses",
+		"trainings": "Trainings",
 		"meeting": "Meetings",
 		"brainstorm": "Brainstorming",
 		"contact": "Contacts"
