@@ -73,15 +73,15 @@ const Accordion = ({ title, children }) => {
 	)
 }
 
-const blockAnimation = {
+const blockAnimationlefth = {
 	hidden: {
-		y: 10,
+		x: '-100vh',
 
 		opacity: 0,
 		scale: 0,
 	},
 	visible: (custom) => ({
-		y: 0,
+		x: '0vh',
 
 		opacity: 1,
 		scale: 1,
@@ -96,7 +96,34 @@ const blockAnimation = {
 	}),
 	exit: {
 		scale: 0,
-		y: 100,
+		x: '-100vh',
+		opacity: 0,
+	},
+}
+const blockAnimationright = {
+	hidden: {
+		x: '100vh',
+
+		opacity: 0,
+		scale: 0,
+	},
+	visible: (custom) => ({
+		x: '0vh',
+
+		opacity: 1,
+		scale: 1,
+		transition: {
+			// delay: custom * 0.2,
+			duration: 0.8,
+			ease: [0.075, 0.82, 0.165, 1],
+			damping: 7,
+			stiffness: 30,
+			restDelta: 0.001,
+		},
+	}),
+	exit: {
+		scale: 0,
+		x: '100vh',
 		opacity: 0,
 	},
 }
@@ -107,12 +134,7 @@ const router = useRouter()
 
 	return (
 		<AnimatePresence>
-			<motion.div
-				initial='hidden'
-				whileInView='visible'
-				viewport={{ amount: 0.2, once: true }}
-				className='container mx-auto mb-4 p-4  rounded flex flex-col gap-1 '
-			>
+			<motion.div className='container mx-auto mb-4 p-4  rounded flex flex-col gap-1 '>
 				<div className='w-full text-center text-xs text-zinc-500 py-2'>
 					<p>{t('there')}</p>
 				</div>
@@ -165,13 +187,11 @@ const router = useRouter()
 					</div>
 				</div>
 				<motion.div
-					// whileHover={{ scale: 1.2 }}
-					// whileTap={{ scale: 0.8 }}
 					custom={1}
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
-					variants={blockAnimation}
+					variants={blockAnimationlefth}
 					className='border p-2 lg:text-xl border-zinc-500/50 my-3 rounded-md bg-blur'
 				>
 					<div className='space-y-3'>
@@ -186,7 +206,7 @@ const router = useRouter()
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
-					variants={blockAnimation}
+					variants={blockAnimationright}
 					className='flex flex-col lg:flex-row'
 				>
 					<div className='flex flex-col lg:text-xl  gap-3 w-full mx-auto mt-10 text-start flex-1 '>
@@ -227,7 +247,7 @@ const router = useRouter()
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
-					variants={blockAnimation}
+					variants={blockAnimationlefth}
 					className='flex flex-col items-center gap-6'
 				>
 					<div className='text-2xl'>{t('Certificat')}</div>
@@ -245,10 +265,11 @@ const router = useRouter()
 				{/* <ImageCarousel /> */}
 				<hr className='opacity-10 my-5' />
 				<motion.div
+					custom={4}
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
-					variants={blockAnimation}
+					variants={blockAnimationright}
 					className='mb-14 lg:text-xl flex flex-col '
 				>
 					<div>
