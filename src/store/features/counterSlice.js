@@ -11,6 +11,7 @@ const initialState = {
 	id: '',
 	loading: true,
 	avatar:false,
+	chat:true
 }
 
 export const dataSlice = createSlice({
@@ -38,9 +39,20 @@ export const dataSlice = createSlice({
 		Avatar: (state, action) => {
 			state.avatar = !action.payload
 		},
+		Chats: (state, action) => {
+			state.chat = !action.payload
+		},
 	},
 })
 
-export const { Authuser, MobileMenus, Languages, PopupMenu, Id, Loading, Avatar } =
-	dataSlice.actions
+export const {
+	Authuser,
+	MobileMenus,
+	Languages,
+	PopupMenu,
+	Id,
+	Loading,
+	Avatar,
+	Chats,
+} = dataSlice.actions
 export default dataSlice.reducer

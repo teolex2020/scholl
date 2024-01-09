@@ -43,7 +43,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 		<html className=' elem ' lang={locale}>
 			{/* <MovingCircle /> */}
 			<body className={inter.className}>
-				<main className='elem lg:min-h-screen  relative scroll flex flex-col justify-between px-[3%] '>
+				<main className='elem lg:min-h-screen  relative scroll flex flex-col justify-between  '>
 					<Image
 						src={bg}
 						alt='bg'
@@ -55,6 +55,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 					<Providers>
 						<NextIntlClientProvider locale={locale} messages={messages}>
 							<Header />
+					
 							<Chat lang={locale} />
 							<div className='flex-1 flex-grow'> {children}</div>
 							<Footer />

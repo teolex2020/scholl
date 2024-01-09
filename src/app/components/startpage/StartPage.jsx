@@ -16,12 +16,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 	return (
 		<AnimatePresence>
 			<motion.div
-				// initial={{ opacity: 0 }}
-				// animate={{ opacity: 1 }}
-				// exit={{ opacity: 0 }}
-				// drag
-				// dragConstraints={{ left: 0, right: 300 }}
-				// dragElastic={0.2}
+			
 				className='container mx-auto elem bg-blur mb-10 py-5 lg:pb-24 mt-0 lg:mt-14 2xl:mt-24  relative rounded-xl'
 			>
 				<div className='flex justify-between flex-col lg:flex-row items-center lg:gap-48 '>
@@ -70,7 +65,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 								restDelta: 0.001,
 							},
 						}}
-						className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5 mr-10'
+						className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5 '
 					>
 						<div className={` ${gentium.className} py-6   `}>
 							<p className='text-2xl'>{title}</p>{' '}

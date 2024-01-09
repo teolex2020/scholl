@@ -5,7 +5,7 @@ import { Gentium_Book_Plus } from 'next/font/google'
 import Menu from './Menu'
 import Language from './Language'
 import { Link } from '@/navigation'
-import logo from '../../../../public/assets/logo.png'
+import ButtonChat from '../chat/Button'
 import Button from './Button.jsx'
 import MobileButon from './MobileButon'
 import MobileMenu from './MobileMenu'
@@ -28,6 +28,7 @@ useEffect(() => {
 	return (
 		<div className='lg:container w-full mx-auto   z-40'>
 			{mobilemenu && <MobileMenu />}
+			<ButtonChat/>
 			<div className='flex  justify-between h-[65px] lg:h-24 items-center  '>
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>

@@ -16,6 +16,9 @@ import { useTranslations } from 'next-intl'
 import GrowingTextArea from './Textarea'
 import Select from 'react-select'
 import { prompts } from './prompt'
+import {useSelector, useDispatch} from "react-redux"
+import { Chats } from '@/store/features/counterSlice'
+
 
 const gentium = Gentium_Book_Plus({
 	weight: '400',
@@ -23,9 +26,10 @@ const gentium = Gentium_Book_Plus({
 })
 
 const Chat = ({ lang }) => {
-	const [active, setActive] = useState(true)
+	const dispatch = useDispatch()
+	
 	const [selectedOption, setSelectedOption] = useState()
-	// const prompt = prompts.find((item) => item.id === lang)?.prompt
+	const chat = useSelector((state) => state.counter.chat)
 
 
 
@@ -47,7 +51,7 @@ const Chat = ({ lang }) => {
 	} = useChat({ body: { prompt } })
 
 	const buttonpopup = () => {
-		setActive(!active)
+		dispatch(Chats(chat))
 	}
 
 	const t = useTranslations('Chat')
@@ -66,17 +70,18 @@ const Chat = ({ lang }) => {
 	return (
 		<div
 			className={` mx-auto max-w-md w-full lg:min-w-[450px] h-full  flex flex-col items-center justify-center gap-5 overflow-auto fixed bottom-0 right-0 bg-[#12181c] z-[100] border-l-2 border-zinc-800 ${
-				active
-					? 'transition duration-700 ease-in-out translate-x-[91%] '
+				chat
+					? 'transition duration-700 ease-in-out translate-x-[100%] '
 					: 'transition duration-700 ease-in-out translate-x-[0%]'
 			}`}
 		>
+
 			<ToastContainer position='top-right' autoClose={1000} />
 			<div
-				className='w-full px-1 absolute top-3 cursor-pointer group'
+				className='w-10 left-1 px-1 absolute top-3 cursor-pointer group  '
 				onClick={buttonpopup}
 			>
-				<div className=' flex  h-10  w-8  relative justify-center  '>
+				<div className=' flex  h-10  w-8  relative justify-center   '>
 					<div className='absolute  bg-blue-300 w-20 h-full blur-3xl rounded-full opacity-[15%]'></div>
 					<div className='absolute bg-blue-200 w-20 h-20  blur-3xl rounded-full opacity-[25%]'></div>
 					<Image
@@ -90,7 +95,7 @@ const Chat = ({ lang }) => {
 				</div>
 				<button
 					className={` py-5 pr-2 ${
-						active
+						chat
 							? 'rotate-0 transition duration-700 ease-in-out'
 							: 'rotate-180 transition duration-700 ease-in-out'
 					}`}
@@ -137,7 +142,7 @@ const Chat = ({ lang }) => {
 			<div className='flex items-start w-full'>
 				<form
 					onSubmit={handleSubmit}
-					className={`w-full p-5 ${active && 'ml-6'}`}
+					className={`w-full p-5 ${chat && 'ml-6'}`}
 				>
 					<div className='flex w-full justify-end gap-5 px-5 py-2'>
 						<div
