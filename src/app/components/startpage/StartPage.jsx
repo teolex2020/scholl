@@ -26,9 +26,11 @@ const StartPage = ({title, name, descriptions, button}) => {
 			>
 				<div className='flex justify-between flex-col lg:flex-row items-center lg:gap-48 '>
 					<motion.div
+						
 						custom={1}
 						initial={{ scale: 0 }}
 						animate={{
+							
 							scale: 1,
 							transition: {
 								// delay: custom * 0.2,

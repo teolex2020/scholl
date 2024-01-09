@@ -75,13 +75,13 @@ const Accordion = ({ title, children }) => {
 
 const blockAnimationlefth = {
 	hidden: {
-		x: '-100vh',
+		// x: -1000,
 
 		opacity: 0,
 		scale: 0,
 	},
 	visible: (custom) => ({
-		x: '0vh',
+		// x: 0,
 
 		opacity: 1,
 		scale: 1,
@@ -96,19 +96,19 @@ const blockAnimationlefth = {
 	}),
 	exit: {
 		scale: 0,
-		x: '-100vh',
+		// x: -500,
 		opacity: 0,
 	},
 }
 const blockAnimationright = {
 	hidden: {
-		x: '100vh',
+		// x: 100,
 
 		opacity: 0,
 		scale: 0,
 	},
 	visible: (custom) => ({
-		x: '0vh',
+		// x: 0,
 
 		opacity: 1,
 		scale: 1,
@@ -123,7 +123,7 @@ const blockAnimationright = {
 	}),
 	exit: {
 		scale: 0,
-		x: '100vh',
+		// x: 100,
 		opacity: 0,
 	},
 }
