@@ -40,7 +40,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 						className=' flex lg:flex-1 h-48 lg:h-[450px] w-96  relative justify-center '
 					>
 						<div className='absolute ml-28  bg-blue-300 w-96 h-full blur-3xl rounded-full opacity-[15%]  '></div>
-						<div className='absolute bg-green-300/30 w-48 h-48 ml-32 blur-3xl rounded-full opacity-[25%] animate-pulse'></div>
+						<div className='absolute bg-green-300/30 w-48 h-48 ml-32 blur-3xl rounded-full opacity-[25%] '></div>
 
 						<Image
 							src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742094/bg_h4hr1y.png'
