@@ -42,7 +42,7 @@ const Trainings = () => {
 			{train.map((e, i) => (
 				<div
 					key={i}
-					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6'
+					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur'
 				>
 					<div className='w-full h-72 sm:h-auto  lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mb-4 lg:mb-0'>
 						<Image

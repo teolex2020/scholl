@@ -192,7 +192,7 @@ const Course = () => {
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
 					variants={blockAnimationlefth}
-					className='border p-2 lg:text-xl border-zinc-500/50 my-3 rounded-md bg-blur'
+					className=' p-2 lg:text-xl  my-3 rounded-md bg-blur'
 				>
 					<div className='space-y-3'>
 						<p className='text-2xl font-semibold'>{t('aftercourse')}</p>

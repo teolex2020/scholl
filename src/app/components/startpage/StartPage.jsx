@@ -15,24 +15,20 @@ const StartPage = ({title, name, descriptions, button}) => {
 
 	return (
 		<AnimatePresence>
-			<motion.div
-			
-				className='container mx-auto elem bg-blur mb-10 py-5 lg:pb-24 mt-0 lg:mt-14 2xl:mt-24  relative rounded-xl'
-			>
+			<motion.div className='container mx-auto elem bg-blur mb-10 py-5 lg:pb-24 mt-0 lg:mt-14 2xl:mt-24  relative rounded-xl'>
 				<div className='flex justify-between flex-col lg:flex-row items-center lg:gap-48 '>
 					<motion.div
-						
+					
 						custom={1}
 						initial={{ scale: 0 }}
 						animate={{
-							
 							scale: 1,
 							transition: {
 								// delay: custom * 0.2,
 								duration: 0.8,
 								ease: [0.075, 0.82, 0.165, 1],
-								damping: 7,
-								stiffness: 30,
+								damping: 10,
+								stiffness: 300,
 								restDelta: 0.001,
 							},
 						}}
