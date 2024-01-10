@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import {AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import {
 	CheckIcon,
@@ -129,8 +129,8 @@ const blockAnimationright = {
 }
 
 const Course = () => {
-const router = useRouter()
-		const t = useTranslations('Course')
+	const router = useRouter()
+	const t = useTranslations('Course')
 
 	return (
 		<AnimatePresence>

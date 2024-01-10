@@ -112,5 +112,8 @@
 		"placeholder": "Your message...",
 		"theme": "Choose a topic for discussion",
 		"theme1": "Fundamentals of practical political analysis: how to distinguish truth from lies and make the right decisions."
+	},
+	"ButtonChat": {
+		"title": "Your AI Assistant"
 	}
 }

@@ -1,19 +1,20 @@
-"use client"
+'use client'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Chats } from '@/store/features/counterSlice'
-import Image from 'next/image'
-
+import { useTranslations } from 'next-intl'
 
 const ButtonChat = () => {
-  	const dispatch = useDispatch()
-    const chat = useSelector((state) => state.counter.chat)
+	const dispatch = useDispatch()
+	const chat = useSelector((state) => state.counter.chat)
 
-const buttonpopup = () => {
-	dispatch(Chats(chat))
-}
+	const buttonpopup = () => {
+		dispatch(Chats(chat))
+	}
 
-  return (
+	const t = useTranslations('ButtonChat')
+
+	return (
 		<div
 			className=' fixed right-5 lg:right-[3%] bottom-[5%] flex gap-3 border-2 rounded-3xl border-zinc-700/50 px-5 py-2 items-center shadow2 bg-[#12181d] hover:scale-105 duration-500 cursor-pointer'
 			onClick={buttonpopup}
@@ -58,7 +59,7 @@ const buttonpopup = () => {
 					</g>
 				</svg>
 			</div>
-			<div className='  '>Your AI Assistant</div>
+			<div className='  '> {t('title')}</div>
 		</div>
 	)
 }
