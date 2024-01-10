@@ -16,12 +16,12 @@ const buttonpopup = () => {
   return (
 		<div className=' fixed right-5 lg:right-[3%] bottom-[5%]  '>
 			<div className=' h-10 w-32 relative ' onClick={buttonpopup}>
-				<div className='  absolute inline-flex h-full w-full  opacity-30 shadow2'></div>
+				<div className='  absolute inline-flex h-full w-full  opacity-30 '></div>
 				<Image
 					src='/assets/button.png'
 					alt='trees '
 					fill
-					className='object-cover '
+					className='object-cover shadow3'
 					priority
 				/>
 			</div>
