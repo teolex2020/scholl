@@ -251,7 +251,7 @@ const Course = () => {
 					className='flex flex-col items-center gap-6'
 				>
 					<div className='text-2xl'>{t('Certificat')}</div>
-					<div className='w-[266px] h-96 relative'>
+					<div className='w-[266px] h-96 relative bg-blur'>
 						<Image
 							src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742111/certificat_piyuo8.png'
 							fill
@@ -270,7 +270,7 @@ const Course = () => {
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
 					variants={blockAnimationright}
-					className='mb-14 lg:text-xl flex flex-col '
+					className='mb-14 lg:text-xl flex flex-col bg-blur rounded-lg p-2'
 				>
 					<div>
 						<div className='text-2xl mb-5'>{t('Questions')}</div>
