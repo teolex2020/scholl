@@ -7,10 +7,10 @@ import {
 	PaperAirplaneIcon,
 	ArrowLeftIcon,
 	ArrowPathIcon,
-	StopCircleIcon,
+	StopCircleIcon, 
 } from '@heroicons/react/24/solid'
 import { Gentium_Book_Plus } from 'next/font/google'
-import Image from 'next/image'
+
 import Message from './Message'
 import { useTranslations } from 'next-intl'
 import GrowingTextArea from './Textarea'
@@ -75,37 +75,37 @@ const Chat = ({ lang }) => {
 					: 'transition duration-700 ease-in-out translate-x-[0%]'
 			}`}
 		>
-
 			<ToastContainer position='top-right' autoClose={1000} />
 			<div
 				className='w-10 left-1 px-1 absolute top-3 cursor-pointer group  '
 				onClick={buttonpopup}
 			>
-				<div className=' flex  h-10  w-8  relative justify-center   '>
-					<div className='absolute  bg-blue-300 w-20 h-full blur-3xl rounded-full opacity-[15%]'></div>
-					<div className='absolute bg-blue-200 w-20 h-20  blur-3xl rounded-full opacity-[25%]'></div>
-					<Image
-						src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742094/bg_h4hr1y.png'
-						alt='trees '
-						fill
-						sizes='(min-width: 808px) 50vw, 100vw'
-						className='object-cover group-hover:scale-105'
-						priority
-					/>
-				</div>
-				<button
-					className={` py-5 pr-2 ${
+						<button
+					className={` -5 pr-2 ${
 						chat
 							? 'rotate-0 transition duration-700 ease-in-out'
 							: 'rotate-180 transition duration-700 ease-in-out'
 					}`}
 				>
-					<ArrowLeftIcon className='h-5 w-5 stroke-slate-100 fill-none stroke-[1.4px] ' />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						strokeWidth={1.5}
+						stroke='currentColor'
+						className='w-8 h-8'
+					>
+						<path
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							d='M6 18 18 6M6 6l12 12'
+						/>
+					</svg>
 				</button>
 			</div>
 
 			<div
-				className={` ${gentium.className} text-2xl px-10 lg:pt-10 text-center text-[#e2a550]`}
+				className={` ${gentium.className} text-2xl px-10 pt-10 text-center text-[#e2a550]`}
 			>
 				<p className='text-4xl font-semibold'>{t('title1')} </p>
 				<p>{t('title2')} </p>

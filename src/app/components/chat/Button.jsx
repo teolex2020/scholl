@@ -21,7 +21,7 @@ const buttonpopup = () => {
 					src='/assets/button.png'
 					alt='trees '
 					fill
-					className='object-cover shadow3'
+					className='object-cover shadow3 hover:scale-105 duration-500'
 					priority
 				/>
 			</div>
