@@ -46,7 +46,7 @@ const Popup = () => {
 
 	return (
 		<div
-			className='absolute hidden lg:block right-0  top-14 w-48 shadow1 rounded-md p-5 z-50 bg-menublur'
+			className='absolute hidden lg:block right-0  top-14 w-48 bg-blur rounded-md p-5 z-50 bg-menublur'
 			ref={popupRef}
 		>
 			<Link href={`/cabinet/${id}`}>
