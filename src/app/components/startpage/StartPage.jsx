@@ -1,9 +1,12 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import ButtonStartPage from '../helper/ButtonStartPage'
 import Image from 'next/image'
 import { Gentium_Book_Plus } from 'next/font/google'
+
+
+
 
 
  const gentium = Gentium_Book_Plus({
@@ -13,12 +16,12 @@ import { Gentium_Book_Plus } from 'next/font/google'
 
 const StartPage = ({title, name, descriptions, button}) => {
 
+
 	return (
 		<AnimatePresence>
-			<motion.div className='container mx-auto elem bg-blur mb-10 py-5 lg:pb-24 mt-0 lg:mt-14 2xl:mt-24  relative rounded-xl'>
+			<motion.div className='container mx-auto elem bg-blur mb-10 py-5 lg:pb-24 mt-0 lg:mt-14 2xl:mt-24  relative rounded-xl max-w-[1356px] '>
 				<div className='flex justify-between flex-col lg:flex-row items-center lg:gap-48 '>
 					<motion.div
-					
 						custom={1}
 						initial={{ scale: 0 }}
 						animate={{
@@ -39,7 +42,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 						<div className='absolute bg-green-300/30 w-48 h-48 ml-32 blur-3xl rounded-full opacity-[25%] '></div>
 
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742094/bg_h4hr1y.png'
+							src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fbg_h4hr1y.png?alt=media&token=d3df8f9c-bd76-43b6-acf6-421f01a570eb'
 							alt='trees '
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'

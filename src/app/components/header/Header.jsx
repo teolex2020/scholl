@@ -28,12 +28,12 @@ useEffect(() => {
 	return (
 		<div className='lg:container w-full mx-auto   z-40'>
 			{mobilemenu && <MobileMenu />}
-			<ButtonChat/>
+			<ButtonChat />
 			<div className='flex  justify-between h-[65px] lg:h-24 items-center  '>
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742124/logo_k8ko99.png'
+							src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Flogo_k8ko99.png?alt=media&token=2770febc-52d1-482e-87ab-100d300e10d6'
 							alt='logo '
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'

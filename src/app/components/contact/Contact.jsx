@@ -5,7 +5,7 @@ import Image from 'next/image'
 import {
 	PhoneIcon, EnvelopeOpenIcon, MapPinIcon
 } from '@heroicons/react/24/solid'
-import darcmap from "../../../../public/assets/darkmap.webp"
+
 
 
 const ContactComponent = () => {
@@ -45,7 +45,6 @@ const ContactComponent = () => {
 							<div className='lg:pl-20 pt-3'>
 								<p>Address</p>
 								<p>Ukraine, Kiev</p>
-								
 							</div>
 						</div>
 					</div>
@@ -53,7 +52,7 @@ const ContactComponent = () => {
 				<div className='flex-1 relative h-[420px] w-full flex justify-end p-5 lg:p-0'>
 					<div className='absolute top-0 bottom-0 left-0 right-0 bg-[#12181d]/30'></div>
 					<Image
-						src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742118/darkmap_ftfbak.webp'
+						src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fdarkmap_ftfbak.webp?alt=media&token=e9ad01e2-17a1-47fb-9d5a-a2d4259378a7'
 						alt=''
 						width={1000}
 						height={1000}

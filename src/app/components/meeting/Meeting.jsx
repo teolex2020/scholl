@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
-import meeting from "../../../../public/assets/meetting.png"
+
 const Meeting = () => {
 		const t = useTranslations('Meeting')
   const form = useRef()
@@ -59,7 +59,7 @@ const Meeting = () => {
 				<div className='flex-1 justify-center flex  '>
 					<div className='  w-96 lg:w-full h-48 lg:h-96 relative  z-10 '>
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742251/meetting_b09h9w.png'
+							src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fmeetting_b09h9w.png?alt=media&token=92b28578-d248-4c31-99f4-f4b380c51132'
 							alt='logo '
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'

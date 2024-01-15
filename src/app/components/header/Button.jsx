@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import Popup from './Popup'
 import { PopupMenu } from '@/store/features/counterSlice'
-import user from '../../../../public/assets/user.png'
+
 import {  useTranslations } from 'next-intl'
 
 const Button = ({ font }) => {
@@ -38,7 +38,7 @@ const Button = ({ font }) => {
 						onClick={popup}
 					>
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742146/user_hwrnp5.png'
+							src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fuser_hwrnp5.png?alt=media&token=0031326a-14c7-4e49-9357-d8c98798608d'
 							fill
 							alt='user'
 							sizes='(min-width: 808px) 50vw, 100vw'

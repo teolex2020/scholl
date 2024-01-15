@@ -17,7 +17,7 @@ const Cart = () => {
 					<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
 					<Image
-						src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742114/course_um7hml.png'
+						src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fcourse_um7hml.png?alt=media&token=b61307b2-ba16-459d-82fe-923d63cc9f5e'
 						sizes='(min-width: 808px) 50vw, 100vw'
 						fill
 						alt=''

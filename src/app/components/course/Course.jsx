@@ -176,7 +176,7 @@ const Course = () => {
 							<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
 							<Image
-								src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742114/course_um7hml.png'
+								src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fcourse_um7hml.png?alt=media&token=b61307b2-ba16-459d-82fe-923d63cc9f5e'
 								fill
 								sizes='(min-width: 808px) 50vw, 100vw'
 								alt='course'
@@ -253,7 +253,7 @@ const Course = () => {
 					<div className='text-2xl'>{t('Certificat')}</div>
 					<div className='w-[266px] h-96 relative bg-blur'>
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1702742111/certificat_piyuo8.png'
+							src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fcertificat_piyuo8.png?alt=media&token=f7037dda-a8ee-4994-bbd5-fe1feb8bae93'
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
 							alt='certificate'
