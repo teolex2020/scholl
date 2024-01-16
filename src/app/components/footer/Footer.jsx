@@ -1,7 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-
+import facebook from '../../../../public/assets/Facebook.svg'
+import youtube from '../../../../public/assets/Youtube.svg'
+import linkedin from '../../../../public/assets/linkedin.svg'
+import x from '../../../../public/assets/twitter.svg'
 
 
 
@@ -20,7 +23,7 @@ const Footer = () => {
 				>
 					<div className=' relative w-5 h-5 '>
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1703600118/Facebook_xeej2n.svg'
+							src={facebook}
 							alt=''
 							fill
 							priority
@@ -35,7 +38,7 @@ const Footer = () => {
 				>
 					<div className='relative  w-5 h-5 '>
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1703600106/YouTube_dwn8e8.svg'
+							src={youtube}
 							alt=''
 							fill
 							priority
@@ -50,7 +53,7 @@ const Footer = () => {
 				>
 					<div className=' relative  w-5 h-5 '>
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1703600129/LinkedIn_mmqxwd.svg'
+							src={linkedin}
 							alt=''
 							fill
 							priority
@@ -62,7 +65,7 @@ const Footer = () => {
 				<a href='https://twitter.com/RuslanBortnik' target='_blank'>
 					<div className=' relative  w-7 h-5 img '>
 						<Image
-							src='https://res.cloudinary.com/dentkbzne/image/upload/v1703600138/twitter_j9fp1w.svg'
+							src={x}
 							alt=''
 							fill
 							priority

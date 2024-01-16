@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
-
+import braimstorm from '../../../../public/assets/braimstorm.png'
 
 
 const BrainStorm = () => {
@@ -63,7 +63,7 @@ const BrainStorm = () => {
 				<div className='flex-1 justify-center flex  '>
 					<div className='  w-96 lg:w-full h-48 lg:h-96 relative  z-10 '>
 						<Image
-							src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fbraimstorm_gokfib.png?alt=media&token=a3d7abff-d054-44ac-87bb-d9ba949b733a'
+							src={braimstorm}
 							alt='logo '
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'

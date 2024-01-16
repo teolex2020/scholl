@@ -6,8 +6,7 @@ import { ClockIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
 
 const train = [
 	{
-		image:
-			'https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fkill_1_erlpl0.png?alt=media&token=08ebd10c-0045-4cf9-9f14-9ef41c5e32f1',
+		image: '/assets/kill.png',
 		title: 'title',
 		descriptions: `descriptions`,
 		price: '1100',
@@ -16,8 +15,7 @@ const train = [
 		teacher: 'lectorname',
 	},
 	{
-		image:
-			'https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fprompt_1_khcxmz.png?alt=media&token=c150c13c-6d21-4a41-a5e4-36d4d3a5a152',
+		image: '/assets/prompt.png',
 		title: 'titleT',
 		descriptions: `descriptionsT`,
 		price: '1100',

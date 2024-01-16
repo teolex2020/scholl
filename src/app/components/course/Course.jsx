@@ -11,8 +11,10 @@ import {
 import { useTranslations } from 'next-intl'
 import Cart from './Cart'
 import Lector from './Lector'
-
 import { useRouter } from '@/navigation'
+import course from "../../../../public/assets/course.png"
+import certificat from '../../../../public/assets/certificat.png'
+
 
 const listStart = [
 	{
@@ -176,7 +178,7 @@ const Course = () => {
 							<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
 
 							<Image
-								src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fcourse_um7hml.png?alt=media&token=b61307b2-ba16-459d-82fe-923d63cc9f5e'
+								src={course}
 								fill
 								sizes='(min-width: 808px) 50vw, 100vw'
 								alt='course'
@@ -253,7 +255,7 @@ const Course = () => {
 					<div className='text-2xl'>{t('Certificat')}</div>
 					<div className='w-[266px] h-96 relative bg-blur'>
 						<Image
-							src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Fcertificat_piyuo8.png?alt=media&token=f7037dda-a8ee-4994-bbd5-fe1feb8bae93'
+							src={certificat}
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
 							alt='certificate'

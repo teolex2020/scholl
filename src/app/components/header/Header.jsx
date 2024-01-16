@@ -10,6 +10,7 @@ import Button from './Button.jsx'
 import MobileButon from './MobileButon'
 import MobileMenu from './MobileMenu'
 import { useSelector } from 'react-redux'
+import logo from "../../../../public/assets/logo.png"
 
 const gentium = Gentium_Book_Plus({
 	weight: '400',
@@ -33,7 +34,7 @@ useEffect(() => {
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>
 						<Image
-							src='https://firebasestorage.googleapis.com/v0/b/scholl-9cad5.appspot.com/o/photosite%2Flogo_k8ko99.png?alt=media&token=2770febc-52d1-482e-87ab-100d300e10d6'
+							src={logo}
 							alt='logo '
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
