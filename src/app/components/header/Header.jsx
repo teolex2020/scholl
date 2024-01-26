@@ -27,7 +27,7 @@ useEffect(() => {
 
 
 	return (
-		<div className='lg:container w-full mx-auto   z-40'>
+		<div className='lg:container w-full mx-auto  z-40'>
 			{mobilemenu && <MobileMenu />}
 			<ButtonChat />
 			<div className='flex  justify-between h-[65px] lg:h-24 items-center  '>

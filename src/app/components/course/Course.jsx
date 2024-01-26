@@ -140,7 +140,14 @@ const Course = () => {
 				<div className='w-full text-center text-xs text-zinc-500 py-2'>
 					<p>{t('there')}</p>
 				</div>
-				<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row rounded-md'>
+				<motion.div
+					custom={1}
+					initial='hidden'
+					whileInView='visible'
+					viewport={{ amount: 0.2, once: true }}
+					variants={blockAnimationlefth}
+					className='mb-4 flex bg-blur flex-col-reverse lg:flex-row rounded-md'
+				>
 					<div className='text-xl lg:text-3xl flex-1  flex items-center justify-center p-10 flex-col'>
 						<h2 className='text-left font-semibold'>{t('title')}</h2>
 						<div className='skewed-section mt-10 '>
@@ -187,9 +194,9 @@ const Course = () => {
 							/>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 				<motion.div
-					custom={1}
+					custom={2}
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
@@ -204,7 +211,7 @@ const Course = () => {
 					</div>
 				</motion.div>
 				<motion.div
-					custom={2}
+					custom={3}
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
@@ -245,7 +252,7 @@ const Course = () => {
 				</motion.div>
 				<hr className='opacity-10 my-5' />
 				<motion.div
-					custom={3}
+					custom={4}
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}
@@ -267,7 +274,7 @@ const Course = () => {
 				{/* <ImageCarousel /> */}
 				<hr className='opacity-10 my-5' />
 				<motion.div
-					custom={4}
+					custom={5}
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ amount: 0.2, once: true }}

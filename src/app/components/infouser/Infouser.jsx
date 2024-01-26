@@ -49,13 +49,7 @@ const Infouser = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			const unsubscribe = auth.onAuthStateChanged((user) => {
-				if (user?.emailVerified !== true) {
-					router.push('/login')
-
-					// Диспатч Redux Action тут
-				} else {
-					console.log('User is logged in')
-				}
+						user?.emailVerified !== true && router.push('/login')
 			})
 
 			return () => unsubscribe()

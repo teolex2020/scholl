@@ -37,14 +37,15 @@ const Trainings = () => {
 					key={i}
 					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur'
 				>
-					<div className='w-full h-72 sm:h-auto  lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mb-4 lg:mb-0'>
+					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mb-4 lg:mb-0'>
 						<Image
 							src={e.image}
 							fill
 							alt='image'
 							className='object-cover rounded-lg'
-							priority
-							sizes='(min-width: 808px) 50vw, 100vw'
+						
+							sizes='(min-width: 808px)'
+							quality={80}
 						/>
 					</div>
 					<div className='flex flex-col justify-between flex-grow'>

@@ -1,18 +1,18 @@
 'use client'
-import React, {useEffect , useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Desctop from './Desctop'
 import Mobiletable from './Mobiletable'
 import Image from 'next/image'
 import {
 	PhoneIcon,
-	EnvelopeOpenIcon, CameraIcon
-	
+	EnvelopeOpenIcon,
+	CameraIcon,
 } from '@heroicons/react/24/solid'
 
-import { doc,  getDoc } from 'firebase/firestore'
+import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/config'
 import { useSelector, useDispatch } from 'react-redux'
-import {  useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { getAuth } from 'firebase/auth'
 import firebase_app from '@/firebase/config'
@@ -23,31 +23,21 @@ const List = () => {
 	const id = useSelector((state) => state.counter.id)
 	const avatar = useSelector((state) => state.counter.avatar)
 	const dispatch = useDispatch()
-	const[data, setData]=useState()
+	const [data, setData] = useState()
 
-const t = useTranslations('Cabinet')
-const router = useRouter()
-const auth = getAuth(firebase_app)
+	const t = useTranslations('Cabinet')
+	const router = useRouter()
+	const auth = getAuth(firebase_app)
 
+	useEffect(() => {
+		setTimeout(() => {
+			const unsubscribe = auth.onAuthStateChanged((user) => {
+				user?.emailVerified !== true && router.push('/login')
+			})
 
-
-
-useEffect(() => {
-	setTimeout(() => {
-		const unsubscribe = auth.onAuthStateChanged((user) => {
-			if (user?.emailVerified !==true) {
-
-			router.push('/login')
-
-				// Диспатч Redux Action тут
-			} else {
-				console.log('User is logged in')
-			}
-		})
-
-		return () => unsubscribe()
-},600) 	})
-
+			return () => unsubscribe()
+		}, 600)
+	})
 
 	useEffect(() => {
 		if (id?.length !== 0) {
@@ -71,12 +61,10 @@ useEffect(() => {
 		}
 	}, [id, avatar])
 
+	const changeImage = () => {
+		dispatch(Avatar(avatar))
+	}
 
-const changeImage = ()=>{
-	dispatch(Avatar(avatar))
-}
-	
-	
 	return (
 		<div className='h-full flex  items-center lg:items-start lg:justify-between flex-col lg:flex-row container mx-auto relative'>
 			<div className='w-96 h-full lg:bg-blur flex flex-2 flex-col items-center py-5 gap-5 rounded-xl lg:m-10'>

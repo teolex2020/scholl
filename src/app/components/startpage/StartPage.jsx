@@ -20,8 +20,8 @@ const StartPage = ({title, name, descriptions, button}) => {
 
 	return (
 		<AnimatePresence>
-			<motion.div className='container mx-auto elem bg-blur mb-10 py-5 lg:pb-24 mt-0 lg:mt-14 2xl:mt-24  relative rounded-xl max-w-[1356px] '>
-				<div className='flex justify-between flex-col lg:flex-row items-center lg:gap-48 '>
+			<motion.div className='container mx-auto elem bg-blur mb-10 py-5  lg:pb-24 mt-5 lg:mt-14 2xl:mt-24  relative rounded-xl max-w-[1346px]  '>
+				<div className='flex justify-around flex-col lg:flex-row items-center lg:gap-48 '>
 					<motion.div
 						custom={1}
 						initial={{ scale: 0 }}
@@ -48,7 +48,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
 							className='object-cover tilt-image '
-							priority
+						
 						/>
 					</motion.div>
 					<motion.div
