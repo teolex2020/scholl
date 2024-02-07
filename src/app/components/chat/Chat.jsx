@@ -18,6 +18,7 @@ import Select from 'react-select'
 import { prompts } from './prompt'
 import {useSelector, useDispatch} from "react-redux"
 import { Chats } from '@/store/features/counterSlice'
+import Selectbutton from './Selectbutton'
 
 
 const gentium = Gentium_Book_Plus({
@@ -30,7 +31,7 @@ const Chat = ({ lang }) => {
 	
 	const [selectedOption, setSelectedOption] = useState()
 	const chat = useSelector((state) => state.counter.chat)
-
+const active = useSelector((state) => state.counter.selectcourse)
 
 
 	const prompt = useMemo(() => {
@@ -56,12 +57,24 @@ const Chat = ({ lang }) => {
 
 	const t = useTranslations('Chat')
 	const messagesEndRef = useRef(null)
-	const options = [
-		{
-			value: '1',
-			label: t('theme1'),
-		},
-	]
+	const options =
+		active === 1
+			? [
+					{
+						value: '1',
+						label: t('theme1'),
+					},
+			  ]
+			: [
+					{
+						value: '2',
+						label: "How to Write 'Killer Texts'?",
+					},
+					{
+						value: '3',
+						label: 'Prompt Engineering or How to Formulate Queries Correctly',
+					},
+			  ]
 
 	useEffect(() => {
 		messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -80,7 +93,7 @@ const Chat = ({ lang }) => {
 				className='w-10 left-1 px-1 absolute top-3 cursor-pointer group  '
 				onClick={buttonpopup}
 			>
-						<button
+				<button
 					className={` -5 pr-2 ${
 						chat
 							? 'rotate-0 transition duration-700 ease-in-out'
@@ -111,6 +124,7 @@ const Chat = ({ lang }) => {
 				<p>{t('title2')} </p>
 			</div>
 			<div className=' h-full w-full px-10 '>
+				<div className='w-fit'><Selectbutton/></div>
 				<div className='max-w-md '>
 					<Select
 						placeholder={`${t('theme')}`}

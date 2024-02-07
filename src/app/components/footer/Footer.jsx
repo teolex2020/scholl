@@ -1,20 +1,34 @@
 import React from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-
+import { Link } from '@/navigation'
 
 
 
 
 const Footer = () => {
-		const t = useTranslations('Foot')
+	const t = useTranslations('Login')
   return (
 		<div className='  lg:container flex justify-between items-center h-10 lg:mx-auto px-10'>
 			<div className='flex gap-4'>
-				©2023 <p className='hidden lg:flex'>{t('name')}</p>
+				©2023{' '}
+				<div className='text-sm z-10'>
+					<Link href='/teamofservise'>
+						<span className='underline cursor-pointer'>{t('service')}</span>
+					</Link>
+					<span> & </span>{' '}
+					<Link href='/privatpolicy'>
+						<span className='underline cursor-pointer'> {t('policy')}</span>
+					</Link>
+					<span> & </span>
+					<Link href='/publicofer'>
+						<span className='underline cursor-pointer'>{t('offer')}</span>
+					</Link>
+				</div>
 			</div>
 			<div className='flex flex-row space-x-6 justify-center'>
 				<a
+					rel='noreferrer'
 					href='https://www.facebook.com/profile.php?id=100068994386641'
 					target='_blank'
 				>
@@ -30,6 +44,7 @@ const Footer = () => {
 				</a>
 
 				<a
+					rel='noreferrer'
 					href='https://www.youtube.com/channel/UCT0ve_Yq3PPSjw3pJDOK5DA%5C'
 					target='_blank'
 				>
@@ -45,6 +60,7 @@ const Footer = () => {
 					</div>
 				</a>
 				<a
+					rel='noreferrer'
 					href='https://www.linkedin.com/in/ruslan-bortnik-87500538/'
 					target='_blank'
 				>

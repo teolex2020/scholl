@@ -32,6 +32,7 @@ const Popup = () => {
 		const auth = getAuth()
 		signOut(auth)
 			.then(() => {
+				localStorage.removeItem('assistant')
 				dispatch(PopupMenu(popupmenu))
 					dispatch(Authuser(false))
 			})

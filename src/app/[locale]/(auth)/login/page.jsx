@@ -4,7 +4,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import signIn from '../../../../firebase/auth/signin'
 import { useRouter, redirect } from 'next/navigation'
-import Link from 'next/link'
+import { Link } from '@/navigation'
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { EyeSlashIcon } from '@heroicons/react/24/solid'
 import { auth, Providers } from '../../../../firebase/config.js'
@@ -147,6 +147,10 @@ const Login = () => {
 						<span> & </span>{' '}
 						<Link href='/privatpolicy'>
 							<span className='underline cursor-pointer'> {t('policy')}</span>
+						</Link>
+						<span> & </span>
+						<Link href='/publicofer'>
+							<span className='underline cursor-pointer'>{t('offer')}</span>
 						</Link>
 					</div>
 				</div>

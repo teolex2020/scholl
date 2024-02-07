@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-const Payment = dynamic(() => import('@/app/components/payment/Payment'), {
+const Payment = dynamic(() => import('@/app/components/payment/Payments'), {
 	loading: () => <div className='w-full text-center '></div>,
 })
 

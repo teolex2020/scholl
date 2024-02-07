@@ -14,7 +14,8 @@ import Lector from './Lector'
 import { useRouter } from '@/navigation'
 import course from "../../../../public/assets/course.png"
 import certificat from '../../../../public/assets/certificat.png'
-
+import { useDispatch } from 'react-redux'
+import {OrderTitle,	OrderPrice} from "@/store/features/counterSlice"
 
 const listStart = [
 	{
@@ -133,6 +134,13 @@ const blockAnimationright = {
 const Course = () => {
 	const router = useRouter()
 	const t = useTranslations('Course')
+	const dispatch = useDispatch()
+
+	const dataOrder = (e)=>{
+dispatch(OrderPrice(4999))
+dispatch(OrderTitle(t('title')))
+router.push('/payment')
+	}
 
 	return (
 		<AnimatePresence>
@@ -174,7 +182,7 @@ const Course = () => {
 						<div>
 							<button
 								className=' mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10'
-								onClick={() => router.push('/')}
+								onClick={() => dataOrder()}
 							>
 								{t('button')}
 							</button>
@@ -248,7 +256,7 @@ const Course = () => {
 						</Accordion>
 						<Accordion title={`${t('Conclusion')}`}></Accordion>
 					</div>
-					<Cart />
+					<Cart dataOrder={dataOrder} />
 				</motion.div>
 				<hr className='opacity-10 my-5' />
 				<motion.div

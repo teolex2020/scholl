@@ -19,7 +19,7 @@ export const MyComponent = () => {
 			if (user) {
 
 			dispatch(Loading(false))
-				
+				localStorage.setItem('assistant', JSON.stringify(user?.uid))
 				dispatch(Authuser(user?.emailVerified))
 				dispatch(Id(user?.uid))
 		  

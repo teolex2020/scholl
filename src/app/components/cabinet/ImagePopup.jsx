@@ -7,8 +7,8 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { getDoc, doc, setDoc } from 'firebase/firestore'
 import { storage, db } from '../../../firebase/config'
 import { Formik, Form } from 'formik'
-import Loader from '../Loader/Loader'
-import { ToastContainer, toast } from 'react-toastify'
+
+import { toast } from 'react-toastify'
 import { Avatar } from '@/store/features/counterSlice'
 
 const ImagePopup = () => {

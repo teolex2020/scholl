@@ -11,7 +11,10 @@ const initialState = {
 	id: '',
 	loading: true,
 	avatar:false,
-	chat:true
+	chat:true,
+	selectcourse: 1,
+	orderPrice:"",
+	orderTitle:""
 }
 
 export const dataSlice = createSlice({
@@ -42,10 +45,21 @@ export const dataSlice = createSlice({
 		Chats: (state, action) => {
 			state.chat = !action.payload
 		},
+		Selectcourse: (state, action) => {
+			state.selectcourse = action.payload
+		},
+		OrderPrice: (state, action) => {
+			state.orderPrice = action.payload
+		},
+		OrderTitle: (state, action) => {
+			state.orderTitle = action.payload
+		},
 	},
 })
 
 export const {
+	OrderTitle,
+	OrderPrice,
 	Authuser,
 	MobileMenus,
 	Languages,
@@ -54,5 +68,6 @@ export const {
 	Loading,
 	Avatar,
 	Chats,
+	Selectcourse,
 } = dataSlice.actions
 export default dataSlice.reducer

@@ -48,7 +48,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
 							className='object-cover tilt-image '
-						
+						priority
 						/>
 					</motion.div>
 					<motion.div

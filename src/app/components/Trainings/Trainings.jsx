@@ -3,6 +3,10 @@ import React from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { ClockIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
+import { useDispatch } from 'react-redux'
+import { OrderTitle, OrderPrice } from '@/store/features/counterSlice'
+import { useRouter } from '@/navigation'
+
 
 const train = [
 	{
@@ -18,7 +22,7 @@ const train = [
 		image: '/assets/prompt.png',
 		title: 'titleT',
 		descriptions: `descriptionsT`,
-		price: '1100',
+		price: '1000',
 		currency: '₴',
 		time: '90',
 		teacher: 'lectornameT',
@@ -28,7 +32,15 @@ const train = [
 
 
 const Trainings = () => {
+		const router = useRouter()
 	const t = useTranslations('BortnikTrain')
+	const dispatch = useDispatch()
+
+		const dataOrder = (e, t) => {
+			dispatch(OrderPrice(e))
+			dispatch(OrderTitle(t))
+			router.push('/payment')
+		}
 
 	return (
 		<div className='h-full flex flex-col  items-center lg:items-start lg:justify-between container mx-auto relative mt-10 p-4 gap-10'>
@@ -43,7 +55,6 @@ const Trainings = () => {
 							fill
 							alt='image'
 							className='object-cover rounded-lg'
-						
 							sizes='(min-width: 808px)'
 							quality={80}
 						/>
@@ -71,7 +82,10 @@ const Trainings = () => {
 
 							<div className='flex items-center'>
 								<div className='w-full flex  '>
-									<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold  justify-center py-1 flex space-x-16 duration-300 hover:bg-blur z-10  px-10 min-w-[200px] w-full lg:w-80 font-extrabold font-sans text-3xl'>
+									<button
+										onClick={() => dataOrder(e.price, t(e.title))}
+										className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold  justify-center py-1 flex space-x-16 duration-300 hover:bg-blur z-10  px-10 min-w-[200px] w-full lg:w-80 font-extrabold font-sans text-3xl'
+									>
 										{e.price}
 										{e.currency}
 									</button>

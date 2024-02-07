@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from '@/navigation'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { useRouter, redirect } from 'next/navigation'
@@ -60,8 +60,7 @@ const Register = () => {
 							.required('Your Email Is Required!'),
 						password: Yup.string()
 							.required('No password provided.')
-							.min(8, 'Should be 8 chars minimum.')
-							,
+							.min(8, 'Should be 8 chars minimum.'),
 					})}
 					onSubmit={async (values, { setSubmitting, resetForm }) => {
 						let { email, password } = values
@@ -163,6 +162,10 @@ const Register = () => {
 						<span> & </span>{' '}
 						<Link href='/privatpolicy'>
 							<span className='underline cursor-pointer'>{t('policy')}</span>
+						</Link>
+						<span> & </span>
+						<Link href='/publicofer'>
+							<span className='underline cursor-pointer'>{t('offer')}</span>
 						</Link>
 					</div>
 				</div>

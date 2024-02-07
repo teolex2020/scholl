@@ -37,7 +37,7 @@ try {
 	return new StreamingTextResponse(stream)
 	
 } catch (error) {
-	 return NextResponse.json('Internal Server Error', error)
+	 return NextResponse.json({ error: error }, { status: 500 })
 }
 
   }

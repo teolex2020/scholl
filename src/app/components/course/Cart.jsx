@@ -6,10 +6,10 @@ import course from '../../../../public/assets/course.png'
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/navigation'
 
-const Cart = () => {
+const Cart = ({ dataOrder }) => {
 	const router = useRouter()
 	const t = useTranslations('Card')
-  return (
+	return (
 		<div className='flex-1 flex justify-center '>
 			{' '}
 			<div className='w-80 bg-blur  rounded-md p-5 h-[430px]'>
@@ -50,7 +50,7 @@ const Cart = () => {
 					<div className='w-full flex justify-center '>
 						<button
 							className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10 min-w-[200px]'
-							onClick={() => router.push('/')}
+							onClick={() => dataOrder()}
 						>
 							{t('button')}
 						</button>
