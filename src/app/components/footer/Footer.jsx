@@ -9,9 +9,9 @@ import { Link } from '@/navigation'
 const Footer = () => {
 	const t = useTranslations('Login')
   return (
-		<div className='  lg:container flex justify-between items-center h-10 lg:mx-auto px-10'>
-			<div className='flex gap-4'>
-				©2023{' '}
+		<div className='  lg:container flex justify-center lg:justify-between items-center h-10 lg:mx-auto px-10'>
+			<div className='lg:flex gap-4 hidden'>
+				©2023
 				<div className='text-sm z-10'>
 					<Link href='/teamofservise'>
 						<span className='underline cursor-pointer'>{t('service')}</span>
