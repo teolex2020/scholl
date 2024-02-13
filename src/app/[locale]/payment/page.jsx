@@ -7,7 +7,9 @@ const Payment = dynamic(() => import('@/app/components/payment/Payments'), {
 
 const page = () => {
   return (
-    <div><Payment/></div>
+    <div>
+      <Payment/>
+      </div>
   )
 }
 

@@ -10,8 +10,6 @@ import user from '../../../../public/assets/user.png'
 import { useTranslations } from 'next-intl'
 
 const Button = ({ font }) => {
-
-
 	const popupmenu = useSelector((state) => state.counter.popupmenu)
 	const authuser = useSelector((state) => state.counter.authUser)
 
@@ -24,27 +22,12 @@ const Button = ({ font }) => {
 		dispatch(PopupMenu(popupmenu))
 	}
 
-	const [isAuthorized, setIsAuthorized] = useState(false)
-
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			const localAssistant = localStorage.getItem('assistant')
-
-			if (localAssistant) {
-				setIsAuthorized(true)
-			} else {
-				setIsAuthorized(false)
-			}
-		}
-	}, [authuser])
-
-
 	return (
 		<div className='relative '>
 			{popupmenu && <Popup />}
 
-			{isAuthorized === authuser ? (
-				isAuthorized ? (
+			{authuser ? (
+				authuser ? (
 					<div
 						className={`border-2 rounded-3xl border-zinc-700/50 w-12 h-12 flex  bg-blur cursor-pointer relative`}
 						onClick={popup}

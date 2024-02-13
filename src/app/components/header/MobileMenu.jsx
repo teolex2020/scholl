@@ -51,8 +51,7 @@ const MobileMenu = () => {
 		signOut(auth)
 		dispatch(MobileMenus(mobilemenu))
 			.then(() => {
-				// dispatch(Authuser(localStorage.removeItem('user')))
-				// dispatch(Id(localStorage.removeItem('token')))
+			
 			})
 			.catch((error) => {
 				console.log(error)

@@ -8,7 +8,7 @@ import { getDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/navigation'
-import { storage, db, auth } from '@/firebase/config'
+import { db } from '@/firebase/config'
 import Loader from '../Loader/Loader'
 
 // Custom Input Field Component
@@ -22,9 +22,11 @@ const CustomField = ({ label, name, type }) => (
 			type={type}
 			className='bg-inherit border border-slate-500 rounded-sm px-3 outline-none text-slate-200 h-12 w-full text-sm group-hover:border-blue-200/80'
 		/>
-		<ErrorMessage name={name}>
-			{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
-		</ErrorMessage>
+		<ErrorMessage
+			name={name}
+			component='div'
+			className='text-red-500 text-sm'
+		/>
 	</div>
 )
 
@@ -41,24 +43,20 @@ const validationSchema = Yup.object({
 })
 
 const Infouser = () => {
-	const id = useSelector((state) => state.counter.id)
+	const { id, authUser } = useSelector((state) => state.counter)
 	const [data, setData] = useState()
 	const router = useRouter()
 	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
-		setTimeout(() => {
-			const unsubscribe = auth.onAuthStateChanged((user) => {
-						user?.emailVerified !== true && router.push('/login')
-			})
-
-			return () => unsubscribe()
-		}, 600)
+		authUser !== true && router.push('/login')
 	})
 
 	useEffect(() => {
-		const fetchData = async () => {
-			if (id) {
+		if (!authUser) {
+			router.push('/login')
+		} else if (id) {
+			const fetchData = async () => {
 				const userDocRef = doc(db, 'users', id)
 				const docSnap = await getDoc(userDocRef)
 				if (docSnap.exists()) {
@@ -67,20 +65,15 @@ const Infouser = () => {
 					console.log('No such user!')
 				}
 			}
+			fetchData()
 		}
-		fetchData()
-	}, [id])
-	//
+	}, [authUser, id, router])
 
 	const handleAdd = async (values) => {
 		if (!id) return
-			setLoading(true)
+		setLoading(true)
 		const userDocRef = doc(db, 'users', id)
-		const userData = {
-			...values,
-			timeStamp: serverTimestamp(),
-			id: id,
-		}
+		const userData = { ...values, timeStamp: serverTimestamp(), id }
 
 		try {
 			await setDoc(userDocRef, userData, { merge: true })
@@ -92,28 +85,6 @@ const Infouser = () => {
 			setLoading(false)
 		}
 	}
-
-	useEffect(() => {
-		if (id?.length !== 0) {
-			const fetchUserData = async () => {
-				const userDocRef = doc(db, 'users', id)
-
-				try {
-					const docSnap = await getDoc(userDocRef)
-
-					if (docSnap.exists()) {
-						setData(docSnap.data())
-					} else {
-						console.log('No such user!')
-					}
-				} catch (error) {
-					console.error('Error fetching user: ', error)
-				}
-			}
-
-			fetchUserData()
-		}
-	}, [id])
 
 	return (
 		<div
