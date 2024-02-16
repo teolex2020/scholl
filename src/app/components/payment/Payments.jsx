@@ -68,6 +68,8 @@ const Payments = () => {
 	const t = useTranslations('Order')
 	const locale = useLocale()
 
+	console.log(locale)
+
 	const confirmForm = async () => {
 		const response = await fetch(`${URL}/${locale}/api/createorder`, {
 			method: 'POST',
@@ -204,25 +206,22 @@ const Payments = () => {
 							<CustomField label='Phone*' name='phone' type='text' />
 							<CustomField label='Email*' name='email' type='email' />
 
-							<div
-								className='flex items-center w-full space-x-5'
+							<button
+								type='submit'
+								className='flex items-center w-full space-x-5 z-50 cursor-pointer'
 								onClick={() => handleCheckboxChange()}
 							>
-								<input
-									className='w-5 h-5'
-									type='checkbox'
-									id='horns'
-									name='horns'
-									readOnly
-									checked={isChecked}
-								/>
-								<label htmlFor='horns'>
-									{' '}
-									<button type='submit' className=' text-lg  text-slate-400'>
-										Дані вірні
-									</button>
-								</label>
-							</div>
+								<div className='border-2 border-zinc-700'>
+									<CheckIcon
+										className={`h-6 w-6  ${
+											merch ? 'text-green-500' : 'text-red-500'
+										} `}
+									/>
+								</div>{' '}
+								<div className=' text-lg  text-slate-400'>
+									{merch ? 'Дані вірні' : 'Дані вірні?'}
+								</div>
+							</button>
 						</Form>
 					</Formik>
 					<div className='z-50 flex justify-center  relative '>
