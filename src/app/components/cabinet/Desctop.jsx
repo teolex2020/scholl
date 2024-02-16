@@ -11,7 +11,7 @@ const Desctop = () => {
 
 	useEffect(() => {
 		async function fetchData() {
-			const response = await fetch(`http://localhost:3000/en/api/userData`, {
+			const response = await fetch(`/api/userData`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
