@@ -67,7 +67,7 @@ const Payments = () => {
 	const router = useRouter()
 	const t = useTranslations('Order')
 	
-		console.log(merch)
+	
 
 	const confirmForm = async () => {
 		const response = await fetch('/api/createorder',
