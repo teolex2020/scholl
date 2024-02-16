@@ -2,7 +2,7 @@
 import React from 'react'
 import { useLocale } from 'next-intl'
 const merchantDomainName = process.env.NEXT_PUBLIC_WAYFORPAY_DOMAIN
-// const account = process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
+const account = process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
 const url = process.env.NEXT_PUBLIC_URL
 
 
@@ -23,7 +23,7 @@ const PaymentPage = ({
 
 
 	return (
-		<div className=' border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16 duration-300 hover:bg-blur z-50 text-lg lg:text-2xl px-10 max-w-[350px] mt-5'>
+		<div className=' border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16 duration-300 hover:bg-blur z-50 text-lg lg:text-2xl px-10 max-w-[350px] mt-5 cursor-pointer'>
 			<form
 				className=' flex flex-col w-96'
 				method='post'

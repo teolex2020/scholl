@@ -10,6 +10,7 @@ import meetting from '../../../../public/assets/meetting.png'
 const Meeting = () => {
 	
 		const t = useTranslations('Meeting')
+	
   const form = useRef()
 
 	const sendEmail = (e) => {
@@ -58,7 +59,7 @@ const Meeting = () => {
 		<div className='flex  items-center flex-col  px-[5%]'>
 			<div className='text-2xl lg:text-3xl py-10'>{t('title')} *</div>
 			<div className='flex gap-10 flex-col lg:flex-row  w-full'>
-				<div className='flex-1 justify-center flex  '>
+				<div className='flex-1 justify-center flex flex-col  '>
 					<div className='  w-96 lg:w-full h-48 lg:h-96 relative  z-10 '>
 						<Image
 							src={meetting}
@@ -66,8 +67,17 @@ const Meeting = () => {
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
 							className='rounded-lg object-contain'
+							priority
 						/>
 					</div>{' '}
+					<div>
+						<button
+							className='w-full  border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex    duration-300 hover:bg-blur z-10 text-lg uppercase px-10 '
+							onClick={() => dataOrder()}
+						>
+							{t('button')}
+						</button>
+					</div>
 				</div>{' '}
 				<div className=' flex flex-1   relative cursor-pointer z-10 '>
 					<form
@@ -88,21 +98,6 @@ const Meeting = () => {
 								className='bg-transparent border-2 border-zinc-700/50 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-zinc-700 decoration-transparent '
 							/>
 						</div>
-						{/* <div className='relative group '>
-							<p className='absolute -top-3 left-4 text-zinc-300   px-3 flex justify-center text-[14px]  bg-[#11171c] rounded-2xl'>
-								Выберите автора
-							</p>
-							<select
-								name='question'
-								defaultValue='4' // Встановіть defaultValue замість використання selected на <option>
-								className='bg-transparent border-2 border-zinc-700/50 rounded-sm px-3 outline-none text-slate-200 h-12 w-full text-sm group-hover:border-zinc-700 decoration-transparent'
-							>
-								<option value='1'>Тарас Шевченко</option>
-								<option value='2'>Леся Українка</option>
-								<option value='3'>Іван Франко</option>
-								<option value='4'>Григорій Квітка-Основ&apos;яненко</option>
-							</select>
-						</div> */}
 
 						<div className='relative group '>
 							<p className='absolute -top-3 left-4 text-zinc-300   w-16 flex justify-center text-[14px]  bg-[#11171c] rounded-2xl'>

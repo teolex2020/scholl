@@ -71,7 +71,8 @@
 	},
 	"Meeting": {
 		"title": "Schedule a meeting",
-		"description": "Here you can schedule a meeting with the course authors for business networking and consultations (online and offline), ask for short advice or discuss the course materials in more detail with their authors, get acquainted with the materials of events already held. This mode of operation is confidential and can only be initiated at the customer's request."
+		"description": "Here you can schedule a meeting with the course authors for business networking and consultations (online and offline), ask for short advice or discuss the course materials in more detail with their authors, get acquainted with the materials of events already held. This mode of operation is confidential and can only be initiated at the customer's request.",
+		"button": "4000₴ "
 	},
 	"Brainstorm": {
 		"title": "Schedule a brainstorming session",
