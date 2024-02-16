@@ -73,7 +73,7 @@ const Payments = () => {
 
 	const confirmForm = async () => {
 		const response = await fetch(
-			`www.bortnikshool.com/${locale}/api/createorder`,
+			`www.bortnikshool.com/uk/api/createorder`,
 			{
 				method: 'POST',
 				headers: {
