@@ -68,7 +68,7 @@ const PaymentPage = ({
 				{/* <input name='returnUrl' value={returnUrl} readOnly type='hidden' /> */}
 				<input
 					name='serviceUrl'
-					value={`${merchantDomainName}/${locale}/api/status`}
+					value={`${url}/${locale}/api/status`}
 					readOnly
 					type='hidden'
 				/>
