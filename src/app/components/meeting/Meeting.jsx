@@ -6,8 +6,20 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
 import meetting from '../../../../public/assets/meetting.png'
-
+import { useDispatch } from 'react-redux'
+import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 const Meeting = () => {
+	const dispatch = useDispatch()
+
+	const dataOrder = (e) => {
+		if (!authUser) {
+			router.push('/login')
+		}
+		dispatch(OrderPrice(4000))
+		dispatch(OrderTitle("Meeting"))
+		dispatch(OrderId(20244))
+		router.push('/payment')
+	}
 	
 		const t = useTranslations('Meeting')
 	
@@ -60,7 +72,7 @@ const Meeting = () => {
 			<div className='text-2xl lg:text-3xl py-10'>{t('title')} *</div>
 			<div className='flex gap-10 flex-col lg:flex-row  w-full'>
 				<div className='flex-1 justify-center flex flex-col  '>
-					<div className='  w-96 lg:w-full h-48 lg:h-96 relative  z-10 '>
+					<div className='  w-96 lg:w-full h-48 lg:h-96 relative   '>
 						<Image
 							src={meetting}
 							alt='logo '
@@ -70,9 +82,9 @@ const Meeting = () => {
 							priority
 						/>
 					</div>{' '}
-					<div>
+					<div className='z-50 mt-5'>
 						<button
-							className='w-full  border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex    duration-300 hover:bg-blur z-10 text-lg uppercase px-10 '
+							className='w-full  border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex    duration-300 hover:bg-blur z-50 text-lg uppercase px-10 '
 							onClick={() => dataOrder()}
 						>
 							{t('button')}
