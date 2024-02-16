@@ -20,7 +20,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
 import PaymentPage from './PayForm'
-import { useLocale } from 'next-intl'
+// import { useLocale } from 'next-intl'
 
 const URL = process.env.NEXT_PUBLIC_URL
 
@@ -66,14 +66,11 @@ const Payments = () => {
 	)
 	const router = useRouter()
 	const t = useTranslations('Order')
-	const locale = useLocale()
-
-	console.log(locale)
-		console.log('product')
+	
+		console.log(merch)
 
 	const confirmForm = async () => {
-		const response = await fetch(
-			'www.bortnikshool.com/uk/api/createorder',
+		const response = await fetch('/api/createorder',
 			{
 				method: 'POST',
 				headers: {
