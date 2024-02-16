@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { ClockIcon, AcademicCapIcon, CalendarIcon } from '@heroicons/react/24/solid'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import { useRouter } from '@/navigation'
 
@@ -18,7 +18,8 @@ const train = [
 		currency: '₴',
 		time: '90',
 		teacher: 'lectorname',
-		data: '02/04/2024',
+		data: '02.04.2024',
+		time: '11.00',
 	},
 	{
 		id: 20243,
@@ -30,18 +31,22 @@ const train = [
 		time: '90',
 		teacher: 'lectornameT',
 		data: '',
+		time: '',
 	},
 ]
 
 
 
 const Trainings = () => {
+	const { authUser } = useSelector((state) => state.counter)
 		const router = useRouter()
 	const t = useTranslations('BortnikTrain')
 	const dispatch = useDispatch()
 
 		const dataOrder = (price, title, id) => {
-	
+		if (!authUser) {
+			router.push('/login')
+		}
 			dispatch(OrderPrice(price))
 			dispatch(OrderTitle(title))
 			dispatch(OrderId(id))
@@ -89,6 +94,8 @@ const Trainings = () => {
 								<CalendarIcon className='w-5 h-5' />
 								<span>{t('data')} - </span>
 								<span className='uppercase'>{e.data}</span>
+								<ClockIcon className='w-5 h-5' />
+								<span className='uppercase'>{e.time}</span>
 							</div>
 
 							<div className='flex items-center'>

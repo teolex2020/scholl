@@ -14,30 +14,26 @@ import { db } from '@/firebase/config'
 import { useSelector, useDispatch } from 'react-redux'
 import { useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
-import { getAuth } from 'firebase/auth'
-import firebase_app from '@/firebase/config'
 import ImagePopup from './ImagePopup'
 import { Avatar } from '@/store/features/counterSlice'
 
 const List = () => {
-	const id = useSelector((state) => state.counter.id)
-	const avatar = useSelector((state) => state.counter.avatar)
+	
+	const { avatar, id, authUser } = useSelector((state) => state.counter)
 	const dispatch = useDispatch()
 	const [data, setData] = useState("")
 
 
 	const t = useTranslations('Cabinet')
 	const router = useRouter()
-	const auth = getAuth(firebase_app)
+
+
+
 
 	useEffect(() => {
-		setTimeout(() => {
-			const unsubscribe = auth.onAuthStateChanged((user) => {
-				user?.emailVerified !== true && router.push('/login')
-			})
-
-			return () => unsubscribe()
-		}, 600)
+		if (!authUser){
+			router.push('/login')
+		}
 	})
 
 

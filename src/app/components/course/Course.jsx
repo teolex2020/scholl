@@ -14,7 +14,7 @@ import Lector from './Lector'
 import { useRouter } from '@/navigation'
 import course from "../../../../public/assets/course.png"
 import certificat from '../../../../public/assets/certificat.png'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 
 
@@ -133,11 +133,15 @@ const blockAnimationright = {
 }
 
 const Course = () => {
+		const { authUser } = useSelector((state) => state.counter)
 	const router = useRouter()
 	const t = useTranslations('Course')
 	const dispatch = useDispatch()
 
 	const dataOrder = (e)=>{
+			if (!authUser) {
+				router.push('/login')
+			}
 dispatch(OrderPrice(4999))
 dispatch(OrderTitle(t('title')))
 dispatch(OrderId(20241))
