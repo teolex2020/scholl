@@ -15,7 +15,8 @@ import { useRouter } from '@/navigation'
 import course from "../../../../public/assets/course.png"
 import certificat from '../../../../public/assets/certificat.png'
 import { useDispatch } from 'react-redux'
-import {OrderTitle,	OrderPrice} from "@/store/features/counterSlice"
+import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
+
 
 const listStart = [
 	{
@@ -139,8 +140,11 @@ const Course = () => {
 	const dataOrder = (e)=>{
 dispatch(OrderPrice(4999))
 dispatch(OrderTitle(t('title')))
+dispatch(OrderId(20241))
 router.push('/payment')
 	}
+
+	
 
 	return (
 		<AnimatePresence>
@@ -181,7 +185,7 @@ router.push('/payment')
 						</div>
 						<div>
 							<button
-								className=' mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10'
+								className=' mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10 w-48'
 								onClick={() => dataOrder()}
 							>
 								{t('button')}

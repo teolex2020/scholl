@@ -18,6 +18,7 @@ import startimage from "../../../../public/assets/bg.png"
 const StartPage = ({title, name, descriptions, button}) => {
 
 
+
 	return (
 		<AnimatePresence>
 			<motion.div className='container mx-auto elem bg-blur mb-10 py-5  lg:pb-24 mt-5 lg:mt-14 2xl:mt-24  relative rounded-xl max-w-[1346px]  '>
@@ -48,7 +49,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
 							className='object-cover tilt-image '
-						priority
+							priority
 						/>
 					</motion.div>
 					<motion.div
@@ -67,6 +68,7 @@ const StartPage = ({title, name, descriptions, button}) => {
 						}}
 						className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5 '
 					>
+					
 						<div className={` ${gentium.className} py-6   `}>
 							<p className='text-2xl'>{title}</p>{' '}
 							<p className='colorgold text-5xl '> {name}</p>

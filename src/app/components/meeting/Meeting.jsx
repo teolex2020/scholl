@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl'
 import meetting from '../../../../public/assets/meetting.png'
 
 const Meeting = () => {
+	
 		const t = useTranslations('Meeting')
   const form = useRef()
 

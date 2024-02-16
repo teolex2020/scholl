@@ -23,7 +23,8 @@ const List = () => {
 	const id = useSelector((state) => state.counter.id)
 	const avatar = useSelector((state) => state.counter.avatar)
 	const dispatch = useDispatch()
-	const [data, setData] = useState()
+	const [data, setData] = useState("")
+
 
 	const t = useTranslations('Cabinet')
 	const router = useRouter()
@@ -38,6 +39,8 @@ const List = () => {
 			return () => unsubscribe()
 		}, 600)
 	})
+
+
 
 	useEffect(() => {
 		if (id?.length !== 0) {
@@ -137,11 +140,11 @@ const List = () => {
 			</div>
 			<hr className='opacity-10 w-full py-3 lg:hidden' />
 			<div className='flex flex-col gap-10 lg:p-10 flex-1 '>
-				<div className='lg:bg-blur min-h-[500px] w-full rounded-xl lg:p-5'>
-					<div className='lg:hidden'>
+				<div className='lg:bg-blur min-h-[500px] w-full rounded-xl lg:p-5 '>
+					<div className='lg:hidden px-5'>
 						<Mobiletable />
 					</div>
-					<div className='hidden lg:block'>
+					<div className='hidden lg:block px-10'>
 						<Desctop />
 					</div>
 				</div>

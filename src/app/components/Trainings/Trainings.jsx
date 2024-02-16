@@ -4,25 +4,27 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { ClockIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
 import { useDispatch } from 'react-redux'
-import { OrderTitle, OrderPrice } from '@/store/features/counterSlice'
+import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import { useRouter } from '@/navigation'
 
 
 const train = [
 	{
+		id: 20242,
 		image: '/assets/kill.png',
 		title: 'title',
 		descriptions: `descriptions`,
-		price: '1100',
+		price: '5',
 		currency: '₴',
 		time: '90',
 		teacher: 'lectorname',
 	},
 	{
+		id: 20243,
 		image: '/assets/prompt.png',
 		title: 'titleT',
 		descriptions: `descriptionsT`,
-		price: '1000',
+		price: '5',
 		currency: '₴',
 		time: '90',
 		teacher: 'lectornameT',
@@ -36,9 +38,11 @@ const Trainings = () => {
 	const t = useTranslations('BortnikTrain')
 	const dispatch = useDispatch()
 
-		const dataOrder = (e, t) => {
-			dispatch(OrderPrice(e))
-			dispatch(OrderTitle(t))
+		const dataOrder = (price, title, id) => {
+	
+			dispatch(OrderPrice(price))
+			dispatch(OrderTitle(title))
+			dispatch(OrderId(id))
 			router.push('/payment')
 		}
 
@@ -83,7 +87,7 @@ const Trainings = () => {
 							<div className='flex items-center'>
 								<div className='w-full flex  '>
 									<button
-										onClick={() => dataOrder(e.price, t(e.title))}
+										onClick={() => dataOrder(e.price, t(e.title), e.id)}
 										className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold  justify-center py-1 flex space-x-16 duration-300 hover:bg-blur z-10  px-10 min-w-[200px] w-full lg:w-80 font-extrabold font-sans text-3xl'
 									>
 										{e.price}

@@ -16,9 +16,11 @@
     "clsx": "^2.0.0",
     "dotenv": "^16.4.2",
     "firebase": "^10.7.0",
+    "firebase-admin": "^12.0.0",
     "formik": "^2.4.5",
     "framer-motion": "^10.17.9",
     "js-cookie": "^3.0.5",
+    "nanoid": "^5.0.5",
     "next": "^14.0.4",
     "next-intl": "^3.3.2",
     "openai": "^4.8.0",
@@ -37,6 +39,7 @@
     "eslint": "^8",
     "eslint-config-next": "^14.0.4",
     "postcss": "^8",
+    "server-only": "^0.0.1",
     "tailwindcss": "^3.3.0"
   }
 }

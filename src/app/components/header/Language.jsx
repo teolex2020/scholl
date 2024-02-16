@@ -2,7 +2,7 @@
 import {  useTransition } from 'react'
 import { Gentium_Book_Plus } from 'next/font/google'
 
-import { useLocale, useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from '@/navigation'
 
 const lang = [

@@ -1,4 +1,5 @@
 "use server"
+
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
@@ -14,6 +15,8 @@ const StartPage = dynamic(
 )
 
  const Home = ({ params: { locale } }) => {
+
+
 
 const data = (global).payload
 console.log("cach",data)

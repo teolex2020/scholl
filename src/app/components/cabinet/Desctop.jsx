@@ -1,75 +1,89 @@
-"use client"
-import React from 'react'
+'use client'
+import { useEffect, useState } from 'react'
 import { VideoCameraIcon } from '@heroicons/react/24/solid'
 import { useTranslations } from 'next-intl'
-
+import { useSelector } from 'react-redux'
 const Desctop = () => {
 	const t = useTranslations('Cabinetdata')
-  return (
-		<></>
-		// <div>
-		// 	{' '}
-		// 	<table className='table-fixed w-full'>
-		// 		<thead className='text-sm'>
-		// 			<tr className='h-10 '>
-		// 				<th className='w-20 '>
-		// 					<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
-		// 						№
-		// 					</div>
-		// 				</th>
 
-		// 				<th className=''>
-		// 					{' '}
-		// 					<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
-		// 						{t('name')}
-		// 					</div>
-		// 				</th>
-		// 				<th>
-		// 					{' '}
-		// 					<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
-		// 						{t('theme')}
-		// 					</div>
-		// 				</th>
-		// 				<th>
-		// 					{' '}
-		// 					<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
-		// 						{t('paid')}
-		// 					</div>
-		// 				</th>
+	const [orderdata, setOrderData] = useState()
+	const id = useSelector((state) => state.counter.id)
 
-		// 				{/* <th className='w-24 '>
-		// 					<div className='border-2 mx-2 rounded-3xl border-zinc-700/50'>
-		// 						Видео
-		// 					</div>
-		// 				</th> */}
-		// 			</tr>
-		// 		</thead>
-		// 		<tbody className=''>
-		// 			<tr className=' h-20'>
-		// 				<td className=' text-center '>1.</td>
+	useEffect(() => {
+		async function fetchData() {
+			const response = await fetch(`http://localhost:3000/en/api/userData`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					userId: id,
+				}),
+			})
 
-		// 				<td className='text-sm text-center  '>
-		// 					<div className=''> ...</div>
-		// 					<div className='text-[10px]'> .....</div>
-		// 				</td>
-		// 				<td className=' text-sm'>
-		// 					....
-		// 				</td>
-		// 				<td className='w-32 text-center'>
-		// 					<button className='bg-green-700 text-sm rounded-sm px-2 py-1'>
-		// 						....
-		// 					</button>
-		// 				</td>
+			if (response.ok) {
+				const { data } = await response.json()
 
-		// 				{/* <td className=' '>
-		// 					<div className='w-full flex justify-center'>
-		// 						<VideoCameraIcon className='h-6 w-6 fill-green-700' />
-		// 					</div>
-		// 				</td> */}
-		// 			</tr>
-		// 		</tbody>
-		// 	</table>
-		// </div>
+				setOrderData(data)
+			} else {
+				console.error('Помилка при data')
+			}
+		}
+
+		fetchData()
+	}, [id])
+
+	return (
+		<div>
+			{' '}
+			<table className='table-fixed w-full '>
+				<thead className='text-sm  border-b  border-zinc-700/50'>
+					<tr className=' text-lg '>
+						<th className='flex '>
+							{' '}
+							<div className=' w-48 p-2 '>{t('theme')}</div>
+						</th>
+						<th className=' w-32 '>
+							{' '}
+							<div className=' p-2 w-32 '>{t('paid')}</div>
+						</th>
+					</tr>
+				</thead>
+				{orderdata ? (
+					orderdata?.map((item, i) => (
+						<tbody key={i} className=''>
+							<tr className=' h-10'>
+								<td className=' text-sm'>
+									{i + 1}.&nbsp;&nbsp;{item.title}.
+								</td>
+								<td className='w-32 text-center'>
+									{item?.reason == 'Ok' ? (
+										<div
+											className={`bg-green-700 text-sm rounded-sm px-2 py-1`}
+										>
+											Paid
+										</div>
+									) : (
+										<div className={`bg-red-700 text-sm rounded-sm px-2 py-1`}>
+											Not paid
+										</div>
+									)}
+								</td>
+							</tr>
+						</tbody>
+					))
+				) : (
+					<tbody className=''>
+						<tr className=' h-20'>
+							<td className=' text-sm'></td>
+							<td className='w-32 text-center'>
+								<div className='bg-green-700 text-sm rounded-sm px-2 py-1'></div>
+							</td>
+						</tr>
+					</tbody>
+				)}
+			</table>
+		</div>
 	)
 }
 

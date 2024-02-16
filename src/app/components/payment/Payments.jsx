@@ -14,13 +14,13 @@ import { useSelector } from 'react-redux'
 import { useRouter } from '@/navigation'
 import { getDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '@/firebase/config'
-import { v4 as uuidv4 } from 'uuid'
+import { nanoid } from 'nanoid'
 import Loader from '../Loader/Loader'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
-import PaymentPage from '../wayforpay/PayForm'
-import { formattedDate } from '@/helper/data'
+import PaymentPage from './PayForm'
+import { useLocale } from 'next-intl'
 
 const URL = process.env.NEXT_PUBLIC_URL
 
@@ -55,28 +55,58 @@ const validationSchema = Yup.object({
 })
 
 const Payments = () => {
-	const [orderNumber, setOrderNumber] = useState(() => uuidv4())
+	const [formdata, setFormdata] = useState(() => Date.now())
+	const [isChecked, setIsChecked] = useState(false)
+	const [orderNumber, setOrderNumber] = useState(() => nanoid())
 	const [loading, setLoading] = useState(false)
-	const [data, setData] = useState("")
+	const [data, setData] = useState('')
 	const [merch, setMerch] = useState(null)
-	const { orderPrice, orderTitle, id, authUser } = useSelector(
+	const { orderPrice, orderTitle, id, authUser, orderId } = useSelector(
 		(state) => state.counter
 	)
 	const router = useRouter()
 	const t = useTranslations('Order')
+	const locale = useLocale()
 
-	 
+	const confirmForm = async () => {
+		const response = await fetch(`${URL}/${locale}/api/createorder`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				orderId: orderNumber + orderId,
+				price: orderPrice,
+				productName: orderTitle,
+				data: formdata,
+			}),
+		})
+
+		if (response.ok) {
+			const data = await response.json()
+
+			setMerch(data.signature)
+		} else {
+			console.error('Помилка при отриманні merchantSignature')
+		}
+	}
+
+	const handleCheckboxChange = () => {
+		setIsChecked(!isChecked)
+	}
 
 	const handleAdd = async (values) => {
 		setLoading(true)
+
+		confirmForm()
 		if (!authUser) {
 			router.push('/login')
 		}
 
-		const userDocRef = doc(db, 'order', id)
+		const userDocRef = doc(db, 'order', orderNumber + orderId)
 		const userData = {
 			...values,
-			orderNumber: orderNumber,
+			orderNumber: orderNumber + orderId,
 			orderPrice: orderPrice,
 			orderTitle: orderTitle,
 			timeStamp: serverTimestamp(),
@@ -84,32 +114,6 @@ const Payments = () => {
 		}
 
 		try {
-			const response = await fetch(`${URL}/api/createorder`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					orderId: orderNumber,
-					price: orderPrice,
-					productName: orderTitle,
-					data: formattedDate,
-					email: data.email,
-				}),
-			})
-
-			console.log('response :>> ', response)
-
-			if (response.ok) {
-				const data = await response.json()
-
-				console.log('data in response :>> ', data.signature)
-
-				setMerch(data.signature)
-			} else {
-				console.error('Помилка при отриманні merchantSignature')
-			}
-
 			await setDoc(userDocRef, userData, { merge: true })
 			toast.success('Success!')
 			// router.back()
@@ -137,40 +141,10 @@ const Payments = () => {
 		}
 	}, [authUser, id, router])
 
-	
-
 	return (
 		<div className='min-w-screen h-fit bg-transparent flex  justify-center px-5 mt-10 z-50'>
 			{loading && <Loader />}
-			<div className='z-10'>
-				{merch !== null && (
-					<div dangerouslySetInnerHTML={{ __html: merch }} />
 
-					// <PaymentPage
-					// 	html_form={html_form}
-					// 	merch={merch}
-					// 	orderId={orderNumber}
-					// 	orderPrice={orderPrice}
-					// 	orderTitle={orderTitle}
-					// 	firstName={data.firstName}
-					// 	lastName={data.lastName}
-					// 	email={data.email}
-					// 	data={formattedDate}
-					// />
-				)}
-			</div>
-			{/* <ToastContainer
-				position='top-center'
-				autoClose={5000}
-				hideProgressBar={false}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-				theme='light'
-			/> */}
 			<div
 				className={clsx(
 					'w-full mx-auto rounded-lg bg-transparent shadow1 p-5 text-gray-700 flex',
@@ -190,7 +164,7 @@ const Payments = () => {
 					</div>
 					<div className='w-full text-center pt-3 text-2xl text-slate-400 font-semibold'>
 						{t('title')}{' '}
-						<span className='text-white text-sm'>{orderNumber}</span>
+						<span className='text-white text-sm'>{orderNumber + orderId}</span>
 					</div>
 					<div className='flex gap-2 py-3 text-[#e2a550]  font-serif font-semibold'>
 						<div>
@@ -213,10 +187,10 @@ const Payments = () => {
 					<Formik
 						enableReinitialize
 						initialValues={{
-							firstName: data?.firstName || '',
-							lastName: data?.lastName || '',
-							phone: data?.phone || '',
-							email: data?.email || '',
+							firstName: data?.firstName || 'firstName',
+							lastName: data?.lastName || 'lastName',
+							phone: data?.phone || '3080999999999',
+							email: data?.email || 'Email@emai.com',
 						}}
 						validationSchema={validationSchema}
 						onSubmit={(values, { setSubmitting }) => {
@@ -230,15 +204,48 @@ const Payments = () => {
 							<CustomField label='Phone*' name='phone' type='text' />
 							<CustomField label='Email*' name='email' type='email' />
 
-							<button
-								type='submit'
-								className=' border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16 duration-300 hover:bg-blur z-50 text-lg lg:text-2xl px-10'
+							<div
+								className='flex items-center w-full space-x-5'
+								onClick={() => handleCheckboxChange()}
 							>
-								{t('button')}
-							</button>
+								<input
+									className='w-5 h-5'
+									type='checkbox'
+									id='horns'
+									name='horns'
+									readOnly
+									checked={isChecked}
+								/>
+								<label htmlFor='horns'>
+									{' '}
+									<button type='submit' className=' text-lg  text-slate-400'>
+										Дані вірні
+									</button>
+								</label>
+							</div>
 						</Form>
 					</Formik>
-					<div className='z-50 flex justify-center'></div>
+					<div className='z-50 flex justify-center  relative '>
+						{!merch && (
+							<div className=' border-2 rounded-3xl border-[#e2a550] colorgold justify-center py-2 flex space-x-16 duration-300  z-50 text-lg lg:text-2xl px-10 max-w-[350px] mt-5'>
+								{t('button')}
+							</div>
+						)}
+						{merch && (
+							<PaymentPage
+								merch={merch}
+								orderId={orderNumber + orderId}
+								orderPrice={orderPrice}
+								orderTitle={orderTitle}
+								firstName={data.firstName}
+								lastName={data.lastName}
+								email={data.email}
+								clientPhone={data.phone}
+								data={formdata}
+								titleButton={t('button')}
+							/>
+						)}
+					</div>
 					<div className='flex justify-center w-full'>
 						<button
 							onClick={() => router.back()}

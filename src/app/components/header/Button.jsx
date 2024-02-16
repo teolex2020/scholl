@@ -22,12 +22,13 @@ const Button = ({ font }) => {
 		dispatch(PopupMenu(popupmenu))
 	}
 
+
+
 	return (
 		<div className='relative '>
 			{popupmenu && <Popup />}
 
-			{authuser ? (
-				authuser ? (
+			{	authuser ? (
 					<div
 						className={`border-2 rounded-3xl border-zinc-700/50 w-12 h-12 flex  bg-blur cursor-pointer relative`}
 						onClick={popup}
@@ -52,11 +53,7 @@ const Button = ({ font }) => {
 						<p className='duration-300  text-lg'>{t('button')}</p>
 					</button>
 				)
-			) : (
-				<div className='h-10 w-14  relative flex justify-center items-center'>
-					<div className='loaders absolute  '></div>
-				</div>
-			)}
+			 }
 		</div>
 	)
 }

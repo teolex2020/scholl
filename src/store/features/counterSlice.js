@@ -14,7 +14,8 @@ const initialState = {
 	chat:true,
 	selectcourse: 1,
 	orderPrice:"",
-	orderTitle:""
+	orderTitle:"",
+	orderId:""
 }
 
 export const dataSlice = createSlice({
@@ -54,10 +55,14 @@ export const dataSlice = createSlice({
 		OrderTitle: (state, action) => {
 			state.orderTitle = action.payload
 		},
+		OrderId: (state, action) => {
+			state.orderId = action.payload
+		},
 	},
 })
 
 export const {
+	OrderId,
 	OrderTitle,
 	OrderPrice,
 	Authuser,
