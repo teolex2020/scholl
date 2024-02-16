@@ -1,3 +1,4 @@
+
 import admin from 'firebase-admin'
 
 function formatPrivatKey(key) {
