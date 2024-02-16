@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { ClockIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
+import { ClockIcon, AcademicCapIcon, CalendarIcon } from '@heroicons/react/24/solid'
 import { useDispatch } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import { useRouter } from '@/navigation'
@@ -18,6 +18,7 @@ const train = [
 		currency: '₴',
 		time: '90',
 		teacher: 'lectorname',
+		data: '02/04/2024',
 	},
 	{
 		id: 20243,
@@ -28,6 +29,7 @@ const train = [
 		currency: '₴',
 		time: '90',
 		teacher: 'lectornameT',
+		data: '',
 	},
 ]
 
@@ -82,6 +84,11 @@ const Trainings = () => {
 								<AcademicCapIcon className='w-5 h-5' />
 								<span>{t('lector')} - </span>
 								<span className='uppercase'>{t(e.teacher)}</span>
+							</div>
+							<div className='text-sm text-zinc-300 flex gap-3 py-3'>
+								<CalendarIcon className='w-5 h-5' />
+								<span>{t('data')} - </span>
+								<span className='uppercase'>{e.data}</span>
 							</div>
 
 							<div className='flex items-center'>
