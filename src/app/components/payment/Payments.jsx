@@ -69,20 +69,24 @@ const Payments = () => {
 	const locale = useLocale()
 
 	console.log(locale)
+		console.log(URL)
 
 	const confirmForm = async () => {
-		const response = await fetch(`${URL}/${locale}/api/createorder`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				orderId: orderNumber + orderId,
-				price: orderPrice,
-				productName: orderTitle,
-				data: formdata,
-			}),
-		})
+		const response = await fetch(
+			`www.bortnikshool.com/${locale}/api/createorder`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					orderId: orderNumber + orderId,
+					price: orderPrice,
+					productName: orderTitle,
+					data: formdata,
+				}),
+			}
+		)
 
 		if (response.ok) {
 			const data = await response.json()
