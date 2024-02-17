@@ -66,7 +66,7 @@ const Payments = () => {
 	const t = useTranslations('Order')
 	const {current} = useRef(nanoid())
 	
-	console.log(data)
+
 
 	const confirmForm = async () => {
 		const response = await fetch('/api/createorder', {
