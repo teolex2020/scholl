@@ -6,10 +6,17 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
 import meetting from '../../../../public/assets/meetting.png'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
+import { useRouter } from '@/navigation'
+
+
 const Meeting = () => {
+	const router = useRouter()
 	const dispatch = useDispatch()
+		const { authUser } = useSelector(
+			(state) => state.counter
+		)
 
 	const dataOrder = (e) => {
 		if (!authUser) {
