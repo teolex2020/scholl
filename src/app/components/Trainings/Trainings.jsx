@@ -14,7 +14,7 @@ const train = [
 		image: '/assets/kill.png',
 		title: 'title',
 		descriptions: `descriptions`,
-		price: '5',
+		price: '1100',
 		currency: '₴',
 		time: '90',
 		teacher: 'lectorname',
