@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import clsx from 'clsx'
 import {
 	CheckIcon,
@@ -20,9 +20,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
 import PaymentPage from './PayForm'
-// import { useLocale } from 'next-intl'
 
-const URL = process.env.NEXT_PUBLIC_URL
 
 const CustomField = ({ label, name, type }) => (
 	<div className='relative group'>
@@ -57,7 +55,7 @@ const validationSchema = Yup.object({
 const Payments = () => {
 	const [formdata, setFormdata] = useState(() => Date.now())
 	const [isChecked, setIsChecked] = useState(false)
-	const [orderNumber, setOrderNumber] = useState(() => nanoid())
+	
 	const [loading, setLoading] = useState(false)
 	const [data, setData] = useState('')
 	const [merch, setMerch] = useState(null)
@@ -66,24 +64,23 @@ const Payments = () => {
 	)
 	const router = useRouter()
 	const t = useTranslations('Order')
+	const {current} = useRef(nanoid())
 	
-	
+	console.log(data)
 
 	const confirmForm = async () => {
-		const response = await fetch('/api/createorder',
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					orderId: orderNumber + orderId,
-					price: orderPrice,
-					productName: orderTitle,
-					data: formdata,
-				}),
-			}
-		)
+		const response = await fetch('/api/createorder', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				orderId: current + orderId,
+				price: orderPrice,
+				productName: orderTitle,
+				data: formdata,
+			}),
+		})
 
 		if (response.ok) {
 			const data = await response.json()
@@ -99,17 +96,18 @@ const Payments = () => {
 	}
 
 	const handleAdd = async (values) => {
+		setData(values)
 		setLoading(true)
 
-		confirmForm()
+	
 		if (!authUser) {
 			router.push('/login')
 		}
 
-		const userDocRef = doc(db, 'order', orderNumber + orderId)
+		const userDocRef = doc(db, 'order', current + orderId)
 		const userData = {
 			...values,
-			orderNumber: orderNumber + orderId,
+			orderNumber: current + orderId,
 			orderPrice: orderPrice,
 			orderTitle: orderTitle,
 			timeStamp: serverTimestamp(),
@@ -118,8 +116,8 @@ const Payments = () => {
 
 		try {
 			await setDoc(userDocRef, userData, { merge: true })
-			toast.success('Success!')
-			// router.back()
+			// toast.success('Success!')
+			confirmForm()
 		} catch (error) {
 			toast.error('Error')
 		} finally {
@@ -127,22 +125,9 @@ const Payments = () => {
 		}
 	}
 
-	useEffect(() => {
-		if (!authUser) {
-			router.back()
-		} else if (id) {
-			const fetchData = async () => {
-				const userDocRef = doc(db, 'users', id)
-				const docSnap = await getDoc(userDocRef)
-				if (docSnap.exists()) {
-					setData(docSnap.data())
-				} else {
-					console.log('No such user!')
-				}
-			}
-			fetchData()
-		}
-	}, [authUser, id, router])
+
+
+		
 
 	return (
 		<div className='min-w-screen h-fit bg-transparent flex  justify-center px-5 mt-10 z-50'>
@@ -167,7 +152,7 @@ const Payments = () => {
 					</div>
 					<div className='w-full text-center pt-3 text-2xl text-slate-400 font-semibold'>
 						{t('title')}{' '}
-						<span className='text-white text-sm'>{orderNumber + orderId}</span>
+						<span className='text-white text-sm'>{current + orderId}</span>
 					</div>
 					<div className='flex gap-2 py-3 text-[#e2a550]  font-serif font-semibold'>
 						<div>
@@ -190,10 +175,10 @@ const Payments = () => {
 					<Formik
 						enableReinitialize
 						initialValues={{
-							firstName: data?.firstName || 'firstName',
-							lastName: data?.lastName || 'lastName',
-							phone: data?.phone || '3080999999999',
-							email: data?.email || 'Email@emai.com',
+							firstName:  '',
+							lastName:  '',
+							phone:  '',
+							email: '',
 						}}
 						validationSchema={validationSchema}
 						onSubmit={(values, { setSubmitting }) => {
@@ -202,10 +187,10 @@ const Payments = () => {
 						}}
 					>
 						<Form className='flex flex-col pt-10 mx-auto gap-6  justify-start relative'>
-							<CustomField label='First Name*' name='firstName' type='text' />
-							<CustomField label='Last Name*' name='lastName' type='text' />
-							<CustomField label='Phone*' name='phone' type='text' />
-							<CustomField label='Email*' name='email' type='email' />
+							<CustomField label='First Name*' name='firstName' type='text' placeholder='First Name'/>
+							<CustomField label='Last Name*' name='lastName' type='text' placeholder='Last Name'/>
+							<CustomField label='Phone*' name='phone' type='text' placeholder='Phone' />
+							<CustomField label='Email*' name='email' type='email' placeholder='Email'/>
 
 							<button
 								type='submit'
@@ -220,7 +205,7 @@ const Payments = () => {
 									/>
 								</div>{' '}
 								<div className=' text-lg  text-slate-400'>
-									{merch ? 'Дані вірні' : 'Дані вірні?'}
+									{merch ? t('corect') : t('notcorect')}
 								</div>
 							</button>
 						</Form>
@@ -234,7 +219,7 @@ const Payments = () => {
 						{merch && (
 							<PaymentPage
 								merch={merch}
-								orderId={orderNumber + orderId}
+								orderId={current + orderId}
 								orderPrice={orderPrice}
 								orderTitle={orderTitle}
 								firstName={data.firstName}

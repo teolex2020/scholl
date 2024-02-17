@@ -136,6 +136,8 @@
 		"quantity": "Quantity:",
 		"price": "Price:",
 		"button": "Proceed to Payment",
-		"button1": "Cancel Order"
+		"button1": "Cancel Order",
+		"corect": "The data is correct",
+		"notcorect": "Is the data correct?"
 	}
 }
