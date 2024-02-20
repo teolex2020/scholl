@@ -37,24 +37,36 @@ export async function POST(req) {
 		to: email,
 		subject: 'Оплата пройшла успішно!',
 		html: `
-      <div style="font-family: Arial, sans-serif; text-align: start; padding: 40px;">
+        <div style="font-family: Arial, sans-serif; text-align: start; padding: 40px;">
       <div style="max-width: 600px; margin: 20px auto; padding: 20px; border-radius: 10px; background-color: #ecf0f1; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
        <div style="text-align: center;">
          
           <h1 style="color: #27ae60; margin-bottom: 5px;">Вітаємо з успішною оплатою замовлення № ${orderReference}</h1>
         </div>
        
+         <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
+         Шановний ${clientName},
+        </p>
           
         <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
-          В наступному повідомленню, Ви отримаєте іструкцію та відповідні посилання, щодо Вашого замовлення
+         Щиро дякую  за вашу підписку. Ваш вибір є важливим визнанням моєї професійної майстерності, що мотивує нас разом підкоряти нові професійні вершини.
+        </p>
+        
+        <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
+         Також це означає, що ми з Вами вже розділяємо спільні цінності  - прагнемо до знань та нової інформації, ставимо під сумнів та критично аналізуємо нашу навколишню дійсність, та змінюємо її.
+        </p>
+        <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
+         Будь ласка, очікуйте на посилання для участі у [назві курсу/тренінгу/зустрічі] на платформі Zoom, яке ми надішлемо вам за <strong style="color: #27ae60; margin-bottom: 5px; text-decoration: underline;"> 1-3 дні </strong> до початку заходу.
+        </p>
+         <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
+         З організаційних питань: тел. +380637893257, email: bortnikschool@gmail.com.  
+        </p>
+         <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
+         Для технічної підтримки: email: placestudyyip@gmail.com.
         </p>
        
        
-        <p style="color: #34495e; font-size: 16px; margin-top: 30px;">
-         Ми пишаємося тим, що допомагаємо людям досягати їхніх освітніх та професійних цілей. Бажаємо вам успіхів у навчанні та впевнені, що отримані знання стануть цінним доповненням до вашого професійного розвитку.
-
-
-        </p>
+       
          <p style="color: #34495e; font-size: 14px; margin-top: 30px; ">
        
 <strong>З найкращими побажаннями,</strong>

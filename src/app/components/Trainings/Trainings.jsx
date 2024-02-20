@@ -19,7 +19,7 @@ const train = [
 		time: '90',
 		teacher: 'lectorname',
 		data: '02.04.2024',
-		time: '11.00',
+		times: '11.00',
 	},
 	{
 		id: 20243,
@@ -31,7 +31,7 @@ const train = [
 		time: '90',
 		teacher: 'lectornameT',
 		data: '',
-		time: '',
+		times: '',
 	},
 ]
 
@@ -79,7 +79,7 @@ const Trainings = () => {
 							<div className='text-sm text-zinc-300 flex gap-3'>
 								<ClockIcon className='w-5 h-5' />
 								<span>
-									{t('duration')} - {e.time} {t('time')}.
+									{t('duration')} - {e.time} .
 								</span>
 							</div>
 							<hr className='border-zinc-800' />
@@ -96,7 +96,7 @@ const Trainings = () => {
 								<span>{t('data')} - </span>
 								<span className='uppercase'>{e.data}</span>
 								<ClockIcon className='w-5 h-5' />
-								<span className='uppercase'>{e.time}</span>
+								<span className='uppercase'>{e.times}</span>
 							</div>
 
 							<div className='flex items-center'>
