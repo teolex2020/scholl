@@ -17,22 +17,14 @@ import startimage from "../../../../public/assets/bg.png"
 
 const StartPage = ({ title, name, descriptions, button, info }) => {
 
-const test = async () => {
-	const response = await fetch('/api/email', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({}),
-	})
-}
+
 
 
 	return (
 		<AnimatePresence>
 			<motion.div className='container mx-auto elem bg-blur mb-10 py-5  lg:pb-24 mt-5 lg:mt-14 2xl:mt-24  relative rounded-xl max-w-[1346px]  '>
 				<div className='flex justify-around flex-col lg:flex-row items-center lg:gap-48 '>
-					<button onClick={()=>test()}>butttondsfdf</button>
+				
 					<motion.div
 						custom={1}
 						initial={{ scale: 0 }}
