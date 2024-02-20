@@ -129,6 +129,7 @@ const Payments = () => {
 
 		
 
+
 	return (
 		<div className='min-w-screen h-fit bg-transparent flex  justify-center px-5 mt-10 z-50'>
 			{loading && <Loader />}

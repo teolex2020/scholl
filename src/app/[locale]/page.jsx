@@ -19,7 +19,7 @@ const StartPage = dynamic(
 
 
 const data = (global).payload
-console.log("cach",data)
+
 
 	 unstable_setRequestLocale(locale)
 		const t = useTranslations('StartPage')
@@ -30,6 +30,7 @@ console.log("cach",data)
 					name={t('name')}
 					descriptions={t('descriptions')}
 					button={t('button')}
+					info={t('info')}
 				/>
 			</>
 		)

@@ -15,14 +15,24 @@ import startimage from "../../../../public/assets/bg.png"
 		subsets: ['latin'],
  })
 
-const StartPage = ({title, name, descriptions, button}) => {
+const StartPage = ({ title, name, descriptions, button, info }) => {
 
+const test = async () => {
+	const response = await fetch('/api/email', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({}),
+	})
+}
 
 
 	return (
 		<AnimatePresence>
 			<motion.div className='container mx-auto elem bg-blur mb-10 py-5  lg:pb-24 mt-5 lg:mt-14 2xl:mt-24  relative rounded-xl max-w-[1346px]  '>
 				<div className='flex justify-around flex-col lg:flex-row items-center lg:gap-48 '>
+					<button onClick={()=>test()}>butttondsfdf</button>
 					<motion.div
 						custom={1}
 						initial={{ scale: 0 }}
@@ -68,13 +78,13 @@ const StartPage = ({title, name, descriptions, button}) => {
 						}}
 						className='flex flex-1 h-full  flex-col px-5 text-center lg:text-left  gap-5 '
 					>
-					
-						<div className={` ${gentium.className} py-6   `}>
+						<div className={` ${gentium.className}   `}>
 							<p className='text-2xl'>{title}</p>{' '}
 							<p className='colorgold text-5xl '> {name}</p>
 						</div>
 						{descriptions}
 						<ButtonStartPage button={button} />
+						<div className='text-[12px]'>*{info}</div>
 					</motion.div>
 				</div>
 			</motion.div>

@@ -10,15 +10,14 @@ import {
 	StopCircleIcon, 
 } from '@heroicons/react/24/solid'
 import { Gentium_Book_Plus } from 'next/font/google'
-
 import Message from './Message'
 import { useTranslations } from 'next-intl'
 import GrowingTextArea from './Textarea'
-import Select from 'react-select'
+// import Select from 'react-select'
 import { prompts } from './prompt'
 import {useSelector, useDispatch} from "react-redux"
 import { Chats } from '@/store/features/counterSlice'
-import Selectbutton from './Selectbutton'
+// import Selectbutton from './Selectbutton'
 
 
 const gentium = Gentium_Book_Plus({
@@ -124,8 +123,8 @@ const active = useSelector((state) => state.counter.selectcourse)
 				<p>{t('title2')} </p>
 			</div>
 			<div className=' h-full w-full px-10 '>
-				<div className='w-fit'><Selectbutton/></div>
-				<div className='max-w-md '>
+				{/* <div className='w-fit'><Selectbutton/></div> */}
+				{/* <div className='max-w-md '>
 					<Select
 						placeholder={`${t('theme')}`}
 						defaultValue={selectedOption}
@@ -134,7 +133,7 @@ const active = useSelector((state) => state.counter.selectcourse)
 						className='text-black bg-black basic-single'
 						instanceId={'wsad123wqwe'} // виправляє помилку
 					/>
-				</div>
+				</div> */}
 				<div className='my-6 max-h-[400px]  lg:max-h-[550px] elem scroll overflow-y-scroll'>
 					{messages.length !== 0
 						? messages.map((e, i) => (
