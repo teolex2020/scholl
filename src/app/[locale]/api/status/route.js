@@ -4,7 +4,6 @@ import { initAdmin } from '@/firebase/db/firebaseAdmin'
 import nodemailer from 'nodemailer'
 require('dotenv').config()
 
-
 export async function POST(req) {
 	const username = process.env.NEXT_PUBLIC_PERSONAL_EMAIL
 	const password = process.env.NEXT_PUBLIC_BURNER_PASSWORD
@@ -59,7 +58,7 @@ export async function POST(req) {
          Будь ласка, очікуйте на посилання для участі у [назві курсу/тренінгу/зустрічі] на платформі Zoom, яке ми надішлемо вам за <strong style="color: #27ae60; margin-bottom: 5px; text-decoration: underline;"> 1-3 дні </strong> до початку заходу.
         </p>
          <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
-         З організаційних питань: тел. +380637893257, email: bortnikschool@gmail.com.  
+         З організаційних питань: email: bortnikschool@gmail.com.  
         </p>
          <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
          Для технічної підтримки: email: placestudyyip@gmail.com.
@@ -83,25 +82,32 @@ export async function POST(req) {
 
 	try {
 		await initAdmin()
-		await firestore().collection('order').doc(orderReference).update({
-			orderReference: orderReference,
-			reason: reason,
-			clientName: clientName,
-			processingDate: processingDate,
-		})
 
-		transporter.sendMail(mailOptions, (error, info) => {
-			if (error) {
-				console.error('Error sending email: ', error)
-			} else {
-				NextResponse.json('Email sent: ', info.response)
-			}
-		})
+		const docRef = firestore().collection('order').doc(orderReference)
+		const docSnap = await docRef.get()
 
-		return NextResponse.json(
-			{ message: 'Success: email was sent' },
-			{ status: 200 }
-		)
+		// console.log('docSnap', docSnap)
+
+		if (docSnap.data().orderReference) {
+			return NextResponse.json(
+				{ message: 'Email has already been sent' },
+				{ status: 200 }
+			)
+		} else {
+			await firestore().collection('order').doc(orderReference).update({
+				orderReference: orderReference,
+				reason: reason,
+				clientName: clientName,
+				processingDate: processingDate,
+			})
+
+			transporter.sendMail(mailOptions)
+
+			return NextResponse.json(
+				{ message: 'Success: email was sent' },
+				{ status: 200 }
+			)
+		}
 	} catch (error) {
 		return NextResponse.json({ error: error }, { status: 500 })
 	}

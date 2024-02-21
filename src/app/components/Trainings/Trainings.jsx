@@ -79,7 +79,7 @@ const Trainings = () => {
 							<div className='text-sm text-zinc-300 flex gap-3'>
 								<ClockIcon className='w-5 h-5' />
 								<span>
-									{t('duration')} - {e.time} .
+									{t('duration')} - {e.time} {t('tim')}
 								</span>
 							</div>
 							<hr className='border-zinc-800' />

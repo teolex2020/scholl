@@ -44,7 +44,7 @@ export async function POST(req) {
 
 		
 
-		console.log('signature', merchantSignature)
+
 		
 
 	 return NextResponse.json({ signature: merchantSignature })
