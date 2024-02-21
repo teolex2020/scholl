@@ -11,7 +11,7 @@ import { useRouter } from '@/navigation'
 const train = [
 	{
 		id: 20242,
-		image: '/assets/kill.png',
+		image: '/assets/kill.jpg',
 		title: 'title',
 		descriptions: `descriptions`,
 		price: '1100',
@@ -23,7 +23,7 @@ const train = [
 	},
 	{
 		id: 20243,
-		image: '/assets/prompt.png',
+		image: '/assets/prompt.jpg',
 		title: 'titleT',
 		descriptions: `descriptionsT`,
 		price: '1100',

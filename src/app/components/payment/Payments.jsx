@@ -9,7 +9,7 @@ import {
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import Image from 'next/image'
-import order from '../../../../public/assets/order.webp'
+import order from '../../../../public/assets/order.jpg'
 import { useSelector } from 'react-redux'
 import { useRouter } from '@/navigation'
 import { getDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'

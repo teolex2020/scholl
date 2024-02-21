@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
-import braimstorm from '../../../../public/assets/braimstorm.png'
+import braimstorm from '../../../../public/assets/braimstorm.jpg'
 
 
 const BrainStorm = () => {

@@ -13,7 +13,7 @@ import Cart from './Cart'
 import Lector from './Lector'
 import { useRouter } from '@/navigation'
 import course from "../../../../public/assets/course.png"
-import certificat from '../../../../public/assets/certificat.png'
+import certificat from '../../../../public/assets/certificat.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 
