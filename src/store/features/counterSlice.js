@@ -24,6 +24,7 @@ export const dataSlice = createSlice({
 	reducers: {
 		Authuser: (state, action) => {
 			state.authUser = action.payload
+			
 		},
 		MobileMenus: (state, action) => {
 			state.mobilemenu = !action.payload

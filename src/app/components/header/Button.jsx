@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import React from 'react'
 import { useRouter } from '@/navigation'
 import { useSelector, useDispatch } from 'react-redux'
 import Image from 'next/image'
@@ -10,8 +10,9 @@ import user from '../../../../public/assets/user.png'
 import { useTranslations } from 'next-intl'
 
 const Button = ({ font }) => {
-	const popupmenu = useSelector((state) => state.counter.popupmenu)
-	const authuser = useSelector((state) => state.counter.authUser)
+	const {popupmenu, authUser} = useSelector((state) => state.counter)
+	
+
 
 	const t = useTranslations('Header')
 
@@ -28,32 +29,31 @@ const Button = ({ font }) => {
 		<div className='relative '>
 			{popupmenu && <Popup />}
 
-			{	authuser ? (
-					<div
-						className={`border-2 rounded-3xl border-zinc-700/50 w-12 h-12 flex  bg-blur cursor-pointer relative`}
-						onClick={popup}
-					>
-						<Image
-							src={user}
-							fill
-							alt='user'
-							sizes='(min-width: 808px) 50vw, 100vw'
-							priority
-							className='object-cover'
-						/>
-						<div className='-bottom-1 -right-1 absolute border border-zinc-700/50 rounded-full bg-zinc-500'>
-							<ChevronDownIcon className='h-4 w-4 ' />
-						</div>
+			{authUser ? (
+				<div
+					className={`border-2 rounded-3xl border-zinc-700/50 w-12 h-12 flex  bg-blur cursor-pointer relative`}
+					onClick={popup}
+				>
+					<Image
+						src={user}
+						fill
+						alt='user'
+						sizes='(min-width: 808px) 50vw, 100vw'
+						priority
+						className='object-cover'
+					/>
+					<div className='-bottom-1 -right-1 absolute border border-zinc-700/50 rounded-full bg-zinc-500'>
+						<ChevronDownIcon className='h-4 w-4 ' />
 					</div>
-				) : (
-					<button
-						onClick={() => router.push('/login')}
-						className={`border-2 rounded-3xl border-zinc-700/50 px-10 py-2 flex  hover:bg-blur space-x-16 ${font} uppercase duration-300`}
-					>
-						<p className='duration-300  text-lg'>{t('button')}</p>
-					</button>
-				)
-			 }
+				</div>
+			) : (
+				<button
+					onClick={() => router.push('/login')}
+					className={`border-2 rounded-3xl border-zinc-700/50 px-10 py-2 flex  hover:bg-blur space-x-16 ${font} uppercase duration-300`}
+				>
+					<p className='duration-300  text-lg'>{t('button')}</p>
+				</button>
+			)}
 		</div>
 	)
 }

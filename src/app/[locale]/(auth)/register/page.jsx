@@ -16,12 +16,12 @@ import { useTranslations } from 'next-intl'
 
 const Register = () => {
 	const t = useTranslations('Login')
-	const id = useSelector((state) => state.counter.id)
+	const authUser = useSelector((state) => state.counter.authUser)
 	useEffect(() => {
-		if (id) {
+		if (authUser) {
 			redirect('/')
 		}
-	}, [id])
+	}, [authUser])
 
 	const [inputType, setInputType] = useState(true)
 
@@ -55,26 +55,32 @@ const Register = () => {
 							.max(64, 'Should be 64 chars maximum.')
 							.required('Your Name Is Required!'),
 						email: Yup.string()
-							.max(64, 'Should be 64 chars maximum.')
-							.email('Invalid email')
-							.required('Your Email Is Required!'),
+							.max(30, 'Must be 30 characters or less')
+							.email('Invalid email address')
+							.required('Please enter your email'),
 						password: Yup.string()
-							.required('No password provided.')
-							.min(8, 'Should be 8 chars minimum.'),
+							.required('Please enter your password')
+							.min(8, 'Should be 8 chars minimum.')
+							.matches(
+								/^(?=.*[a-zA-Z]).{8,}$/,
+								'Password must contain at least one Latin letter.'
+							),
 					})}
 					onSubmit={async (values, { setSubmitting, resetForm }) => {
 						let { email, password } = values
 						const { result, error } = await signUp(email, password)
 
 						if (error) {
-							return toast.error('User not found')
+							return toast.error(
+								'This email address is already in use by another account.'
+							)
 						}
-						// toast.success('Success Notification !')
+						toast.success('Success Notification !')
 						setSubmitting(false)
 						resetForm()
 						// else successful
 
-						return router.push('/')
+						return router.push('/login')
 					}}
 				>
 					<Form className='flex flex-col w-[300px] gap-5 lg:mt-32'>
@@ -83,6 +89,7 @@ const Register = () => {
 								{t('user')}
 							</p>
 							<Field
+								autocomplete='off'
 								name='name'
 								type='text'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'
@@ -96,6 +103,7 @@ const Register = () => {
 								{t('email')}
 							</p>
 							<Field
+								autocomplete='off'
 								name='email'
 								type='email'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'
@@ -119,6 +127,7 @@ const Register = () => {
 								)}
 							</div>
 							<Field
+								autocomplete='off'
 								name='password'
 								type={inputType ? 'password' : 'text'}
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'
@@ -163,6 +172,7 @@ const Register = () => {
 						<Link href='/privatpolicy'>
 							<span className='underline cursor-pointer'>{t('policy')}</span>
 						</Link>
+						<br />
 						<span> & </span>
 						<Link href='/publicofer'>
 							<span className='underline cursor-pointer'>{t('offer')}</span>

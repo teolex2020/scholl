@@ -49,7 +49,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 						alt='bg'
 						fill
 						priority={true}
-						className='object-cover opacity-[0.8%]  '
+						className='bg-cover opacity-[0.8%]  '
 					/>
 					{/* <Provider store={store}> */}
 					<Providers>

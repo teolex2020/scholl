@@ -34,20 +34,21 @@ const Login = () => {
 	const sign = async (values) => {
 		let { email, password } = values
 		const { result, error } = await signIn(email, password)
-		dispatch(Id(result?.user?.uid))
+		// dispatch(Id(result?.user?.uid))
 		if (error) {
-			console.log('erre', error)
-			return toast.error('User not login')
+			
+			return toast.error('Email/password accounts are not enabled')
 		}
-		toast.success('Success Notification !')
 
-		return router.push('/')
+		toast.success('Success Notification !')
+    
+		// return router.push('/')
 	}
 
 	const signupWithGoogle = () => {
 		signInWithPopup(auth, Providers)
 			.then((result) => {
-				dispatch(Id(result?.user?.uid))
+				// dispatch(Id(result?.user?.uid))
 
 				toast.success('Success Notification !')
 				return router.push('/')
@@ -72,7 +73,10 @@ const Login = () => {
 						password: Yup.string()
 							.required('Please enter your password')
 							.min(8, 'Should be 8 chars minimum.')
-							.matches(/[a-zA-Z]/, 'Only contain Latin letters.'),
+							.matches(
+								/^(?=.*[a-zA-Z]).{8,}$/,
+								'Password must contain at least one Latin letter.'
+							),
 					})}
 					onSubmit={sign}
 				>
@@ -82,9 +86,10 @@ const Login = () => {
 								{t('email')}
 							</p>
 							<Field
+								autocomplete='off'
 								name='email'
 								type='email'
-								className='bg-inherit border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-blue-200/80 decoration-transparent '
+								className='bg-[#11171c]  border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-blue-200/80 decoration-transparent '
 							/>
 							<ErrorMessage name='email'>
 								{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
@@ -105,6 +110,7 @@ const Login = () => {
 								)}
 							</div>
 							<Field
+								autocomplete='off'
 								type={inputType ? 'password' : 'text'}
 								name='password'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full group-hover:border-blue-200/80'
@@ -148,6 +154,7 @@ const Login = () => {
 						<Link href='/privatpolicy'>
 							<span className='underline cursor-pointer'> {t('policy')}</span>
 						</Link>
+						<br />
 						<span> & </span>
 						<Link href='/publicofer'>
 							<span className='underline cursor-pointer'>{t('offer')}</span>

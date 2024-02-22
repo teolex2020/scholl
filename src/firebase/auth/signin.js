@@ -6,6 +6,7 @@ const user = auth.currentUser
 console.log(user)
 
 export default async function signIn(email, password) {
+	
 	let result = null,
 		error = null
 	try {
