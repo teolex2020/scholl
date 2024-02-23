@@ -89,7 +89,7 @@ const Register = () => {
 								{t('user')}
 							</p>
 							<Field
-								autocomplete='off'
+								
 								name='name'
 								type='text'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'
@@ -103,7 +103,7 @@ const Register = () => {
 								{t('email')}
 							</p>
 							<Field
-								autocomplete='off'
+								
 								name='email'
 								type='email'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'
@@ -127,7 +127,7 @@ const Register = () => {
 								)}
 							</div>
 							<Field
-								autocomplete='off'
+								
 								name='password'
 								type={inputType ? 'password' : 'text'}
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'

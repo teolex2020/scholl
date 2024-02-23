@@ -4,7 +4,7 @@ import { initAdmin } from '@/firebase/db/firebaseAdmin'
 
 export async function POST(req) {
 	const {userId} = await req.json()
-	console.log('response :>> ', userId)
+	
 	try {
 		await initAdmin()
 		const firestore = getFirestore()
@@ -19,7 +19,7 @@ export async function POST(req) {
 			reason: link.data().reason,
 		}))
 
-		console.log('response :>> ', documents)
+		
 
 		return NextResponse.json({ data: documents }, { status: 200 })
 	} catch (error) {

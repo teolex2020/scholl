@@ -15,6 +15,7 @@ export const MyComponent = () => {
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			if (user) {
+				
 				dispatch(Loading(false))
 				dispatch(Authuser(!!user))
 				dispatch(Id(user?.uid))

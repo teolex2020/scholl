@@ -86,7 +86,7 @@ const Login = () => {
 								{t('email')}
 							</p>
 							<Field
-								autocomplete='off'
+								
 								name='email'
 								type='email'
 								className='bg-[#11171c]  border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-blue-200/80 decoration-transparent '
@@ -110,7 +110,7 @@ const Login = () => {
 								)}
 							</div>
 							<Field
-								autocomplete='off'
+								
 								type={inputType ? 'password' : 'text'}
 								name='password'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full group-hover:border-blue-200/80'

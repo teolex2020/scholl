@@ -3,8 +3,7 @@ import React from 'react'
 import { Link } from '@/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { useSelector, useDispatch } from 'react-redux'
-import { MobileMenus } from '@/store/features/counterSlice'
-
+import { MobileMenus, Authuser } from '@/store/features/counterSlice'
 
 import { getAuth, signOut } from 'firebase/auth'
 
@@ -38,21 +37,23 @@ const menu = [
 ]
 
 const MobileMenu = () => {
-	const mobilemenu = useSelector((state) => state.counter.mobilemenu)
-	const id = useSelector((state) => state.counter.id)
+	const { mobilemenu, authUser, id } = useSelector((state) => state.counter)
+
+	
 
 	const dispatch = useDispatch()
 	const locale = useLocale()
 	const t = useTranslations('Menu')
-		const b = useTranslations('Popup')
+	const b = useTranslations('Popup')
 
 	const singout = () => {
 		const auth = getAuth()
 		signOut(auth)
-		dispatch(MobileMenus(mobilemenu))
 			.then(() => {
-			
+				dispatch(MobileMenus(mobilemenu))
+				dispatch(Authuser(false))
 			})
+
 			.catch((error) => {
 				console.log(error)
 			})
@@ -79,7 +80,7 @@ const MobileMenu = () => {
 						</Link>
 					))}
 					<div className='relative '>
-						{id ? (
+						{authUser ? (
 							<div className={` cursor-pointer relative`}>
 								<Link href={`/cabinet/${id}`}>
 									<div
@@ -94,7 +95,7 @@ const MobileMenu = () => {
 									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-20 `}
 									onClick={() => singout()}
 								>
-									<div>{b('button')}</div>
+									<div>{b('button')} </div>
 								</div>
 							</div>
 						) : (

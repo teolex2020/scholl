@@ -13,7 +13,6 @@ const Popup = () => {
 	const dispatch = useDispatch()
 	const popupmenu = useSelector((state) => state.counter.popupmenu)
 	const id = useSelector((state) => state.counter.id)
-	
 
 	const popupRef = useRef()
 
@@ -32,9 +31,8 @@ const Popup = () => {
 		const auth = getAuth()
 		signOut(auth)
 			.then(() => {
-			
 				dispatch(PopupMenu(popupmenu))
-					dispatch(Authuser(false))
+				dispatch(Authuser(false))
 			})
 			.catch((error) => {
 				console.log(error)
