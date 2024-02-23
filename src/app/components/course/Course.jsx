@@ -12,7 +12,7 @@ import { useTranslations } from 'next-intl'
 import Cart from './Cart'
 import Lector from './Lector'
 import { useRouter } from '@/navigation'
-import course from "../../../../public/assets/course.png"
+import course from "../../../../public/assets/course.webp"
 import certificat from '../../../../public/assets/certificat.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'

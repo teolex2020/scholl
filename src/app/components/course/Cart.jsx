@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { ClockIcon, VideoCameraIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
-import course from '../../../../public/assets/course.png'
+import course from '../../../../public/assets/course.webp'
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/navigation'
 

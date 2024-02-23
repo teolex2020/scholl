@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import ButtonStartPage from '../helper/ButtonStartPage'
 import Image from 'next/image'
 import { Gentium_Book_Plus } from 'next/font/google'
-import startimage from "../../../../public/assets/bg.png"
+import startimage from "../../../../public/assets/bg.webp"
 
 
 
