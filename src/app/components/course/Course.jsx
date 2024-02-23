@@ -189,23 +189,23 @@ router.push('/payment')
 						</div>
 						<div>
 							<button
-								className=' mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-lg lg:text-2xl px-10 w-48'
+								className=' mt-10 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:scale-105 bg-blur z-10  font-semibold lg:text-2xl px-10 w-48'
 								onClick={() => dataOrder()}
 							>
 								{t('button')}
 							</button>
 						</div>
 					</div>
-					<div className='flex-2 '>
-						<div className='w-80 h-64 mx-auto lg:w-[500px] lg:h-80 flex justify-center relative mt-10 '>
-							<div className='absolute  bg-blue-400 w-96 h-full blur-3xl rounded-full opacity-[20%]'></div>
+					<div className='flex-1 '>
+						<div className='w-72 h-64 mx-auto lg:w-[400px] lg:h-80 flex justify-center relative mt-10 '>
+							<div className='absolute  bg-blue-400/30 w-96 h-full blur-3xl rounded-full'></div>
 
 							<Image
 								src={course}
 								fill
 								sizes='(min-width: 808px) 50vw, 100vw'
 								alt='course'
-								className='rounded-full, object-cover'
+								className='rounded-full, object-cover opacity-80'
 								priority
 							/>
 						</div>
