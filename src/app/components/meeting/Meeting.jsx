@@ -78,7 +78,7 @@ const Meeting = () => {
 		<div className='flex  items-center flex-col  px-[5%]'>
 			<div className='text-2xl lg:text-3xl py-10'>{t('title')} *</div>
 			<div className='flex gap-10 flex-col lg:flex-row  w-full'>
-				<div className='flex-1 justify-center flex flex-col  '>
+				<div className='flex-1 justify-center flex flex-col items-center '>
 					<div className='  w-96 lg:w-full h-48 lg:h-96 relative   '>
 						<Image
 							src={meetting}
@@ -89,7 +89,7 @@ const Meeting = () => {
 							priority
 						/>
 					</div>{' '}
-					<div className='z-50 mt-5'>
+					<div className='z-10 mt-5 w-full'>
 						<button
 							className='w-full  border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex    duration-300 hover:bg-blur z-50 text-lg uppercase px-10 '
 							onClick={() => dataOrder()}

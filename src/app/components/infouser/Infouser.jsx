@@ -53,32 +53,50 @@ const Infouser = () => {
 	})
 
 	useEffect(() => {
-		if (!authUser) {
-			router.push('/login')
-		} else if (id) {
-			const fetchData = async () => {
-				const userDocRef = doc(db, 'users', id)
-				const docSnap = await getDoc(userDocRef)
-				if (docSnap.exists()) {
-					setData(docSnap.data())
+		if (!data) {
+			async function fetchData() {
+				const response = await fetch(`/api/userInfo`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						userId: id,
+					}),
+				})
+
+				if (response.ok) {
+					const { data } = await response.json()
+
+					setData(data)
 				} else {
-					console.log('No such user!')
+					console.error('Error')
 				}
 			}
+
 			fetchData()
 		}
-	}, [authUser, id, router])
+	}, [id, data])
 
 	const handleAdd = async (values) => {
 		if (!id) return
 		setLoading(true)
-		const userDocRef = doc(db, 'users', id)
-		const userData = { ...values, timeStamp: serverTimestamp(), id }
 
 		try {
-			await setDoc(userDocRef, userData, { merge: true })
-			toast.success('Success!')
-			setTimeout(() => router.back(), 1000)
+			const response = await fetch('/api/addUser', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ ...values, id }),
+			})
+
+			if (response.ok) {
+				toast.success('Success!')
+				setTimeout(() => router.back(), 1000)
+			} else {
+				throw new Error('Failed to add user.')
+			}
 		} catch (error) {
 			toast.error('Error adding user.')
 		} finally {

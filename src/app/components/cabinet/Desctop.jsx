@@ -26,7 +26,7 @@ const Desctop = () => {
 
 				setOrderData(data)
 			} else {
-				console.error('Помилка при data')
+				console.error('Error')
 			}
 		}
 

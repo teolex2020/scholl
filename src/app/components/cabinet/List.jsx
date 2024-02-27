@@ -18,47 +18,46 @@ import ImagePopup from './ImagePopup'
 import { Avatar } from '@/store/features/counterSlice'
 
 const List = () => {
-	
 	const { avatar, id, authUser } = useSelector((state) => state.counter)
 	const dispatch = useDispatch()
-	const [data, setData] = useState("")
-
+	const [data, setData] = useState('')
+	const [orderdata, setOrderData] = useState()
 
 	const t = useTranslations('Cabinet')
 	const router = useRouter()
 
-
-
-
 	useEffect(() => {
-		if (!authUser){
+		if (!authUser) {
 			router.push('/login')
 		}
 	})
 
-
-
 	useEffect(() => {
-		if (id?.length !== 0) {
-			const fetchUserData = async () => {
-				const userDocRef = doc(db, 'users', id)
+		if(!orderdata){
+			async function fetchData() {
+				const response = await fetch(`/api/userInfo`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						userId: id,
+					}),
+				})
 
-				try {
-					const docSnap = await getDoc(userDocRef)
+				if (response.ok) {
+					const { data } = await response.json()
 
-					if (docSnap.exists()) {
-						setData(docSnap.data())
-					} else {
-						console.log('No such user!')
-					}
-				} catch (error) {
-					console.error('Error fetching user: ', error)
+					setOrderData(data)
+				} else {
+					console.error('Error')
 				}
 			}
 
-			fetchUserData()
+			fetchData()
 		}
-	}, [id, avatar])
+		
+	}, [id, orderdata])
 
 	const changeImage = () => {
 		dispatch(Avatar(avatar))
@@ -80,9 +79,9 @@ const List = () => {
 						>
 							<CameraIcon className='h-8 w-8 fill-black' />
 						</div>
-						{data?.img ? (
+						{orderdata?.img ? (
 							<Image
-								src={data?.img}
+								src={orderdata?.img}
 								fill
 								alt='nonimage'
 								className='rounded-full, object-cover rounded-full '
@@ -103,8 +102,8 @@ const List = () => {
 				</div>
 				<div className='flex flex-col gap-5'>
 					<div className='flex gap-3 text-xl'>
-						<p>{data?.lastName ? data?.lastName : 'Your'}</p>
-						<p>{data?.firstName ? data?.firstName : 'Name'}</p>
+						<p>{orderdata?.lastName ? orderdata?.lastName : 'Your'}</p>
+						<p>{orderdata?.firstName ? orderdata?.firstName : 'Name'}</p>
 					</div>
 
 					<div className='flex gap-3 text-sm'>
@@ -112,7 +111,7 @@ const List = () => {
 							<EnvelopeOpenIcon className='h-5 w-5 ' />
 						</div>
 						<div className=''>
-							<p>{data?.email ? data?.email : 'email@email.com'}</p>
+							<p>{orderdata?.email ? orderdata?.email : 'email@email.com'}</p>
 						</div>
 					</div>
 					<div className='flex gap-3 text-sm'>
@@ -120,7 +119,7 @@ const List = () => {
 							<PhoneIcon className='h-5 w-5 ' />
 						</div>
 						<div className=''>
-							<p>{data?.phone ? data?.phone : '099-999-99-99'}</p>
+							<p>{orderdata?.phone ? orderdata?.phone : '099-999-99-99'}</p>
 						</div>
 					</div>
 				</div>

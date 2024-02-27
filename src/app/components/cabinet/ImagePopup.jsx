@@ -65,26 +65,30 @@ const ImagePopup = () => {
 	}
 
 	useEffect(() => {
-		if (id?.length !== 0) {
-			const fetchUserData = async () => {
-				const userDocRef = doc(db, 'users', id)
+		if (!data) {
+			async function fetchData() {
+				const response = await fetch(`/api/userInfo`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						userId: id,
+					}),
+				})
 
-				try {
-					const docSnap = await getDoc(userDocRef)
+				if (response.ok) {
+					const { data } = await response.json()
 
-					if (docSnap.exists()) {
-						setData(docSnap.data())
-					} else {
-						console.log('No such user!')
-					}
-				} catch (error) {
-					console.error('Error fetching user: ', error)
+					setData(data)
+				} else {
+					console.error('Error')
 				}
 			}
 
-			fetchUserData()
+			fetchData()
 		}
-	}, [id])
+	}, [id, data])
 
 	const initialValues = {
 		myFile: '',
