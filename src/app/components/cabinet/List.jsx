@@ -85,7 +85,7 @@ const List = () => {
 								fill
 								alt='nonimage'
 								className='rounded-full, object-cover rounded-full '
-								priority
+								loading='lazy'
 								sizes='(min-width: 808px) 50vw, 100vw'
 							/>
 						) : (

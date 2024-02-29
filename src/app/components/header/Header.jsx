@@ -39,7 +39,7 @@ useEffect(() => {
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
 							quality={70}
-							priority
+							loading='lazy'
 						/>
 					</div>
 				</Link>

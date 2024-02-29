@@ -2,10 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/navigation'
-import facebook from '../../../../public/assets/Facebook.svg'
-import linkedln from '../../../../public/assets/linkedin.svg'
-import youtube from '../../../../public/assets/YouTube.svg'
-import twitter from '../../../../public/assets/twitter.svg'
+import facebook from '../../../../public/assets/facebook.png'
+import linkedln from '../../../../public/assets/linkedin.png'
+import youtube from '../../../../public/assets/youtube.png'
+import twitter from '../../../../public/assets/twitter.png'
 
 const socialLinks = [
 	{
@@ -51,7 +51,7 @@ const Footer = () => {
 					</Link>
 				</div>
 			</div>
-			<div className='flex flex-row space-x-6 justify-center'>
+			<div className='flex flex-row space-x-6 justify-center img'>
 				{socialLinks.map(({ name, url, image }) => (
 					<a
 						key={name}

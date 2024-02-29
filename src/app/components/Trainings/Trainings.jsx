@@ -68,7 +68,7 @@ const Trainings = () => {
 							className='object-cover rounded-lg'
 							sizes='(min-width: 808px)'
 							quality={80}
-							priority
+							loading='lazy'
 						/>
 					</div>
 					<div className='flex flex-col justify-between flex-grow'>
