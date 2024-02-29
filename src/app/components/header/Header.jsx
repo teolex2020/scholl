@@ -10,7 +10,7 @@ import Button from './Button.jsx'
 import MobileButon from './MobileButon'
 import MobileMenu from './MobileMenu'
 import { useSelector } from 'react-redux'
-import logo from "../../../../public/assets/logo.png"
+import logo from "../../../../public/assets/logo.webp"
 
 const gentium = Gentium_Book_Plus({
 	weight: '400',
@@ -19,7 +19,7 @@ const gentium = Gentium_Book_Plus({
 
 const Header = () => {
 	const mobilemenu = useSelector((state) => state.counter.mobilemenu)
-	const authuser = useSelector((state) => state.counter.authUser)
+	
  const [isAuthorized, setIsAuthorized] = useState(false)
 useEffect(() => {
 	setIsAuthorized(true)
@@ -38,7 +38,7 @@ useEffect(() => {
 							alt='logo '
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
-							className='object-cover'
+							quality={70}
 							priority
 						/>
 					</div>

@@ -7,7 +7,7 @@ import {
 	PaperAirplaneIcon,
 	ArrowLeftIcon,
 	ArrowPathIcon,
-	StopCircleIcon, 
+	StopCircleIcon, XMarkIcon
 } from '@heroicons/react/24/solid'
 import { Gentium_Book_Plus } from 'next/font/google'
 import Message from './Message'
@@ -15,10 +15,9 @@ import { useTranslations } from 'next-intl'
 import GrowingTextArea from './Textarea'
 // import Select from 'react-select'
 import { prompts } from './prompt'
-import {useSelector, useDispatch} from "react-redux"
+import { useSelector, useDispatch } from 'react-redux'
 import { Chats } from '@/store/features/counterSlice'
 // import Selectbutton from './Selectbutton'
-
 
 const gentium = Gentium_Book_Plus({
 	weight: '400',
@@ -27,17 +26,14 @@ const gentium = Gentium_Book_Plus({
 
 const Chat = ({ lang }) => {
 	const dispatch = useDispatch()
-	
-	const [selectedOption, setSelectedOption] = useState()
-	const chat = useSelector((state) => state.counter.chat)
-const active = useSelector((state) => state.counter.selectcourse)
 
+	// const [selectedOption, setSelectedOption] = useState()
+	const {chat, active} = useSelector((state) => state.counter)
+	
 
 	const prompt = useMemo(() => {
 		return prompts.find((item) => item.id === lang)?.prompt
 	}, [lang])
-
-	
 
 	const {
 		messages,
@@ -82,10 +78,8 @@ const active = useSelector((state) => state.counter.selectcourse)
 	return (
 		<div
 			className={` mx-auto max-w-md w-full lg:min-w-[450px] h-full  flex flex-col items-center justify-center gap-5 overflow-auto fixed bottom-0 right-0 bg-[#12181c] z-[100] border-l-2 border-zinc-800 ${
-				chat
-					? 'transition duration-700 ease-in-out translate-x-[100%] '
-					: 'transition duration-700 ease-in-out translate-x-[0%]'
-			}`}
+				chat ? 'translate-x-[100%]' : 'translate-x-[0%]'
+			} transition duration-700 ease-in-out`}
 		>
 			<ToastContainer position='top-right' autoClose={1000} />
 			<div
@@ -93,26 +87,10 @@ const active = useSelector((state) => state.counter.selectcourse)
 				onClick={buttonpopup}
 			>
 				<button
-					className={` -5 pr-2 ${
-						chat
-							? 'rotate-0 transition duration-700 ease-in-out'
-							: 'rotate-180 transition duration-700 ease-in-out'
-					}`}
+					className={` pr-2 flex items-center`}
 				>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						fill='none'
-						viewBox='0 0 24 24'
-						strokeWidth={1.5}
-						stroke='currentColor'
-						className='w-8 h-8'
-					>
-						<path
-							strokeLinecap='round'
-							strokeLinejoin='round'
-							d='M6 18 18 6M6 6l12 12'
-						/>
-					</svg>
+					<XMarkIcon className='h-8 w-9 stroke-slate-100 fill-slate-100 stroke-[1px] ' />
+					Close
 				</button>
 			</div>
 
@@ -183,7 +161,7 @@ const active = useSelector((state) => state.counter.selectcourse)
 							type='submit'
 							className='relative   py-2 text-[#a1a1a1] text-base   rounded-r-md  hover:text-white w-20  flex justify-center items-center '
 						>
-							{' '}
+					
 							{isLoading ? (
 								<div className='loader  '></div>
 							) : (
