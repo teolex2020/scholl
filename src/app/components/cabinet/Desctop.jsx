@@ -77,7 +77,7 @@ const Desctop = () => {
 						<tr className=' h-20'>
 							<td className=' text-sm'></td>
 							<td className='w-32 text-center'>
-								<div className='bg-green-700 text-sm rounded-sm px-2 py-1'></div>
+								<div className=' text-sm rounded-sm px-2 py-1'></div>
 							</td>
 						</tr>
 					</tbody>

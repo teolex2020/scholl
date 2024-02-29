@@ -1,16 +1,13 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
-const Trainings = dynamic(
-	() => import('@/app/components/Trainings/Trainings.jsx'),
-	{
-		loading: () => <div className='w-full text-center '></div>,
-	}
-)
+
+import Trainings from '@/app/components/Trainings/Trainings'
 
 const page = () => {
-  return (
-    <div><Trainings/></div>
-  )
+	return (
+		<div>
+			<Trainings />
+		</div>
+	)
 }
 
 export default page

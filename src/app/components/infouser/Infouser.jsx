@@ -4,7 +4,7 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { useSelector } from 'react-redux'
-import { getDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'
+
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/navigation'
@@ -55,15 +55,23 @@ const Infouser = () => {
 	useEffect(() => {
 		if (!data) {
 			async function fetchData() {
-				const response = await fetch(`/api/userInfo`, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
+				const response = await fetch(
+					`/api/userInfo`,
+					{
+						cache: 'only-if-cached',
+						mode: 'same-origin',
+						signal: controller.signal,
 					},
-					body: JSON.stringify({
-						userId: id,
-					}),
-				})
+					{
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({
+							userId: id,
+						}),
+					}
+				)
 
 				if (response.ok) {
 					const { data } = await response.json()
