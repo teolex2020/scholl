@@ -1,5 +1,3 @@
-
-
 const withNextIntl = require('next-intl/plugin')()
 
 /** @type {import('next').NextConfig} */
@@ -50,8 +48,6 @@ const nextConfig = withNextIntl({
 				hostname: 'res.cloudinary.com',
 				pathname: '**',
 			},
-			
-			
 		],
 	},
 })

@@ -11,15 +11,12 @@ import { auth, Providers } from '../../../../firebase/config.js'
 import { signInWithPopup } from 'firebase/auth'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useSelector, useDispatch } from 'react-redux'
-import { Id } from '@/store/features/counterSlice'
+import { useSelector } from 'react-redux'
 import { useTranslations } from 'next-intl'
 
-const Login = () => {	
+const Login = () => {
 	const t = useTranslations('Login')
-	const authUser= useSelector((state) => state.counter.authUser)
-
-	const dispatch = useDispatch()
+	const authUser = useSelector((state) => state.counter.authUser)
 
 	useEffect(() => {
 		if (authUser) {
@@ -34,22 +31,17 @@ const Login = () => {
 	const sign = async (values) => {
 		let { email, password } = values
 		const { result, error } = await signIn(email, password)
-		// dispatch(Id(result?.user?.uid))
+
 		if (error) {
-			
 			return toast.error('Email/password accounts are not enabled')
 		}
 
 		toast.success('Success Notification !')
-    
-		// return router.push('/')
 	}
 
 	const signupWithGoogle = () => {
 		signInWithPopup(auth, Providers)
 			.then((result) => {
-				// dispatch(Id(result?.user?.uid))
-
 				toast.success('Success Notification !')
 				return router.push('/')
 			})
@@ -110,7 +102,6 @@ const Login = () => {
 								)}
 							</div>
 							<Field
-								
 								type={inputType ? 'password' : 'text'}
 								name='password'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full group-hover:border-blue-200/80'

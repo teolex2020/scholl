@@ -18,8 +18,8 @@ const train = [
 		currency: '₴',
 		time: '90',
 		teacher: 'lectorname',
-		data: '02.04.2024',
-		times: '11.00',
+		data: '03.04.2024',
+		times: '19.00',
 	},
 	{
 		id: 20243,
