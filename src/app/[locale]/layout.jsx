@@ -24,7 +24,7 @@ export async function generateMetadata(){
       icon: '/assets/favicon-32x32.png'},
 	
 		  title: {
-      default:'School'}
+      default:'School of Political Analysis by Ruslan Bortnik'}
 		 }
 }
 

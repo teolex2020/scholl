@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/navigation'
-import { db } from '@/firebase/config'
 import Loader from '../Loader/Loader'
+import withAuth from '@/lib/auth/whithAuth'
 
 // Custom Input Field Component
 const CustomField = ({ label, name, type }) => (
@@ -48,9 +48,7 @@ const Infouser = () => {
 	const router = useRouter()
 	const [loading, setLoading] = useState(false)
 
-	useEffect(() => {
-		authUser !== true && router.push('/login')
-	})
+	
 
 	useEffect(() => {
 		if (!data) {
@@ -176,4 +174,4 @@ const Infouser = () => {
 	)
 }
 
-export default Infouser
+export default withAuth(Infouser)

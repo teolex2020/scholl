@@ -16,6 +16,7 @@ export async function POST(req) {
 		clientName,
 		processingDate,
 		email,
+		amount,
 		userdata,
 	} = data
 
@@ -99,6 +100,7 @@ export async function POST(req) {
 				reason: reason,
 				clientName: clientName,
 				processingDate: processingDate,
+				amount: amount,
 			})
 
 			transporter.sendMail(mailOptions)

@@ -8,29 +8,22 @@ import {
 	EnvelopeOpenIcon,
 	CameraIcon,
 } from '@heroicons/react/24/solid'
-
-import { doc, getDoc } from 'firebase/firestore'
-import { db } from '@/firebase/config'
 import { useSelector, useDispatch } from 'react-redux'
 import { useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import ImagePopup from './ImagePopup'
 import { Avatar } from '@/store/features/counterSlice'
+import withAuth from '@/lib/auth/whithAuth'
 
 const List = () => {
-	const { avatar, id, authUser } = useSelector((state) => state.counter)
+	const { avatar, id } = useSelector((state) => state.counter)
 	const dispatch = useDispatch()
-	const [data, setData] = useState('')
+
 	const [orderdata, setOrderData] = useState()
 
 	const t = useTranslations('Cabinet')
 	const router = useRouter()
 
-	useEffect(() => {
-		if (!authUser) {
-			router.push('/login')
-		}
-	})
 
 	useEffect(() => {
 		if(!orderdata){
@@ -148,4 +141,4 @@ const List = () => {
 	)
 }
 
-export default List
+export default withAuth(List)

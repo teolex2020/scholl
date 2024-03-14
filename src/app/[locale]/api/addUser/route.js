@@ -4,7 +4,7 @@ import { initAdmin } from '@/firebase/db/firebaseAdmin'
 
 export async function POST(req) {
 	const { id, firstName, lastName, phone, email } = await req.json()
-console.log('id', id)
+
 	try {
 		await initAdmin()
 	const firestore = getFirestore()
