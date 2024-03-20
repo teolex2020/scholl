@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation'
 import Loader from '../Loader/Loader'
 import withAuth from '@/lib/auth/whithAuth'
 
+
 // Custom Input Field Component
 const CustomField = ({ label, name, type }) => (
 	<div className='relative group'>
@@ -43,24 +44,20 @@ const validationSchema = Yup.object({
 })
 
 const Infouser = () => {
+	const [formdata, setFormdata] = useState(() => Date.now())
 	const { id, authUser } = useSelector((state) => state.counter)
 	const [data, setData] = useState()
 	const router = useRouter()
 	const [loading, setLoading] = useState(false)
 
-	
+
 
 	useEffect(() => {
 		if (!data) {
 			async function fetchData() {
 				const response = await fetch(
 					`/api/userInfo`,
-					{
-						cache: 'only-if-cached',
-						mode: 'same-origin',
-						signal: controller.signal,
-					},
-					{
+										{
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json',
@@ -94,7 +91,7 @@ const Infouser = () => {
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({ ...values, id }),
+				body: JSON.stringify({ ...values, id, data: formdata }),
 			})
 
 			if (response.ok) {
