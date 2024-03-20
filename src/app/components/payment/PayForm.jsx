@@ -68,7 +68,7 @@ const PaymentPage = ({
 				{/* <input name='returnUrl' value={returnUrl} readOnly type='hidden' /> */}
 				<input
 					name='serviceUrl'
-					value={`${url}/${locale}/api/status`}
+					value={`https://www.bortnikshool.com/${locale}/api/status`}
 					readOnly
 					type='hidden'
 				/>
