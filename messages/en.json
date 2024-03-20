@@ -139,6 +139,6 @@
 		"button": "Proceed to Payment",
 		"button1": "Cancel Order",
 		"corect": "The data is correct",
-		"notcorect": "Is the data correct?"
+		"notcorect": "Is the data correct? (Confirm)"
 	}
 }

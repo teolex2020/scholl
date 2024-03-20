@@ -1,4 +1,5 @@
 import React from 'react'
+import Markdown from 'react-markdown'
 
 const Message = ({ role, content }) => {
 	return (
@@ -15,7 +16,7 @@ const Message = ({ role, content }) => {
 					role === 'user' ? 'bg-[#292e35]' : 'bg-[#5f634c]'
 				} p-3 rounded-md`}
 			>
-				{content}
+				<Markdown>{content}</Markdown>
 			</div>
 		</div>
 	)
