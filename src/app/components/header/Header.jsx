@@ -12,6 +12,9 @@ import MobileMenu from './MobileMenu'
 import { useSelector } from 'react-redux'
 import logo from "../../../../public/assets/logo.webp"
 
+
+
+
 const gentium = Gentium_Book_Plus({
 	weight: '400',
 	subsets: ['latin'],
@@ -45,11 +48,15 @@ useEffect(() => {
 				</Link>
 				<MobileButon />
 				<Menu />
+				<div className='flex  justify-center'>
+					{' '}
+					<Language />
+				</div>
 
-				<Language />
-				<div className='lg:flex hidden z-30 items-center mx-5 '>
+				<div className='lg:flex hidden z-30 items-center  mx-5 '>
 					<Button font={gentium.className} />
 				</div>
+				
 			</div>
 
 			<hr className='opacity-10' />

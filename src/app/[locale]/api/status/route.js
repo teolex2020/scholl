@@ -89,7 +89,7 @@ export async function POST(req) {
 
 		// console.log('docSnap', docSnap)
 
-		if (docSnap.data().orderReference) {
+		if (docSnap?.data().reason==="Ok") {
 			return NextResponse.json(
 				{ message: 'Email has already been sent' },
 				{ status: 200 }
@@ -103,7 +103,7 @@ export async function POST(req) {
 				amount: amount,
 			})
 
-			transporter.sendMail(mailOptions)
+			// transporter.sendMail(mailOptions)
 
 			return NextResponse.json(
 				{ message: 'Success: email was sent' },

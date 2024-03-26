@@ -5,18 +5,20 @@ import { initAdmin } from '@/firebase/db/firebaseAdmin'
 export async function POST(req) {
 	const {userId} = await req.json()
 	
-	
+		
 	try {
 		await initAdmin()
 		const firestore = getFirestore()
 		const linkSnapshot = await firestore
 			.collection('users')
-			.doc(userId)
+			.where('id', '==', userId)
 			.get()
+
+				
 
 		if (!linkSnapshot.empty) {
 			// Припускаємо, що id унікальний, тому беремо перший документ
-			const userDoc = linkSnapshot.data()
+			const userDoc = linkSnapshot.docs[0].data()
 
 	
 

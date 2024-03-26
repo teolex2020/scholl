@@ -66,6 +66,7 @@ const Footer = () => {
 							fill
 							priority
 							className='object-contain'
+							sizes='(min-width: 808px) 50vw, 100vw'
 						/>
 					</a>
 				))}
