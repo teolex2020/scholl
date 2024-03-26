@@ -7,8 +7,7 @@ require('dotenv').config()
 export async function POST(req) {
 	const username = process.env.NEXT_PUBLIC_PERSONAL_EMAIL
 	const password = process.env.NEXT_PUBLIC_BURNER_PASSWORD
-
-	const data = await req.json()
+	const emailSentStatus = 'emailSent'
 
 	const {
 		orderReference,
@@ -18,7 +17,7 @@ export async function POST(req) {
 		email,
 		amount,
 		userdata,
-	} = data
+	} = await req.json()
 
 	const transporter = nodemailer.createTransport({
 		service: 'Gmail',
@@ -85,31 +84,33 @@ export async function POST(req) {
 		await initAdmin()
 
 		const docRef = firestore().collection('order').doc(orderReference)
-		const docSnap = await docRef.get()
+		const orderDocSnap = await docRef.get()
 
-		// console.log('docSnap', docSnap)
-
-		if (docSnap?.data().reason==="Ok") {
+		// Check if the email has already been sent.
+		if (orderDocSnap.exists && orderDocSnap.data()[emailSentStatus]) {
 			return NextResponse.json(
 				{ message: 'Email has already been sent' },
 				{ status: 200 }
 			)
-		} else {
-			await firestore().collection('order').doc(orderReference).update({
-				orderReference: orderReference,
-				reason: reason,
-				clientName: clientName,
-				processingDate: processingDate,
-				amount: amount,
-			})
-
-			// transporter.sendMail(mailOptions)
-
-			return NextResponse.json(
-				{ message: 'Success: email was sent' },
-				{ status: 200 }
-			)
 		}
+
+		await docRef.update(
+			{
+				reason,
+				clientName,
+				processingDate,
+				amount,
+				[emailSentStatus]: true, // Set the email sent flag to true.
+			},
+			{ merge: true }
+		)
+
+		// Send email
+		transporter.sendMail(mailOptions)
+		return NextResponse.json(
+			{ message: 'Success: email was sent' },
+			{ status: 200 }
+		)
 	} catch (error) {
 		return NextResponse.json({ error: error }, { status: 500 })
 	}

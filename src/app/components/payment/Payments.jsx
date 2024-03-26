@@ -112,6 +112,7 @@ const Payments = () => {
 			orderTitle: orderTitle,
 			timeStamp: serverTimestamp(),
 			id: id,
+			emailSent: false,
 		}
 
 		try {
