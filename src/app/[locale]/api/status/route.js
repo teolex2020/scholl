@@ -104,9 +104,11 @@ export async function POST(req) {
 			},
 			{ merge: true }
 		)
-
-		// Send email
-		// transporter.sendMail(mailOptions)
+if(reason === "Ok") {
+	// Send email
+	transporter.sendMail(mailOptions)
+}
+	
 		return NextResponse.json(
 			{ message: 'Success: email was sent' },
 			{ status: 200 }
