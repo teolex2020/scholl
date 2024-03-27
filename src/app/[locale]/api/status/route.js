@@ -19,6 +19,13 @@ export async function POST(req) {
 		userdata,
 	} = await req.json()
 
+	if (reason === 'Cardholder session expired') {
+		return NextResponse.json(
+			{ error: 'Cardholder session expired' },
+			{ status: 400 }
+		)
+	}
+
 	const transporter = nodemailer.createTransport({
 		service: 'Gmail',
 		host: 'smtp.gmail.com',
