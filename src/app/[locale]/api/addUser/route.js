@@ -8,7 +8,7 @@ export async function POST(req) {
 	try {
 		await initAdmin()
 		const firestore = getFirestore()
-		const user = await firestore.collection('users').doc(id).set(
+		const user = await firestore.collection('users').doc(id).update(
 			{
 				firstName,
 				lastName,
