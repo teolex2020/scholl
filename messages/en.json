@@ -130,7 +130,9 @@
 		"titleT": "Prompt Engineering or How to Formulate Queries Correctly",
 		"descriptionsT": "Prompt Engineering is a critical skill in working with generative artificial intelligence models like GPT-3 and GPT-4. It's the art of formulating queries or 'prompts' that guide the model towards the desired outcome. Effective Prompt Engineering requires an understanding of how the model interprets input data and the linguistic structures it uses for generating responses. This may include techniques such as providing context, choosing the right tone and style, and structuring the query in a way that directs the model to specific types of responses or formats. The goal of Prompt Engineering is to create queries that minimize misinterpretation and maximize the usefulness and accuracy of the results.",
 		"lectornameT": "Oleksandr Tepliuk",
-		"data": "Date"
+		"data": "Date",
+		"more": "More",
+		"less": "Less"
 	},
 	"Order": {
 		"title": "Your Order:",

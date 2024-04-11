@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import ButtonStartPage from '../helper/ButtonStartPage'
+import ButtonStartPage from '../ui/ButtonStartPage'
 import Image from 'next/image'
 import { Gentium_Book_Plus } from 'next/font/google'
 import startimage from "../../../../public/assets/bg.webp"

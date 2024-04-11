@@ -1,12 +1,15 @@
-"use client"
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { ClockIcon, AcademicCapIcon, CalendarIcon } from '@heroicons/react/24/solid'
+import {
+	ClockIcon,
+	AcademicCapIcon,
+	CalendarIcon,
+} from '@heroicons/react/24/solid'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import { useRouter } from '@/navigation'
-
 
 const train = [
 	{
@@ -35,30 +38,57 @@ const train = [
 	},
 ]
 
-
-
 const Trainings = () => {
 	const { authUser } = useSelector((state) => state.counter)
-		const router = useRouter()
+	const router = useRouter()
 	const t = useTranslations('BortnikTrain')
 	const dispatch = useDispatch()
 
-		const dataOrder = (price, title, id) => {
+	const dataOrder = (price, title, id) => {
 		if (!authUser) {
 			router.push('/login')
 		}
-			dispatch(OrderPrice(price))
-			dispatch(OrderTitle(title))
-			dispatch(OrderId(id))
-			router.push('/payment')
+		dispatch(OrderPrice(price))
+		dispatch(OrderTitle(title))
+		dispatch(OrderId(id))
+		router.push('/payment')
+	}
+	const [isMobileDevice, setIsMobileDevice] = useState(false)
+	const [expandedDescriptions, setExpandedDescriptions] = useState({})
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobileDevice(window.matchMedia('(max-width: 767px)').matches)
 		}
 
+		handleResize()
+		window.addEventListener('resize', handleResize)
+
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [])
+
+	const toggleExpanded = (id) => {
+		setExpandedDescriptions((prevState) => ({
+			...prevState,
+			[id]: !prevState[id],
+		}))
+	}
+
+	const truncateDescription = (description) => {
+		const words = description.split(' ')
+		return `${words.slice(0, 10).join(' ')}...`
+	}
+	
+
+
 	return (
-		<div className='h-full flex flex-col  items-center lg:items-start lg:justify-between container mx-auto relative mt-10 p-4 gap-10'>
+		<div className='h-full flex flex-col  items-center lg:items-start lg:justify-between container mx-auto relative mt-10 p-4 gap-10 '>
 			{train.map((e, i) => (
 				<div
 					key={i}
-					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur'
+					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur w-full '
 				>
 					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mb-4 lg:mb-0'>
 						<Image
@@ -83,7 +113,27 @@ const Trainings = () => {
 								</span>
 							</div>
 							<hr className='border-zinc-800' />
-							<div className='py-2'>{t(e.descriptions)}</div>
+							{isMobileDevice ? (
+								<div className='mb-4 py-2'>
+									<div className=''>
+										{expandedDescriptions[e.id] ? (
+											<p className=''>{t(e.descriptions)}</p>
+										) : (
+											<p className='line-clamp-4'>
+												{truncateDescription(t(e.descriptions))}
+											</p>
+										)}
+									</div>
+									<button
+										onClick={() => toggleExpanded(e.id)}
+										className=' mt-2 text-green-500 hover:text-green-500'
+									>
+										{expandedDescriptions[e.id] ? t('less') : t('more')} ....
+									</button>
+								</div>
+							) : (
+								<div className='py-2'>{t(e.descriptions)}</div>
+							)}
 						</div>
 						<div>
 							<div className='text-sm text-zinc-300 flex gap-3 py-3'>

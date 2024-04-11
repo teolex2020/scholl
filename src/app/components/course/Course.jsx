@@ -1,22 +1,23 @@
 'use client'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import {
-	CheckIcon,
-	ChevronDoubleDownIcon,
 	FireIcon,
 	AcademicCapIcon,
+	CalendarIcon,
+	ClockIcon,
 } from '@heroicons/react/24/solid'
 import { useTranslations } from 'next-intl'
 import Cart from './Cart'
-import Lector from './Lector'
+
 import { useRouter } from '@/navigation'
-import course from "../../../../public/assets/course.webp"
+import course from '../../../../public/assets/course.webp'
 import certificat from '../../../../public/assets/certificat.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
-
+import ListItem from './ListItem'
+import Accordion from './Accordion'
 
 const listStart = [
 	{
@@ -32,50 +33,6 @@ const listStart = [
 		title: 'intro4',
 	},
 ]
-
-const ListItem = ({ title }) => (
-	<div className='flex gap-5 items-center'>
-		<div>
-			{' '}
-			<CheckIcon className='h-6 w-6 text-green-500' />
-		</div>
-
-		<div className='text-start  text-lg'>{title}</div>
-	</div>
-)
-
-const Accordion = ({ title, children }) => {
-	const [isOpen, setIsOpen] = useState(false)
-
-	const toggleOpen = () => setIsOpen(!isOpen)
-
-	return (
-		<div className=' flex gap-5 items-start flex-col text-left cursor-pointer  z-10'>
-			<div className=' flex gap-3 ' onClick={toggleOpen}>
-				<div>
-					<ChevronDoubleDownIcon
-						className={`h-6 w-6 text-green-500  ${
-							isOpen
-								? 'rotate-180 transition duration-700 ease-in-out'
-								: 'rotate-0 transition duration-700 ease-in-out'
-						}`}
-					/>
-				</div>
-				<div className='text-lg'>{title}</div>
-			</div>
-			<div
-				className={` text-base
- ${
-		isOpen
-			? 'h-fit transition duration-700 ease-in-out'
-			: 'h-0 transition duration-700 ease-in-out'
- } overflow-hidden`}
-			>
-				{isOpen && children}
-			</div>
-		</div>
-	)
-}
 
 const blockAnimationlefth = {
 	hidden: {
@@ -133,22 +90,22 @@ const blockAnimationright = {
 }
 
 const Course = () => {
-		const { authUser } = useSelector((state) => state.counter)
+
+	const [isData, setIsData] = useState(false)
+	const { authUser } = useSelector((state) => state.counter)
 	const router = useRouter()
 	const t = useTranslations('Course')
 	const dispatch = useDispatch()
 
-	const dataOrder = (e)=>{
-			if (!authUser) {
-				router.push('/login')
-			}
-dispatch(OrderPrice(4999))
-dispatch(OrderTitle(t('title')))
-dispatch(OrderId(20241))
-router.push('/payment')
+	const dataOrder = (e) => {
+		if (!authUser) {
+			router.push('/login')
+		}
+		dispatch(OrderPrice(4999))
+		dispatch(OrderTitle(t('title')))
+		dispatch(OrderId(20241))
+		router.push('/payment')
 	}
-
-	
 
 	return (
 		<AnimatePresence>
@@ -174,17 +131,53 @@ router.push('/payment')
 							</div>
 						</div>
 						<div className='text-sm pt-5 w-full text-start '>
-							<div className='flex items-center gap-3 relative group cursor-pointer w-fit'>
-								<div className='hidden group-hover:block duration-300 fixed  bottom-0 left-0 right-0 bg-[#12181d]  p-10 border rounded-md lg:text-base z-50 max-w-3xl'>
-									<Lector />
-								</div>
-								<div>
-									<AcademicCapIcon className='h-6 w-6 text-green-500' />
-								</div>
+							<div className='flex  relative    justify-start h-7   gap-3'>
+								<AcademicCapIcon className='h-6 w-6 text-green-500' />
+
 								{t('lectorname')}
-								<span className='uppercase underline cursor-pointer '>
-									{t('lector')}
-								</span>
+								<span className='uppercase underline  '>{t('lector')}</span>
+							</div>
+							<div
+								className='text-sm text-zinc-300 flex gap-3 py-3 relative cursor-pointer w-fit'
+								onMouseEnter={() => setIsData(true)}
+								onMouseLeave={() => setIsData(false)}
+							>
+								<CalendarIcon className='w-5 h-5 text-green-500' />
+								<span>02.09.2024 -</span>
+								<span className='uppercase'>21.10.2024</span>
+								<ClockIcon className='w-5 h-5' />
+								<span className='uppercase'>19.00</span>
+								<div
+									className={`${
+										isData ? 'scale-100' : 'scale-0'
+									} duration-500  bg-[#12181d]  border rounded-md text-sm z-50 max-w-3xl absolute bottom-0-0 left-0 p-2 flex `}
+								>
+									<p>
+										2.09.2024, <br /> 4.09.2024,
+										<br />
+										9.09.2024,
+										<br />
+										11.09.2024,
+										<br />
+										16.09.2024,
+										<br />
+										18.09.2024,
+										<br /> 23.09.2024,
+										<br /> 25.09.2024, <br />
+										30.09.2024
+									</p>
+									<p>
+										2.10.2024,
+										<br />
+										7.10.2024,
+										<br />
+										9.10.2024,
+										<br />
+										14.10.2024,
+										<br /> 16.10.2024,
+										<br /> 21.10.2024
+									</p>
+								</div>
 							</div>
 						</div>
 						<div>
