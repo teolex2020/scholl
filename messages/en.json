@@ -77,6 +77,9 @@
 		"lectorname": "Mykhailo Chaplyha",
 		"duration": "Duration",
 		"tim": "minutes",
+		"data": "Date",
+			"more": "More",
+		"less": "Less",
 		"star": "Training is free for military personnel. Trainings are held ONLINE"
 	},
 	"Brainstorm": {
