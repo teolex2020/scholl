@@ -1,162 +1,157 @@
-"use client"
-import React, { useRef } from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import emailjs from '@emailjs/browser'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
-import meetting from '../../../../public/assets/meetting.jpg'
+import {
+	ClockIcon,
+	AcademicCapIcon,
+	CalendarIcon,
+} from '@heroicons/react/24/solid'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import { useRouter } from '@/navigation'
 
+const train = [
+	{
+		id: 20244,
+		image: '/assets/chapluga.webp',
+		title: 'title',
+		description: `description`,
+		price: '1499',
+		currency: '₴',
+		time: '180',
+		teacher: 'lectorname',
+		data: '16.05.2024',
+		times: '19.00',
+	},
+	
+]
 
 const Meeting = () => {
+	const { authUser } = useSelector((state) => state.counter)
 	const router = useRouter()
+	const t = useTranslations('Meeting')
 	const dispatch = useDispatch()
-		const { authUser } = useSelector(
-			(state) => state.counter
-		)
 
-	const dataOrder = (e) => {
+	const dataOrder = (price, title, id) => {
 		if (!authUser) {
 			router.push('/login')
 		}
-		dispatch(OrderPrice(4000))
-		dispatch(OrderTitle("Meeting"))
-		dispatch(OrderId(20244))
+		dispatch(OrderPrice(price))
+		dispatch(OrderTitle(title))
+		dispatch(OrderId(id))
 		router.push('/payment')
 	}
-	
-		const t = useTranslations('Meeting')
-	
-  const form = useRef()
+	const [isMobileDevice, setIsMobileDevice] = useState(false)
+	const [expandedDescriptions, setExpandedDescriptions] = useState({})
 
-	const sendEmail = (e) => {
-		e.preventDefault()
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobileDevice(window.matchMedia('(max-width: 767px)').matches)
+		}
 
-		emailjs
-			.sendForm(
-				process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
-				process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
-				form.current,
-				process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY
-			)
-			.then(
-				() => {
-					toast.success('Message successfully sent!', {
-						position: 'bottom-center',
-						autoClose: 3500,
-						hideProgressBar: false,
-						closeOnClick: true,
-						pauseOnHover: true,
-						draggable: true,
-						progress: undefined,
-						theme: 'dark',
-					})
-					const timeout = setTimeout(() => {
-						window.location.reload(false)
-					}, 3900)
+		handleResize()
+		window.addEventListener('resize', handleResize)
 
-					return () => clearTimeout(timeout)
-				},
-				() => {
-					toast.error('Failed to send the message, please try again', {
-						position: 'bottom-center',
-						autoClose: 3500,
-						hideProgressBar: false,
-						closeOnClick: true,
-						pauseOnHover: true,
-						draggable: true,
-						progress: undefined,
-						theme: 'dark',
-					})
-				}
-			)
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [])
+
+	const toggleExpanded = (id) => {
+		setExpandedDescriptions((prevState) => ({
+			...prevState,
+			[id]: !prevState[id],
+		}))
 	}
-  return (
-		<div className='flex  items-center flex-col  px-[5%]'>
-			<div className='text-2xl lg:text-3xl py-10'>{t('title')} *</div>
-			<div className='flex gap-10 flex-col lg:flex-row  w-full'>
-				<div className='flex-1 justify-center flex flex-col items-center '>
-					<div className='  w-96 lg:w-full h-48 lg:h-96 relative   '>
+
+	const truncateDescription = (description) => {
+		const words = description.split(' ')
+		return `${words.slice(0, 10).join(' ')}...`
+	}
+
+	return (
+		<div className='h-full flex flex-col  items-center lg:items-start lg:justify-between container mx-auto relative mt-10 p-4 gap-10 '>
+			{train.map((e, i) => (
+				<div
+					key={i}
+					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur w-full '
+				>
+					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mb-4 lg:mb-0'>
 						<Image
-							src={meetting}
-							alt='logo '
+							src={e.image}
 							fill
-							sizes='(min-width: 808px) 50vw, 100vw'
-							className='rounded-lg object-contain'
-							priority
+							alt='image'
+							className='object-cover rounded-lg'
+							sizes='(min-width: 808px)'
+							quality={80}
+							loading='lazy'
 						/>
-					</div>{' '}
-					<div className='z-10 mt-5 w-full'>
-						<button
-							className='w-full  border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex    duration-300 hover:bg-blur z-50 text-lg uppercase px-10 '
-							onClick={() => dataOrder()}
-						>
-							{t('button')}
-						</button>
 					</div>
-				</div>{' '}
-				<div className=' flex flex-1   relative cursor-pointer z-10 '>
-					<form
-						className='flex-1 flex flex-col gap-5 max-w-3xl'
-						ref={form}
-						onSubmit={sendEmail}
-					>
-						<div className='relative group '>
-							<p className='absolute -top-3 left-4 text-zinc-300   px-3 flex justify-center text-[14px]  bg-[#11171c] rounded-2xl'>
-								Your Name
-							</p>
-							<input
-								type='text'
-								name='name'
-								required
-								minLength='3'
-								maxLength='50'
-								className='bg-transparent border-2 border-zinc-700/50 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-zinc-700 decoration-transparent '
-							/>
+					<div className='flex flex-col justify-between flex-grow'>
+						<div>
+							<div className='colorgold text-2xl lg:text-3xl flex  w-full text-center sm:text-start font-semibold pb-5'>
+								<div>{t(e.title)}</div>
+							</div>
+							<div className='text-sm text-zinc-300 flex gap-3'>
+								<ClockIcon className='w-5 h-5' />
+								<span>
+									{t('duration')} - {e.time} {t('tim')}
+								</span>
+							</div>
+							<hr className='border-zinc-800' />
+							{isMobileDevice ? (
+								<div className='mb-4 py-2'>
+									<div className=''>
+										{expandedDescriptions[e.id] ? (
+											<p className=''>{t(e.description)}</p>
+										) : (
+											<p className='line-clamp-4'>
+												{truncateDescription(t(e.description))}
+											</p>
+										)}
+									</div>
+									<button
+										onClick={() => toggleExpanded(e.id)}
+										className=' mt-2 text-green-500 hover:text-green-500'
+									>
+										{expandedDescriptions[e.id] ? t('less') : t('more')} ....
+									</button>
+								</div>
+							) : (
+								<div className='py-2'>{t(e.description)}</div>
+							)}
 						</div>
+						<div>
+							<div className='text-sm text-zinc-300 flex gap-3 py-3'>
+								<AcademicCapIcon className='w-5 h-5' />
+								<span>{t('lector')} - </span>
+								<span className='uppercase'>{t(e.teacher)}</span>
+							</div>
+							<div className='text-sm text-zinc-300 flex gap-3 py-3'>
+								<CalendarIcon className='w-5 h-5' />
+								<span>{t('data')} - </span>
+								<span className='uppercase'>{e.data}</span>
+								<ClockIcon className='w-5 h-5' />
+								<span className='uppercase'>{e.times}</span>
+							</div>
 
-						<div className='relative group '>
-							<p className='absolute -top-3 left-4 text-zinc-300   w-16 flex justify-center text-[14px]  bg-[#11171c] rounded-2xl'>
-								Email
-							</p>
-							<input
-								required
-								type='email'
-								name='email'
-								minLength='3'
-								maxLength='50'
-								className='bg-transparent border-2 border-zinc-700/50 rounded-sm px-3 outline-none  text-slate-200 h-12 w-full text-sm  group-hover:border-zinc-700 decoration-transparent '
-							/>
+							<div className='flex items-center'>
+								<div className='w-full flex  '>
+									<button
+										onClick={() => dataOrder(e.price, t(e.title), e.id)}
+										className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold  justify-center py-1 flex space-x-16 duration-300 hover:bg-blur z-10  px-10 min-w-[200px] w-full lg:w-80 font-extrabold font-sans text-3xl'
+									>
+										{e.price}
+										{e.currency}
+									</button>
+								</div>
+							</div>
+							<div className='text-[10px] pt-3'>*{t('star')}</div>
 						</div>
-						<div className='relative group '>
-							<p className='absolute -top-3 left-4 text-zinc-300  px-2 w-fit flex justify-center text-[14px]  bg-[#11171c] rounded-2xl'>
-								Message
-							</p>
-							<textarea
-								className='w-full p-5 text-sm text-white mb-3 border-2 border-zinc-700/50 outline-none bg-transparent rounded-md group-hover:border-zinc-700'
-								cols='30'
-								rows='10'
-								name='message'
-								required
-								minLength='3'
-								maxLength='100'
-							></textarea>
-						</div>
-						<button
-							type='submit'
-							className={`border-2 rounded-3xl border-zinc-700/50 px-10 py-2 flex  hover:bg-blur space-x-16  uppercase duration-300 z-10 justify-center`}
-						>
-							Send
-						</button>
-
-						<ToastContainer />
-					</form>
+					</div>
 				</div>
-			</div>
-			<div className='text-[12px]'>* {t('description')}</div>
+			))}
 		</div>
 	)
 }

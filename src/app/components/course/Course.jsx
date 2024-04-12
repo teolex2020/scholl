@@ -138,12 +138,13 @@ const Course = () => {
 								<span className='uppercase underline  '>{t('lector')}</span>
 							</div>
 							<div
-								className='text-sm text-zinc-300 flex gap-3 py-3 relative cursor-pointer w-fit'
+								className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit px-'
 								onMouseEnter={() => setIsData(true)}
 								onMouseLeave={() => setIsData(false)}
 							>
 								<CalendarIcon className='w-5 h-5 text-green-500' />
-								<span>02.09.2024 -</span>
+								<span>02.09.2024 </span>
+								<span>-</span>
 								<span className='uppercase'>21.10.2024</span>
 								<ClockIcon className='w-5 h-5' />
 								<span className='uppercase'>19.00</span>
@@ -213,7 +214,7 @@ const Course = () => {
 					className=' p-2 lg:text-xl  my-3 rounded-md bg-blur'
 				>
 					<div className='space-y-3'>
-						<p className='text-2xl font-semibold'>{t('aftercourse')}</p>
+						<p className='text-2xl font-semibold'>{t('aftercourse')}:</p>
 						{listStart.map((item, index) => (
 							<ListItem key={index} title={t(item.title)} />
 						))}

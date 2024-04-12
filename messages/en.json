@@ -71,9 +71,13 @@
 		"course": "The course consists of:"
 	},
 	"Meeting": {
-		"title": "Schedule a meeting",
-		"description": "Here you can schedule a meeting with the course authors for business networking and consultations (online and offline), ask for short advice or discuss the course materials in more detail with their authors, get acquainted with the materials of events already held. This mode of operation is confidential and can only be initiated at the customer's request.",
-		"button": "4000₴ "
+		"title": "What Will Happen to Ukraine",
+		"description": "Friends, you are awaited by a meeting and candid dialogue with a former civil servant, political leader, star of the information space, thinker, and simply a Free Person, Mykhailo Chaplyha. “What Will Happen to Ukraine” - honestly, without pomp and propaganda, but responsibly and argumentatively, in a closed audience and without recording, one of the bravest and brightest political thinkers of modern Ukraine will share. You will also have the opportunity to ask your own questions.",
+		"lector": "Instructor",
+		"lectorname": "Mykhailo Chaplyha",
+		"duration": "Duration",
+		"tim": "minutes",
+		"star": "Training is free for military personnel. Trainings are held ONLINE"
 	},
 	"Brainstorm": {
 		"title": "Schedule a brainstorming session",
