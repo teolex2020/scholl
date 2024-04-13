@@ -25,11 +25,11 @@ const menu = [
 		title: 'meeting',
 		url: '/meeting',
 	},
-	{
-		id: 3,
-		title: 'brainstorm',
-		url: '/brainstorm',
-	},
+	// {
+	// 	id: 3,
+	// 	title: 'brainstorm',
+	// 	url: '/brainstorm',
+	// },
 	{
 		id: 4,
 		title: 'contact',

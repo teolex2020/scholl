@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import {
 	ArrowRightOnRectangleIcon,
 	BuildingLibraryIcon,
+	CreditCardIcon
 } from '@heroicons/react/24/solid'
 import { getAuth, signOut } from 'firebase/auth'
 import Link from 'next/link'
@@ -59,7 +60,17 @@ const Popup = () => {
 					<div>{t('title')}</div>
 				</div>
 			</Link>
-
+			<Link href={`/purchases/${id}`}>
+				<div
+					className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
+					onClick={popup}
+				>
+					<div>
+						<CreditCardIcon className='w-5 h-5' />
+					</div>
+					<div> {t('title1')}</div>
+				</div>
+			</Link>
 			<div
 				className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
 				onClick={() => singout()}

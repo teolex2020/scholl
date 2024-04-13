@@ -3,7 +3,7 @@ import React from 'react'
 import { useLocale } from 'next-intl'
 const merchantDomainName = process.env.NEXT_PUBLIC_WAYFORPAY_DOMAIN
 const account = process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
-const url = process.env.NEXT_PUBLIC_URL
+
 
 
 

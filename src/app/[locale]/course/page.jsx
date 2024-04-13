@@ -1,7 +1,12 @@
 'use server'
 
 import React from 'react'
-import Course from '@/app/components/course/Course'
+// import Course from '@/app/components/course/Course'
+import Loader from '@/app/components/Loader/Loader.jsx'
+import dynamic from 'next/dynamic'
+const Course = dynamic(() => import('../../components/course/Course.jsx'), {
+	loading: () => <Loader />,
+})
 
 const page = () => {
 	return (

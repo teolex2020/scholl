@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { useSelector, useDispatch } from 'react-redux'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
-import { getDoc, doc, setDoc } from 'firebase/firestore'
+import {  doc, setDoc } from 'firebase/firestore'
 import { storage, db } from '../../../firebase/config'
 import { Formik, Form } from 'formik'
 
@@ -20,8 +20,10 @@ const ImagePopup = () => {
 	const avatar = useSelector((state) => state.counter.avatar)
 	const dispatch = useDispatch()
 
-	// Function to upload file to Firebase Storage and update user's photo URL in Firestore
-	const uploadFile = async (file, userId) => {
+	
+
+	
+	const uploadFile = (file, userId) => {
 		const fileName = userId
 		const storageRef = ref(storage, `photo/${fileName}`)
 		const uploadTask = uploadBytesResumable(storageRef, file)
@@ -35,58 +37,63 @@ const ImagePopup = () => {
 					setUploadProgress(progress)
 				},
 				(error) => reject(error),
-				async () => {
-					const downloadURL = await getDownloadURL(uploadTask.snapshot.ref)
-					resolve(downloadURL)
+				() => {
+					getDownloadURL(uploadTask.snapshot.ref)
+						.then((downloadURL) => resolve(downloadURL))
+						.catch((error) => reject(error))
 				}
 			)
 		})
 	}
 
 	// Function to handle adding/updating the user's photo
-	const handleAdd = async () => {
+	const handleAdd = () => {
 		if (!file || !id) return
 		setLoading(true)
 
-		try {
-			const downloadURL = await uploadFile(file, id)
-			const userDocRef = doc(db, 'users', id)
-			const userData = { img: downloadURL }
-			await setDoc(userDocRef, userData, { merge: true })
-		
-			toast.success('Success!')
-			setTimeout(() => dispatch(Avatar(avatar)), 1000)
-		} catch (error) {
-			console.error(error)
-			toast.error('Error adding user.')
-		} finally {
-			setLoading(false)
-		}
+		uploadFile(file, id)
+			.then((downloadURL) => {
+				const userDocRef = doc(db, 'users', id)
+				const userData = { img: downloadURL }
+				return setDoc(userDocRef, userData, { merge: true })
+			})
+			.then(() => {
+				toast.success('Success!')
+				setTimeout(() => dispatch(Avatar(avatar)), 1000)
+			})
+			.catch((error) => {
+				console.error(error)
+				toast.error('Error adding user.')
+			})
+			.finally(() => {
+				setLoading(false)
+			})
 	}
 
 	useEffect(() => {
 		if (!data) {
-			async function fetchData() {
-				const response = await fetch(`/api/userInfo`, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						userId: id,
-					}),
+			fetch(`/api/userInfo`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					userId: id,
+				}),
+			})
+				.then((response) => {
+					if (response.ok) {
+						return response.json()
+					} else {
+						throw new Error('Error')
+					}
 				})
-
-				if (response.ok) {
-					const { data } = await response.json()
-
+				.then(({ data }) => {
 					setData(data)
-				} else {
-					console.error('Error')
-				}
-			}
-
-			fetchData()
+				})
+				.catch((error) => {
+					console.error(error)
+				})
 		}
 	}, [id, data])
 

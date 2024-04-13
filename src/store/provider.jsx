@@ -20,7 +20,7 @@ export const MyComponent = () => {
 				dispatch(Authuser(!!user))
 				dispatch(Id(user?.uid))
 
-				// Диспатч Redux Action тут
+				
 			} else {
 				console.info('User is not logged in')
 			}

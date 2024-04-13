@@ -1,8 +1,9 @@
 import React from 'react'
+import Loader from '@/app/components/Loader/Loader'
 
 import dynamic from 'next/dynamic'
 const List = dynamic(() => import('@/app/components/cabinet/List.jsx'), {
-	loading: () => <div className='w-full text-center '></div>,
+	loading: () => <Loader />,
 })
 
 

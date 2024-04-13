@@ -21,7 +21,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
 import PaymentPage from './PayForm'
 
-
 const CustomField = ({ label, name, type }) => (
 	<div className='relative group'>
 		<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg px-2 text-[14px] group-hover:text-blue-200/80'>
@@ -55,7 +54,7 @@ const validationSchema = Yup.object({
 const Payments = () => {
 	const [formdata, setFormdata] = useState(() => Date.now())
 	const [isChecked, setIsChecked] = useState(false)
-	
+
 	const [loading, setLoading] = useState(false)
 	const [data, setData] = useState('')
 	const [merch, setMerch] = useState(null)
@@ -64,12 +63,10 @@ const Payments = () => {
 	)
 	const router = useRouter()
 	const t = useTranslations('Order')
-	const {current} = useRef(nanoid())
-	
-
+	const { current } = useRef(nanoid())
 
 	const confirmForm = async () => {
-		const response = await fetch('/api/createorder', {
+		fetch('/api/createorder', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -81,27 +78,21 @@ const Payments = () => {
 				data: formdata,
 			}),
 		})
-
-		if (response.ok) {
-			const data = await response.json()
-
-			setMerch(data.signature)
-		} else {
-			console.error('Помилка при отриманні merchantSignature')
-		}
+			.then((response) => response.json())
+			.then((data) => setMerch(data.signature))
 	}
 
 	const handleCheckboxChange = () => {
 		setIsChecked(!isChecked)
 	}
 
-	const handleAdd = async (values) => {
+	const handleAdd = (values) => {
 		setData(values)
 		setLoading(true)
 
-	
 		if (!authUser) {
 			router.push('/login')
+			return
 		}
 
 		const userDocRef = doc(db, 'order', current + orderId)
@@ -115,21 +106,18 @@ const Payments = () => {
 			emailSent: false,
 		}
 
-		try {
-			await setDoc(userDocRef, userData, { merge: true })
-			// toast.success('Success!')
-			confirmForm()
-		} catch (error) {
-			toast.error('Error')
-		} finally {
-			setLoading(false)
-		}
+		setDoc(userDocRef, userData, { merge: true })
+			.then(() => {
+				confirmForm()
+			})
+			.catch((error) => {
+				toast.error('Error')
+				console.error(error)
+			})
+			.finally(() => {
+				setLoading(false)
+			})
 	}
-
-
-
-		
-
 
 	return (
 		<div className='min-w-screen h-fit bg-transparent flex  justify-center px-5 mt-10 z-50'>
@@ -177,9 +165,9 @@ const Payments = () => {
 					<Formik
 						enableReinitialize
 						initialValues={{
-							firstName:  '',
-							lastName:  '',
-							phone:  '',
+							firstName: '',
+							lastName: '',
+							phone: '',
 							email: '',
 						}}
 						validationSchema={validationSchema}
@@ -189,10 +177,30 @@ const Payments = () => {
 						}}
 					>
 						<Form className='flex flex-col pt-10 mx-auto gap-6  justify-start relative'>
-							<CustomField label='First Name*' name='firstName' type='text' placeholder='First Name'/>
-							<CustomField label='Last Name*' name='lastName' type='text' placeholder='Last Name'/>
-							<CustomField label='Phone*' name='phone' type='text' placeholder='Phone' />
-							<CustomField label='Email*' name='email' type='email' placeholder='Email'/>
+							<CustomField
+								label='First Name*'
+								name='firstName'
+								type='text'
+								placeholder='First Name'
+							/>
+							<CustomField
+								label='Last Name*'
+								name='lastName'
+								type='text'
+								placeholder='Last Name'
+							/>
+							<CustomField
+								label='Phone*'
+								name='phone'
+								type='text'
+								placeholder='Phone'
+							/>
+							<CustomField
+								label='Email*'
+								name='email'
+								type='email'
+								placeholder='Email'
+							/>
 
 							<button
 								type='submit'

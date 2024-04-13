@@ -42,7 +42,7 @@ useEffect(() => {
 							fill
 							sizes='(min-width: 808px) 50vw, 100vw'
 							quality={70}
-							loading='lazy'
+							priority
 						/>
 					</div>
 				</Link>
@@ -56,7 +56,6 @@ useEffect(() => {
 				<div className='lg:flex hidden z-30 items-center  mx-5 '>
 					<Button font={gentium.className} />
 				</div>
-				
 			</div>
 
 			<hr className='opacity-10' />

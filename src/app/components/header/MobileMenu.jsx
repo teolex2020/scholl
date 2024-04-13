@@ -24,11 +24,11 @@ const menu = [
 		title: 'meeting',
 		url: '/meeting',
 	},
-	{
-		id: 3,
-		title: 'brainstorm',
-		url: '/brainstorm',
-	},
+	// {
+	// 	id: 3,
+	// 	title: 'brainstorm',
+	// 	url: '/brainstorm',
+	// },
 	{
 		id: 4,
 		title: 'contact',
@@ -79,6 +79,8 @@ const MobileMenu = () => {
 							</li>
 						</Link>
 					))}
+
+					<hr className='border-2 rounded-3xl border-zinc-500/50' />
 					<div className='relative '>
 						{authUser ? (
 							<div className={` cursor-pointer relative`}>
@@ -88,6 +90,14 @@ const MobileMenu = () => {
 										className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center`}
 									>
 										<div>{b('title')}</div>
+									</div>
+								</Link>
+								<Link href={`/purchases/${id}`}>
+									<div
+										onClick={() => dispatch(MobileMenus(mobilemenu))}
+										className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-5`}
+									>
+										<div>{b('title1')}</div>
 									</div>
 								</Link>
 

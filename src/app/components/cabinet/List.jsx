@@ -14,25 +14,23 @@ import { useTranslations } from 'next-intl'
 import ImagePopup from './ImagePopup'
 import { Avatar } from '@/store/features/counterSlice'
 import withAuth from '@/lib/auth/whithAuth'
+import Loader from '../Loader/Loader'
 
 const List = () => {
+	const [loading, setLoading] = useState(false)
 	const { avatar, id } = useSelector((state) => state.counter)
 	const dispatch = useDispatch()
 
-
-
 	const [orderdata, setOrderData] = useState()
-
-		
 
 	const t = useTranslations('Cabinet')
 	const router = useRouter()
 
-
 	useEffect(() => {
-		if(!orderdata){
-			async function fetchData() {
-				const response = await fetch(`/api/userInfo`, {
+		if (!orderdata) {
+			setLoading(true)
+			function fetchData() {
+				fetch(`/api/userInfo`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
@@ -41,23 +39,27 @@ const List = () => {
 						userId: id,
 					}),
 				})
-
-				if (response.ok) {
-					const { data } = await response.json()
-
-					setOrderData(data)
-				} else {
-					console.error('Error')
-				}
+					.then((response) => response.json())
+					.then((data) => {
+						setOrderData(data.data)
+						setLoading(false)
+					})
+					.catch((error) => {
+						console.error('An error occurred:', error)
+						setLoading(false)
+					})
 			}
 
 			fetchData()
 		}
-		
 	}, [id, orderdata])
 
 	const changeImage = () => {
 		dispatch(Avatar(avatar))
+	}
+
+	if (loading) {
+		return <Loader />
 	}
 
 	return (
@@ -81,7 +83,7 @@ const List = () => {
 								src={orderdata?.img}
 								fill
 								alt='nonimage'
-								className='rounded-full, object-cover rounded-full '
+								className=' object-cover rounded-full '
 								loading='lazy'
 								sizes='(min-width: 808px) 50vw, 100vw'
 							/>

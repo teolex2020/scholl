@@ -12,6 +12,7 @@ import Loader from '../Loader/Loader'
 import withAuth from '@/lib/auth/whithAuth'
 
 
+
 // Custom Input Field Component
 const CustomField = ({ label, name, type }) => (
 	<div className='relative group'>
@@ -45,7 +46,7 @@ const validationSchema = Yup.object({
 
 const Infouser = () => {
 	const [formdata, setFormdata] = useState(() => Date.now())
-	const { id, authUser } = useSelector((state) => state.counter)
+	const { id} = useSelector((state) => state.counter)
 	const [data, setData] = useState()
 	const router = useRouter()
 	const [loading, setLoading] = useState(false)
@@ -54,10 +55,9 @@ const Infouser = () => {
 
 	useEffect(() => {
 		if (!data) {
-			async function fetchData() {
-				const response = await fetch(
-					`/api/userInfo`,
-										{
+				setLoading(true) 
+			 function fetchData() {
+				 fetch(`/api/userInfo`, {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json',
@@ -65,53 +65,62 @@ const Infouser = () => {
 						body: JSON.stringify({
 							userId: id,
 						}),
-					}
-				)
-
-				if (response.ok) {
-					const { data } = await response.json()
-
-					setData(data)
-				} else {
-					console.error('Error')
-				}
+					})
+						.then((response) => response.json())
+						.then((data) => {
+							setData(data.data)
+							setLoading(false)
+						})
+						.catch((error) => {
+							console.error('An error occurred:', error)
+							setLoading(false) 
+						})
 			}
+
+			
 
 			fetchData()
 		}
 	}, [id, data])
 
-	const handleAdd = async (values) => {
+
+
+	const handleAdd = (values) => {
 		if (!id) return
 		setLoading(true)
 
-		try {
-			const response = await fetch('/api/addUser', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({ ...values, id, data: formdata }),
+		fetch('/api/addUser', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ ...values, id, data: formdata }),
+		})
+			.then((response) => {
+				if (response.ok) {
+					toast.success('Success!')
+					setTimeout(() => router.back(), 1000)
+				} else {
+					throw new Error('Failed to add user.')
+				}
 			})
+			.catch((error) => {
+				toast.error('Error adding user.')
+			})
+			.finally(() => {
+				setLoading(false)
+			})
+	}
 
-			if (response.ok) {
-				toast.success('Success!')
-				setTimeout(() => router.back(), 1000)
-			} else {
-				throw new Error('Failed to add user.')
-			}
-		} catch (error) {
-			toast.error('Error adding user.')
-		} finally {
-			setLoading(false)
-		}
+	if (loading) {
+		return <Loader />
 	}
 
 	return (
 		<div
 			className={`fixed top-0 right-0 left-0 bottom-0 z-50 pointer-events-auto bg-[#12181d]  `}
 		>
-			{loading && <Loader />}
+			
 
 			<ToastContainer
 				position='top-center'
