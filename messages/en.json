@@ -79,7 +79,7 @@
 		"duration": "Duration",
 		"tim": "minutes",
 		"data": "Date",
-			"more": "More",
+		"more": "More",
 		"less": "Less",
 		"star": "Training is free for military personnel. Trainings are held ONLINE"
 	},
@@ -150,5 +150,8 @@
 		"button1": "Cancel Order",
 		"corect": "The data is correct",
 		"notcorect": "Is the data correct? (Confirm)"
+	},
+	"Purchase": {
+		"title": "You have no purchases ...."
 	}
 }

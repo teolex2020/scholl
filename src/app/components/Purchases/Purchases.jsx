@@ -1,13 +1,13 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import Loader from '../Loader/Loader'
 const Purchases = () => {
 	const [data, setData] = useState(null)
 	const [loading, setLoading] = useState(false)
 	const id = useSelector((state) => state.counter.id)
-
+const t = useTranslations('Purchase')
 	useEffect(() => {
 		// Перевірка, чи вже є дані, щоб уникнути непотрібних запитів
 		if (!data) {
@@ -63,16 +63,7 @@ const Purchases = () => {
 				))
 			) : (
 				<div className='flex justify-center items-center w-full h-full'>
-					<div className='w-96 h-96 relative'>
-						<Image
-							src='/assets/shop.webp'
-							fill
-							alt='nonimage'
-							className=' object-cover  '
-							priority
-							sizes='(min-width: 808px) 50vw, 100vw'
-						/>
-					</div>
+					<h2>{t('title')} ....</h2>
 				</div>
 			)}
 		</div>

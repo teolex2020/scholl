@@ -11,7 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@heroicons/react": "^2.0.18",
-    "@next/eslint-plugin-next": "^14.2.0",
+    "@next/eslint-plugin-next": "14.0.4",
     "@reduxjs/toolkit": "^1.9.7",
     "ai": "^2.2.29",
     "clsx": "^2.0.0",
@@ -22,7 +22,7 @@
     "framer-motion": "^10.17.9",
     "js-cookie": "^3.0.5",
     "nanoid": "^5.0.5",
-    "next": "^14.0.4",
+    "next": "14.0.4",
     "next-intl": "^3.3.2",
     "nodemailer": "^6.9.9",
     "openai": "^4.8.0",
@@ -40,7 +40,7 @@
   "devDependencies": {
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
-    "eslint-config-next": "^14.0.4",
+    "eslint-config-next": "14.0.4",
     "postcss": "^8",
     "server-only": "^0.0.1",
     "tailwindcss": "^3.3.0"

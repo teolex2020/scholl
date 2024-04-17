@@ -20,6 +20,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
 import PaymentPage from './PayForm'
+import PopupData from './PopupData'
 
 const CustomField = ({ label, name, type }) => (
 	<div className='relative group'>
@@ -54,6 +55,7 @@ const validationSchema = Yup.object({
 const Payments = () => {
 	const [formdata, setFormdata] = useState(() => Date.now())
 	const [isChecked, setIsChecked] = useState(false)
+	const [verifData, setVerifData] = useState(false)
 
 	const [loading, setLoading] = useState(false)
 	const [data, setData] = useState('')
@@ -64,6 +66,8 @@ const Payments = () => {
 	const router = useRouter()
 	const t = useTranslations('Order')
 	const { current } = useRef(nanoid())
+
+	
 
 	const confirmForm = async () => {
 		fetch('/api/createorder', {
@@ -129,7 +133,7 @@ const Payments = () => {
 					'max-w-sm'
 				)}
 			>
-				<div className='flex-1'>
+				<div className='flex-1 relative'>
 					<div className='relative w-full h-48 rounded-xl border-4 border-zinc-800 '>
 						<Image
 							src={order}
@@ -204,7 +208,7 @@ const Payments = () => {
 
 							<button
 								type='submit'
-								className='flex items-center w-full space-x-5 z-50 cursor-pointer'
+								className='flex items-center w-full space-x-5 z-50 cursor-pointer group'
 								onClick={() => handleCheckboxChange()}
 							>
 								<div className='border-2 border-zinc-700'>
@@ -214,7 +218,7 @@ const Payments = () => {
 										} `}
 									/>
 								</div>{' '}
-								<div className=' text-lg  text-slate-400'>
+								<div className=' text-lg  text-slate-400 group-hover:text-slate-300  group-hover:scale-110 duration-500'>
 									{merch ? t('corect') : t('notcorect')}
 								</div>
 							</button>
@@ -222,9 +226,13 @@ const Payments = () => {
 					</Formik>
 					<div className='z-50 flex justify-center  relative '>
 						{!merch && (
-							<div className=' border-2 rounded-3xl border-[#e2a550] colorgold justify-center py-2 flex space-x-16 duration-300  z-50 text-lg lg:text-2xl px-10 max-w-[350px] mt-5'>
-								{t('button')}
-							</div>
+							<></>
+							// <div
+							// 	className=' border-2 rounded-3xl border-red-500 text-red-500 justify-center py-2 flex space-x-16 duration-300  z-50 text-lg lg:text-2xl px-10 max-w-[350px] mt-5 cursor-pointer'
+
+							// >
+							// 	{t('button')}
+							// </div>
 						)}
 						{merch && (
 							<PaymentPage
@@ -241,7 +249,7 @@ const Payments = () => {
 							/>
 						)}
 					</div>
-					<div className='flex justify-center w-full'>
+					<div className='flex justify-center w-full mt-10'>
 						<button
 							onClick={() => router.back()}
 							className='py-2 flex text-slate-400 z-10 text-center text-lg hover:text-slate-300'
