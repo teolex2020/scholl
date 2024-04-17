@@ -214,7 +214,7 @@ const Payments = () => {
 								<div className='border-2 border-zinc-700'>
 									<CheckIcon
 										className={`h-6 w-6  ${
-											merch ? 'text-green-500' : 'text-red-500'
+											merch ? 'text-green-500' : 'opacity-0'
 										} `}
 									/>
 								</div>{' '}
