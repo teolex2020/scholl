@@ -7,27 +7,27 @@ const withAuth = (WrappedComponent) => {
 	const auth = getAuth(firebase_app)
 
 	const AuthComponent = (props) => {
-		// Додано ім'я функції 'AuthComponent'
+	
 		const Router = useRouter()
 		const [isAuthenticated, setIsAuthenticated] = useState(false)
 
 		useEffect(() => {
 			auth.onAuthStateChanged((user) => {
 				if (!user) {
-					// Якщо користувач не аутентифікований, перенаправляємо на сторінку логіну
+					
 					Router.push('/login')
 				} else {
-					// Встановлюємо стан аутентифікації як true
+					
 					setIsAuthenticated(true)
 				}
 			})
 		}, [Router])
 
-		// Рендеримо компонент, якщо користувач аутентифікований
+		
 		return isAuthenticated ? <WrappedComponent {...props} /> : null
 	}
 
-	AuthComponent.displayName = `WithAuth(${getDisplayName(WrappedComponent)})` // Додано displayName
+	AuthComponent.displayName = `WithAuth(${getDisplayName(WrappedComponent)})` 
 
 	return AuthComponent
 }
