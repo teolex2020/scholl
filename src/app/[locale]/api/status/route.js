@@ -62,7 +62,7 @@ export async function POST(req) {
          Також це означає, що ми з Вами вже розділяємо спільні цінності  - прагнемо до знань та нової інформації, ставимо під сумнів та критично аналізуємо нашу навколишню дійсність, та змінюємо її.
         </p>
         <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
-         Будь ласка, очікуйте на посилання для участі на платформі Zoom, яке ми надішлемо вам за <strong style="color: #27ae60; margin-bottom: 5px; text-decoration: underline;"> 1-3 дні </strong> до початку заходу.
+         Будь ласка, очікуйте на посилання для участі на платформі Zoom, яке ми надішлемо вам за <strong style="color: #27ae60; margin-bottom: 5px; text-decoration: underline;"> 1-3 дні </strong> до початку заходу/курсу/тренінгу або автоматично отримайде доступ до відео, якщо захід/курс/тренінг вже розпочався.
         </p>
          <p style="color: #34495e; font-size: 16px; margin-bottom: 30px;">
          З організаційних питань: email: bortnikschool@gmail.com.  
