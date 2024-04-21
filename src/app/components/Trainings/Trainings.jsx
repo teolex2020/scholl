@@ -17,25 +17,26 @@ const train = [
 		image: '/assets/kill.jpg',
 		title: 'title',
 		descriptions: `descriptions`,
-		price: '1100',
+		price: '550',
 		currency: '₴',
 		time: '90',
 		teacher: 'lectorname',
 		data: '03.04.2024',
 		times: '19.00',
+		discont:"-50%"
 	},
-	{
-		id: 20243,
-		image: '/assets/prompt.jpg',
-		title: 'titleT',
-		descriptions: `descriptionsT`,
-		price: '1100',
-		currency: '₴',
-		time: '90',
-		teacher: 'lectornameT',
-		data: '',
-		times: '',
-	},
+	// {
+	// 	id: 20243,
+	// 	image: '/assets/prompt.jpg',
+	// 	title: 'titleT',
+	// 	descriptions: `descriptionsT`,
+	// 	price: '1100',
+	// 	currency: '₴',
+	// 	time: '90',
+	// 	teacher: 'lectornameT',
+	// 	data: '',
+	// 	times: '',
+	// },
 ]
 
 const Trainings = () => {
@@ -90,6 +91,14 @@ const Trainings = () => {
 					key={i}
 					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur w-full '
 				>
+					{e.discont.length > 0 ? (
+						<div className='absolute top-2 right-3 bg-red-700 rounded-full py-1 px-2 font-bold text-xl'>
+							-50%
+						</div>
+					) : (
+						''
+					)}
+
 					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mb-4 lg:mb-0'>
 						<Image
 							src={e.image}
@@ -141,20 +150,23 @@ const Trainings = () => {
 								<span>{t('lector')} - </span>
 								<span className='uppercase'>{t(e.teacher)}</span>
 							</div>
-							<div className='text-sm text-zinc-300 flex gap-3 py-3'>
+							{/* <div className='text-sm text-zinc-300 flex gap-3 py-3'>
 								<CalendarIcon className='w-5 h-5' />
 								<span>{t('data')} - </span>
 								<span className='uppercase'>{e.data}</span>
 								<ClockIcon className='w-5 h-5' />
 								<span className='uppercase'>{e.times}</span>
-							</div>
+							</div> */}
 
 							<div className='flex items-center'>
 								<div className='w-full flex  '>
 									<button
 										onClick={() => dataOrder(e.price, t(e.title), e.id)}
-										className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold  justify-center py-1 flex space-x-16 duration-300 hover:bg-blur z-10  px-10 min-w-[200px] w-full lg:w-80 font-extrabold font-sans text-3xl'
+										className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold  justify-center py-1 flex space-x-16 duration-300 hover:bg-blur z-10  px-10 min-w-[200px] w-full lg:w-80 font-extrabold font-sans text-3xl items-center gap-3'
 									>
+										<p className='  text-xl text-center opacity-50 line-through text-zinc-400/50 '>
+											1100₴
+										</p>
 										{e.price}
 										{e.currency}
 									</button>
