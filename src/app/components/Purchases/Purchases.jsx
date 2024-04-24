@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslations } from 'next-intl'
 import Loader from '../Loader/Loader'
+import withAuth from '@/lib/auth/whithAuth'
 const Purchases = () => {
 	const [data, setData] = useState(null)
 	const [loading, setLoading] = useState(false)
@@ -39,10 +40,11 @@ const t = useTranslations('Purchase')
 		)
 	}
 
+	console.log(data)
 
 	return (
 		<div className='container mx-auto flex flex-wrap min-h-screen'>
-			{data ? (
+			{data?.length > 0 > 0 ? (
 				data?.map((item, i) => (
 					<div
 						key={i}
@@ -70,4 +72,4 @@ const t = useTranslations('Purchase')
 	)
 }
 
-export default Purchases
+export default withAuth(Purchases)
