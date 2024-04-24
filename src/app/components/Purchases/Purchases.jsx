@@ -44,7 +44,7 @@ const t = useTranslations('Purchase')
 
 	return (
 		<div className='container mx-auto flex flex-wrap min-h-screen'>
-			{data?.length > 0 > 0 ? (
+			{data?.length > 0  ? (
 				data?.map((item, i) => (
 					<div
 						key={i}
