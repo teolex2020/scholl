@@ -93,7 +93,7 @@ const Meeting = () => {
 					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur w-full '
 				>
 						{!e.live ? (
-						<div className='absolute top-2 right-3 bg-blue-700 rounded-full py-1 px-2 font-semibold text-sm flex items-center gap-3'>
+						<div className='absolute top-2 right-3 bg-blue-700 rounded-full py-1 px-2 font-semibold text-sm flex items-center gap-3 '>
 							<VideoCameraIcon className='w-5 h-5' />
 							<p>Відео в записі</p>
 						</div>
@@ -102,7 +102,7 @@ const Meeting = () => {
 							<EyeIcon className='w-5 h-5' />
 							<p>Пряма трансляція</p>
 						</div>)}
-					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800  '>
+					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mt-7 lg:mt-0'>
 						<Image
 							src={e.image}
 							fill
@@ -116,7 +116,7 @@ const Meeting = () => {
 					<div className='flex flex-col justify-between flex-grow'>
 						<div>
 							<div className='colorgold  lg:text-3xl flex  w-full text-center sm:text-start font-semibold lg:pb-5'>
-								<div className='text-2xl mb-5 w-[80%]'>{t(e.title)}</div>
+								<div className='text-2xl mb-5 lg:w-[80%] '>{t(e.title)}</div>
 							</div>
 							<div className='text-sm text-zinc-300 flex gap-3'>
 								<ClockIcon className='w-5 h-5' />
