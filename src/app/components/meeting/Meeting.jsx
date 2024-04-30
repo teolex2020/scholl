@@ -27,19 +27,19 @@ const train = [
 		times: '19.00',
 		live: true,
 	},
-	{
-		id: 20245,
-		image: '/assets/buziev.webp',
-		title: 'title1',
-		description: `description1`,
-		price: '1495',
-		currency: '₴',
-		time: '180',
-		teacher: 'lectorname1',
-		data: '30.04.2024',
-		times: '18.00',
-		live: true,
-	},
+	// {
+	// 	id: 20245,
+	// 	image: '/assets/buziev.webp',
+	// 	title: 'title1',
+	// 	description: `description1`,
+	// 	price: '1495',
+	// 	currency: '₴',
+	// 	time: '180',
+	// 	teacher: 'lectorname1',
+	// 	data: '30.04.2024',
+	// 	times: '18.00',
+	// 	live: true,
+	// },
 ]
 
 const Meeting = () => {
