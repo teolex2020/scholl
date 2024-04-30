@@ -84,7 +84,9 @@
 		"data": "Date",
 		"more": "More",
 		"less": "Less",
-		"star": "Training is free for military personnel. Trainings are held ONLINE"
+		"star": "Training is free for military personnel. Trainings are held ONLINE",
+		"live": "live stream",
+		"recorded": "recorded video"
 	},
 	"Brainstorm": {
 		"title": "Schedule a brainstorming session",
@@ -143,7 +145,9 @@
 		"lectornameT": "Oleksandr Tepliuk",
 		"data": "Date",
 		"more": "More",
-		"less": "Less"
+		"less": "Less",
+		"live": "live stream",
+		"recorded": "recorded video"
 	},
 	"Order": {
 		"title": "Your Order:",

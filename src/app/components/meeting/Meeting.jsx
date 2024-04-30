@@ -92,16 +92,19 @@ const Meeting = () => {
 					key={i}
 					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur w-full '
 				>
-						{!e.live ? (
+					{!e.live ? (
 						<div className='absolute top-2 right-3 bg-blue-700 rounded-full py-1 px-2 font-semibold text-sm flex items-center gap-3 '>
 							<VideoCameraIcon className='w-5 h-5' />
-							<p>Відео в записі</p>
+							<p>{t('recorded')}</p>
 						</div>
 					) : (
 						<div className='absolute top-2 right-3 bg-green-700 rounded-full py-1 px-2 font-semibold text-sm flex items-center gap-3'>
 							<EyeIcon className='w-5 h-5' />
-							<p>Пряма трансляція</p>
-						</div>)}
+							<p>
+								<p>{t('live')}</p>
+							</p>
+						</div>
+					)}
 					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mt-7 lg:mt-0'>
 						<Image
 							src={e.image}
