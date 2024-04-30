@@ -6,6 +6,8 @@ import {
 	ClockIcon,
 	AcademicCapIcon,
 	CalendarIcon,
+	VideoCameraIcon,
+	EyeIcon,
 } from '@heroicons/react/24/solid'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
@@ -23,6 +25,7 @@ const train = [
 		teacher: 'lectorname',
 		data: '16.05.2024',
 		times: '19.00',
+		live: true,
 	},
 	{
 		id: 20245,
@@ -35,6 +38,7 @@ const train = [
 		teacher: 'lectorname1',
 		data: '30.04.2024',
 		times: '18.00',
+		live: true,
 	},
 ]
 
@@ -88,7 +92,17 @@ const Meeting = () => {
 					key={i}
 					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur w-full '
 				>
-					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mb-4 lg:mb-0'>
+						{!e.live ? (
+						<div className='absolute top-2 right-3 bg-blue-700 rounded-full py-1 px-2 font-semibold text-sm flex items-center gap-3'>
+							<VideoCameraIcon className='w-5 h-5' />
+							<p>Відео в записі</p>
+						</div>
+					) : (
+						<div className='absolute top-2 right-3 bg-green-700 rounded-full py-1 px-2 font-semibold text-sm flex items-center gap-3'>
+							<EyeIcon className='w-5 h-5' />
+							<p>Пряма трансляція</p>
+						</div>)}
+					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800  '>
 						<Image
 							src={e.image}
 							fill
@@ -101,8 +115,8 @@ const Meeting = () => {
 					</div>
 					<div className='flex flex-col justify-between flex-grow'>
 						<div>
-							<div className='colorgold text-2xl lg:text-3xl flex  w-full text-center sm:text-start font-semibold pb-5'>
-								<div>{t(e.title)}</div>
+							<div className='colorgold  lg:text-3xl flex  w-full text-center sm:text-start font-semibold lg:pb-5'>
+								<div className='text-2xl mb-5 w-[80%]'>{t(e.title)}</div>
 							</div>
 							<div className='text-sm text-zinc-300 flex gap-3'>
 								<ClockIcon className='w-5 h-5' />
@@ -113,7 +127,7 @@ const Meeting = () => {
 							<hr className='border-zinc-800' />
 							{isMobileDevice ? (
 								<div className='mb-4 py-2'>
-									<div className=''>
+									<div className='text-sm '>
 										{expandedDescriptions[e.id] ? (
 											<p className=''>{t(e.description)}</p>
 										) : (
@@ -134,7 +148,7 @@ const Meeting = () => {
 							)}
 						</div>
 						<div>
-							<div className='text-sm text-zinc-300 flex gap-3 py-3'>
+							<div className='text-sm text-zinc-300 flex gap-3 lg:py-3'>
 								<AcademicCapIcon className='w-5 h-5' />
 								<span>{t('lector')} - </span>
 								<span className='uppercase'>{t(e.teacher)}</span>

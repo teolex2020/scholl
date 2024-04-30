@@ -40,7 +40,7 @@ const t = useTranslations('Purchase')
 		)
 	}
 
-	console.log(data)
+
 
 	return (
 		<div className='container mx-auto flex flex-wrap min-h-screen'>
