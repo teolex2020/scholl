@@ -12,18 +12,20 @@ import LocaleProvider from './provider'
 
 export const metadata = {
 	icons: {
-			icon: '/assets/favicon-32x32.png',
-		},
+		icon: '/assets/favicon-32x32.png',
+	},
 
-		title: {
-			default: 'School of Political Analysis by Ruslan Bortnik',
-		},
+	title: {
+		default: 'School of Political Analysis by Ruslan Bortnik',
+	},
+	description: 'School of Political Analysis by Ruslan Bortnik',
+	verification: {
+		google: 'google',
+		facebook: 'facebook',
+	},
 }
 
-
-export default  function RootLayout({ children, params: { locale } }) {
-	
-
+export default function RootLayout({ children, params: { locale } }) {
 	return (
 		<html className=' elem ' lang={locale}>
 			<body className={inter.className}>
@@ -37,7 +39,7 @@ export default  function RootLayout({ children, params: { locale } }) {
 							className='bg-cover opacity-[0.8%]  '
 						/>
 
-						<LocaleProvider >
+						<LocaleProvider>
 							<Header />
 
 							<Chat lang={locale} />
