@@ -106,7 +106,7 @@ const Trainings = () => {
 						</div>
 					)}
 
-					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 '>
+					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mt-7 lg:mt-0'>
 						<Image
 							src={e.image}
 							fill
