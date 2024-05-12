@@ -1,14 +1,21 @@
-import { Inter } from 'next/font/google'
+import {  Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
 import bg from '../../../public/assets/phon.jpg'
 import Image from 'next/image'
-const inter = Inter({ subsets: ['latin'] })
 import { Providers } from '@/store/provider'
-
 import Chat from '../components/chat/Chat'
 import LocaleProvider from './provider'
+
+
+const roboto = Roboto({
+	subsets: ['latin'],
+	variable: '--font-ronoto',
+	weight: ['400', '700', '900'],
+})
+
+
 
 export const metadata = {
 	icons: {
@@ -28,9 +35,11 @@ export const metadata = {
 export default function RootLayout({ children, params: { locale } }) {
 	return (
 		<html className=' elem ' lang={locale}>
-			<body className={inter.className}>
+			<body className={` `}>
 				<Providers>
-					<main className='elem lg:min-h-screen  relative scroll flex flex-col justify-between  '>
+					<main
+						className={`elem lg:min-h-screen  relative scroll flex flex-col justify-between  ${roboto.className}`}
+					>
 						<Image
 							src={bg}
 							alt='bg'

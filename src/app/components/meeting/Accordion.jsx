@@ -2,8 +2,7 @@
 import { useState } from 'react'
 import {
 	ChevronDoubleDownIcon,
-	FireIcon,
-	AcademicCapIcon,
+	
 } from '@heroicons/react/24/solid'
 const Accordion = ({ title, children }) => {
 	const [isOpen, setIsOpen] = useState(false)

@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { ClockIcon, VideoCameraIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
+
 import { useTranslations } from 'next-intl'
 
 
@@ -21,7 +22,7 @@ const Cart = ({ dataOrder, price, alltime, image }) => {
 					priority
 				/>
 			</div>
-			<div className='flex pl-10 md:pl-0 md:justify-center  items-center gap-6 font-semibold colorgold md:mt-6 mt-2 py-3'>
+			<div className='flex pl-10 md:pl-0 md:justify-center items-center gap-6 font-semibold colorgold md:mt-6 mt-2 py-3'>
 				<p className='z-10 text-xl'>{t('price')}</p>
 				<p className='z-10 text-3xl md:text-5xl'>{price} ₴</p>
 			</div>
@@ -39,10 +40,6 @@ const Cart = ({ dataOrder, price, alltime, image }) => {
 				<div className='flex gap-3 items-center z-10'>
 					<VideoCameraIcon className='h-4 w-4 ' />
 					<p> {t('video')}</p>
-				</div>
-				<div className='flex gap-3 items-center z-10'>
-					<AcademicCapIcon className='h-4 w-4 ' />
-					<p> {t('certificate')}</p>
 				</div>
 
 				<div className='w-full flex justify-center '>

@@ -7,7 +7,7 @@ import {
 	AcademicCapIcon,
 	CalendarIcon,
 	VideoCameraIcon,
-	EyeIcon
+	EyeIcon,
 } from '@heroicons/react/24/solid'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
@@ -15,37 +15,37 @@ import { useRouter } from '@/navigation'
 
 const train = [
 	{
-		id: 20242,
-		image: '/assets/kill.jpg',
+		id: 20244,
+		image: '/assets/chapluga.webp',
 		title: 'title',
-		descriptions: `descriptions`,
-		price: '550',
+		description: `description`,
+		price: '1499',
 		currency: '₴',
-		time: '90',
+		time: '180',
 		teacher: 'lectorname',
-		data: '03.04.2024',
+		data: '16.05.2024',
 		times: '19.00',
-		discont:"-50%",
-		live: false
+		live: true,
 	},
 	// {
-	// 	id: 20243,
-	// 	image: '/assets/prompt.jpg',
-	// 	title: 'titleT',
-	// 	descriptions: `descriptionsT`,
-	// 	price: '1100',
+	// 	id: 20245,
+	// 	image: '/assets/buziev.webp',
+	// 	title: 'title1',
+	// 	description: `description1`,
+	// 	price: '1495',
 	// 	currency: '₴',
-	// 	time: '90',
-	// 	teacher: 'lectornameT',
-	// 	data: '',
-	// 	times: '',
+	// 	time: '180',
+	// 	teacher: 'lectorname1',
+	// 	data: '30.04.2024',
+	// 	times: '18.00',
+	// 	live: true,
 	// },
 ]
 
-const Trainings = () => {
+const Meeting = () => {
 	const { authUser } = useSelector((state) => state.counter)
 	const router = useRouter()
-	const t = useTranslations('BortnikTrain')
+	const t = useTranslations('Meeting')
 	const dispatch = useDispatch()
 
 	const dataOrder = (price, title, id) => {
@@ -84,8 +84,6 @@ const Trainings = () => {
 		const words = description.split(' ')
 		return `${words.slice(0, 10).join(' ')}...`
 	}
-	
-
 
 	return (
 		<div className='h-full flex flex-col  items-center lg:items-start lg:justify-between container mx-auto relative mt-10 p-4 gap-10 '>
@@ -95,17 +93,18 @@ const Trainings = () => {
 					className='flex flex-col lg:flex-row rounded-lg border-2 border-zinc-800 p-3 max-w-7xl mx-auto h-fit gap-6 bg-blur w-full '
 				>
 					{!e.live ? (
-						<div className='absolute top-5 right-4 bg-white text-black border-2  border-black rounded-lg py-1 px-2 font-bold text-sm flex items-center gap-3 z-10'>
+						<div className='absolute top-2 right-3 bg-blue-700 rounded-full py-1 px-2 font-semibold text-sm flex items-center gap-3 '>
 							<VideoCameraIcon className='w-5 h-5' />
 							<p>{t('recorded')}</p>
 						</div>
 					) : (
-						<div className='absolute top-5 right-4 bg-white text-black border-2  border-black rounded-lg py-1 px-2 font-bold text-sm flex items-center gap-3 z-10'>
+						<div className='absolute top-2 right-3 bg-green-700 rounded-full py-1 px-2 font-semibold text-sm flex items-center gap-3'>
 							<EyeIcon className='w-5 h-5' />
-							<p>{t('live')}</p>
+							<p>
+								<p>{t('live')}</p>
+							</p>
 						</div>
 					)}
-
 					<div className='w-full h-72 lg:h-auto   lg:w-96  flex-shrink-0 relative rounded-lg border-4 border-zinc-800 mt-7 lg:mt-0'>
 						<Image
 							src={e.image}
@@ -119,8 +118,8 @@ const Trainings = () => {
 					</div>
 					<div className='flex flex-col justify-between flex-grow'>
 						<div>
-							<div className='colorgold text-2xl lg:text-3xl flex  w-full text-center sm:text-start font-semibold lg:pb-5'>
-								<div className='text-2xl mb-5 w-[80%]'>{t(e.title)}</div>
+							<div className='colorgold  lg:text-3xl flex  w-full text-center sm:text-start font-semibold lg:pb-5'>
+								<div className='text-2xl mb-5 lg:w-[80%] '>{t(e.title)}</div>
 							</div>
 							<div className='text-sm text-zinc-300 flex gap-3'>
 								<ClockIcon className='w-5 h-5' />
@@ -131,12 +130,12 @@ const Trainings = () => {
 							<hr className='border-zinc-800' />
 							{isMobileDevice ? (
 								<div className='mb-4 py-2'>
-									<div className='text-sm'>
+									<div className='text-sm '>
 										{expandedDescriptions[e.id] ? (
-											<p className=''>{t(e.descriptions)}</p>
+											<p className=''>{t(e.description)}</p>
 										) : (
 											<p className='line-clamp-4'>
-												{truncateDescription(t(e.descriptions))}
+												{truncateDescription(t(e.description))}
 											</p>
 										)}
 									</div>
@@ -148,28 +147,28 @@ const Trainings = () => {
 									</button>
 								</div>
 							) : (
-								<div className='py-2'>{t(e.descriptions)}</div>
+								<div className='py-2'>{t(e.description)}</div>
 							)}
 						</div>
 						<div>
-							<div className='text-sm text-zinc-300 flex gap-3 '>
+							<div className='text-sm text-zinc-300 flex gap-3 lg:py-3'>
 								<AcademicCapIcon className='w-5 h-5' />
 								<span>{t('lector')} - </span>
 								<span className='uppercase'>{t(e.teacher)}</span>
 							</div>
-							{/* <div className='text-sm text-zinc-300 flex gap-3 py-3'>
+							<div className='text-sm text-zinc-300 flex gap-3 py-3'>
 								<CalendarIcon className='w-5 h-5' />
 								<span>{t('data')} - </span>
 								<span className='uppercase'>{e.data}</span>
 								<ClockIcon className='w-5 h-5' />
 								<span className='uppercase'>{e.times}</span>
-							</div> */}
+							</div>
 
 							<div className='flex items-center'>
 								<div className='w-full flex  '>
 									<button
 										onClick={() => dataOrder(e.price, t(e.title), e.id)}
-										className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold  justify-center py-1 flex space-x-16 duration-300 hover:bg-blur z-10  px-10 min-w-[200px] w-full lg:w-80 font-extrabold font-sans text-3xl items-center gap-3'
+										className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold  justify-center py-1 flex space-x-16 duration-300 hover:bg-blur z-10  px-10 min-w-[200px] w-full lg:w-80 font-extrabold font-sans text-3xl'
 									>
 										{e.price}
 										{e.currency}
@@ -185,4 +184,4 @@ const Trainings = () => {
 	)
 }
 
-export default Trainings
+export default Meeting

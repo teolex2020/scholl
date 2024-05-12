@@ -258,7 +258,7 @@ select {
 }
 
 .skewed-section {
-	transform: skewX(-8deg); /* Змініть градус для регулювання нахилу */
+	transform: skewX(-20deg); /* Змініть градус для регулювання нахилу */
 	overflow: hidden; /* Щоб вміст не виходив за межі нахиленого блоку */
 	background-color: #f3f3f3; /* Ваш колір фону */
 	/* Додаткові стилі */

@@ -18,17 +18,17 @@ const menu = [
 		title: 'trainings',
 		url: '/trainings',
 	},
-
+	{
+		id: 3,
+		title: 'lecture',
+		url: '/lectures',
+	},
 	{
 		id: 2,
 		title: 'meeting',
 		url: '/meeting',
 	},
-	// {
-	// 	id: 3,
-	// 	title: 'brainstorm',
-	// 	url: '/brainstorm',
-	// },
+
 	{
 		id: 4,
 		title: 'contact',

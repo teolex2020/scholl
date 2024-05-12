@@ -1,6 +1,5 @@
 'use client'
-import { useState } from 'react'
-import Image from 'next/image'
+
 import {
 	FireIcon,
 	AcademicCapIcon,
@@ -12,16 +11,14 @@ import { useTranslations, useLocale } from 'next-intl'
 import Cart from './Cart'
 import { useParams } from 'next/navigation'
 import { useRouter } from '@/navigation'
-import certificat from '../../../../public/assets/certificat.jpg'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
-import ListItem from './ListItem'
 import Accordion from './Accordion'
-import List from './List'
 import { Gentium_Book_Plus } from 'next/font/google'
-import { coursesua } from './language/coursesua'
-import { coursesen } from './language/coursesen'
-import { coursesru } from './language/coursesru'
+import { coursesua } from './language/trainingua'
+import { coursesen } from './language/trainingen'
+import { coursesru } from './language/trainingru'
 
 const gentium = Gentium_Book_Plus({
 	weight: '400',
@@ -34,7 +31,7 @@ const Course = () => {
 	const router = useRouter()
 	const t = useTranslations('Course')
 	const dispatch = useDispatch()
-const locale = useLocale()
+	const locale = useLocale()
 
 	const params = useParams()
 
@@ -97,27 +94,14 @@ const locale = useLocale()
 									</div>
 								</div>
 
-								<div
-									className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '
-									// onMouseEnter={() => setIsData(true)}
-									// onMouseLeave={() => setIsData(false)}
-								>
+								<div className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '>
 									<CalendarIcon className='w-5 h-5 text-green-500' />
 									<span>{data.datastart} </span>
-									<span>-</span>
-									<span>{data.dataend} </span>
+									
 									<ClockIcon className='w-5 h-5' />
-									<span className='uppercase'>19.00</span>
+									<span className='uppercase'>{data.time}</span>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div className=' p-2 lg:text-xl  my-3 rounded-md bg-blur min-h-[255px]'>
-						<div className='space-y-3'>
-							<p className='text-xl font-semibold'>{t('aftercourse')}:</p>
-							{data.conclusions.map((item, index) => (
-								<ListItem key={index} title={item.title} />
-							))}
 						</div>
 					</div>
 				</div>
@@ -127,38 +111,6 @@ const locale = useLocale()
 						price={data.price}
 						alltime={data.alltime}
 						image={data.image}
-					/>
-				</div>
-			</div>
-
-			<div className='flex flex-col lg:flex-row'>
-				<div className='flex flex-col lg:text-xl  gap-3 w-full mx-auto md:mt-5 text-start flex-1 '>
-					<div>
-						<p className='text-xl font-semibold md:mb-3'>
-							{' '}
-							{t('courseprogram')}:
-						</p>
-					</div>
-					{data.courseprogram.map((item, index) => (
-						<Accordion key={index} title={item.title}>
-							{item?.lectures?.map((lecture, index) => (
-								<List key={index} title={lecture.title} />
-							))}
-						</Accordion>
-					))}
-				</div>
-			</div>
-			<hr className='opacity-10 my-5' />
-			<div className='flex flex-col items-center gap-6'>
-				<div className='text-2xl'>{t('Certificat')}</div>
-				<div className='w-[266px] h-96 relative bg-blur'>
-					<Image
-						src={certificat}
-						fill
-						sizes='(min-width: 808px) 50vw, 100vw'
-						alt='certificate'
-						className='object-cover'
-						priority
 					/>
 				</div>
 			</div>
