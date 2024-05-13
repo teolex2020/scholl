@@ -20,7 +20,7 @@ try {
 	
 
 	const response = await openai.chat.completions.create({
-		model: 'gpt-4-turbo',
+		model: 'gpt-4o',
 		stream: true,
 
 		temperature: 0.3,
