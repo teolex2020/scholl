@@ -26,7 +26,7 @@ const Allcourse = () => {
 	)
 
 	return (
-		<div className='container mx-auto'>
+		<div className='container mx-auto '>
 			<div className='py-3'>
 				<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 			</div>

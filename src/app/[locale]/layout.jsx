@@ -38,7 +38,7 @@ export default function RootLayout({ children, params: { locale } }) {
 			<body className={` `}>
 				<Providers>
 					<main
-						className={`elem lg:min-h-screen  relative scroll flex flex-col justify-between  ${roboto.className}`}
+						className={`elem lg:min-h-screen  relative scroll flex flex-col justify-between h-full  ${roboto.className}`}
 					>
 						<Image
 							src={bg}
@@ -52,7 +52,7 @@ export default function RootLayout({ children, params: { locale } }) {
 							<Header />
 
 							<Chat lang={locale} />
-							<div className='flex-1 flex-grow'> {children}</div>
+							<div className='flex-1 '> {children}</div>
 							<Footer />
 						</LocaleProvider>
 					</main>

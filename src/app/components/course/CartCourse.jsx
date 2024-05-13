@@ -7,7 +7,7 @@ import {
 	VideoCameraIcon,
 	EyeIcon,
 } from '@heroicons/react/24/solid'
-import course from '../../../../public/assets/chaplyga.webp'
+
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/navigation'
 
