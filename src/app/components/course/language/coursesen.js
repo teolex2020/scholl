@@ -126,9 +126,9 @@ export const coursesen = [
 		course: 'Course',
 		lector: 'Konstantin Bondarenko',
 		language: 'Russian',
-		title: 'The True History of Ukraine: From Prosperity to Prosperity',
+		title: 'The True History of Ukraine: From Down to Down',
 		descriptions:
-			'A unique authorial series of lectures by Ukrainian political scientist and historian Konstantin Bondarenko on the history of Ukrainian lands, people, and state.',
+			'A unique authorial series of lectures by Ukrainian political scientist and historian Konstantin Bondarenko on the history of Ukrainian lands, people, and state. Certificate (after passing the test)',
 		price: '15000',
 		status: true,
 		image: 'bondarenko.webp',
