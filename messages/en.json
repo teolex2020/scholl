@@ -88,7 +88,8 @@
 		"less": "Less",
 		"star": "Training is free for military personnel. Trainings are held ONLINE",
 		"live": "live stream",
-		"recorded": "recorded video"
+		"recorded": "recorded video",
+		"takeout": "*All meetings are held in a closed format, so events are not recorded"
 	},
 	"Brainstorm": {
 		"title": "Schedule a brainstorming session",

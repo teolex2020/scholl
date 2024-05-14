@@ -1,14 +1,16 @@
 'use client'
 import React, { useState } from 'react'
 import CartCourse from './CartTraining'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { coursesua } from './language/meetua'
 import { coursesen } from './language/meeten'
 import { coursesru } from './language/meetru'
 import Search from '../Search/Search'
 
+
 const Allcourse = () => {
 	const locale = useLocale()
+	const t = useTranslations('Meeting')
 
 	const courses = {
 		ua: coursesua,
@@ -27,6 +29,7 @@ const Allcourse = () => {
 
 	return (
 		<div className='container mx-auto '>
+			<div className='w-full text-center text-sm text-slate-400 pt-2'>{t('takeout')}.</div>
 			<div className='py-3'>
 				<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 			</div>
