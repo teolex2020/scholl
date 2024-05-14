@@ -131,8 +131,8 @@ export const coursesua = [
 		price: '15000',
 		status: true,
 		image: 'bondarenko.webp',
-		datastart: '02.09.2024',
-		dataend: '21.10.2024',
+		datastart: '04.06.2024',
+		dataend: '05.07.2024',
 		time: '19.00',
 		alltime: 24,
 		conclusions: [
