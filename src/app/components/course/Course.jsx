@@ -127,6 +127,7 @@ const locale = useLocale()
 						price={data.price}
 						alltime={data.alltime}
 						image={data.image}
+						active={data.active}
 					/>
 				</div>
 			</div>

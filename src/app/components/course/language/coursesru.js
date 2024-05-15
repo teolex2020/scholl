@@ -1,6 +1,7 @@
 export const coursesru = [
 	{
 		id: '20241',
+		active: true,
 		course: 'Курс',
 		lector: 'Руслан Бортник',
 		language: 'русский',
@@ -124,17 +125,18 @@ export const coursesru = [
 	},
 	{
 		id: '20246',
+		active: false,
 		course: 'Курс',
 		lector: 'Константин Бондаренко',
 		language: 'русский',
 		title: 'Настоящая история Украины: от расвета до расвета',
 		descriptions:
 			'Уникальный авторский цикл лекций украинского политолога, историка Константина Бондаренко о истории украинских земель, народа и государства. Сертификат (после сдачи теста)',
-		price: '15000',
+		price: '',
 		status: true,
 		image: 'bondarenko.webp',
-		datastart: '04.06.2024',
-		dataend: '05.07.2024',
+		datastart: '',
+		dataend: '',
 		time: '19.00',
 		alltime: 24,
 		conclusions: [

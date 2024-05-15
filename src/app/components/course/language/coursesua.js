@@ -1,6 +1,7 @@
 export const coursesua = [
 	{
 		id: '20241',
+		active: true,
 		course: 'Курс',
 		lector: 'Бортнік Руслан',
 		language: 'російська',
@@ -122,17 +123,18 @@ export const coursesua = [
 	},
 	{
 		id: '20246',
+		active: false,
 		course: 'Курс',
 		lector: 'Констянтин Бондаренко',
 		language: 'російська',
 		title: 'Справжня історія України: від світанку до світанку',
 		descriptions:
 			'Унікальний авторський цикл лекцій українського політолога, історика Костянтина Бондаренка про історію українських земель, народу і держави. Сертифікат (після складання тесту)',
-		price: '15000',
+		price: '',
 		status: true,
 		image: 'bondarenko.webp',
-		datastart: '04.06.2024',
-		dataend: '05.07.2024',
+		datastart: '',
+		dataend: '',
 		time: '19.00',
 		alltime: 24,
 		conclusions: [

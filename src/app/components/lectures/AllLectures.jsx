@@ -54,6 +54,7 @@ const Allcourse = () => {
 						status={course.status}
 						image={course.image}
 						course={course.course}
+						active={course.active}
 					/>
 				))}
 			</div>

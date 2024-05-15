@@ -11,7 +11,7 @@ import {
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/navigation'
 
-const CartCourse = ({ lector, price, status, title, id, image, course }) => {
+const CartCourse = ({ lector, price, status, title, id, image, course, active }) => {
 	const t = useTranslations('BortnikTrain')
 	const route = useRouter()
 	return (
@@ -50,8 +50,8 @@ const CartCourse = ({ lector, price, status, title, id, image, course }) => {
 				<p className={`text-lg h-[40px] px-2 `}>{title}</p>
 			</div>
 			<div className='w-full flex justify-center font-semibold '>
-				<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex items-center   duration-300 hover:bg-blur z-10 text-2xl px-5 min-w-48 '>
-					<p className=' text-xl'>{price} ₴</p>
+				<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex items-center   duration-300 hover:bg-blur z-10 text-2xl px-5 min-w-48 ' >
+					<p className=' text-xl' >{price} ₴</p>
 				</button>
 			</div>
 			<div className='w-fit flex gap-3 items-center text-white px-3 '>

@@ -1,6 +1,7 @@
 export const coursesen = [
 	{
 		id: '20241',
+		active: true,
 		course: 'Course',
 		lector: 'Ruslan Bortnik',
 		language: 'Russian',
@@ -123,17 +124,18 @@ export const coursesen = [
 	},
 	{
 		id: '20246',
+		active: false,
 		course: 'Course',
 		lector: 'Konstantin Bondarenko',
 		language: 'Russian',
 		title: 'The True History of Ukraine: From Down to Down',
 		descriptions:
 			'A unique authorial series of lectures by Ukrainian political scientist and historian Konstantin Bondarenko on the history of Ukrainian lands, people, and state. Certificate (after passing the test)',
-		price: '15000',
+		price: '',
 		status: true,
 		image: 'bondarenko.webp',
-		datastart: '04.06.2024',
-		dataend: '05.07.2024',
+		datastart: '',
+		dataend: '',
 		time: '19.00',
 		alltime: 24,
 		conclusions: [
