@@ -24,7 +24,7 @@ const ContactComponent = () => {
 								<p className='colorgold text-xl font-semibold'>Phone</p>
 							</div>
 							<div className='lg:pl-20 pt-3'>
-								<p>+38(093)-757-75-65</p>
+								<p>+38(063)-789-32-57</p>
 							</div>
 						</div>
 						<div>
