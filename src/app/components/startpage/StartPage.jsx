@@ -1,30 +1,21 @@
-"use client"
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import ButtonStartPage from '../ui/ButtonStartPage'
 import Image from 'next/image'
 import { Gentium_Book_Plus } from 'next/font/google'
-import startimage from "../../../../public/assets/bg.webp"
+import startimage from '../../../../public/assets/bg.webp'
 
-
-
-
-
- const gentium = Gentium_Book_Plus({
-		weight: '400',
-		subsets: ['latin'],
- })
+const gentium = Gentium_Book_Plus({
+	weight: '400',
+	subsets: ['latin'],
+})
 
 const StartPage = ({ title, name, descriptions, button, info }) => {
-
-
-
-
 	return (
 		<AnimatePresence>
 			<motion.div className='container mx-auto elem bg-blur mb-10 py-5  lg:pb-24 mt-5 lg:mt-14 2xl:mt-24  relative rounded-xl max-w-[1346px]  '>
 				<div className='flex justify-around flex-col lg:flex-row items-center lg:gap-48 '>
-				
 					<motion.div
 						custom={1}
 						initial={{ scale: 0 }}

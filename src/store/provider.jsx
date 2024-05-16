@@ -7,10 +7,23 @@ import firebase_app from '@/firebase/config'
 import { useDispatch } from 'react-redux'
 import { Authuser, Loading, Id } from './features/counterSlice'
 import { PersistGate } from 'redux-persist/integration/react'
+import {
+	initializeAppCheck,
+	ReCaptchaEnterpriseProvider,
+} from 'firebase/app-check'
 
 export const MyComponent = () => {
 	const dispatch = useDispatch()
 	const auth = getAuth(firebase_app)
+
+	useEffect(() => {
+		initializeAppCheck(firebase_app, {
+			provider: new ReCaptchaEnterpriseProvider(
+				process.env.NEXT_PUBLIC_SITE_KEY
+			),
+			isTokenAutoRefreshEnabled: true,
+		})
+	}, [])
 
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {

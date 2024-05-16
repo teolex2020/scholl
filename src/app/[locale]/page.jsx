@@ -3,6 +3,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 
+
 import StartPage from '../components/startpage/StartPage.jsx'
 
 const Home = ({ params: { locale } }) => {

@@ -96,7 +96,7 @@ const Course = () => {
 								<div className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '>
 									<CalendarIcon className='w-5 h-5 text-green-500' />
 									<span>{data.datastart} </span>
-									
+
 									<ClockIcon className='w-5 h-5' />
 									<span className='uppercase'>19.00</span>
 								</div>
@@ -110,6 +110,7 @@ const Course = () => {
 						price={data.price}
 						alltime={data.alltime}
 						image={data.image}
+						active={data.active}
 					/>
 				</div>
 			</div>
