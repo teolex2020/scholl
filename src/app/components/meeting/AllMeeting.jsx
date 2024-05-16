@@ -34,7 +34,7 @@ const Allcourse = () => {
 				<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 			</div>
 
-			<div className='lg:p-6  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10  place-items-center '>
+			{/* <div className='lg:p-6  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10  place-items-center '>
 				{filteredCourses.map((course, i) => (
 					<CartCourse
 						key={i}
@@ -48,7 +48,7 @@ const Allcourse = () => {
 						course={course.course}
 					/>
 				))}
-			</div>
+			</div> */}
 		</div>
 	)
 }

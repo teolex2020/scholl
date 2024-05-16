@@ -104,7 +104,7 @@ const Course = () => {
 						</div>
 					</div>
 				</div>
-				<div>
+				{/* <div>
 					<Cart
 						dataOrder={dataOrder}
 						price={data.price}
@@ -112,7 +112,7 @@ const Course = () => {
 						image={data.image}
 						active={data.active}
 					/>
-				</div>
+				</div> */}
 			</div>
 
 			<hr className='opacity-10 my-5' />
