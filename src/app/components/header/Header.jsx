@@ -11,6 +11,7 @@ import MobileButon from './MobileButon'
 import MobileMenu from './MobileMenu'
 import { useSelector } from 'react-redux'
 import logo from "../../../../public/assets/logo.webp"
+import { BellIcon } from '@heroicons/react/24/solid'
 
 
 
@@ -24,6 +25,7 @@ const Header = () => {
 	const mobilemenu = useSelector((state) => state.counter.mobilemenu)
 	
  const [isAuthorized, setIsAuthorized] = useState(false)
+  const [activeBell, setActiveBell] = useState(false)
 useEffect(() => {
 	setIsAuthorized(true)
 }, [])
@@ -33,7 +35,7 @@ useEffect(() => {
 		<div className='lg:container w-full mx-auto  z-40'>
 			{mobilemenu && <MobileMenu />}
 			<ButtonChat />
-			<div className='flex  justify-between h-[65px] lg:h-24 items-center  '>
+			<div className='flex  md:justify-between h-[65px] lg:h-24 items-center  '>
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>
 						<Image
@@ -48,13 +50,22 @@ useEffect(() => {
 				</Link>
 				<MobileButon />
 				<Menu />
-				<div className='flex  justify-center'>
+				<div className='flex  justify-center  w-fit'>
 					{' '}
 					<Language />
 				</div>
 
 				<div className='lg:flex hidden z-30 items-center  mx-5 '>
 					<Button font={gentium.className} />
+				</div>
+				<div className='relative'>
+					<BellIcon className='w-7 h-7 s stroke-zinc-200 fill-none' />
+
+					<div
+						className={`w-3 h-3 absolute  rounded-full right-0 bottom-1 ${
+							activeBell ? 'bg-green-500' : 'bg-zinc-500'
+						} `}
+					></div>
 				</div>
 			</div>
 

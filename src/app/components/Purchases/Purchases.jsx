@@ -4,47 +4,77 @@ import { useSelector } from 'react-redux'
 import { useTranslations } from 'next-intl'
 import Loader from '../Loader/Loader'
 import withAuth from '@/lib/auth/whithAuth'
+import { db } from '@/firebase/config'
+import {
+	collection,
+	query,
+	where,
+	onSnapshot,
+	getDoc,
+	doc,
+} from 'firebase/firestore'
+import { getAuth } from 'firebase/auth'
+
 const Purchases = () => {
 	const [data, setData] = useState(null)
 	const [loading, setLoading] = useState(false)
 	const id = useSelector((state) => state.counter.id)
-const t = useTranslations('Purchase')
+	const t = useTranslations('Purchase')
+	const auth = getAuth()
+	const user = auth.currentUser
+
 	useEffect(() => {
-		// Перевірка, чи вже є дані, щоб уникнути непотрібних запитів
-		if (!data) {
-			setLoading(true) // Встановлення стану завантаження перед запитом
-			fetch(`/api/videocours`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
+		if (user && id && !data) {
+			setLoading(true)
+			const q = query(collection(db, 'order'), where('id', '==', id))
+
+			const unsubscribe = onSnapshot(
+				q,
+				async (querySnapshot) => {
+					const documents = querySnapshot.docs.map((doc) => ({
+						orderNumber: doc.data().orderNumber,
+						reason: doc.data().reason,
+					}))
+
+					const filterVideo = documents.filter((item) => item.reason === 'Ok')
+					const filterVideoslice = filterVideo.map((item) =>
+						item.orderNumber.slice(-5)
+					)
+
+					const videoLinks = await Promise.all(
+						filterVideoslice.map(async (videoId) => {
+							const videoDoc = await getDoc(doc(db, 'video', videoId))
+							if (videoDoc.exists()) {
+								return {
+									video: videoDoc.data().video,
+									title: videoDoc.data().title,
+								}
+							}
+							return null
+						})
+					)
+
+					setData(videoLinks.filter((video) => video !== null))
+					setLoading(false)
 				},
-				body: JSON.stringify({
-					userId: id,
-				}),
-			})
-				.then((response) => response.json())
-				.then((data) => {
-					setData(data.data) 
-					setLoading(false) 
-				})
-				.catch((error) => {
-					console.error('An error occurred:', error)
-					setLoading(false) 
-				})
+				(error) => {
+					console.error('Error in onSnapshot:', error)
+					setLoading(false)
+				}
+			)
+
+			// Відписка від прослуховування при розмонтуванні компонента
+			return () => unsubscribe()
 		}
-	}, [id, data]) 
+	}, [user, id, data])
 
-	if(loading) {
-		return (
-			<Loader/>
-		)
+	if (loading) {
+		return <Loader />
 	}
-
-
 
 	return (
 		<div className='container mx-auto flex flex-wrap min-h-screen'>
-			{data?.length > 0  ? (
+			{data?.length > 0 ? (
 				data?.map((item, i) => (
 					<div
 						key={i}

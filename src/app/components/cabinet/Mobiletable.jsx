@@ -1,36 +1,16 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { VideoCameraIcon } from '@heroicons/react/24/solid'
+
 import { useTranslations } from 'next-intl'
 import { useSelector } from 'react-redux'
-const Mobiletable = () => {
+
+
+const Mobiletable = ({ data }) => {
 	const t = useTranslations('Cabinetdata')
-	const [orderdata, setOrderData] = useState()
+	
 	const id = useSelector((state) => state.counter.id)
 
-	useEffect(() => {
-		async function fetchData() {
-			const response = await fetch(`/api/userData`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					userId: id,
-				}),
-			})
 
-			if (response.ok) {
-				const { data } = await response.json()
-
-				setOrderData(data)
-			} else {
-				console.error('Помилка при data')
-			}
-		}
-
-		fetchData()
-	}, [id])
 
 	return (
 		<div>
@@ -48,8 +28,8 @@ const Mobiletable = () => {
 						</th>
 					</tr>
 				</thead>
-				{orderdata ? (
-					orderdata?.map((item, i) => (
+				{data ? (
+					data?.map((item, i) => (
 						<tbody key={i} className=''>
 							<tr className=' h-10'>
 								<td className=' text-sm'>

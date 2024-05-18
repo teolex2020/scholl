@@ -22,12 +22,14 @@ const List = () => {
 	const dispatch = useDispatch()
 
 	const [orderdata, setOrderData] = useState()
+	const [data, setData] = useState()
+
 
 	const t = useTranslations('Cabinet')
 	const router = useRouter()
 
 	useEffect(() => {
-		if (!orderdata) {
+		if (!orderdata && id) {
 			setLoading(true)
 			function fetchData() {
 				fetch(`/api/userInfo`, {
@@ -54,6 +56,30 @@ const List = () => {
 		}
 	}, [id, orderdata])
 
+	useEffect(() => {
+		async function fetchData() {
+			const response = await fetch(`/api/userData`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					userId: id,
+				}),
+			})
+
+			if (response.ok) {
+				const { data } = await response.json()
+
+				setData(data)
+			} else {
+				console.error('Помилка при data')
+			}
+		}
+
+		fetchData()
+	}, [id])
+
 	const changeImage = () => {
 		dispatch(Avatar(avatar))
 	}
@@ -64,12 +90,12 @@ const List = () => {
 
 	return (
 		<div className='h-full flex  items-center lg:items-start lg:justify-between flex-col lg:flex-row container mx-auto relative'>
-			<div className='w-96 h-full lg:bg-blur flex flex-2 flex-col items-center py-5 gap-5 rounded-xl lg:m-10'>
+			<div className='w-96  lg:bg-blur flex flex-2 flex-col items-center py-5 gap-5 rounded-xl lg:m-10'>
 				<div className='absolute top-0 right-0 left-0 flex justify-center lg:items-center  h-full  '>
 					{' '}
 					{avatar && <ImagePopup />}
 				</div>
-				<p className='text-2xl'>{t('title')}</p>
+				<p className='text-2xl'>{t('title')} </p>
 				<div className=''>
 					<div className='w-24 h-24 lg:w-48 lg:h-48 rounded-full bg-blur relative'>
 						<div
@@ -136,10 +162,10 @@ const List = () => {
 			<div className='flex flex-col gap-10 lg:p-10 flex-1 '>
 				<div className='lg:bg-blur min-h-[500px] w-full rounded-xl lg:p-5 '>
 					<div className='lg:hidden px-5'>
-						<Mobiletable />
+						<Mobiletable data={data}/>
 					</div>
 					<div className='hidden lg:block px-10'>
-						<Desctop />
+						<Desctop data={data}/>
 					</div>
 				</div>
 			</div>

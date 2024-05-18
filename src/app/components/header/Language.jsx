@@ -44,7 +44,7 @@ function onSelectChange(event) {
 }
   	
   return (
-		<div className='cursor-pointer text-sm z-20 mr-32 lg:mr-0'>
+		<div className='cursor-pointer text-sm z-20 mx-10 lg:mr-0'>
 			<ul
 				className={` flex items-center space-x-3  ${gentium.className} uppercase`}
 			>
