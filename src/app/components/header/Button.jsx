@@ -10,9 +10,7 @@ import user from '../../../../public/assets/user.png'
 import { useTranslations } from 'next-intl'
 
 const Button = ({ font }) => {
-	const {popupmenu, authUser} = useSelector((state) => state.counter)
-	
-
+	const { popupmenu, authUser } = useSelector((state) => state.counter)
 
 	const t = useTranslations('Header')
 
@@ -22,8 +20,6 @@ const Button = ({ font }) => {
 	const popup = () => {
 		dispatch(PopupMenu(popupmenu))
 	}
-
-
 
 	return (
 		<div className='relative '>

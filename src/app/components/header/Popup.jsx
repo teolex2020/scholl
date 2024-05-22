@@ -14,6 +14,7 @@ const Popup = () => {
 	const dispatch = useDispatch()
 	const popupmenu = useSelector((state) => state.counter.popupmenu)
 	const id = useSelector((state) => state.counter.id)
+	console.log("id",id)
 
 	const popupRef = useRef()
 

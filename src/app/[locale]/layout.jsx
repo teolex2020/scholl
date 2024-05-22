@@ -7,7 +7,9 @@ import Image from 'next/image'
 import { Providers } from '@/store/provider'
 import Chat from '../components/chat/Chat'
 import LocaleProvider from './provider'
-import Script from 'next/script'
+
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 
 const roboto = Roboto({
@@ -36,20 +38,19 @@ export const metadata = {
 export default function RootLayout({ children, params: { locale } }) {
 	return (
 		<html className=' elem ' lang={locale}>
-	
-				<head>
-					<Script
-						async
-						src='https://www.googletagmanager.com/gtag/js?id=G-84W2FYYVKC'
-					></Script>
-					<Script id='google-analytics'>
-						{`  window.dataLayer = window.dataLayer || [];
+			{/* <head>
+				<Script
+					async
+					src='https://www.googletagmanager.com/gtag/js?id=G-84W2FYYVKC'
+				></Script>
+				<Script id='google-analytics'>
+					{`  window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-84W2FYYVKC');`}
-					</Script>
-				</head>
-	
+				</Script>
+			</head> */}
+
 			<body className={` `}>
 				<Providers>
 					<main
@@ -73,6 +74,7 @@ export default function RootLayout({ children, params: { locale } }) {
 					</main>
 				</Providers>
 			</body>
+			<GoogleAnalytics gaId='G-84W2FYYVKC' />
 		</html>
 	)
 }

@@ -1,7 +1,7 @@
 export const coursesen = [
 	{
 		id: '20244',
-		active: true,
+		active: false,
 		course: 'Meeting',
 		lector: 'Mykhailo Chaplyha',
 		language: 'Russian',

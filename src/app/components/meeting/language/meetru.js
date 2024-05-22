@@ -1,7 +1,7 @@
 export const coursesru = [
 	{
 		id: '20244',
-		active: true,
+		active: false,
 		course: 'Встреча',
 		lector: 'Михаил Чаплыга',
 		language: 'русский',

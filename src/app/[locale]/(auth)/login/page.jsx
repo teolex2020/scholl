@@ -31,12 +31,16 @@ const Login = () => {
 	const sign = async (values) => {
 		let { email, password } = values
 		const { result, error } = await signIn(email, password)
-
+		if (result) {
+			toast.success('Success Notification !')
+			
+			router.push('/')
+		}
 		if (error) {
 			return toast.error('Email/password accounts are not enabled')
 		}
 
-		toast.success('Success Notification !')
+	
 	}
 
 	const signupWithGoogle = () => {

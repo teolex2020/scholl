@@ -120,8 +120,6 @@ const Infouser = () => {
 		<div
 			className={`fixed top-0 right-0 left-0 bottom-0 z-50 pointer-events-auto bg-[#12181d]  `}
 		>
-			
-
 			<ToastContainer
 				position='top-center'
 				autoClose={5000}
@@ -163,7 +161,9 @@ const Infouser = () => {
 								<CustomField label='First Name' name='firstName' type='text' />
 								<CustomField label='Last Name' name='lastName' type='text' />
 								<CustomField label='Phone' name='phone' type='text' />
-								<CustomField label='Email' name='email' type='email' />
+								{!data?.email && (
+									<CustomField label='Email' name='email' type='email' />
+								)}
 
 								<button
 									type='submit'

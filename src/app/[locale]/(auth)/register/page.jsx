@@ -30,7 +30,6 @@ const Register = () => {
 	const signupWithGoogle = () => {
 		signInWithPopup(auth, Providers)
 			.then((result) => {
-			
 				toast.success('Success Notification !')
 				return router.push('/')
 			})
@@ -89,7 +88,6 @@ const Register = () => {
 								{t('user')}
 							</p>
 							<Field
-								
 								name='name'
 								type='text'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'
@@ -103,7 +101,6 @@ const Register = () => {
 								{t('email')}
 							</p>
 							<Field
-								
 								name='email'
 								type='email'
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'
@@ -127,7 +124,6 @@ const Register = () => {
 								)}
 							</div>
 							<Field
-								
 								name='password'
 								type={inputType ? 'password' : 'text'}
 								className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full group-hover:border-blue-200/80'

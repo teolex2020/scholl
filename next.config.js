@@ -4,6 +4,7 @@ const withNextIntl = require('next-intl/plugin')()
 
 const nextConfig = withNextIntl({
 	reactStrictMode: true,
+	// productionBrowserSourceMaps: false,
 
 	// see https://nextjs.org/docs/api-reference/next.config.js/headers
 	async headers() {

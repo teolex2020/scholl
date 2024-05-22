@@ -8,14 +8,11 @@ import { useDispatch } from 'react-redux'
 import { Authuser, Loading, Id } from './features/counterSlice'
 import { PersistGate } from 'redux-persist/integration/react'
 
-
 // console.log('key', process.env.NEXT_PUBLIC_SITE_KEY)
 
 export const MyComponent = () => {
 	const dispatch = useDispatch()
 	const auth = getAuth(firebase_app)
-
-
 
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -24,18 +21,17 @@ export const MyComponent = () => {
 				dispatch(Loading(false))
 				dispatch(Authuser(!!user))
 				dispatch(Id(user?.uid))
-
-				
 			} else {
 				console.info('User is not logged in')
 			}
 		})
+		
 
 		return () => unsubscribe()
 	}, [auth, dispatch])
 }
 
-export async function Providers({ children = {} }) {
+export  function Providers({ children = {} }) {
 	return (
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>

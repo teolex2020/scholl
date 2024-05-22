@@ -71,6 +71,7 @@
 		"video": "video materials",
 		"certificate": "certificate",
 		"button": "Buy",
+		"buttonClose": "Closed",
 		"course": "The course consists of:"
 	},
 	"Meeting": {

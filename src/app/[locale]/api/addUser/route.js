@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getFirestore, serverTimestamp } from 'firebase-admin/firestore'
+import { getFirestore} from 'firebase-admin/firestore'
 import { initAdmin } from '@/firebase/db/firebaseAdmin'
 
 export async function POST(req) {
@@ -8,7 +8,7 @@ export async function POST(req) {
 	try {
 		await initAdmin()
 		const firestore = getFirestore()
-		const user = await firestore.collection('users').doc(id).update(
+		await firestore.collection('users').doc(id).update(
 			{
 				firstName,
 				lastName,
