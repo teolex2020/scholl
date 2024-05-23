@@ -15,4 +15,20 @@ export const coursesen = [
 		time: '19.00',
 		duration: 180,
 	},
+	{
+		id: '20245',
+		active: false,
+		course: 'Meeting',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title: 'What Will Happen to Ukraine',
+		descriptions:
+			'Dear viewers! We are pleased to invite you to a private meeting with Ruslan Biziayev, which will be devoted to the new geopolitical and economic order in the world. At this meeting, we will discuss the situation in the world and Ukraine through the prism of specific state and human issues and see the ways of their development. You will also have the opportunity to ask your questions.',
+		price: '1495',
+		status: false,
+		image: 'buziev.webp',
+		datastart: '00.00.2024',
+		time: '19.00',
+		duration: 180,
+	},
 ]

@@ -6,7 +6,7 @@
 		"button": "Log out",
 		"title": "My account",
 		"title1": "My purchases",
-		"buton": "Enter"
+		"buton": "Sign in"
 	},
 	"Menu": {
 		"course": "Courses",
@@ -24,36 +24,14 @@
 		"info": "Trainings and courses are held in ONLINE format "
 	},
 	"Course": {
-		"title": "Fundamentals of Practical Political Analysis: How to Distinguish Truth from Lies and Make the Right Decisions",
-		"descriptions": "The political analysis and forecasting course will help you acquire the most important knowledge and skills in public life that you can apply when working on complex practical projects.",
-		"lector": "Bortnik Ruslan",
+	
 		"lectorname": "Teacher:",
 		"language": "Language:",
 		"button": "Buy ",
 		"aftercourse": "Upon completion of the course, you will learn/know",
-		"intro1": "Critically evaluate information, arguments and policies. Developing critical thinking skills is central to political analysis.",
-		"intro2": "Better understand and analyze public policy, assess its impact on society.",
-		"intro3": "Model complex political processes.",
-		"intro4": "Analyze specific historical and contemporary political events, case studies and real-world scenarios.",
+		
 		"courseprogram": "Course Program",
-		"Introduction": "Introduction. Concerns everyone. Miranda's lessons. (1 hour)",
-		"Deconstruction": "Deconstruction of the information flow (16 hours):",
-		"intro5": "- principles and objectives of political analysis, obviously incomprehensible things, Dr. House's criminal doctrine (2 hours);",
-		"intro6": "- subjects and objects (difficulties in determining the real object of analysis) (1 hour);",
-		"intro7": "- information processing technologies (visualization, perception problems, verification, classification, structuring), reference points of the information flow (2 hours);",
-		"intro8": "- logical analysis and matrix method (1 hour);",
-		"intro9": "- situational analysis, induction and deduction (1 hour);",
-		"intro10": "- mental experiment and political modeling (2 hours); ",
-		"intro11": "- comparative analysis (1 hour);",
-		"Reconstruction": "Reconstruction of information. Functional design of information flows (design and modeling of information flows) (9 hours):",
-		"intro12": "- logical synthesis (1 hour);",
-		"intro13": "- elements of game theory (1 hour);",
-		"intro14": "- political modeling and design (1 hour);",
-		"intro15": "- political forecasting (1 hour);",
-		"intro16": "- visualization (1 hour);",
-		"intro17": "- testing and interpretation (1 hour);",
-		"intro18": "- textology (1 hour);",
-		"intro19": "- case studies (2 hours).",
+	
 		"Conclusion": "Conclusions. On the way to consciously binding freedom (2 hours).",
 		"Certificat": "After completing the course you will receive a certificate",
 		"Questions": "Frequently asked questions:",
