@@ -21,7 +21,8 @@ export const coursesen = [
 		course: 'Meeting',
 		lector: 'Ruslan Bizyaev',
 		language: 'Russian',
-		title: 'What Will Happen to Ukraine',
+		title:
+			'World War III. Causes and consequences for the state and the individual.',
 		descriptions:
 			'Dear viewers! We are pleased to invite you to a private meeting with Ruslan Biziayev, which will be devoted to the new geopolitical and economic order in the world. At this meeting, we will discuss the situation in the world and Ukraine through the prism of specific state and human issues and see the ways of their development. You will also have the opportunity to ask your questions.',
 		price: '1495',
@@ -30,5 +31,26 @@ export const coursesen = [
 		datastart: '00.00.2024',
 		time: '19.00',
 		duration: 180,
+	},
+	{
+		id: '20257',
+		active: true,
+		course: 'Meeting',
+		lector: 'VADIM KARASEV',
+		language: 'Russian',
+		title:
+			'Modern Ukraine and Russia: The emergence of a state from the spirit and condition of war (comparative analysis)',
+		descriptions: `We are excited to share with you, that you can take part in a Closed Meeting with Vadim Karasev, the director of the Institute of Global Strategies, a political scientist from Ukraine, advisor to the Deputy Prime Minister of Ukraine (1999 and 2001-2002), advisor to the head of the President of Ukraine's Secretariat (2006-2010), au-thor, and host of the political and philosophical television shows "Black Swan," "Black Square," and others. 
+
+We will have an open discussion with Vadim Yuryevich regarding the future of the world, Ukraine, and the place and function of thinking individuals in the political, economic, and social structures that will be established following the Great War.
+
+
+`,
+		price: '1599',
+		status: false,
+		image: 'karasev.webp',
+		datastart: '19.06.2024',
+		time: '19.00',
+		duration: 240,
 	},
 ]
