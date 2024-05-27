@@ -94,7 +94,7 @@ const Course = () => {
 										</span>
 									</div>
 								</div>
-								<div className='flex gap-3'>
+								<div className='flex flex-col md:flex-row md:gap-3'>
 									<div className='text-sm text-white flex gap-2 py-3 relative cursor-pointer w-fit '>
 										<HandRaisedIcon className='w-5 h-5 text-green-500' />
 										<span> {m('Moderator')}: </span>
@@ -109,10 +109,14 @@ const Course = () => {
 										<span className='uppercase'>19.00</span>
 									</div>
 								</div>
+								<div className='w-full text-center text-lg text-red-600 font-semibold pt-2'>
+									{m('takeout')}.
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<div>
 					<Cart
 						dataOrder={dataOrder}
