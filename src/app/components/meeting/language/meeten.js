@@ -4,7 +4,9 @@ export const coursesen = [
 		active: false,
 		course: 'Meeting',
 		lector: 'Mykhailo Chaplyha',
+		Moderator: 'Ruslan Bortnik',
 		language: 'Russian',
+
 		title: 'What Will Happen to Ukraine',
 		descriptions:
 			'Friends, you are awaited by a meeting and candid dialogue with a former civil servant, Representative of the Commissioner for Human Rights (2012-2018), political leader, star of the information space, thinker, and simply a Free Person, Mykhailo Chaplyha. “What Will Happen to Ukraine” - honestly, without pomp and propaganda, but responsibly and argumentatively, in a closed audience and without recording, one of the bravest and brightest political thinkers of modern Ukraine will share. You will also have the opportunity to ask your own questions.',
@@ -20,6 +22,7 @@ export const coursesen = [
 		active: false,
 		course: 'Meeting',
 		lector: 'Ruslan Bizyaev',
+		Moderator: 'Ruslan Bortnik',
 		language: 'Russian',
 		title:
 			'World War III. Causes and consequences for the state and the individual.',
@@ -37,6 +40,7 @@ export const coursesen = [
 		active: true,
 		course: 'Meeting',
 		lector: 'VADIM KARASEV',
+		Moderator: 'Ruslan Bortnik',
 		language: 'Russian',
 		title:
 			'Modern Ukraine and Russia: The emergence of a state from the spirit and condition of war (comparative analysis)',

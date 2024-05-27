@@ -5,6 +5,7 @@ import {
 	CalendarIcon,
 	ClockIcon,
 	LanguageIcon,
+	HandRaisedIcon
 } from '@heroicons/react/24/solid'
 import { useTranslations, useLocale } from 'next-intl'
 import Cart from './Cart'
@@ -28,6 +29,7 @@ const Course = () => {
 	const { authUser } = useSelector((state) => state.counter)
 	const router = useRouter()
 	const t = useTranslations('Course')
+	const m = useTranslations('Meeting')
 	const dispatch = useDispatch()
 	const locale = useLocale()
 
@@ -92,13 +94,20 @@ const Course = () => {
 										</span>
 									</div>
 								</div>
+								<div className='flex gap-3'>
+									<div className='text-sm text-white flex gap-2 py-3 relative cursor-pointer w-fit '>
+										<HandRaisedIcon className='w-5 h-5 text-green-500' />
+										<span> {m('Moderator')}: </span>
 
-								<div className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '>
-									<CalendarIcon className='w-5 h-5 text-green-500' />
-									<span>{data.datastart} </span>
+										<span className='uppercase'>{data.Moderator}</span>
+									</div>
+									<div className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '>
+										<CalendarIcon className='w-5 h-5 text-green-500' />
+										<span>{data.datastart} </span>
 
-									<ClockIcon className='w-5 h-5' />
-									<span className='uppercase'>19.00</span>
+										<ClockIcon className='w-5 h-5' />
+										<span className='uppercase'>19.00</span>
+									</div>
 								</div>
 							</div>
 						</div>

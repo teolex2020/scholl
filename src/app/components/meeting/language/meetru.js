@@ -4,6 +4,7 @@ export const coursesru = [
 		active: false,
 		course: 'Встреча',
 		lector: 'Михаил Чаплыга',
+		Moderator: 'Руслан Бортник',
 		language: 'русский',
 		title: 'Что будет с Украиной',
 		descriptions:
@@ -20,6 +21,7 @@ export const coursesru = [
 		active: false,
 		course: 'Встреча',
 		lector: 'Руслан Бизяев',
+		Moderator: 'Руслан Бортник',
 		language: 'русский',
 		title:
 			'Третья мировая война. Причины и следствия для государства и человека.',
@@ -37,6 +39,7 @@ export const coursesru = [
 		active: true,
 		course: 'Встреча',
 		lector: 'Вадим Карасев',
+		Moderator: 'Руслан Бортник',
 		language: 'русский',
 		title:
 			'Рождение государства из духа и состояния Войны - Европа Современная Россия и Украина (сравнительный анализ)',

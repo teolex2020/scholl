@@ -55,7 +55,7 @@
 	"Meeting": {
 		
 		"lector": "Instructor",
-	
+	"Moderator":"Moderator",
 		"duration": "Duration",
 		"tim": "minutes",
 		"data": "Date",
