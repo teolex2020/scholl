@@ -16,7 +16,7 @@ import { useRouter } from '@/navigation'
 const train = [
 	{
 		id: 20242,
-		image: '/assets/kill.jpg',
+		image: '/assets/kill.webp',
 		title: 'title',
 		descriptions: `descriptions`,
 		price: '550',

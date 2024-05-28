@@ -2,7 +2,7 @@ import {  Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
-import bg from '../../../public/assets/phon.jpg'
+import bg from '../../../public/assets/phon.webp'
 import Image from 'next/image'
 import { Providers } from '@/store/provider'
 import Chat from '../components/chat/Chat'
@@ -38,18 +38,7 @@ export const metadata = {
 export default function RootLayout({ children, params: { locale } }) {
 	return (
 		<html className=' elem ' lang={locale}>
-			{/* <head>
-				<Script
-					async
-					src='https://www.googletagmanager.com/gtag/js?id=G-84W2FYYVKC'
-				></Script>
-				<Script id='google-analytics'>
-					{`  window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-84W2FYYVKC');`}
-				</Script>
-			</head> */}
+			
 
 			<body className={` `}>
 				<Providers>
