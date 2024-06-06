@@ -1,35 +1,26 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import {
-	ArrowRightOnRectangleIcon,
+	ArrowRightEndOnRectangleIcon,
 	BuildingLibraryIcon,
-	CreditCardIcon
+	CreditCardIcon,
 } from '@heroicons/react/24/solid'
 import { getAuth, signOut } from 'firebase/auth'
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { PopupMenu, Authuser } from '@/store/features/counterSlice'
 import { useTranslations } from 'next-intl'
+
 const Popup = () => {
 	const t = useTranslations('Popup')
 	const dispatch = useDispatch()
 	const popupmenu = useSelector((state) => state.counter.popupmenu)
 	const id = useSelector((state) => state.counter.id)
 
+	const togglePopup = () => {
+		dispatch(PopupMenu(popupmenu))
+	}
 
-	const popupRef = useRef()
-
-	useEffect(() => {
-		function handleClickOutside(event) {
-			if (popupRef.current && !popupRef.current.contains(event.target)) {
-				dispatch(PopupMenu(popupmenu))
-			}
-		}
-		document.addEventListener('mousedown', handleClickOutside)
-
-		return () => document.removeEventListener('mousedown', handleClickOutside)
-	}, [popupRef, dispatch, popupmenu])
-
-	const singout = () => {
+	const handleSignOut = () => {
 		const auth = getAuth()
 		signOut(auth)
 			.then(() => {
@@ -41,45 +32,40 @@ const Popup = () => {
 			})
 	}
 
-	const popup = () => {
-		dispatch(PopupMenu(popupmenu))
-	}
-
 	return (
 		<div
-			className='absolute hidden lg:block right-0  top-14 w-48 bg-blur rounded-md p-5 z-50 bg-menublur'
-			ref={popupRef}
+			className='fixed inset-0 flex items-start justify-end bg-transparent'
+			onClick={togglePopup}
 		>
-			<Link href={`/cabinet/${id}`}>
-				<div
-					className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
-					onClick={popup}
-				>
-					<div>
-						<BuildingLibraryIcon className='w-5 h-5' />
-					</div>
-					<div>{t('title')}</div>
-				</div>
-			</Link>
-			<Link href={`/purchases/${id}`}>
-				<div
-					className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
-					onClick={popup}
-				>
-					<div>
-						<CreditCardIcon className='w-5 h-5' />
-					</div>
-					<div> {t('title1')}</div>
-				</div>
-			</Link>
 			<div
-				className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
-				onClick={() => singout()}
+				className='absolute right-0 top-20 w-48 bg-blur rounded-md p-5 z-50 bg-menublur mr-[10%]'
+				onClick={(e) => e.stopPropagation()}
 			>
-				<div>
-					<ArrowRightOnRectangleIcon className='w-5 h-5' />
+				<Link href={`/cabinet/${id}`}>
+					<div
+						className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
+						onClick={togglePopup}
+					>
+						<BuildingLibraryIcon className='w-5 h-5' />
+						<div>{t('title')}</div>
+					</div>
+				</Link>
+				<Link href={`/purchases/${id}`}>
+					<div
+						className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
+						onClick={togglePopup}
+					>
+						<CreditCardIcon className='w-5 h-5' />
+						<div>{t('title1')}</div>
+					</div>
+				</Link>
+				<div
+					className='flex space-x-5 py-3 hover:scale-105 cursor-pointer duration-300'
+					onClick={handleSignOut}
+				>
+					<ArrowRightEndOnRectangleIcon className='w-5 h-5' />
+					<div>{t('button')}</div>
 				</div>
-				<div>{t('button')}</div>
 			</div>
 		</div>
 	)

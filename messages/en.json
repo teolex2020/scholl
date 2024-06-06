@@ -6,7 +6,8 @@
 		"button": "Log out",
 		"title": "My account",
 		"title1": "My purchases",
-		"buton": "Sign in"
+		"buton": "Sign in",
+		"description": "Your news will be displayed here"
 	},
 	"Menu": {
 		"course": "Courses",

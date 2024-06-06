@@ -9,9 +9,11 @@ import ButtonChat from '../chat/Button'
 import Button from './Button.jsx'
 import MobileButon from './MobileButon'
 import MobileMenu from './MobileMenu'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import logo from "../../../../public/assets/logo.webp"
 import { BellIcon } from '@heroicons/react/24/solid'
+import Popupbell from './PopupBell'
+import { PopupBell } from '@/store/features/counterSlice'
 
 
 
@@ -22,7 +24,11 @@ const gentium = Gentium_Book_Plus({
 })
 
 const Header = () => {
-	const mobilemenu = useSelector((state) => state.counter.mobilemenu)
+	const dispatch = useDispatch()
+	const { mobilemenu, popupBell } = useSelector(
+		(state) => state.counter
+	)
+
 	
  const [isAuthorized, setIsAuthorized] = useState(false)
   const [activeBell, setActiveBell] = useState(false)
@@ -30,10 +36,15 @@ useEffect(() => {
 	setIsAuthorized(true)
 }, [])
 
+const popup = () => {
+	dispatch(PopupBell(popupBell))
+}
+
 
 	return (
 		<div className='lg:container w-full mx-auto  z-40'>
 			{mobilemenu && <MobileMenu />}
+			{popupBell && <Popupbell />}
 			<ButtonChat />
 			<div className='flex  md:justify-between h-[65px] lg:h-24 items-center  '>
 				<Link href='/'>
@@ -58,7 +69,7 @@ useEffect(() => {
 				<div className='lg:flex hidden z-30 items-center  mx-5 '>
 					<Button font={gentium.className} />
 				</div>
-				<div className='relative'>
+				<div className='relative cursor-pointer hover:scale-105 duration-500' onClick={popup}>
 					<BellIcon className='w-7 h-7 s stroke-zinc-200 fill-none' />
 
 					<div

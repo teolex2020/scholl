@@ -208,7 +208,7 @@ const Payments = () => {
 
 							<button
 								type='submit'
-								className='flex items-center w-full space-x-5 z-50 cursor-pointer group'
+								className='flex items-center w-full space-x-5  cursor-pointer group'
 								onClick={() => handleCheckboxChange()}
 							>
 								<div className='border-2 border-zinc-700'>

@@ -15,7 +15,8 @@ const initialState = {
 	selectcourse: 1,
 	orderPrice:"",
 	orderTitle:"",
-	orderId:""
+	orderId:"",
+	popupBell:false
 }
 
 export const dataSlice = createSlice({
@@ -24,7 +25,6 @@ export const dataSlice = createSlice({
 	reducers: {
 		Authuser: (state, action) => {
 			state.authUser = action.payload
-			
 		},
 		MobileMenus: (state, action) => {
 			state.mobilemenu = !action.payload
@@ -59,6 +59,9 @@ export const dataSlice = createSlice({
 		OrderId: (state, action) => {
 			state.orderId = action.payload
 		},
+		PopupBell: (state, action) => {
+			state.popupBell = !action.payload
+		},
 	},
 })
 
@@ -75,5 +78,6 @@ export const {
 	Avatar,
 	Chats,
 	Selectcourse,
+	PopupBell,
 } = dataSlice.actions
 export default dataSlice.reducer

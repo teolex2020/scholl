@@ -1,4 +1,4 @@
-import {  Roboto } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
@@ -10,15 +10,11 @@ import LocaleProvider from './provider'
 
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-
-
 const roboto = Roboto({
 	subsets: ['latin'],
 	variable: '--font-ronoto',
 	weight: ['400', '700', '900'],
 })
-
-
 
 export const metadata = {
 	icons: {
@@ -38,8 +34,6 @@ export const metadata = {
 export default function RootLayout({ children, params: { locale } }) {
 	return (
 		<html className=' elem ' lang={locale}>
-			
-
 			<body className={` `}>
 				<Providers>
 					<main
@@ -55,7 +49,6 @@ export default function RootLayout({ children, params: { locale } }) {
 
 						<LocaleProvider>
 							<Header />
-
 							<Chat lang={locale} />
 							<div className='flex-1 '> {children}</div>
 							<Footer />
