@@ -10,7 +10,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import Cart from './Cart'
 import { useParams } from 'next/navigation'
 import { useRouter } from '@/navigation'
-
+import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import Accordion from './Accordion'
@@ -51,6 +51,20 @@ const Course = () => {
 		dispatch(OrderTitle(data.title))
 		dispatch(OrderId(data.id))
 		router.push('/payment')
+	}
+
+	if (!data) {
+		return (
+			<div className='flex flex-col justify-center items-center w-full h-full p-20'>
+				<div>
+					<h2>Page Not Found....</h2>
+				</div>
+
+				<div className='text-blue-500'>
+					<Link href='/'>Return Home</Link>
+				</div>
+			</div>
+		)
 	}
 
 	return (

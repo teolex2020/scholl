@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import {
 	FireIcon,
@@ -56,6 +56,20 @@ const locale = useLocale()
 		dispatch(OrderTitle(data.title))
 		dispatch(OrderId(data.id))
 		router.push('/payment')
+	}
+
+	if (!data) {
+		return (
+			<div className='flex flex-col justify-center items-center w-full h-full p-20'>
+				<div>
+					<h2>Page Not Found....</h2>
+				</div>
+
+				<div className='text-blue-500'>
+					<Link href='/'>Return Home</Link>
+				</div>
+			</div>
+		)
 	}
 
 	return (

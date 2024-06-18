@@ -11,7 +11,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import Cart from './Cart'
 import { useParams } from 'next/navigation'
 import { useRouter } from '@/navigation'
-
+import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import Accordion from './Accordion'
@@ -56,6 +56,22 @@ const Course = () => {
 		router.push('/payment')
 	}
 
+
+
+if (!data) {
+	return (
+		<div className='flex flex-col justify-center items-center w-full h-full p-20'>
+			<div>
+				<h2>Page Not Found....</h2>
+			</div>
+
+			<div className='text-blue-500'>
+				<Link href='/'>Return Home</Link>
+			</div>
+		</div>
+	)
+}
+
 	return (
 		<div className=' lg:container mx-auto mb-4 p-4  rounded flex flex-col gap-1 relative '>
 			<div className=' text-center text-xs text-zinc-500 py-2 '>
@@ -71,7 +87,7 @@ const Course = () => {
 								<p
 									className={`text-lg text-left  font-semibold  ${gentium.className} `}
 								>
-									{data.descriptions}
+									{data?.descriptions}
 								</p>
 							</div>
 
@@ -83,14 +99,14 @@ const Course = () => {
 
 										{t('lectorname')}
 
-										<span className='uppercase underline  '>{data.lector}</span>
+										<span className='uppercase underline  '>{data?.lector}</span>
 									</div>
 									<div className='flex  relative    justify-start h-7   gap-3'>
 										<LanguageIcon className='h-6 w-6 text-green-500' />
 
 										{t('language')}
 										<span className='uppercase underline  '>
-											{data.language}
+											{data?.language}
 										</span>
 									</div>
 								</div>
@@ -99,11 +115,11 @@ const Course = () => {
 										<HandRaisedIcon className='w-5 h-5 text-green-500' />
 										<span> {m('Moderator')}: </span>
 
-										<span className='uppercase'>{data.Moderator}</span>
+										<span className='uppercase'>{data?.Moderator}</span>
 									</div>
 									<div className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '>
 										<CalendarIcon className='w-5 h-5 text-green-500' />
-										<span>{data.datastart} </span>
+										<span>{data?.datastart} </span>
 
 										<ClockIcon className='w-5 h-5' />
 										<span className='uppercase'>19.00</span>
@@ -120,10 +136,10 @@ const Course = () => {
 				<div>
 					<Cart
 						dataOrder={dataOrder}
-						price={data.price}
-						alltime={data.alltime}
-						image={data.image}
-						active={data.active}
+						price={data?.price}
+						alltime={data?.alltime}
+						image={data?.image}
+						active={data?.active}
 					/>
 				</div>
 			</div>

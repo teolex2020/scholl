@@ -1,7 +1,8 @@
+import React from 'react'
 import Link from 'next/link'
 
-export default function NotFound() {
-	return (
+const page = () => {
+  return (
 		<div className='flex justify-center items-center w-full h-full'>
 			<h2>Not Found</h2>
 			<p>Could not find requested resource</p>
@@ -9,3 +10,5 @@ export default function NotFound() {
 		</div>
 	)
 }
+
+export default page
