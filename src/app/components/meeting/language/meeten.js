@@ -37,7 +37,7 @@ export const coursesen = [
 	},
 	{
 		id: '20257',
-		active: true,
+		active: false,
 		course: 'Meeting',
 		lector: 'VADIM KARASEV',
 		Moderator: 'Ruslan Bortnik',

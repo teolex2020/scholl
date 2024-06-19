@@ -35,7 +35,7 @@ export const coursesua = [
 	},
 	{
 		id: '20257',
-		active: true,
+		active: false,
 		course: 'Зустріч',
 		lector: 'Вадим Карасєв',
 		Moderator: 'Руслан Бортнік',

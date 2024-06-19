@@ -36,7 +36,7 @@ export const coursesru = [
 	},
 	{
 		id: '20257',
-		active: true,
+		active: false,
 		course: 'Встреча',
 		lector: 'Вадим Карасев',
 		Moderator: 'Руслан Бортник',
