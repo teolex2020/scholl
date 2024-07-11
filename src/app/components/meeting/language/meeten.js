@@ -57,4 +57,23 @@ We will have an open discussion with Vadim Yuryevich regarding the future of the
 		time: '19.00',
 		duration: 240,
 	},
+	{
+		id: '20258',
+		active: true,
+		course: 'Meeting',
+		lector: 'Oleg Starikov',
+		Moderator: 'Ruslan Bortnik',
+		language: 'Russian',
+		title:
+			'Where is the front moving: prospects for Kiev, Kharkiv and Odessa? The threat of nuclear escalation?',
+		descriptions: `Friends, ..... July at 19.00 (Kiev time) we invite you to a closed online meeting with Oleg Starikov (military observer, defense and security sector expert, retired SBU colonel).
+You are waiting for frank insights from: Who will attack and What will be the changes in the front by the end of 2024? Will Ukraine be able to save Sumy, Kharkiv and Odessa? Will the Russian Federation attack Kiev? The F-16 and the risks of a nuclear strike? A concrete opinion and forecast from one of Ukraine's most prominent military experts.
+`,
+		price: '1499',
+		status: false,
+		image: 'staricov.webp',
+		datastart: '31.07.2024',
+		time: '19.00',
+		duration: 90,
+	},
 ]
