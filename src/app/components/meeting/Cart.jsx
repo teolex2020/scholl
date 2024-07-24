@@ -63,12 +63,18 @@ const Cart = ({ dataOrder, price, alltime, image, active, donat }) => {
 					)}
 				</div>
 			</div>
-			<div className='z-10 w-full ад text-center my-3 relative'>
-				<p className='opacity-50'>&&</p>
-				<button className='hover:scale-105 duration-500 ' onClick={togglePopup}>
-					{t('donat')}
-				</button>
-			</div>
+			{donat && (
+				<div className='z-10 w-full ад text-center my-3 relative'>
+					<p className='opacity-50'>&&</p>
+					<button
+						className='hover:scale-105 duration-500 '
+						onClick={togglePopup}
+					>
+						{t('donat')}
+					</button>
+				</div>
+			)}
+
 			{isPopupOpen && (
 				<div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20'>
 					<div className='bg-black/50 p-5 rounded-lg relative '>

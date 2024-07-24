@@ -18,7 +18,7 @@ const ButtonChat = () => {
 		<div
 			className=' fixed right-5 lg:right-[3%] bottom-[5%] flex gap-3 border-2 rounded-3xl border-zinc-700/50 px-5 py-2 items-center shadow2 bg-[#12181d] hover:scale-105 duration-500 cursor-pointer'
 			onClick={buttonpopup}
-		>
+		> 
 			<div>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
@@ -59,7 +59,7 @@ const ButtonChat = () => {
 					</g>
 				</svg>
 			</div>
-			<div className='  '> {t('title')}</div>
+			<div className=' hidden md:block '> {t('title')}</div>
 		</div>
 	)
 }
