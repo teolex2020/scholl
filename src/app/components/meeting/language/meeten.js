@@ -72,6 +72,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		price: '1499',
 		status: false,
 		image: 'staricov.webp',
+		donat: 'donat.webp',
 		datastart: '31.07.2024',
 		time: '19.00',
 		duration: 90,

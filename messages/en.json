@@ -51,7 +51,8 @@
 		"certificate": "certificate",
 		"button": "Buy",
 		"buttonClose": "Closed",
-		"course": "The course consists of:"
+		"course": "The course consists of:",
+		"donat":"Get access by donating USDT"
 	},
 	"Meeting": {
 		

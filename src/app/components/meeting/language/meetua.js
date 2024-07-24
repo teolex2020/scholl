@@ -73,6 +73,7 @@ F-16 та ризики ядерного удару?
 		price: '1499',
 		status: false,
 		image: 'staricov.webp',
+		donat: 'donat.webp',
 		datastart: '31.07.2024',
 		time: '19.00',
 		duration: 90,

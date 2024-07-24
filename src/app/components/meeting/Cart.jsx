@@ -1,13 +1,17 @@
 "use client"
-import React from 'react'
+import React, {useState} from 'react'
 import Image from 'next/image'
-import { ClockIcon, VideoCameraIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
+import { ClockIcon, VideoCameraIcon, AcademicCapIcon, XMarkIcon } from '@heroicons/react/24/solid'
 
 import { useTranslations } from 'next-intl'
 
 
-const Cart = ({ dataOrder, price, alltime, image, active }) => {
+const Cart = ({ dataOrder, price, alltime, image, active, donat }) => {
+	const [isPopupOpen, setIsPopupOpen] = useState(false)
 
+	const togglePopup = () => {
+		setIsPopupOpen(!isPopupOpen)
+	}
 	
 	
 	const t = useTranslations('Card')
@@ -54,12 +58,35 @@ const Cart = ({ dataOrder, price, alltime, image, active }) => {
 						</button>
 					) : (
 						<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16   duration-300 hover:bg-blur z-10 text-2xl px-10 min-w-[200px]'>
-						
 							{t('buttonClose')}
 						</button>
 					)}
 				</div>
 			</div>
+			<div className='z-10 w-full ад text-center my-3 relative'>
+				<p className='opacity-50'>&&</p>
+				<button className='hover:scale-105 duration-500 ' onClick={togglePopup}>
+					{t('donat')}
+				</button>
+			</div>
+			{isPopupOpen && (
+				<div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20'>
+					<div className='bg-black/50 p-5 rounded-lg relative '>
+						<button className='absolute top-0 right-0' onClick={togglePopup}>
+							<XMarkIcon className='h-8 w-8 ' />
+						</button>
+						<Image
+							src={`/assets/${donat}`}
+							sizes='(min-width: 808px) 50vw, 100vw'
+							width={500}
+							height={500}
+							className=' object-cover'
+							priority
+							alt='QR Code for donation'
+						/>
+					</div>
+				</div>
+			)}
 		</div>
 	)
 }

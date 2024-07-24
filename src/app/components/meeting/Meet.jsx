@@ -140,6 +140,7 @@ if (!data) {
 						alltime={data?.alltime}
 						image={data?.image}
 						active={data?.active}
+						donat={data?.donat}
 					/>
 				</div>
 			</div>
