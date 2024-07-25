@@ -12,7 +12,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import Cart from './Cart'
 import { useParams } from 'next/navigation'
 import { useRouter } from '@/navigation'
-import certificat from '../../../../public/assets/certificat.jpg'
+import certificat from '../../../../public/assets/certificat.webp'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import ListItem from './ListItem'
@@ -165,8 +165,8 @@ const locale = useLocale()
 			</div>
 			<hr className='opacity-10 my-5' />
 			<div className='flex flex-col items-center gap-6'>
-				<div className='text-2xl'>{t('Certificat')}</div>
-				<div className='w-[266px] h-96 relative bg-blur'>
+				<div className='text-2xl'>{t('Certificat')}*</div>
+				<div className='w-96 h-64 relative bg-blur'>
 					<Image
 						src={certificat}
 						fill
