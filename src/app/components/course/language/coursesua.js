@@ -201,7 +201,7 @@ export const coursesua = [
 	},
 	{
 		id: '20265',
-		active: false,
+		active: true,
 		course: 'Курс',
 		lector: 'Михайло Мінаков ',
 		language: 'російська',
@@ -262,7 +262,6 @@ export const coursesua = [
 				title: 'Лекція шоста. Теперішні вибори та перспективи розвитку США. ',
 				duration: '45 minute',
 			},
-			
 		],
 	},
 ]

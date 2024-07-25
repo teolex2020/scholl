@@ -174,7 +174,7 @@ export const coursesua = [
 		datastart: '27.08.2024',
 		time: '19.00',
 		duration: 45,
-		active: false,
+		active: true,
 	},
 	{
 		id: '20260',
@@ -191,7 +191,7 @@ export const coursesua = [
 		datastart: '27.08.2024',
 		time: '19.00',
 		duration: 45,
-		active: false,
+		active: true,
 	},
 	{
 		id: '20261',
@@ -208,7 +208,7 @@ export const coursesua = [
 		datastart: '28.08.2024',
 		time: '19.00',
 		duration: 45,
-		active: false,
+		active: true,
 	},
 	{
 		id: '20262',
@@ -224,7 +224,7 @@ export const coursesua = [
 		datastart: '28.08.2024',
 		time: '19.00',
 		duration: 45,
-		active: false,
+		active: true,
 	},
 	{
 		id: '20263',
@@ -240,7 +240,7 @@ export const coursesua = [
 		datastart: '29.08.2024',
 		time: '19.00',
 		duration: 45,
-		active: false,
+		active: true,
 	},
 	{
 		id: '20264',
@@ -256,6 +256,6 @@ export const coursesua = [
 		datastart: '29.08.2024',
 		time: '19.00',
 		duration: 45,
-		active: false,
+		active: true,
 	},
 ]
