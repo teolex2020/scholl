@@ -201,4 +201,71 @@ export const coursesen = [
 			},
 		],
 	},
+	{
+		id: '20265',
+		active: false,
+		course: 'Course',
+		lector: 'Mykhailo Minakov',
+		language: 'Russian',
+		title: 'American Politics: History, Current State, and Possible Future',
+		descriptions:
+			'A unique series of lectures by Ukrainian philosopher and political researcher, Doctor of Philosophy Mykhailo Minakov, about the political history and system of the USA.',
+		price: '9999',
+		status: true,
+		image: 'minakov.webp',
+		datastart: '27.08.2024',
+		dataend: '29.08.2024',
+		time: '19.00',
+		alltime: 24,
+		conclusions: [
+			{
+				title:
+					'— What political institutions make up the political system of the USA.',
+			},
+			{
+				title:
+					'— How the power elites of the USA were formed and how they function.',
+			},
+			{
+				title: '— How the federal government of the USA works.',
+			},
+			{
+				title: '— What is the role of the USA in international relations.',
+			},
+			{
+				title: '— What ideologies shape the political landscape of the USA.',
+			},
+			{
+				title:
+					'— How elections to federal bodies of power take place and what to expect from the 2024 elections.',
+			},
+		],
+		courseprogram: [
+			{
+				title: 'First Lecture. Political System of the USA.',
+				duration: '45 minutes',
+			},
+			{
+				title: 'Second Lecture. Power Elites of the USA.',
+				duration: '45 minutes',
+			},
+			{
+				title: 'Third Lecture. Federal Government of the USA.',
+				duration: '45 minutes',
+			},
+			{
+				title: 'Fourth Lecture. USA in International Relations.',
+				duration: '45 minutes',
+			},
+			{
+				title: 'Fifth Lecture. Ideologies in the USA.',
+				duration: '45 minutes',
+			},
+			{
+				title:
+					'Sixth Lecture. Current Elections and Development Prospects of the USA.',
+				duration: '45 minutes',
+			},
+		],
+	},
 ]
