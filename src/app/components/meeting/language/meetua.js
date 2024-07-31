@@ -55,7 +55,7 @@ export const coursesua = [
 	},
 	{
 		id: '20258',
-		active: true,
+		active: false,
 		course: 'Зустріч',
 		lector: 'Олег Стариков',
 		Moderator: 'Руслан Бортнік',

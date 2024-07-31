@@ -59,7 +59,7 @@ We will have an open discussion with Vadim Yuryevich regarding the future of the
 	},
 	{
 		id: '20258',
-		active: true,
+		active: false,
 		course: 'Meeting',
 		lector: 'Oleg Starikov',
 		Moderator: 'Ruslan Bortnik',

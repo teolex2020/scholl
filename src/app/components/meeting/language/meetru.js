@@ -56,7 +56,7 @@ export const coursesru = [
 	},
 	{
 		id: '20258',
-		active: true,
+		active: false,
 		course: 'Встреча',
 		lector: 'Олег Стариков',
 		Moderator: 'Руслан Бортник',
