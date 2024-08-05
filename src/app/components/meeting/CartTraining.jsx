@@ -16,7 +16,7 @@ const CartCourse = ({ lector, price, status, title, id, image, course }) => {
 	const route = useRouter()
 	return (
 		<div
-			className='flex flex-col w-[322px] bg-blur  rounded-lg p-3 max-h-[489px] hover:shadow1 duration-500 gap-2 cursor-pointer'
+			className='flex flex-col w-[322px] bg-blur  rounded-lg p-3 max-h-[489px] hover:shadow1 duration-500 gap-1 cursor-pointer'
 			onClick={() => route.push(`/meeting/${id}`)}
 		>
 			{status ? (
@@ -42,12 +42,12 @@ const CartCourse = ({ lector, price, status, title, id, image, course }) => {
 				/>
 			</div>
 
-			<div className='flex gap-3 items-center text-[14px] text-[#e2a550]'>
+			<div className='flex gap-3 items-center text-[20px] text-[#e2a550]'>
 				<AcademicCapIcon className='h-4 w-4 ' />
 				<p> {lector}</p>
 			</div>
 			<div className='   '>
-				<p className={`text- h-[70px] px-2 `}>{title}</p>
+				<p className={` h-[70px] px-2 `}>{title}</p>
 			</div>
 			<div className='w-full flex justify-center font-semibold '>
 				<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex items-center   duration-300 hover:bg-blur z-10 text-2xl px-5 min-w-48 '>
