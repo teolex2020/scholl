@@ -84,9 +84,9 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		lector: 'Ruslan Bortnik',
 		Moderator: 'Ruslan Bortnik',
 		language: 'Russian',
-		title: 'Main Threats to Ukraine',
+		title: 'What the WORLD will be: timelines, parameters and boundaries of the Peace Agreement',
 		descriptions: `Dear friends! On August 11, 2024, at 20:00 (Kyiv time), a closed online meeting with Ruslan Bortnik, Director of the Ukrainian Institute of Politics, and sponsors of his 🎬YouTube channel will take place.
-📚Topic of the meeting: Main Threats to Ukraine.
+📚Topic of the meeting: What the WORLD will be: timelines, parameters and boundaries of the Peace Agreement.
 ➡️The course of the war: Where will the frontline eventually be?
 ➡️Peace negotiations: When and how will they end?
 ➡️What will be the model of peaceful settlement for Ukraine, Russia, and the West?
