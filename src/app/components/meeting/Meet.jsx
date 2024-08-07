@@ -99,7 +99,9 @@ if (!data) {
 
 										{t('lectorname')}
 
-										<span className='uppercase underline  '>{data?.lector}</span>
+										<span className='uppercase underline  '>
+											{data?.lector}
+										</span>
 									</div>
 									<div className='flex  relative    justify-start h-7   gap-3'>
 										<LanguageIcon className='h-6 w-6 text-green-500' />
@@ -122,7 +124,7 @@ if (!data) {
 										<span>{data?.datastart} </span>
 
 										<ClockIcon className='w-5 h-5' />
-										<span className='uppercase'>19.00</span>
+										<span className='uppercase'>{data?.time}</span>
 									</div>
 								</div>
 								<div className='w-full text-center text-lg text-red-600 font-semibold pt-2'>

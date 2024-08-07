@@ -84,17 +84,9 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		lector: 'Ruslan Bortnik',
 		Moderator: 'Ruslan Bortnik',
 		language: 'Russian',
-		title: 'What the WORLD will be: timelines, parameters and boundaries of the Peace Agreement',
-		descriptions: `Dear friends! On August 11, 2024, at 20:00 (Kyiv time), a closed online meeting with Ruslan Bortnik, Director of the Ukrainian Institute of Politics, and sponsors of his 🎬YouTube channel will take place.
-📚Topic of the meeting: What the WORLD will be: timelines, parameters and boundaries of the Peace Agreement.
-➡️The course of the war: Where will the frontline eventually be?
-➡️Peace negotiations: When and how will they end?
-➡️What will be the model of peaceful settlement for Ukraine, Russia, and the West?
-➡️What are the future prospects for life in Ukraine?
-➡️Which sectors of the economy will develop, and which will degrade?
-💬We will discuss all this in a close circle of like-minded people in a pragmatic and rational manner.
-❓During the meeting, you will be able to ask your questions to Ruslan Bortnik.
-🆓We remind you that participation in this meeting is free for sponsors of Ruslan Bortnik's YouTube channel, as well as for sponsors on platforms like Buy me a coffee and Patreon. You will receive a participation link on your platform.`,
+		title:
+			'What the Peace will be: timelines, parameters and boundaries of the Peace Agreement',
+		descriptions: `Dear friends! On August 11, 2024, at 20:00 (Kyiv time), a closed online meeting with Ruslan Bortnik, Director of the Ukrainian Institute of Politics, and sponsors of his 🎬YouTube channel will take place. 📚Topic of the meeting: What the PEACE will be: timelines, parameters and boundaries of the Peace Agreement. ➡️The course of the war: Where will the frontline eventually be? ➡️Peace negotiations: When and how will they end? ➡️What will be the model of peaceful settlement for Ukraine, Russia, and the West? ➡️What are the future prospects for life in Ukraine? ➡️Which sectors of the economy will develop, and which will degrade? 💬We will discuss all this in a close circle of like-minded people in a pragmatic and rational manner. ❓During the meeting, you will be able to ask your questions to Ruslan Bortnik. 🆓We remind you that participation in this meeting is free for sponsors of Ruslan Bortnik's YouTube channel, as well as for sponsors on platforms like Buy me a coffee and Patreon. You will receive a participation link on your platform.`,
 		price: '1999',
 		status: false,
 		image: 'bortnik.webp',
