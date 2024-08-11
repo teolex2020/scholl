@@ -81,7 +81,7 @@ F-16 и риски ядерного удара?
 	},
 	{
 		id: '20266',
-		active: true,
+		active: false,
 		course: 'Встреча',
 		lector: 'Руслан Бортник',
 		Moderator: 'Руслан Бортник',
