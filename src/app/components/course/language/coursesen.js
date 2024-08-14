@@ -35,7 +35,8 @@ export const coursesen = [
 		],
 		courseprogram: [
 			{
-				title: 'Introduction. Relevant to everyone. Miranda’s lessons.',
+				title:
+					'Introduction. Relevant to everyone. Miranda’s lessons. (1 hour)',
 				duration: '1 hour',
 			},
 
@@ -78,46 +79,47 @@ export const coursesen = [
 			},
 			{
 				title:
-					'Information Reconstruction. Functional design of information flows (constructing and modeling information flows)',
+					'Information Reconstruction. Functional design of information flows (constructing and modeling information flows) (9 hours)',
 				duration: '9 hours',
 				lectures: [
 					{
-						title: 'Logical synthesis',
+						title: 'Logical synthesis (1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Elements of game theory',
+						title: 'Elements of game theory (1 hour)',
 						duration: '1 hour',
 					},
 
 					{
-						title: 'Political modeling and designing',
+						title: 'Political modeling and designing (1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Political forecasting',
+						title: 'Political forecasting (1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Visualization',
+						title: 'Visualization (2 hours)',
 						duration: '2 hours',
 					},
 					{
-						title: 'Testing and interpretation',
+						title: 'Testing and interpretation (1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Textology',
+						title: 'Textology (1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Practical cases',
+						title: 'Practical cases (2 hours)',
 						duration: '2 hours',
 					},
 				],
 			},
 			{
-				title: 'Conclusions. On the path to consciously binding freedom',
+				title:
+					'Conclusions. On the path to consciously binding freedom (2 hours)',
 				duration: '2 hours',
 			},
 		],
