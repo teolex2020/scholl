@@ -202,7 +202,7 @@ export const coursesua = [
 	},
 	{
 		id: '20265',
-		active: true,
+		active: false,
 		course: 'Курс',
 		lector: 'Михайло Мінаков ',
 		language: 'російська',

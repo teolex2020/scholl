@@ -203,7 +203,7 @@ export const coursesru = [
 	},
 	{
 		id: '20265',
-		active: true,
+		active: false,
 		course: 'Курс',
 		lector: 'Михаил Минаков',
 		language: 'Русский',

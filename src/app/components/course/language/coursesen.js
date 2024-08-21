@@ -205,7 +205,7 @@ export const coursesen = [
 	},
 	{
 		id: '20265',
-		active: true,
+		active: false,
 		course: 'Course',
 		lector: 'Mykhailo Minakov',
 		language: 'Russian',
