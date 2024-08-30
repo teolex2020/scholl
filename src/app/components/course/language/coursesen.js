@@ -8,118 +8,134 @@ export const coursesen = [
 		title:
 			'Fundamentals of Practical Political Analysis: How to Distinguish Truth from Lies and Make the Right Decisions',
 		descriptions:
-			'This course in political analysis and forecasting will provide you with the most important knowledge and skills in social life, which you can apply in working on complex practical projects.',
+			'The course on political analysis and forecasting will help you gain the most important knowledge and skills in public life that you can apply when working on complex practical projects.',
 		price: '4999',
 		status: true,
 		image: 'bortnikcourse.webp',
 		datastart: '02.09.2024',
 		dataend: '21.10.2024',
-		time: '19.00',
+		time: '19:00',
 		alltime: 27,
 		conclusions: [
 			{
 				title:
-					'Critically evaluate information, arguments, and policies. Developing critical thinking skills is central to political analysis.',
+					'Critically assess information, arguments, and policies. Developing critical thinking skills is central to political analysis.',
 			},
 			{
 				title:
-					'Better understand and analyze government policies, evaluate their impact on society.',
+					'Better understand and analyze government policies, and assess their impact on society.',
 			},
 			{
 				title: 'Model complex political processes.',
 			},
 			{
 				title:
-					'Analyze specific historical and contemporary political events, thematic studies, and real-world scenarios.',
+					'Analyze specific historical and contemporary political events, case studies, and real-world scenarios.',
 			},
 		],
 		courseprogram: [
 			{
 				title:
-					'Introduction. Relevant to everyone. Miranda’s lessons. (1 hour)',
+					"Introduction. It concerns everyone. Miranda's lessons. (03.09.2024 - 1 hour)",
 				duration: '1 hour',
 			},
-
 			{
-				title: 'Deconstructing the Information Flow (16 hours):',
+				title: 'Deconstruction of the Information Flow (16 hours):',
 				duration: '16 hours',
 				lectures: [
 					{
 						title:
-							'Principles and objectives of political analysis, obvious yet obscure aspects, Dr. House’s criminal doctrine (2 hours);',
+							"Principles and Goals of Political Analysis, Obvious and Non-Obvious Things, Dr. House's Criminal Doctrine (04.09.2024 - 2 hours);",
 						duration: '2 hours',
 					},
 					{
 						title:
-							'Subjects and objects (challenges in identifying the true object of analysis) (1 hour);',
+							'Subjects and Objects (difficulties in determining the true object of analysis) (05.09.2024 - 1 hour);',
+						duration: '1 hour',
+					},
+					{
+						title: 'Processes and Events (10.09.2024 - 1 hour);',
 						duration: '1 hour',
 					},
 					{
 						title:
-							'Information processing technologies (visualization, perception issues, verification, classification, structuring), anchor points of information flow (2 hours);',
+							'Information Processing Technologies (visualization, perception issues, verification, classification, structuring), Reference Points of the Information Flow (11.09.2024 - 2 hours);',
 						duration: '2 hours',
 					},
 					{
-						title: 'Logical analysis and matrix approach (1 hour);',
+						title: 'Logical Analysis and Matrix Method (12.09.2024 - 1 hour);',
 						duration: '1 hour',
 					},
 					{
-						title: 'Situational analysis, induction, and deduction (1 hour);',
+						title:
+							'Situational Analysis, Induction, and Deduction (17.09.2024 - 1 hour);',
 						duration: '1 hour',
 					},
 					{
-						title: 'Imaginary experiment and political modeling (2 hours);',
+						title:
+							'Mental Experiment and Political Modeling (18.09.2024 - 2 hours);',
 						duration: '2 hours',
 					},
 					{
-						title: 'Comparative analysis (1 hour);',
+						title: 'Comparative Analysis (19.09.2024 - 2 hours);',
+						duration: '2 hours',
+					},
+					{
+						title: 'Expert Surveys and Rating (24.09.2024 - 1 hour);',
 						duration: '1 hour',
+					},
+					{
+						title: 'AI Audit (25.09.2024 - 1 hour);',
+						duration: '1 hour',
+					},
+					{
+						title: 'Practical Cases (01.10.2024 - 2 hours);',
+						duration: '2 hours',
 					},
 				],
 			},
 			{
 				title:
-					'Information Reconstruction. Functional design of information flows (constructing and modeling information flows) (9 hours)',
+					'Reconstruction of Information. Functional Design of Information Flows (Construction and Modeling of Information Flows) (9 hours)',
 				duration: '9 hours',
 				lectures: [
 					{
-						title: 'Logical synthesis (1 hour)',
+						title: 'Logical Synthesis (02.10.2024 - 1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Elements of game theory (1 hour)',
-						duration: '1 hour',
-					},
-
-					{
-						title: 'Political modeling and designing (1 hour)',
+						title: 'Elements of Game Theory (03.10.2024 - 1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Political forecasting (1 hour)',
+						title: 'Political Modeling and Design (09.10.2024 - 1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Visualization (2 hours)',
-						duration: '2 hours',
-					},
-					{
-						title: 'Testing and interpretation (1 hour)',
+						title: 'Political Forecasting (10.10.2024 - 1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Textology (1 hour)',
+						title: 'Visualization (11.10.2024 - 1 hour)',
 						duration: '1 hour',
 					},
 					{
-						title: 'Practical cases (2 hours)',
+						title: 'Testing and Interpretation (14.10.2024 - 1 hour)',
+						duration: '1 hour',
+					},
+					{
+						title: 'Textology (16.10.2024 - 1 hour)',
+						duration: '1 hour',
+					},
+					{
+						title: 'Practical Cases (18.10.2024 - 2 hours)',
 						duration: '2 hours',
 					},
 				],
 			},
 			{
 				title:
-					'Conclusions. On the path to consciously binding freedom (2 hours)',
+					'Conclusions. On the Path to Consciously Binding Freedom (21.10.2024 - 2 hours)',
 				duration: '2 hours',
 			},
 		],
