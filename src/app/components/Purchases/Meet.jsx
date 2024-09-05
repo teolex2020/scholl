@@ -29,6 +29,8 @@ const Meet = () => {
 			setLoading(true)
 			const q = query(collection(db, 'order'), where('id', '==', id))
 
+			
+
 			const unsubscribe = onSnapshot(
 				q,
 				async (querySnapshot) => {
@@ -36,6 +38,8 @@ const Meet = () => {
 						orderNumber: doc.data().orderNumber,
 						reason: doc.data().reason,
 					}))
+
+				
 
 					const filterLinks = documents.filter((item) => item.reason === 'Ok')
 					const filterLinksslice = filterLinks.map((item) =>

@@ -255,4 +255,20 @@ export const coursesen = [
 	// 	duration: 45,
 	// 	active: true,
 	// },
+	{
+		id: '20267',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'Russian',
+		title: 'Introduction. Concerns Everyone. Miranda Lessons.',
+		descriptions:
+			'The ability to analyze information is the direct and only path to Freedom in society—the privilege to choose and act in ones own interests. Today, this path is accessible to only a small portion of people. After all, to be honest, 99% of people are dependent consumers and captives of others meanings and desires in almost everything: they live according to imposed patterns that dictate their lives from birth (choice/non-choice of toys and the color of swaddling clothes) – to education – and family – and medicine – and even death (choice of burial method). But often, this is not Your choice, but someone elses!',
+		price: '999',
+		status: true,
+		image: 'bortnik1.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]

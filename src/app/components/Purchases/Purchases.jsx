@@ -23,6 +23,8 @@ const Purchases = () => {
 	const auth = getAuth()
 	const user = auth.currentUser
 
+	console.log(data)
+
 	useEffect(() => {
 		if (user && id && !data) {
 			setLoading(true)
@@ -36,10 +38,14 @@ const Purchases = () => {
 						reason: doc.data().reason,
 					}))
 
+						console.log('documents', documents)
+
 					const filterVideo = documents.filter((item) => item.reason === 'Ok')
 					const filterVideoslice = filterVideo.map((item) =>
 						item.orderNumber.slice(-5)
 					)
+
+					console.log('filterVideoslice', filterVideoslice)
 
 					const videoLinks = await Promise.all(
 						filterVideoslice.map(async (videoId) => {
