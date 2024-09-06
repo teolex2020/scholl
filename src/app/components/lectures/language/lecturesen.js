@@ -271,4 +271,39 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+
+	{
+		id: '20268',
+		course: 'Lecture',
+		lector: 'Ruslan Bortnik',
+		language: 'Russian',
+		title:
+			'Principles and Goals of Political Analysis, Obvious but Unclear Things, Dr. Houses Doctrine.',
+		descriptions:
+			'Main principles of political analysis: 1. "Objectivity and impartiality"; 2. "Comprehensive approach"; 3. "Rationality and logic"; 4. "Prediction of consequences"; 5. "Practical applicability"; 6. "Consideration of the interests and views of all participants"; 7. Critical thinking – intellectual audit. Traps of political analysis: 1. Ignoring alternative viewpoints. 2. Underestimating long-term consequences. 3. Relying on outdated data. 4. Overestimating the importance of individual factors. 5. Incorrect interpretation of data. 6. Excessive simplification. 7. Overestimating the role of state intervention. Main goals of political analysis: 1. Problem identification. 2. Evaluation of alternative solutions. 3. Providing recommendations for decision-making. 4. Assessing the consequences of already made decisions. 5. Predicting future trends.',
+		price: '999',
+		status: true,
+		image: 'bortnik2.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
+	{
+		id: '20269',
+		course: 'Lecture',
+		lector: 'Ruslan Bortnik',
+		language: 'Russian',
+		title:
+			'Subjects and Objects of Political Analysis (Challenges in Defining the Real Object).',
+		descriptions:
+			'1. Subjects of Political Analysis. The subjects of political analysis can only be groups of people or individual analysts. 2. Objects of Political Analysis. The object of political analysis is what is being researched. In politics, the objects of analysis can be: 1. Political systems. The structure of the state, balance of power, democratic and authoritarian regimes are analyzed. 2. Political processes. Elections, decision-making, and implementation of government programs are analyzed. 3. Political actors. These can be political parties, leaders, social groups, or international organizations. 4. Political culture and ideology. The values, beliefs, and behaviors of various political groups are analyzed. 5. Conflicts and crises. The objects can be armed conflicts, social crises, and international confrontations. 3. Challenges in defining the real object of analysis. Defining the object of political analysis is not always obvious. In complex political situations, analysts may face several problems: 1. Multiplicity of interests and opinions. In politics, there are many actors, each with their own interests. This creates complexity in choosing the object of analysis, as it is often necessary to consider all sides of the conflict or political process. 2. Difficulty in distinguishing causes and effects. It is often difficult to determine what is the cause and what is the effect in the political process. 3. Problems of data interpretation. Even with reliable data, its interpretation may be difficult. 4. Changes in political context. The political situation may change rapidly, complicating the identification of the object of analysis in the long term. 5. Ideological bias. Analysts may be influenced by their political preferences or interests, which interferes with objectively evaluating the objects of analysis.',
+		price: '999',
+		status: true,
+		image: 'bortnik3.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
