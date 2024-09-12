@@ -306,4 +306,38 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20270',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'English',
+		title:
+			'Processes and Events in Political Analysis: The Complexity of Differentiation.',
+		descriptions:
+			'Main types of political processes: 1. Institutional processes: These processes include changes in political institutions such as parliament, courts, and executive power. 2. Socio-political processes: Social processes include growth in political awareness, mobilization of civil society, and changes in political culture. 3. Economic-political processes: Economic processes play an important role in political life. 4. International political processes: International processes influence global relations between states. Main types of political events: 1. Elections. 2. Political crises: Political crises can be caused by protests, coups, or revolutions. 3. International events: International events include conflicts, wars, treaties, and agreements. 4. Political assassinations and terrorist acts: Political assassinations or terrorist acts can drastically change the political landscape. The complexity of separating political processes and events: Separating political processes and events is a complex task, as they are closely intertwined in reality. Political processes are long-term and sustainable changes in political, economic, or social systems, while events usually represent short-term, specific moments or actions that can have a significant impact on the course of history. However, it is often difficult to draw a clear line between these two concepts, as one event can become a catalyst for a long-term process, or a long-term process can lead to the emergence of many events.',
+		price: '999',
+		status: true,
+		image: 'bortnik4.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
+	{
+		id: '20271',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'English',
+		title:
+			'Information Sources, Information Processing Technologies, and Reference Points.',
+		descriptions:
+			'1. Information sources in political analysis 1.1. Primary sources: represent original data collected firsthand and provide unbiased, "raw" information. These sources have not yet undergone interpretation or analysis by other researchers. 1.2. Secondary sources are interpretations and analyses based on primary data, prepared by researchers or analysts. These sources include expert opinions, studies, and reports that interpret primary information. 1.3. Tertiary sources are summarized and systematized data, such as media, encyclopedias, reference books, or databases that collect and organize information from primary and secondary sources. 2. Information processing technologies 2.1. "Data verification" is the process of checking the authenticity, reliability, and accuracy of received information. In political analysis, this is critically important to avoid disinformation and manipulation. 2.2. "Data visualization" is the process of presenting information in a graphical or visual form, which helps to perceive complex data faster and better. The use of diagrams, graphs, maps, and infographics significantly simplifies the perception of political information. 2.3. Problems of information perception arise as a result of cognitive distortions, misrepresentation of data, or bias. People tend to perceive information depending on its context and presentation format. 2.4. Classification and structuring of information is the process of organizing data into ordered categories and hierarchies, which allows for systematic and efficient analysis. 2.5. Analytical models are techniques based on the use of mathematical and statistical tools to predict political and economic events. 2.6 For OSINT (Open Source Intelligence) analysis, there are a number of specialized programs and tools that help collect, analyze, and visualize information from open sources. Here is a list of some popular programs and platforms used for OSINT analysis: 1. "Maltego", "theHarvester", "SpiderFoot", "Recon-ng", "Shodan", "Censys", "Social-Engineer Toolkit (SET)", "OSINT Framework", "Google Dorking (Google Hacking)", "Amass", etc. 3. Reference points of the information flow.',
+		price: '999',
+		status: true,
+		image: 'bortnik5.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
