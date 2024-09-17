@@ -340,4 +340,21 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20272',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'Russian',
+		title:
+			'Methods of Political Analysis: Logical Analysis and Matrix Approach.',
+		descriptions:
+			'There are many methods of political analysis, which can be divided into several key groups: 1. "Historical Method" — analysis of political events and processes through their historical development, which allows for understanding long-term trends and recurring patterns. 2. "Comparative Method" — a method based on the comparison of political systems, institutions, and processes in different countries or time periods to identify their characteristics and patterns. 3. "Systematic Method" — viewing political phenomena as parts of broader systems (for example, the political system as part of the social system) and studying the interrelationships between these parts. 4. "Logical Method" — analyzing cause-and-effect relationships between political phenomena and processes using the laws of logic to identify dependencies and construct arguments. 5. "Matrix Method" — structuring and comparing a variety of factors in the form of a table (matrix), which allows considering their impact on political decisions and outcomes. 6. "Sociological Method" — studying political processes through the lens of public opinion, social groups, and institutions using sociological surveys and statistical data. 7. "Cognitive Method" — studying political processes through the perception and thinking of political actors, analyzing their goals, beliefs, and decisions. 8. "Mathematical and Statistical Methods" — using quantitative data and mathematical models to analyze political processes, such as electoral behavior or resource distribution. "Logical analysis" is best suited for cases where it is necessary to trace a chain of events and identify key factors influencing the situation. "Matrix analysis" is useful when several factors and their interrelationships need to be considered simultaneously. It helps compare alternative scenarios and make decisions based on complex interconnections.',
+		price: '999',
+		status: true,
+		image: 'bortnik7.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
