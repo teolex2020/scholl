@@ -47,7 +47,7 @@ const CartCourse = ({ lector, price, status, title, id, image, course, active })
 				<p> {lector}</p>
 			</div>
 			<div className='   '>
-				<p className={`text-lg h-[60px] px-2 `}>{title}</p>
+				<p className={`text-base h-[60px] px-2 `}>{title}</p>
 			</div>
 			<div className='w-full flex justify-center font-semibold '>
 				<button className='mt-5 border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex items-center   duration-300 hover:bg-blur z-10 text-2xl px-5 min-w-48 ' >
