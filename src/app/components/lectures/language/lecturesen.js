@@ -406,4 +406,20 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20276',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'English',
+		title: 'Expert surveys and rating in political analysis.',
+		descriptions:
+			'Expert surveys are an important method of obtaining knowledge and forecasts in political analysis. Unlike mass public opinion polls, which collect data from a wide sample of the population, expert surveys focus on the opinions and assessments of a narrow group of specialists. 1. The essence of expert surveys Expert surveys are a method of collecting information based on the opinions and assessments of a group of experts. These surveys are usually conducted among specialists in a specific field, such as political science, international relations, economics, sociology, or law. The main goal of an expert survey is to obtain a well-founded opinion on issues where public opinion may be insufficiently informed or unbalanced. Expert surveys are important for analyzing political situations, predicting future events, and evaluating the effectiveness of political decisions. 2. The process of conducting expert surveys The process of conducting expert surveys includes several stages: - Selection of experts. This is a key point, as the importance and authority of the results depend on the competence of the selected specialists. Experts can be representatives of the academic environment, research centers, analysts, or practitioners in a certain political field.',
+		price: '999',
+		status: true,
+		image: 'bortnik10.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
