@@ -422,4 +422,37 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20277',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'English',
+		title: 'Using AI tools in political analysis, AI audit.',
+		descriptions:
+			"Artificial Intelligence (AI) is actively being implemented in various fields, including politics, which requires a deep understanding of not only the possibilities but also the risks of its application. Political analysis is an area where AI can be used to analyze big data, predict voter behavior, study political rhetoric, and identify propaganda and manipulation. However, questions arise regarding AI auditing, ensuring its transparency, and combating bias. 1. Predicting political events using AI. AI can be used to predict election outcomes, protest movements, international conflicts, and economic sanctions. This is done through the analysis of big data, including historical data, social and economic indicators, information from media and social networks. Specific mechanisms: 1. 'Machine learning for electoral data analysis' - GPTs: 2. 'Neural networks for predicting election outcomes': 3. 'Social behavior analysis': 2. AI for rhetoric and propaganda analysis. AI is actively used to analyze political rhetoric, identify bias, and propaganda. Text and speech analysis allows for the detection of hidden motives and possible manipulations. Specific mechanisms: 1. 'Natural Language Processing (NLP) for political rhetoric analysis'. 2. 'Network narrative analysis'. 3. 'Countering disinformation and fake news'.",
+		price: '999',
+		status: true,
+		image: 'bortnik11.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
+	{
+		id: '20278',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'English',
+		title:
+			'Application of methods and techniques of political analysis: practical cases.',
+		descriptions:
+			'Deconstruction of events in political analysis (logical block) 1. Defining principles and goals of political analysis; 2. Identifying subjects and objects (difficulties in determining the real object of analysis). The problem of processes and events. 3. Information gathering and processing. 4. Selection and application of logical analysis method: systemic and situational analysis, induction and deduction, matrix method, comparative. 5. Search for alternatives and additional data: expert surveys and rating. AI audit. 6. Verification of analysis: thought experiment and political modeling.',
+		price: '999',
+		status: true,
+		image: 'bortnik12.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
