@@ -455,4 +455,20 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20279',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'English',
+		title: 'Logical synthesis as a method of political analysis',
+		descriptions:
+			'Logical synthesis is a method based on collecting, analyzing, and integrating various aspects of information to create a holistic understanding of complex political phenomena. It uses logical operations and methods to combine data, facts, and concepts to identify patterns, predict the development of events, and formulate conclusions. Main principles of logical synthesis in political analysis: 1. Systematic approach to analysis 2. Logical operations and analysis methods Errors in applying logical synthesis 1. Ignoring context; 2. Misinterpretation of data; 3. Excessive generalization; 4. Insufficient hypothesis testing; 5. Lack of diversity in information sources; 6. Ignoring alternative explanations; 7. Problems with logical coherence; 8. Neglecting qualitative aspects.',
+		price: '999',
+		status: true,
+		image: 'bortnik13.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
