@@ -22,7 +22,6 @@ const StartPage = ({ title, name, descriptions, button, info }) => {
 						animate={{
 							scale: 1,
 							transition: {
-								// delay: custom * 0.2,
 								duration: 0.8,
 								ease: [0.075, 0.82, 0.165, 1],
 								damping: 10,
