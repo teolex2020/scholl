@@ -503,4 +503,37 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20282',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'English',
+		title: 'Forecasting in political analysis: methods and tools',
+		descriptions:
+			'"Forecasting methods" 1. "Trend extrapolation" The method is based on analyzing historical data to identify existing trends that can be continued into the future. For example, if there is an observed growth in nationalist sentiments, the forecast may indicate an increase in their influence in the coming years. 2. "Scenario method" The scenario method involves developing several variants of future event development. Each scenario is assigned probable consequences and key factors that may affect its realization. 3. "Delphi method" This is an expert forecasting method based on collecting opinions from a group of experts on a specific issue. These opinions are analyzed, summarized, and forecasts are formed based on them. 4. SWOT analysis SWOT analysis involves assessing strengths, weaknesses, opportunities, and threats for a specific political situation or decision. 5. "Game modeling method (game theory)" Based on modeling the behavior of various political actors in conditions of conflict or cooperation. It helps to predict how different participants in the political process may act depending on mutual interests. *Tools for political forecasting 1. "Big Data and analytical platforms" Collection and analysis of large data sets (for example, social media, economic statistics, surveys) allow for more accurate forecasts. -Example tools: Palantir, Tableau. 2. "Machine learning and artificial intelligence" Machine learning algorithms can analyze huge volumes of information and identify hidden patterns that are not always obvious in traditional analysis. 3. "Modeling platforms (for example, AnyLogic or Arena)" Simulation modeling platforms allow for analyzing complex systems and testing various scenarios in a virtual environment.',
+		price: '999',
+		status: true,
+		image: 'bortnik16.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
+	{
+		id: '20283',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'English',
+		title:
+			'Visualization and functional design of information flows in political analysis',
+		descriptions:
+			"Visualization and functional design of information flows play a key role in political analysis. These tools not only help analysts better understand complex data but also make information more accessible to a wider audience. Effective visualization can transform abstract data into visual graphs, charts, and maps, facilitating information perception and improving the decision-making process. Recommended literature 1. 'The Visual Display of Quantitative Information' by Edward Tufte. 2. 'Storytelling with Data: A Data Visualization Guide for Business Professionals' by Cole Nussbaumer Knaflic. 3. 'Information Visualization: Perception for Design' by Colin Griffiths. Recommended films 'The Fog of War' (2003). A documentary about strategy and decision-making in the context of war, where visual elements are used for data analysis. The film helps to understand how visualization can be used to explain complex concepts and historical events. 'Inside Job' (2010). This documentary about the 2008 financial crisis includes visualizations that help understand complex financial concepts and their impact on the economy. The film demonstrates how visual data can clarify complex and multi-layered problems. Visualization and functional design of information flows are powerful tools in a political analyst's arsenal. They help not only in presenting data but also in interpreting and applying it in real political practice. Studying these aspects can significantly improve the quality of political analysis and enhance understanding of complex political processes. In the modern world, where information is becoming increasingly accessible, data visualization skills are becoming critically important for successful work in the field of political analysis.",
+		price: '999',
+		status: true,
+		image: 'bortnik17.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
