@@ -536,4 +536,20 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20284',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'Russian',
+		title: 'Testing and Interpretation in Political Analysis',
+		descriptions:
+			'Testing and data interpretation are key aspects of political analysis. These processes help evaluate hypotheses, identify patterns, and understand the dynamics of political processes. Political analysts, using statistical methods, can make informed conclusions about how various factors influence political behavior, public opinion, and elections. In this lecture, we will explore the main testing methods, their interpretation, examples of application, and recommendations for use. 1. Testing in political analysis 2. Interpretation of results 3. Recommendations for use',
+		price: '999',
+		status: true,
+		image: 'bortnik18.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
