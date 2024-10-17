@@ -554,4 +554,20 @@ export const coursesru = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20285',
+		course: 'Лекция',
+		lector: 'Бортник Руслан',
+		language: 'русский',
+		title: 'Анализ текстов (методы и приемы)',
+		descriptions:
+			'Методы анализа текстов 1. Контент-анализ, 2. Дискурсивный анализ, 3. Анализ нарративов, 4. Когнитивный анализ, 5. Лингвистический анализ',
+		price: '999',
+		status: true,
+		image: 'bortnik19.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]

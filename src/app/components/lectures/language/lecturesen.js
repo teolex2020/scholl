@@ -552,4 +552,20 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20285',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'Russian',
+		title: 'Text Analysis (Methods and Techniques)',
+		descriptions:
+			'Methods of text analysis: 1. Content analysis, 2. Discourse analysis, 3. Narrative analysis, 4. Cognitive analysis, 5. Linguistic analysis',
+		price: '999',
+		status: true,
+		image: 'bortnik19.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]

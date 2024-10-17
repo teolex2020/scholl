@@ -553,4 +553,20 @@ export const coursesua = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20285',
+		course: 'Лекція',
+		lector: 'Бортник Руслан',
+		language: 'російська',
+		title: 'Аналіз текстів (методи та прийоми)',
+		descriptions:
+			'Методи аналізу текстів: 1. Контент-аналіз, 2. Дискурсивний аналіз, 3. Аналіз наративів, 4. Когнітивний аналіз, 5. Лінгвістичний аналіз',
+		price: '999',
+		status: true,
+		image: 'bortnik19.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
