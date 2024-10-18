@@ -568,4 +568,21 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20286',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'Russian',
+		title:
+			'Tools of Political Reconstruction and Functional Design: Practical Cases',
+		descriptions:
+			'Algorithm for applying methods (techniques) of reconstruction (design) in a political case: 1. Defining the subject and object of reconstruction (for whom? For what purpose?); 2. Logical synthesis (deduction and induction); 3. Game theory (analysis of behavior models); 4. Political modeling and design; 5. Political forecasting; 6. Visualization and functional design; 7. Testing and interpretation (adaptation).',
+		price: '999',
+		status: true,
+		image: 'bortnik20.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]

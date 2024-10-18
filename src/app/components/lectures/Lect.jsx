@@ -111,7 +111,7 @@ const Course = () => {
 									<span>{data.datastart} </span>
 
 									<ClockIcon className='w-5 h-5' />
-									<span className='uppercase'>19.00</span>
+									<span className='uppercase'>00.00</span>
 								</div>
 							</div>
 						</div>
