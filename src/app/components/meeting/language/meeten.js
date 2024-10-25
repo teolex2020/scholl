@@ -94,4 +94,22 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		time: '20.00',
 		duration: 120,
 	},
+	{
+		id: '20287',
+		active: true,
+		course: 'Meeting',
+		lector: 'Mykhailo Chaplyha',
+		Moderator: 'Ruslan Bortnik',
+		language: 'Russian',
+		title:
+			"The World and Ukraine after the U.S. Presidential Elections: Era of Chaos or 'Iron Hand'?",
+		descriptions:
+			"Friends! On November 7, 2024, at 19:00, you are invited to an exclusive closed meeting and an honest dialogue with Mykhailo Chaplyha, a former representative of the Ombudsman for Human Rights (2012–2018), political leader, media figure, thinker, and Free Man. The topic of discussion will be: 'The World and Ukraine after the U.S. Presidential Elections: Era of Chaos or 'Iron Hand'?' We will discuss how the results of the American elections may impact Ukraine—will there be peace, elections, and a change in power? What to expect on the global stage—will international chaos and confrontation intensify, what will happen to global politics and the economy, and where is the best place to live? In a logical, honest manner, without pretension or propaganda, in a closed setting and off the record, Mykhailo Chaplyha, one of Ukraine’s most courageous and prominent political thinkers, will share insights on all these issues. You will also have the opportunity to ask questions and receive answers.",
+		price: '1499',
+		status: false,
+		image: 'chaplyga.webp',
+		datastart: '11/07/2024',
+		time: '19:00',
+		duration: 180,
+	},
 ]
