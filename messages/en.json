@@ -55,9 +55,8 @@
 		"donat":"Get access by donating USDT"
 	},
 	"Meeting": {
-		
 		"lector": "Instructor",
-	"Moderator":"Moderator",
+		"Moderator": "Moderator",
 		"duration": "Duration",
 		"tim": "minutes",
 		"data": "Date",
@@ -66,7 +65,8 @@
 		"star": "Training is free for military personnel. Trainings are held ONLINE",
 		"live": "live stream",
 		"recorded": "recorded video",
-		"takeout": "*Meetings are not recorded, so please do not forget and do not be late"
+		"takeout": "*Meetings are not recorded, so please do not forget and do not be late",
+		"link": "The meeting link will appear in your account under the \"My Purchases\" section → \"Meeting Links\" 1-3 days before the event."
 	},
 	"Brainstorm": {
 		"title": "Schedule a brainstorming session",

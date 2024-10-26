@@ -83,11 +83,14 @@ if (!data) {
 						<div className='text-xl lg:text-3xl flex-1  flex items-start justify-start md:p-10 p-3 flex-col'>
 							<h2 className='text-left font-semibold'>{data?.title}</h2>
 
-							<div className=' mt-5  rounded-sm flex items-center justify-center'>
+							<div className=' mt-5  rounded-sm flex flex-col items-center justify-center'>
 								<p
 									className={`text-lg text-left  font-semibold  ${gentium.className} `}
 								>
 									{data?.descriptions}
+								</p>
+								<p className='text-sm w-full py-2 text-[#e2a550]'>
+									***{m('link')}***
 								</p>
 							</div>
 
