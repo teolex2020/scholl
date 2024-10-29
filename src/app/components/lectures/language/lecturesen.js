@@ -585,4 +585,20 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20288',
+		course: 'Lecture',
+		lector: 'Bortnik Ruslan',
+		language: 'Russian',
+		title: 'Towards Consciously Binding Freedom',
+		descriptions:
+			"1. Awareness as the Foundation of Freedom: A person becomes truly free only when they are informed about what is happening, able to assess facts and events in their context. Without understanding the essence of phenomena and information flows, a person cannot make balanced decisions aligned with their true interests. Such awareness builds a foundation for inner independence. 2. Independence from Manipulations: Critical thinking is the primary barrier against manipulations driven by foreign interests and the desire for control. Those who can distinguish facts from fabricated data and political reality from propaganda are protected from attempts to influence their consciousness. Realizing this distinction allows a person to control their own life and remain unaffected by informational pressure. 3. Independence in Thoughts and Decisions: True freedom comes not from following the crowd but from the ability to think independently and make decisions that are beneficial for oneself. This helps avoid succumbing to the illusory goals and expectations of others and enables one to make decisions based on personal convictions and reality. Such a person can clearly articulate their desires and uphold personal values, which is genuine freedom. Lecture No. 21, 'Towards Consciously Binding Freedom,' from the course 'Fundamentals of Practical Political Analysis: How to Distinguish Truth from Lies and Make Right Decisions'",
+		price: '999',
+		status: true,
+		image: 'bortnik21.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]

@@ -9,7 +9,7 @@ export const coursesen = [
 			'Fundamentals of Practical Political Analysis: How to Distinguish Truth from Lies and Make the Right Decisions',
 		descriptions:
 			'The course on political analysis and forecasting will help you gain the most important knowledge and skills in public life that you can apply when working on complex practical projects.',
-		price: '4999',
+		price: '14999',
 		status: true,
 		image: 'bortnikcourse.webp',
 		datastart: '02.09.2024',
