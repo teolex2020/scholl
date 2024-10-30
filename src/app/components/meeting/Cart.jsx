@@ -76,7 +76,7 @@ const Cart = ({ dataOrder, price, alltime, image, active, donat }) => {
 			)}
 
 			{isPopupOpen && (
-				<div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20'>
+				<div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
 					<div className='bg-black/50 p-5 rounded-lg relative '>
 						<button className='absolute top-0 right-0' onClick={togglePopup}>
 							<XMarkIcon className='h-8 w-8 ' />

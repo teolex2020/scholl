@@ -118,6 +118,7 @@ F-16 и риски ядерного удара?
 		price: '1999',
 		status: false,
 		image: 'chaplyga.webp',
+		donat: 'donat1999.webp',
 		datastart: '7.11.2024',
 		time: '19.00',
 		duration: 180,

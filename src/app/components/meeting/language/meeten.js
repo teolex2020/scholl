@@ -108,6 +108,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		price: '1999',
 		status: false,
 		image: 'chaplyga.webp',
+		donat: 'donat1999.webp',
 		datastart: '11/07/2024',
 		time: '19:00',
 		duration: 180,
