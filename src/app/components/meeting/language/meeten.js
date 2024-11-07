@@ -96,7 +96,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 	},
 	{
 		id: '20287',
-		active: true,
+		active: false,
 		course: 'Meeting',
 		lector: 'Mykhailo Chaplyha',
 		Moderator: 'Ruslan Bortnik',
