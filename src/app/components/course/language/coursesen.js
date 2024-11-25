@@ -221,14 +221,14 @@ export const coursesen = [
 	},
 	{
 		id: '20265',
-		active: false,
+		active: true,
 		course: 'Course',
 		lector: 'Mykhailo Minakov',
 		language: 'Russian',
 		title: 'American Politics: History, Current State, and Possible Future',
 		descriptions:
 			'A unique series of lectures by Ukrainian philosopher and political researcher, Doctor of Philosophy Mykhailo Minakov, about the political history and system of the USA.',
-		price: '9999',
+		price: '',
 		status: true,
 		image: 'minakov.webp',
 		datastart: '27.08.2024',
@@ -283,6 +283,68 @@ export const coursesen = [
 				title:
 					'Sixth Lecture. Current Elections and Development Prospects of the USA.',
 				duration: '45 minutes',
+			},
+		],
+	},
+	{
+		id: '20289',
+		active: false,
+		course: 'Course',
+		lector: 'Kush Oleksiy',
+		language: 'Russian',
+		title:
+			'Key Economic Trends: Successful Personal and Collective Strategies in the Modern World',
+		descriptions:
+			'A course on analyzing and forecasting current global economic development trends and building individual development strategies that you can successfully apply when working on complex projects at both individual and collective levels. The course consists of 5 lectures – 30 minutes of author’s lecture and 30 minutes of Q&A. In the Q&A format, you will learn about the future of currencies and exchange rates, how to preserve your wealth during times of geopolitical and military crises, what will happen with asset and real estate prices, whether you should invest in cryptocurrency, and much more!',
+		price: '4999',
+		status: true,
+		image: 'cusch.webp',
+		datastart: '',
+		dataend: '',
+		time: '19:00',
+		alltime: 5,
+		conclusions: [
+			{
+				title:
+					'— Critically evaluate information, arguments, and policies. Enhance individual critical thinking skills, identify weaknesses in mainstream theories, and foresee non-mainstream perspectives.',
+			},
+			{
+				title:
+					'— Better understand global processes to make decisions at macro and micro levels.',
+			},
+			{
+				title: '— Model complex macroeconomic processes.',
+			},
+			{
+				title:
+					'— Analyze contemporary political events and form an individual vision of the real world.',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					"Lecture 1: Ukraine. Development prospects and the likelihood of a new electoral cycle. 'Freezing' the war or 'freezing' politics? The 'three-body' problem for the USA. Hryvnia exchange rate, inflation, and economic growth rates.",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Lecture 2: A new monetary system – what to expect from cryptocurrency development, the new global role of the USA. Cryptocurrency prospects.',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Lecture 3: Mainstream and non-mainstream development models, using Argentina, Turkey, and Mexico as examples.',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Lecture 4: BRICS – an alternative to the West or a different world? Where to invest profitably.',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Lecture 5: The Russian Federation’s economy – potential for continuing the war in the context of a new economic model.',
+				duration: '30 minutes',
 			},
 		],
 	},
