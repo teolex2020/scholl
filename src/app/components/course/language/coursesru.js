@@ -302,7 +302,7 @@ export const coursesru = [
 		status: true,
 		image: 'cusch.webp',
 		datastart: '05/12/2024',
-		dataend: '07/12/2024',
+		dataend: '09/12/2024',
 		time: '19.00',
 		alltime: 5,
 		conclusions: [
