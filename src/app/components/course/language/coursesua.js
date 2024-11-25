@@ -298,8 +298,8 @@ export const coursesua = [
 		price: '4999',
 		status: true,
 		image: 'cusch.webp',
-		datastart: '',
-		dataend: '',
+		datastart: '05/12/2024',
+		dataend: '07/12/2024',
 		time: '19:00',
 		alltime: 5,
 		conclusions: [
