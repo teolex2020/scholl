@@ -33,6 +33,7 @@ const Course = () => {
 	const { authUser } = useSelector((state) => state.counter)
 	const router = useRouter()
 	const t = useTranslations('Course')
+	const m = useTranslations('Meeting')
 	const dispatch = useDispatch()
 const locale = useLocale()
 
@@ -123,6 +124,9 @@ const locale = useLocale()
 									<ClockIcon className='w-5 h-5' />
 									<span className='uppercase'>19.00</span>
 								</div>
+							</div>
+							<div className='w-full text-center text-lg text-red-600 font-semibold pt-2'>
+								{m('takeout')}.
 							</div>
 						</div>
 					</div>
