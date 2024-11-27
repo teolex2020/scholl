@@ -126,7 +126,7 @@ const locale = useLocale()
 								</div>
 							</div>
 							<div className='w-full text-center text-lg text-red-600 font-semibold pt-2'>
-								{m('takeout')}.
+								{m('link')}.
 							</div>
 						</div>
 					</div>
