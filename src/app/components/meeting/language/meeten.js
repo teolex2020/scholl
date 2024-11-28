@@ -113,4 +113,23 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		time: '19:00',
 		duration: 180,
 	},
+	{
+		id: '20290',
+		active: true,
+		course: 'Meeting',
+		lector: 'Ruslan Bortnik',
+		Moderator: 'Ruslan Bortnik',
+		language: 'Russian',
+		title:
+			'New U.S. President D. Trump, Ukraine, and Russia: Scenarios for Peaceful Settlement and the Future of Ukrainian Statehood',
+		descriptions:
+			' During the meeting, we will discuss the following questions in detail:🔹 What are the chances of success for a new negotiation model proposed by the Trump administration?🔹 Scenarios for peaceful settlement: What conditions could form the basis for negotiations between Ukraine, Russia, and the U.S. under Trump’s leadership? How likely is a compromise involving a temporary freeze of the conflict? 🔹 Trump’s and the U.S.’s role in peace negotiations: How will the U.S.’s role as a mediator in negotiations change? Will Trump seek a quick peace at the expense of Ukraine’s interests? What initiatives might Trump propose to resolve the conflict? 🔹 The future of Ukrainian statehood: What could potential territorial concessions mean for Ukraine? What is the likelihood that Ukraine will not agree to a formal withdrawal from its internationally recognized territories? How will possible agreements impact Ukraine’s independence and sovereignty? What challenges might arise in Ukraine’s domestic politics in the case of controversial decisions during negotiations? 🔹 Economic and social consequences: How might internal reforms and Western support change under the new U.S. approach? Which sectors of Ukraine’s economy could suffer or benefit as a result of potential agreements? 🔹 Prospects for Russia and Belarus: What could Russia gain from reaching an agreement, and how would it affect its relations with the West? What will Russia’s position on Ukraine’s long-term prospects be? How might Belarus’s role change—could it become a new platform for peace negotiations?🔹 Geopolitical influence: How will Ukraine’s role in global politics evolve under Trump’s administration? Could Trump’s new strategy weaken NATO and EU influence in the region? 🔹 International players: What role might China and Global South countries play in potential peace agreements? How significant will EU support remain if U.S. policy shifts?🔹 Long-term perspectives:What could the new geopolitical landscape of Eastern Europe look like after a potential peace settlement?',
+		price: '2999',
+		status: false,
+		image: 'usa.webp',
+		donat: '',
+		datastart: '22.01.2025',
+		time: '19:00',
+		duration: 180,
+	},
 ]

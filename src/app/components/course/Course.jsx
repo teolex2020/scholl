@@ -83,7 +83,6 @@ const locale = useLocale()
 					<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row rounded-md min-h-80 '>
 						<div className='text-xl lg:text-3xl flex-1  flex items-start justify-start md:p-10 p-3 flex-col'>
 							<h2 className='text-left font-semibold'>{data.title}</h2>
-
 							<div className=' mt-5  rounded-sm flex items-center justify-center'>
 								<p
 									className={`text-lg text-left  font-semibold  ${gentium.className} `}
@@ -91,7 +90,9 @@ const locale = useLocale()
 									{data.descriptions}
 								</p>
 							</div>
-
+							<p className='text-sm w-full py-2 text-[#e2a550]'>
+								***{m('link')}***
+							</p>
 							<div className='text-sm pt-5 w-full text-start mt-5 '>
 								<div className='flex flex-col md:flex-row md:space-x-5'>
 									{' '}
@@ -125,9 +126,7 @@ const locale = useLocale()
 									<span className='uppercase'>19.00</span>
 								</div>
 							</div>
-							<div className='w-full text-center text-lg text-red-600 font-semibold pt-2'>
-								{m('link')}.
-							</div>
+							
 						</div>
 					</div>
 					<div className=' p-2 lg:text-xl  my-3 rounded-md bg-blur min-h-[255px]'>
