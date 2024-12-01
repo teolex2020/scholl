@@ -348,4 +348,98 @@ export const coursesen = [
 			},
 		],
 	},
+	{
+		id: '20291',
+		active: true,
+		course: 'Course',
+		lector: 'Bizyaev Ruslan',
+		language: 'Russian',
+		title:
+			"Historical Chronicles: 'The Unfinished War.' A Course on the Military-Political History of the First Half of the Twentieth Century.",
+		descriptions:
+			'This course is dedicated to an in-depth analysis of the causes and events that led to World War II, starting from the late 19th century to December 1941. Participants will learn how the political elites of Britain, the USA, France, Italy, the USSR, and Germany thought and acted, as well as examine key events in Asia. The course will help understand how seemingly insignificant events influenced history and provide a reevaluation of widely accepted versions of the war. This is an opportunity not only to delve into the past but also to reflect on the future.',
+		price: '3999',
+		status: true,
+		image: 'bizaev.webp',
+		datastart: '09/01/2025',
+		dataend: '31/01/2025',
+		time: '19:00',
+		alltime: 12,
+		conclusions: [
+			{
+				title:
+					'— Critically evaluate information, arguments, various historical concepts, and policies.',
+			},
+			{
+				title:
+					'— Better understand the historical aspects of global processes, recognize the logic and patterns of decision-making, methods and techniques of manipulation, and how history influences contemporary processes.',
+			},
+			{
+				title:
+					'— Analyze contemporary political events and form an individual vision of the real world.',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					'Lecture 1: Why, nearly 90 years after World War II ended, has no non-contradictory history of it appeared? Why are many archives in the USA, Britain, and Russia still closed? Examples from the USSR-USA military cooperation. (09.01.2025)',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 2: 'The First Drops of Rain.' The Lipski-Neurath Pact. Who made Hitler 'acceptable,' and why? (10.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 3: 'Operation Sea Lion.' Where did Dönitz's 'Wolf Packs' come from, and whom were they meant to attack? (14.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 4: 'The Saar Gambit,' or where did Hitler get coal? (16.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 5: 'The Rhine Hammer,' or the new heart of the Reich. (17.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 6: 'Vienna Waltz,' or making much from nothing. (21.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 7: 'Bitter Slivovitz,' or the power of law. (23.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 8: 'Rudolf Hess. Interrupted Flight,' or why did the last prisoner of Spandau hang himself? (24.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 9: 'The Bloody Bograch,' or why was the people's right suddenly forgotten? (28.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 10: 'Too White a Race,' or who appealed to the Führer and Goebbels? (29.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 11: 'Why Did Poland Need the Anti-Comintern Pact?' or how Hans and Józef fell out. (30.01.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 12: 'Fifty Shades of Brown.' Hitler—the Icebreaker of the World Revolution? Or was he manipulated more subtly? If so, by whom? (31.01.2025)",
+				duration: '30 minutes',
+			},
+		],
+	},
 ]
