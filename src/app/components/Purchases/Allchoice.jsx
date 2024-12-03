@@ -1,8 +1,10 @@
-"use client"
+'use client'
+
 import React, { useState } from 'react'
 import Choice from './Choice'
 import Purchases from './Purchases'
 import Meet from './Meet'
+import { useTranslations } from 'next-intl'
 
 const button = [
 	{
@@ -16,23 +18,28 @@ const button = [
 ]
 
 const Allchoice = () => {
+	const [active, setActive] = useState(1)
+	const t = useTranslations('Allchoice') // Замість "Allchoice" використовуйте ключ локалізації
 
-  	const [active, setActive] = useState(1)
+	const choice = (id) => {
+		setActive(id)
+	}
 
-    
-
-		const choice = (e) => {
-			setActive(e)
-		}
-
-  return (
+	return (
 		<div>
 			<div>
-				<Choice button={button} choice={choice} active={active} />
+				<Choice
+					button={button.map((item) => ({
+						...item,
+						title: t(item.id === 1 ? 'videos' : 'links'),
+					}))}
+					choice={choice}
+					active={active}
+				/>
 			</div>
 
-			<hr className='my-3 container mx-auto  border border-zinc-700' />
-			<div className='flex gap-6 px-12 py-8 '>
+			<hr className='my-3 container mx-auto border border-zinc-700' />
+			<div className='flex gap-6 px-12 py-8'>
 				{active === 1 ? <Purchases /> : <Meet />}
 			</div>
 		</div>

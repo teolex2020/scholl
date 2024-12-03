@@ -25,14 +25,13 @@
 		"info": "Trainings and courses are held in ONLINE format "
 	},
 	"Course": {
-	
 		"lectorname": "Teacher:",
 		"language": "Language:",
 		"button": "Buy ",
 		"aftercourse": "Upon completion of the course, you will learn/know",
-		
+
 		"courseprogram": "Course Program",
-	
+
 		"Conclusion": "Conclusions. On the way to consciously binding freedom (2 hours).",
 		"Certificat": "After completing the course you will receive a certificate",
 		"Questions": "Frequently asked questions:",
@@ -52,7 +51,7 @@
 		"button": "Buy",
 		"buttonClose": "Closed",
 		"course": "The course consists of:",
-		"donat":"Get access by donating USDT"
+		"donat": "Get access by donating USDT"
 	},
 	"Meeting": {
 		"lector": "Instructor",
@@ -113,13 +112,12 @@
 		"title": "Your AI Assistant"
 	},
 	"BortnikTrain": {
-	
 		"lector": "Instructor",
-		
+
 		"duration": "Duration",
 		"tim": "minutes",
 		"star": "Training is free for military personnel. Trainings are held ONLINE",
-	
+
 		"data": "Date",
 		"more": "More",
 		"less": "Less",
@@ -137,5 +135,9 @@
 	},
 	"Purchase": {
 		"title": "You have no purchases ...."
+	},
+	"Allchoice": {
+		"videos": "Videos of purchased courses/trainings/lectures",
+		"links": "Links to meetings"
 	}
 }
