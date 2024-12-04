@@ -442,4 +442,62 @@ export const coursesen = [
 			},
 		],
 	},
+	{
+		id: '20292',
+		active: false,
+		course: 'Course',
+		lector: 'Viktor Savinov',
+		language: 'Russian',
+		title: "Course 'Postmodern'",
+		descriptions:
+			'Postmodernism is an umbrella term encompassing key aspects of modern political science, philosophy, sociology, economics, communications, and military strategy. This course is designed for those who want to master tools and methods used by leading global think tanks, strategic planning departments, and prestigious universities. You will learn to analyze and plan: Political events. Economic processes. Social transformations. Communication strategies. Governance systems. Combat operations. Course format: 5 lectures of 90 minutes each, followed by a 30-minute Q&A session after each lecture.',
+		price: '34999',
+		status: true,
+		image: 'savinov.webp',
+		datastart: '',
+		dataend: '',
+		time: '19:00',
+		alltime: 7,
+		conclusions: [
+			{
+				title:
+					'— Understanding the basic concepts, systems, structures, and strategies of postmodernism.',
+			},
+			{
+				title:
+					'— Ability to analyze and forecast political events, economic processes, social transformations, and governance strategies.',
+			},
+			{
+				title:
+					'— Skills in developing communication strategies and assessing the effectiveness of military campaigns.',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					'Lecture 1: The Era of Postmodernism. Historical and philosophical continuum. Paradigm shift. History and genealogy of mythology.',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Lecture 2: Philosophy of Postmodernism. Structuralism and post-structuralism. De-anthropologization. Deconstruction. Rhizome and phenomenology. Metamodernism. (10.01.2025)',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Lecture 3: Economics and Sociology of Postmodernism. The unfinished project of modernity. Simulacra and simulation. Imaginary. Desiring machines. Consumer society. Economic cycles.',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Lecture 4: Postmodern Communications. Death of the author and the open work. Logic of meaning. The concept of media. Discursive practices. Psychoanalysis and methodology.',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Lecture 5: Postmodern Strategies. Modern military strategy. Types of wars and objectives. Battlefield. Methods for assessing the effectiveness of military campaigns. Victory in the conditions of postmodernism.',
+				duration: '30 minutes',
+			},
+		],
+	},
 ]

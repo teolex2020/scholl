@@ -167,7 +167,7 @@ const locale = useLocale()
 				</div>
 			</div>
 			<hr className='opacity-10 my-5' />
-			<div className='flex flex-col items-center gap-6'>
+			{/* <div className='flex flex-col items-center gap-6'>
 				<div className='text-2xl'>{t('Certificat')}*</div>
 				<div className='w-96 h-64 relative bg-blur'>
 					<Image
@@ -179,7 +179,7 @@ const locale = useLocale()
 						priority
 					/>
 				</div>
-			</div>
+			</div> */}
 
 			<hr className='opacity-10 my-5' />
 			<div className='mb-14 lg:text-xl flex flex-col bg-blur rounded-lg p-2 gap-2'>
