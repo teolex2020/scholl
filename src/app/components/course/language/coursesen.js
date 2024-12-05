@@ -221,7 +221,7 @@ export const coursesen = [
 	},
 	{
 		id: '20265',
-		active: true,
+		active: false,
 		course: 'Course',
 		lector: 'Mykhailo Minakov',
 		language: 'Russian',
@@ -297,7 +297,7 @@ export const coursesen = [
 		descriptions:
 			'A course on analyzing and forecasting current global economic development trends and building individual development strategies that you can successfully apply when working on complex projects at both individual and collective levels. The course consists of 5 lectures – 30 minutes of author’s lecture and 30 minutes of Q&A. In the Q&A format, you will learn about the future of currencies and exchange rates, how to preserve your wealth during times of geopolitical and military crises, what will happen with asset and real estate prices, whether you should invest in cryptocurrency, and much more!',
 		price: '5999',
-		status: true,
+		status: false,
 		image: 'cusch.webp',
 		datastart: '05/12/2024',
 		dataend: '09/12/2024',

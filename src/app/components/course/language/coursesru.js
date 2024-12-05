@@ -290,7 +290,7 @@ export const coursesru = [
 	},
 	{
 		id: '20289',
-		active: true,
+		active: false,
 		course: 'Курс',
 		lector: 'Кущ Алексей ',
 		language: 'Русский',
