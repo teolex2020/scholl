@@ -288,7 +288,7 @@ export const coursesen = [
 	},
 	{
 		id: '20289',
-		active: false,
+		active: true,
 		course: 'Course',
 		lector: 'Kush Oleksiy',
 		language: 'Russian',

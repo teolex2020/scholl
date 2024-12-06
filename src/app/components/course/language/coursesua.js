@@ -287,7 +287,7 @@ export const coursesua = [
 	},
 	{
 		id: '20289',
-		active: false,
+		active: true,
 		course: 'Курс',
 		lector: 'Кущ Олексій',
 		language: 'Російська',
