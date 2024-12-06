@@ -23,7 +23,7 @@ const Purchases = () => {
 	const auth = getAuth()
 	const user = auth.currentUser
 
-	console.log(data)
+
 
 	useEffect(() => {
 		if (user && id && !data) {

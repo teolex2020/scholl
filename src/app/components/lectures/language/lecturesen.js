@@ -601,4 +601,21 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20293',
+		course: 'Lecture',
+		lector: 'Oleksiy Kush',
+		language: 'Russian',
+		title:
+			"First Lecture: Ukraine. Development Prospects and the Likelihood of a New Electoral Cycle. 'Freezing' the War or 'Freezing' Politics? The 'Three-Body' Problem for the USA. Hryvnia Exchange Rate, Inflation, and Economic Growth Rates.",
+		descriptions:
+			"The first lecture by Oleksiy Kush as part of the course 'Key Economic Trends: Successful Strategies in the Modern World.' The lecturer highlights Ukraine's major economic challenges for 2025, including prospects for resuming political processes, the possible freezing of the war, inflation forecasts, and the influence of U.S. foreign policy. Special attention is given to the analysis of resources and their role in global decision-making, as well as the transformation of international relations through the lens of geopolitical conflicts. Viewers will learn about the impact of demographic changes, declining exports, and challenges related to Ukraine's economic recovery. The lecture also includes unique recommendations for forming individual success strategies for 2025 based on a resource-oriented analytical approach. Don't miss the discussion of key aspects of the future that are shaping our reality today!",
+		price: '1999',
+		status: true,
+		image: 'kusch1.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
