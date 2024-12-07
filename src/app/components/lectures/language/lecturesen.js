@@ -618,4 +618,21 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20294',
+		course: 'Lecture',
+		lector: 'Aleksey Kush',
+		language: 'Russian',
+		title:
+			'Second Lecture: The New Monetary System – What to Expect from Cryptocurrency Development and the New Global Role of the USA. Prospects of Cryptocurrencies.',
+		descriptions:
+			"The second lecture by Aleksey Kush, 'The New Monetary System: What to Expect from Cryptocurrency Development and the New Global Role of the USA,' focuses on the future of financial systems. It discusses the potential of cryptocurrencies, their impact on the global economy, and the strategic role of the USA in developing digital currencies. Republicans, particularly Donald Trump, advocate for integrating cryptocurrencies into the U.S. financial system, including the possibility of repaying national debt using Bitcoin. The lecture explores the prospects for U.S. global dominance through new digital tools, challenges to the dollar, and the impact of cryptocurrencies on the global market and financial stability. The lecture provides practical recommendations for investors and forecasts regarding the influence of these processes on the global economy.",
+		price: '1999',
+		status: true,
+		image: 'kusch2.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
