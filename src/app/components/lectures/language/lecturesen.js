@@ -635,4 +635,21 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20295',
+		course: 'Lecture',
+		lector: 'Aleksey Kush',
+		language: 'Russian',
+		title:
+			'Third Lecture: Mainstream and Non-Mainstream Development Models Using Argentina, Turkey, and Mexico as Examples.',
+		descriptions:
+			"In the third lecture, the author examines mainstream and alternative (non-mainstream) economic development models using the examples of three countries: Argentina, Turkey, and Mexico. The lecturer compares standard approaches to financial and economic policy with unconventional ones, showing how differences in attitudes toward inflation, exchange rates, the role of the state, and international integration impact economic growth rates, the population’s welfare, and the development prospects of countries. Using Turkey as an example, the author demonstrates a model of accelerated industrial growth combined with high inflation and unconventional monetary policy that stimulates production. Mexico is explored as a country benefiting from its proximity to a strong economic partner—the USA—and applying 'nearshoring' strategies to attract investors. Meanwhile, Argentina serves as an example of a country seeking its unique economic strategy between socialism and liberalism but often facing challenges and instability. Ultimately, the lecture helps understand how various economic models and unconventional approaches can influence long-term sustainability, competitiveness, and the population’s welfare, as well as why it is important for Ukraine to study and reflect on this experience.",
+		price: '1999',
+		status: true,
+		image: 'kusch3.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]

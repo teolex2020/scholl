@@ -38,11 +38,11 @@ const Allcourse = () => {
 	const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
 	return (
-		<div className='container mx-auto'>
+		<div className='container mx-auto '>
 			<div className='py-3'>
 				<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 			</div>
-			<div className='lg:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10 place-items-center'>
+			<div className='lg:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10 place-items-center '>
 				{currentItems.map((course, i) => (
 					<CartCourse
 						key={i}
