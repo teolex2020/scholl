@@ -47,7 +47,7 @@ const CartCourse = ({ lector, price, status, title, id, image, course }) => {
 						/>
 					</div>
 				</div>
-				<div className='flex justify-center gap-2 mt-3  flex-col-reverse'>
+				<div className='flex justify-center items-start gap-2 mt-3  flex-col-reverse  w-full'>
 					{' '}
 					<div className='flex gap-3 items-center text-[14px] text-[#e2a550]'>
 						<AcademicCapIcon className='h-4 w-4 ' />
