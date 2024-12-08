@@ -450,14 +450,14 @@ export const coursesen = [
 		language: 'Russian',
 		title: "Course 'Postmodern'",
 		descriptions:
-			'Postmodernism is an umbrella term encompassing key aspects of modern political science, philosophy, sociology, economics, communications, and military strategy. This course is designed for those who want to master tools and methods used by leading global think tanks, strategic planning departments, and prestigious universities. You will learn to analyze and plan: Political events. Economic processes. Social transformations. Communication strategies. Governance systems. Combat operations. Course format: 5 lectures of 90 minutes each, followed by a 30-minute Q&A session after each lecture.',
+			'Postmodernism is an umbrella concept covering key aspects of modern political science, philosophy, sociology, economics, communication, and military strategy. This course is designed for those who want to master the tools and methods used by leading global think tanks, strategic planning departments, and prestigious universities. 5 lectures of 90 minutes each. 30-minute Q&A session after each lecture.',
 		price: '34999',
 		status: true,
 		image: 'savinov.webp',
-		datastart: '',
-		dataend: '',
+		datastart: '05.05.2025',
+		dataend: '20.05.2025',
 		time: '19:00',
-		alltime: 7,
+		alltime: 10,
 		conclusions: [
 			{
 				title:
@@ -475,27 +475,27 @@ export const coursesen = [
 		courseprogram: [
 			{
 				title:
-					'Lecture 1: The Era of Postmodernism. Historical and philosophical continuum. Paradigm shift. History and genealogy of mythology.',
+					'First lecture. The postmodern era. Historical and philosophical continuum. Paradigmatic transition. History and genealogy. Mythologies. (05.05.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Lecture 2: Philosophy of Postmodernism. Structuralism and post-structuralism. De-anthropologization. Deconstruction. Rhizome and phenomenology. Metamodernism. (10.01.2025)',
+					'Second lecture. Philosophy of postmodernity. Structuralism and poststructuralism. Deanthropologization. Deconstruction. Rhizoma. Postmodern. Metamodern. (10.05.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Lecture 3: Economics and Sociology of Postmodernism. The unfinished project of modernity. Simulacra and simulation. Imaginary. Desiring machines. Consumer society. Economic cycles.',
+					'Third lecture. Economics and Sociology of Postmodernity. The unfinished project of modernity. Simulacra. Simulation. Imaginer. Desiring machines. The society of consumption. The society of control. Economic cycles.(12.05.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Lecture 4: Postmodern Communications. Death of the author and the open work. Logic of meaning. The concept of media. Discursive practices. Psychoanalysis and methodology.',
+					'Fourth lecture. Postmodern Communication.  The death of the author. The open work.  The logic of meaning. The notion of media. Discursive practices. Psychoanalysis. Methodology. (17.05.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Lecture 5: Postmodern Strategies. Modern military strategy. Types of wars and objectives. Battlefield. Methods for assessing the effectiveness of military campaigns. Victory in the conditions of postmodernism.',
+					'Fifth lecture. Postmodern Strategies. Modern military strategy. Types of warfare and objectives. The battlefield. Methods of assessing the effectiveness of military campaigns. Victory. (20.05.2025)',
 				duration: '30 minutes',
 			},
 		],
