@@ -36,12 +36,12 @@ const CartCourse = ({
 					{status ? (
 						<div className='absolute top-5 right-4 bg-white text-black border-2 border-black rounded-lg py-1 px-2 font-bold text-sm hidden sm:flex items-center gap-3 z-10'>
 							<VideoCameraIcon className='w-5 h-5' />
-							<p>{t('recorded')}</p>
+							{/* <p>{t('recorded')}</p> */}
 						</div>
 					) : (
 						<div className='absolute top-5 right-4 bg-white text-black border-2 border-black rounded-lg py-1 px-2 font-bold text-sm flex items-center gap-3 z-10'>
 							<EyeIcon className='w-5 h-5' />
-							<p>{t('live')}</p>
+							{/* <p>{t('live')}</p> */}
 						</div>
 					)}
 					<div className='sm:w-[300px] w-20 h-20 sm:min-h-48   relative mt-1 '>
@@ -55,7 +55,7 @@ const CartCourse = ({
 						/>
 					</div>
 				</div>
-				<div className='flex justify-center gap-2  flex-col-reverse'>
+				<div className='flex justify-center gap-2 mt-3  flex-col-reverse'>
 					{' '}
 					<div className='flex gap-3 items-center text-[14px] text-[#e2a550]'>
 						<AcademicCapIcon className='h-4 w-4 ' />
@@ -83,9 +83,7 @@ const CartCourse = ({
 					<p className='text-xl'>{price} ₴</p>
 				</button>
 			</div>
-			<div className='w-fit hidden sm:flex gap-3 items-center text-white px-3'>
-				<p>{course}</p>
-			</div>
+		
 		</div>
 	)
 }
