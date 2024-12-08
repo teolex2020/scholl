@@ -42,7 +42,7 @@ const CartCourse = ({ lector, price, status, title, id, image, course }) => {
 							sizes='(min-width: 808px) 50vw, 100vw'
 							fill
 							alt=''
-							className='object-cover rounded-lg'
+							className='object-cover rounded-lg '
 							priority
 						/>
 					</div>

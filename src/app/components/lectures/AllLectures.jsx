@@ -20,11 +20,13 @@ const Allcourse = () => {
 
 	const currentCourses = courses[locale] || coursesua
 
-	const filteredCourses = currentCourses.filter(
-		(course) =>
-			course.lector.toLowerCase().includes(searchQuery.toLowerCase()) ||
-			course.title.toLowerCase().includes(searchQuery.toLowerCase())
-	)
+	const filteredCourses = currentCourses
+		.filter(
+			(course) =>
+				course.lector.toLowerCase().includes(searchQuery.toLowerCase()) ||
+				course.title.toLowerCase().includes(searchQuery.toLowerCase())
+		)
+		.reverse()
 
 	// Calculate total pages
 	const pageCount = Math.ceil(filteredCourses.length / itemsPerPage)
@@ -32,7 +34,10 @@ const Allcourse = () => {
 	// Get current items
 	const indexOfLastItem = currentPage * itemsPerPage
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage
-	const currentItems = filteredCourses.slice(indexOfFirstItem, indexOfLastItem)
+	const currentItems = filteredCourses
+		.slice(indexOfFirstItem, indexOfLastItem)
+		
+		
 
 	// Change page
 	const paginate = (pageNumber) => setCurrentPage(pageNumber)
@@ -43,20 +48,21 @@ const Allcourse = () => {
 				<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 			</div>
 			<div className='lg:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10 place-items-center '>
-				{currentItems.map((course, i) => (
-					<CartCourse
-						key={i}
-						id={course.id}
-						lector={course.lector}
-						title={course.title}
-						description={course.descriptions}
-						price={course.price}
-						status={course.status}
-						image={course.image}
-						course={course.course}
-						active={course.active}
-					/>
-				))}
+				{currentItems				
+					.map((course, i) => (
+						<CartCourse
+							key={i}
+							id={course.id}
+							lector={course.lector}
+							title={course.title}
+							description={course.descriptions}
+							price={course.price}
+							status={course.status}
+							image={course.image}
+							course={course.course}
+							active={course.active}
+						/>
+					))}
 			</div>
 			<div className='pagination flex justify-center space-x-2 mt-4 mb-10'>
 				{Array.from({ length: pageCount }, (_, i) => (

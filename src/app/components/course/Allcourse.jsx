@@ -20,12 +20,13 @@ const Allcourse = () => {
 
 	const currentCourses = courses[locale] || coursesua
 
-	 const filteredCourses = currentCourses.filter(
-			(course) =>
-				course.lector.toLowerCase().includes(searchQuery.toLowerCase()) ||
-				course.title.toLowerCase().includes(searchQuery.toLowerCase()) 
-				
-		)
+	 const filteredCourses = currentCourses
+			.filter(
+				(course) =>
+					course.lector.toLowerCase().includes(searchQuery.toLowerCase()) ||
+					course.title.toLowerCase().includes(searchQuery.toLowerCase())
+			)
+			.reverse()
 
 		
 
@@ -37,19 +38,21 @@ const Allcourse = () => {
 
 			<div className='lg:p-6  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4  place-items-center '>
 				{filteredCourses.length > 0 ? (
-					filteredCourses.map((course, i) => (
-						<CartCourse
-							key={i}
-							id={course.id}
-							lector={course.lector}
-							title={course.title}
-							description={course.descriptions}
-							price={course.price}
-							status={course.status}
-							image={course.image}
-							course={course.course}
-						/>
-					))
+					filteredCourses
+					
+						.map((course, i) => (
+							<CartCourse
+								key={i}
+								id={course.id}
+								lector={course.lector}
+								title={course.title}
+								description={course.descriptions}
+								price={course.price}
+								status={course.status}
+								image={course.image}
+								course={course.course}
+							/>
+						))
 				) : (
 					<div className='w-full text-center text-xl text-gray-500'>
 						Not found

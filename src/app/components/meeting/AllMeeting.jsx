@@ -21,11 +21,13 @@ const Allcourse = () => {
 
 	const currentCourses = courses[locale] || coursesua
 
-	const filteredCourses = currentCourses.filter(
-		(course) =>
-			course.lector.toLowerCase().includes(searchQuery.toLowerCase()) ||
-			course.title.toLowerCase().includes(searchQuery.toLowerCase())
-	)
+	const filteredCourses = currentCourses
+		.filter(
+			(course) =>
+				course.lector.toLowerCase().includes(searchQuery.toLowerCase()) ||
+				course.title.toLowerCase().includes(searchQuery.toLowerCase())
+		)
+		.reverse()
 
 	return (
 		<div className='container mx-auto '>

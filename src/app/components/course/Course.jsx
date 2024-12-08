@@ -115,9 +115,7 @@ const locale = useLocale()
 
 								<div
 									className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '
-									// onMouseEnter={() => setIsData(true)}
-									// onMouseLeave={() => setIsData(false)}
-								>
+																>
 									<CalendarIcon className='w-5 h-5 text-green-500' />
 									<span>{data.datastart} </span>
 									<span>-</span>
