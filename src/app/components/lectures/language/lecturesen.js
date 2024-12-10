@@ -652,4 +652,21 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20296',
+		course: 'Lecture',
+		lector: 'Aleksey Kush',
+		language: 'Russian',
+		title:
+			'Fourth Lecture: BRICS - An Alternative to the West or Another World? Where to Invest Profitably.',
+		descriptions:
+			"In this lecture, Aleksey Kush, as part of the course 'Key Economic Trends: Successful Personal and Collective Strategies,' discusses a unique topic: is BRICS an alternative to the West, or the birth of a new world order? Learn how geopolitical fragmentation and the economic dynamics of the Global South countries can reshape the global economy. Aleksey also explores promising areas for investment, including countries that will become growth drivers in the coming years. This lecture offers an in-depth analysis of key trends in the modern world!",
+		price: '1999',
+		status: true,
+		image: 'kusch4.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
