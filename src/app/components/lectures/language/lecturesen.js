@@ -669,4 +669,21 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20297',
+		course: 'Lecture',
+		lector: 'Aleksey Kush',
+		language: 'Russian',
+		title:
+			'Fifth Lecture: The Russian Economy – Potential for Continuing the War in the Context of a New Economic Model.',
+		descriptions:
+			"The fifth lecture discusses the potential of the Russian economy to sustain the war under a new economic model. Key aspects covered include: The three-phase war model and its application in Syria, Nagorno-Karabakh, and Ukraine; The role of monetary and fiscal policy in adapting the Russian economy to sanctions; Economic transformation: from resource dependency to a mixed model; The impact of credit and mortgage impulses on GDP growth; Prospects for Russia's economic development amid structural adjustments. Lecturer Aleksey Kush provides an objective analysis of the current situation, forecasts for 2025, and answers audience questions about the likelihood of conflict freezing and further economic prospects. This lecture will be valuable for anyone seeking a deeper understanding of how the economy influences strategic decisions.",
+		price: '1999',
+		status: true,
+		image: 'kusch5.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
