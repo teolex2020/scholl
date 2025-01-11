@@ -686,4 +686,38 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20298',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			'First Lecture: Why, Nearly 90 Years After World War II Ended, Has No Non-Contradictory History of It Appeared?',
+		descriptions:
+			"Why, nearly 90 years after the end of World War II, has no non-contradictory history of it appeared? Why are many archives in the USA, Britain, and Russia still closed? We will explore this through two examples of military cooperation between the USSR and the USA, examining how myths were created and faded into history as part of Ruslan Bizyaev’s course, 'Historical Chronicles: The Unfinished War.' This course focuses on the military-political history of the first half of the twentieth century.",
+		price: '999',
+		status: true,
+		image: 'bizaev1.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
+	{
+		id: '20299',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			"Second Lecture: 'The First Drops of Rain' The Lipski-Neurath Pact. Who Made Hitler 'Acceptable,' and Why?",
+		descriptions:
+			"'The First Drops of Rain' The Lipski-Neurath Pact. Who made Hitler 'acceptable,' and why? This lecture is part of Ruslan Bizyaev’s course, 'Historical Chronicles: The Unfinished War,' focusing on the military-political history of the first half of the twentieth century.",
+		price: '999',
+		status: true,
+		image: 'bizaev2.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
