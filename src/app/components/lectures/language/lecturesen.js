@@ -720,4 +720,21 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20300',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			"Third Lecture: 'Operation Sea Lion.' Where Did Dönitz's 'Wolf Packs' Come From?",
+		descriptions:
+			"Third Lecture: 'Operation Sea Lion.' Where did Dönitz's 'Wolf Packs' come from, and whom were they supposed to attack? This lecture is part of Ruslan Bizyaev’s course, 'Historical Chronicles: The Unfinished War,' focusing on the military-political history of the first half of the twentieth century.",
+		price: '999',
+		status: true,
+		image: 'bizaev3.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
