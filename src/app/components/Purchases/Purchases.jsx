@@ -25,59 +25,71 @@ const Purchases = () => {
 
 
 
-	useEffect(() => {
-		if (user && id && !data) {
-			setLoading(true)
-			// console.log(`User ID: ${user.uid}`, `Redux ID: ${id}`) 
-			const q = query(collection(db, 'order'), where('id', '==', id))
+useEffect(() => {
+	if (user && id && !data) {
+		setLoading(true)
+		// console.log(`User ID: ${user.uid}`, `Redux ID: ${id}`)
 
-			const unsubscribe = onSnapshot(
-				q,
-				async (querySnapshot) => {
-					try {
-						const documents = querySnapshot.docs.map((doc) => ({
-							orderNumber: doc.data().orderNumber,
-							reason: doc.data().reason,
-						}))
+		const q = query(collection(db, 'order'), where('id', '==', id))
 
-						const filterVideo = documents.filter((item) => item.reason === 'Ok')
-						const filterVideoslice = filterVideo.map(
-							(item) => item.orderNumber?.slice(-5) // Defensive .? Operator
-						)
+		const unsubscribe = onSnapshot(
+			q,
+			async (querySnapshot) => {
+				try {
+					const documents = querySnapshot.docs.map((doc) => ({
+						orderNumber: doc.data().orderNumber,
+						reason: doc.data().reason,
+					}))
 
-						const videoLinks = await Promise.all(
-							filterVideoslice.map(async (videoId) => {
-								if (!videoId) return null
-								const videoDoc = await getDoc(doc(db, 'video', videoId))
-								if (videoDoc.exists()) {
-									return {
-										video: videoDoc.data().video,
-										title: videoDoc.data().title,
-									}
-								}
-								return null
+					const filterVideo = documents.filter((item) => item.reason === 'Ok')
+					// console.log('Filtered orders:', filterVideo)
+					const uniqueVideoIds = [
+						...new Set(
+							filterVideo.map((item) => {
+								const videoId = item.orderNumber?.slice(-5)
+								// console.log('Video Id after slice', videoId) 
+								return videoId
 							})
-						)
+						),
+					]
+					// console.log('Unique video IDs:', uniqueVideoIds)
+					const videoLinks = await Promise.all(
+						uniqueVideoIds.map(async (videoId) => {
+							if (!videoId) return null
+							const videoDoc = await getDoc(doc(db, 'video', videoId))
+							if (videoDoc.exists()) {
+								return {
+									video: videoDoc.data().video,
+									title: videoDoc.data().title,
+								}
+							}
+							return null
+						})
+					)
 
-						setData(videoLinks.filter((video) => video !== null))
-						setLoading(false)
-					} catch (error) {
-						console.error('Error processing video data:', error)
-						setData([]) // Clear data to display error
-						setLoading(false)
-					}
-				},
-				(error) => {
-					console.error('Error in onSnapshot:', error)
-					setData([]) // Clear data to display error
+					const filteredVideoLinks = videoLinks.filter(
+						(video) => video !== null
+					)
+					// console.log('Filtered video links:', filteredVideoLinks)
+
+					setData(filteredVideoLinks)
+				} catch (error) {
+					console.error('Error processing video data:', error)
+					setData([]) // Очищення даних для відображення помилки
+				} finally {
 					setLoading(false)
 				}
-			)
+			},
+			(error) => {
+				console.error('Error in onSnapshot:', error)
+				setData([]) // Очищення даних для відображення помилки
+				setLoading(false)
+			}
+		)
 
-			// Відписка від прослуховування при розмонтуванні компонента
-			return () => unsubscribe()
-		}
-	}, [user, id, data])
+		return () => unsubscribe()
+	}
+}, [user, id, data])
 
 	if (loading) {
 		return <Loader />
