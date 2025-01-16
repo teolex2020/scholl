@@ -94,7 +94,7 @@ const Purchases = () => {
 							<source src={item.video} type='video/mp4' />
 							Ваш браузер не підтримує відео тег.
 						</video>
-						<div className='flex justify-center items-center text-lg  py-4 h-24  overflow-hidden'>
+						<div className='flex justify-center items-center   py-4 h-24  overflow-hidden'>
 							<h2>{item.title}</h2>
 						</div>
 					</div>
