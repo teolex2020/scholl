@@ -28,43 +28,48 @@ const Purchases = () => {
 	useEffect(() => {
 		if (user && id && !data) {
 			setLoading(true)
+			// console.log(`User ID: ${user.uid}`, `Redux ID: ${id}`) 
 			const q = query(collection(db, 'order'), where('id', '==', id))
 
 			const unsubscribe = onSnapshot(
 				q,
 				async (querySnapshot) => {
-					const documents = querySnapshot.docs.map((doc) => ({
-						orderNumber: doc.data().orderNumber,
-						reason: doc.data().reason,
-					}))
+					try {
+						const documents = querySnapshot.docs.map((doc) => ({
+							orderNumber: doc.data().orderNumber,
+							reason: doc.data().reason,
+						}))
 
-						
+						const filterVideo = documents.filter((item) => item.reason === 'Ok')
+						const filterVideoslice = filterVideo.map(
+							(item) => item.orderNumber?.slice(-5) // Defensive .? Operator
+						)
 
-					const filterVideo = documents.filter((item) => item.reason === 'Ok')
-					const filterVideoslice = filterVideo.map((item) =>
-						item.orderNumber.slice(-5)
-					)
-
-			
-
-					const videoLinks = await Promise.all(
-						filterVideoslice.map(async (videoId) => {
-							const videoDoc = await getDoc(doc(db, 'video', videoId))
-							if (videoDoc.exists()) {
-								return {
-									video: videoDoc.data().video,
-									title: videoDoc.data().title,
+						const videoLinks = await Promise.all(
+							filterVideoslice.map(async (videoId) => {
+								if (!videoId) return null
+								const videoDoc = await getDoc(doc(db, 'video', videoId))
+								if (videoDoc.exists()) {
+									return {
+										video: videoDoc.data().video,
+										title: videoDoc.data().title,
+									}
 								}
-							}
-							return null
-						})
-					)
+								return null
+							})
+						)
 
-					setData(videoLinks.filter((video) => video !== null))
-					setLoading(false)
+						setData(videoLinks.filter((video) => video !== null))
+						setLoading(false)
+					} catch (error) {
+						console.error('Error processing video data:', error)
+						setData([]) // Clear data to display error
+						setLoading(false)
+					}
 				},
 				(error) => {
 					console.error('Error in onSnapshot:', error)
+					setData([]) // Clear data to display error
 					setLoading(false)
 				}
 			)
@@ -80,7 +85,9 @@ const Purchases = () => {
 
 	return (
 		<div className='container mx-auto flex flex-wrap min-h-screen'>
-			{data?.length > 0 ? (
+			{data === null || loading ? (
+				<Loader />
+			) : data?.length > 0 ? (
 				data?.map((item, i) => (
 					<div
 						key={i}
@@ -89,19 +96,20 @@ const Purchases = () => {
 						<video
 							className='w-96 h-48 bg-black rounded-lg'
 							controls
-							poster={item.video}
+							poster={item?.video}
 						>
-							<source src={item.video} type='video/mp4' />
+							<source src={item?.video} type='video/mp4' />
 							Ваш браузер не підтримує відео тег.
 						</video>
 						<div className='flex justify-center items-center   py-4 h-24  overflow-hidden'>
-							<h2>{item.title}</h2>
+							<h2>{item?.title}</h2>
 						</div>
 					</div>
 				))
 			) : (
 				<div className='flex justify-center items-center w-full  h-full'>
 					<h2>{t('title')} ....</h2>
+					{data?.length === 0 && <p>Failed to load video</p>}
 				</div>
 			)}
 		</div>
