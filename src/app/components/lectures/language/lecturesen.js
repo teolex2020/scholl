@@ -753,4 +753,20 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20302',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title: "Fifth Lecture: 'The Rhine Hammer' or the New Heart of the Reich",
+		descriptions:
+			"Fifth Lecture: 'The Rhine Hammer' or the new heart of the Reich. This lecture is part of Ruslan Bizyaev’s course, 'Historical Chronicles: The Unfinished War,' focusing on the military-political history of the first half of the twentieth century.",
+		price: '999',
+		status: true,
+		image: 'bizaev5.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
