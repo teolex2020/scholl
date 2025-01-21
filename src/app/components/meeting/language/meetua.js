@@ -136,7 +136,7 @@ F-16 та ризики ядерного удару?
 		price: '2999',
 		status: false,
 		image: 'usa.webp',
-		donat: '',
+		donat: 'bortnik22.webp',
 		datastart: '22.01.2025',
 		time: '19:00',
 		duration: 180,
