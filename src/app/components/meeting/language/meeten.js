@@ -127,7 +127,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		price: '2999',
 		status: false,
 		image: 'usa.webp',
-		donat: '',
+		donat: 'bortnik22.webp',
 		datastart: '22.01.2025',
 		time: '19:00',
 		duration: 180,
