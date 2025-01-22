@@ -115,7 +115,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 	},
 	{
 		id: '20290',
-		active: true,
+		active: false,
 		course: 'Meeting',
 		lector: 'Ruslan Bortnik',
 		Moderator: 'Ruslan Bortnik',
