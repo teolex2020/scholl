@@ -769,4 +769,20 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20303',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title: "Sixth Lecture: 'Vienna Waltz' or Much From Nothing",
+		descriptions:
+			"Sixth Lecture: 'Vienna Waltz' or Much From Nothing. This lecture is part of Ruslan Bizyaev’s course, 'Historical Chronicles: The Unfinished War,' focusing on the military-political history of the first half of the twentieth century.",
+		price: '999',
+		status: true,
+		image: 'bizaev6.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
