@@ -500,4 +500,82 @@ export const coursesen = [
 			},
 		],
 	},
+	{
+		id: '20310',
+		active: true,
+		course: 'Course',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			'The Unfinished War: Hyenas and Herbivores of Europe a Hundred Years Ago',
+		descriptions:
+			"Course Program: Cycle Two. The Pact and Its Consequences. Part One. Instead of a Foreword: As of March 1939, Hitler wanted nothing to do with the USSR, yet by August 18, in a personal letter to Stalin, he was literally pleading with the 'leader of all times and peoples' to accept his representative and sign an agreement. Why was Hitler in such a hurry, given that the Rapallo Treaty was still formally in effect between the USSR and Germany? Who or what created these conditions for Hitler? A complex web of international geopolitics involving the USA, Britain, France, Italy, the USSR, and Poland from 1918 to October 1939. 'All coincidences are purely accidental' (c). In the spring of 1941, the then-head of the 'Eastern Army' department and future founder of West Germany’s military intelligence, Reinhard Gehlen, reported to Hitler that a moral issue for the Wehrmacht in the upcoming campaign could be the 'Spirit of Rapallo.' Himmler disagreed and was ultimately proven right. Why? And why does modern historiography attempt to 'stretch the owl over the globe'? The international situation of the mid-1920s and its echoes in 1939.",
+		price: '3999',
+		status: true,
+		image: 'bizae.webp',
+		datastart: '12/02/2025',
+		dataend: '00/00/2025',
+		time: '19:00',
+		alltime: 12,
+		conclusions: [
+			{
+				title:
+					'— Critically evaluate information, arguments, different historical concepts, and politics.',
+			},
+			{
+				title:
+					'— Better understand the historical aspects of global processes, see the logic and patterns behind decision-making, methods of manipulation, and how history impacts contemporary events.',
+			},
+			{
+				title:
+					'— Analyze modern political events and form an independent view of the real world.',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					"First Lecture: The Echo of Jutland. 'They simply have nothing to offer us,' or why the seas remain calm.",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Second Lecture: The Promised Skies. The Four Future Aces of Göring?',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Third Lecture: Whose Gas? A very delicate cooperation in the field of toxic substances.',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Fourth Lecture: Armor is Strong, or Don’t Make My Tanks Laugh. Nothing happened because it simply couldn’t.',
+				duration: '30 minutes',
+			},
+			{
+				title: 'Fifth Lecture: The God of War. More than just cannons.',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Sixth Lecture: The Thin Red Line. Why did the Curzon Line become a problem instead of a solution?',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Seventh Lecture: After the Storm. An attempt to mend relations with neighbors—was it successful?',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Eighth Lecture: The Hyena of Europe, or... was this really allowed?',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Ninth Lecture: On the Road to the Abyss. Between colonies and neighbors.',
+				duration: '30 minutes',
+			},
+		],
+	},
 ]

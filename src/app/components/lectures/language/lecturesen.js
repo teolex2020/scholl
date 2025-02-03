@@ -835,4 +835,55 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20307',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			"Lecture No.10: 'Too White a Race' or Who Did the Führer and Goebbels Like So Much?",
+		descriptions:
+			"Lecture No.10: 'Too White a Race' or Who Did the Führer and Goebbels Like So Much? This lecture is part of Ruslan Bizyaev’s course, 'Historical Chronicles: The Unfinished War,' focusing on the military-political history of the first half of the twentieth century.",
+		price: '999',
+		status: true,
+		image: 'bizaev10.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
+	{
+		id: '20308',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			"Lecture No.11: 'Why Did Poland Need the Anti-Comintern Pact?' or How Did Hans and Józef Fall Out?",
+		descriptions:
+			"Lecture No.11: 'Why Did Poland Need the Anti-Comintern Pact?' or How Did Hans and Józef Fall Out? This lecture is part of Ruslan Bizyaev’s course, 'Historical Chronicles: The Unfinished War,' focusing on the military-political history of the first half of the twentieth century.",
+		price: '999',
+		status: true,
+		image: 'bizaev11.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
+	{
+		id: '20309',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			"Lecture No.12: '50 Shades of Brown.' Hitler – the Icebreaker of the World Revolution? Or Was He Manipulated?",
+		descriptions:
+			"Lecture No.12: '50 Shades of Brown.' Hitler – the Icebreaker of the World Revolution? Or was he manipulated in a much more subtle way? If so, by whom? This lecture is part of Ruslan Bizyaev’s course, 'Historical Chronicles: The Unfinished War,' focusing on the military-political history of the first half of the twentieth century.",
+		price: '999',
+		status: true,
+		image: 'bizaev12.webp',
+		datastart: '',
+		time: '',
+		duration: 60,
+		active: true,
+	},
 ]
