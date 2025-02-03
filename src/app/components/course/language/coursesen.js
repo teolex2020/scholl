@@ -534,47 +534,47 @@ export const coursesen = [
 		courseprogram: [
 			{
 				title:
-					"First Lecture: The Echo of Jutland. 'They simply have nothing to offer us,' or why the seas remain calm.",
+					"First Lecture: The Echo of Jutland. 'They simply have nothing to offer us,' or why the seas remain calm. (12.02.2025)",
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Second Lecture: The Promised Skies. The Four Future Aces of Göring?',
+					'Second Lecture: The Promised Skies. The Four Future Aces of Göring? (13.02.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Third Lecture: Whose Gas? A very delicate cooperation in the field of toxic substances.',
+					'Third Lecture: Whose Gas? A very delicate cooperation in the field of toxic substances.(17.02.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Fourth Lecture: Armor is Strong, or Don’t Make My Tanks Laugh. Nothing happened because it simply couldn’t.',
+					'Fourth Lecture: Armor is Strong, or Don’t Make My Tanks Laugh. Nothing happened because it simply couldn’t. (18.02.2025)',
 				duration: '30 minutes',
 			},
 			{
-				title: 'Fifth Lecture: The God of War. More than just cannons.',
-				duration: '30 minutes',
-			},
-			{
-				title:
-					'Sixth Lecture: The Thin Red Line. Why did the Curzon Line become a problem instead of a solution?',
+				title: 'Fifth Lecture: The God of War. More than just cannons. (19.02.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Seventh Lecture: After the Storm. An attempt to mend relations with neighbors—was it successful?',
+					'Sixth Lecture: The Thin Red Line. Why did the Curzon Line become a problem instead of a solution? (20.02.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Eighth Lecture: The Hyena of Europe, or... was this really allowed?',
+					'Seventh Lecture: After the Storm. An attempt to mend relations with neighbors—was it successful? (24.02.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Ninth Lecture: On the Road to the Abyss. Between colonies and neighbors.',
+					'Eighth Lecture: The Hyena of Europe, or... was this really allowed? (25.02.2025)',
 				duration: '30 minutes',
+			},
+			{
+				title:
+					'Ninth Lecture: On the Road to the Abyss. Between colonies and neighbors. (26.02.2025)',
+				duration: '30 minutes ',
 			},
 		],
 	},
