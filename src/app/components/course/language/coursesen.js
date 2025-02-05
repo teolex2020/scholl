@@ -513,8 +513,8 @@ export const coursesen = [
 		price: '3999',
 		status: true,
 		image: 'bizae.webp',
-		datastart: '12/02/2025',
-		dataend: '00/00/2025',
+		datastart: '18/02/2025',
+		dataend: '27/02/2025',
 		time: '19:00',
 		alltime: 12,
 		conclusions: [
@@ -553,7 +553,8 @@ export const coursesen = [
 				duration: '30 minutes',
 			},
 			{
-				title: 'Fifth Lecture: The God of War. More than just cannons. (24.02.2025)',
+				title:
+					'Fifth Lecture: The God of War. More than just cannons. (24.02.2025)',
 				duration: '30 minutes',
 			},
 			{
@@ -571,7 +572,6 @@ export const coursesen = [
 					'Eighth Lecture: The Hyena of Europe, or... was this really allowed? (27.02.2025)',
 				duration: '30 minutes',
 			},
-			
 		],
 	},
 ]

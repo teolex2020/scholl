@@ -516,8 +516,8 @@ export const coursesru = [
 		price: '3999',
 		status: true,
 		image: 'bizae.webp',
-		datastart: '12/02/2025',
-		dataend: '00/00/2025',
+		datastart: '18/02/2025',
+		dataend: '27/02/2025',
 		time: '19.00',
 		alltime: 12,
 		conclusions: [
@@ -571,11 +571,10 @@ export const coursesru = [
 			},
 
 			{
-				title: 'Восьмая лекция.	Гиена Европы, или, а шо-так можно было? (27.02.2025)',
+				title:
+					'Восьмая лекция.	Гиена Европы, или, а шо-так можно было? (27.02.2025)',
 				duration: '30 минут',
 			},
-		
-			
 		],
 	},
 ]
