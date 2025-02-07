@@ -9,9 +9,9 @@ import {
 	collection,
 	query,
 	where,
-	onSnapshot,
-	getDoc,
+	getDocs, // Змінено на getDocs
 	doc,
+	getDoc,
 } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
@@ -23,36 +23,25 @@ const Purchases = () => {
 	const auth = getAuth()
 	const user = auth.currentUser
 
+	useEffect(() => {
+		const fetchData = async () => {
+			if (user && id && !data) {
+				setLoading(true)
 
-
-useEffect(() => {
-	if (user && id && !data) {
-		setLoading(true)
-		// console.log(`User ID: ${user.uid}`, `Redux ID: ${id}`)
-
-		const q = query(collection(db, 'order'), where('id', '==', id))
-
-		const unsubscribe = onSnapshot(
-			q,
-			async (querySnapshot) => {
 				try {
+					const q = query(collection(db, 'order'), where('id', '==', id))
+					const querySnapshot = await getDocs(q)
+
 					const documents = querySnapshot.docs.map((doc) => ({
 						orderNumber: doc.data().orderNumber,
 						reason: doc.data().reason,
 					}))
 
 					const filterVideo = documents.filter((item) => item.reason === 'Ok')
-					// console.log('Filtered orders:', filterVideo)
 					const uniqueVideoIds = [
-						...new Set(
-							filterVideo.map((item) => {
-								const videoId = item.orderNumber?.slice(-5)
-								// console.log('Video Id after slice', videoId) 
-								return videoId
-							})
-						),
+						...new Set(filterVideo.map((item) => item.orderNumber?.slice(-5))),
 					]
-					// console.log('Unique video IDs:', uniqueVideoIds)
+
 					const videoLinks = await Promise.all(
 						uniqueVideoIds.map(async (videoId) => {
 							if (!videoId) return null
@@ -70,26 +59,18 @@ useEffect(() => {
 					const filteredVideoLinks = videoLinks.filter(
 						(video) => video !== null
 					)
-					// console.log('Filtered video links:', filteredVideoLinks)
-
 					setData(filteredVideoLinks)
 				} catch (error) {
 					console.error('Error processing video data:', error)
-					setData([]) // Очищення даних для відображення помилки
+					setData([])
 				} finally {
 					setLoading(false)
 				}
-			},
-			(error) => {
-				console.error('Error in onSnapshot:', error)
-				setData([]) // Очищення даних для відображення помилки
-				setLoading(false)
 			}
-		)
+		}
 
-		return () => unsubscribe()
-	}
-}, [user, id, data])
+		fetchData() // Викликаємо асинхронну функцію
+	}, [user, id, data])
 
 	if (loading) {
 		return <Loader />
@@ -97,22 +78,29 @@ useEffect(() => {
 
 	return (
 		<div className='container mx-auto flex flex-wrap min-h-screen'>
-			{data === null || loading ? (
+			{data === null ? (
 				<Loader />
-			) : data?.length > 0 ? (
-				data?.map((item, i) => (
+			) : data.length > 0 ? (
+				data.map((item, i) => (
 					<div
 						key={i}
 						className='h-80 text-center  w-80 border-2 border-zinc-600  rounded-lg p-2 bg-blur'
 					>
-						<video
-							className='w-96 h-48 bg-black rounded-lg'
-							controls
-							poster={item?.video}
-						>
-							<source src={item?.video} type='video/mp4' />
-							Ваш браузер не підтримує відео тег.
-						</video>
+						{item?.video ? (
+							<video
+								className='w-96 h-48 bg-black rounded-lg'
+								controls
+								poster={item?.video}
+								preload='metadata'
+							>
+								<source src={item?.video} type='video/mp4' />
+								Your browser does not support the video tag.
+							</video>
+						) : (
+							<div className='w-96 h-48 flex items-center justify-center bg-gray-300 rounded-lg'>
+								<p>Video not available</p>
+							</div>
+						)}
 						<div className='flex justify-center items-center   py-4 h-24  overflow-hidden'>
 							<h2>{item?.title}</h2>
 						</div>
