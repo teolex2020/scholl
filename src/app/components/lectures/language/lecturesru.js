@@ -888,4 +888,5 @@ export const coursesru = [
 		duration: 60,
 		active: true,
 	},
+	
 ]

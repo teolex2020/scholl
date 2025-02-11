@@ -132,4 +132,23 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		time: '19:00',
 		duration: 180,
 	},
+	{
+		id: '20310',
+		active: true,
+		course: 'Meeting',
+		lector: 'Vadym Syrota',
+		Moderator: 'Ruslan Bortnyk',
+		language: 'Russian',
+		title:
+			'Ukrainian Banks: Stability and Risks, How to Earn and Not Lose Your Money',
+		descriptions:
+			"A unique online meeting with Vadym Syrota, one of Ukraine’s most renowned banking experts, with over 10 years of experience at the National Bank of Ukraine, collaborating with 'Kennan Institute, Wilson Centre' (USA), 'Chatham House' (GB), and leading Ukrainian and international media outlets. During the meeting, Vadym Syrota will review the structure of Ukraine’s banking system and its development dynamics, covering: types of banks, their business models, profitability, why Ukrainian banks have become record-breaking in profits, risks for different types of banks, how to protect deposits and earn, how to avoid losing money, and what the future holds for Ukraine’s banking system. Additionally, the expert will discuss: 🔹 Types of Ukrainian banks (business banks, retail banks for the 'ordinary citizen', scheme-based laundering banks, oligarchic banks, etc.) and their hidden mechanisms of operation. 🔹 How banks generate record-breaking profits since Ukraine’s independence and whether this 'shiny display' of the banking system is real. 🔹 Basic skills for reading financial statements, allowing you to assess a financial institution’s solvency, detect suspicious transactions, and determine whether a bank’s profits or losses are genuine or fictitious. ****🔹 How to assess a bank’s reliability?— What financial indicators are crucial to analyze?— How to distinguish real losses from artificial write-offs?— Which banks are potentially problematic, and how can this be identified? 🔹 State regulation: who controls the banks?— The role of the NBU and other financial regulators.— Why do some banks 'survive' while others are suddenly liquidated?— How does the state influence the banking sector, and what reforms are currently being discussed? 🔹 The future of Ukraine’s banking system.— What changes are expected in the market in the coming years?— What is the likelihood of new banking crises? Additional: Practical Analysis. The meeting will include an analysis of several real banks: their financial reports, risks, and strategies. This will help participants learn to analyze financial institutions and make more informed decisions when choosing a bank.",
+		price: '4500',
+		status: true,
+		image: 'syrota.webp',
+		donat: '',
+		datastart: '01.03.2025',
+		time: '11:00',
+		duration: 90,
+	},
 ]
