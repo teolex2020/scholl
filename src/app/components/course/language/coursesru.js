@@ -503,7 +503,7 @@ export const coursesru = [
 		],
 	},
 	{
-		id: '20310',
+		id: '20311',
 		active: true,
 		course: 'Курс',
 		lector: 'Бизяев Руслан ',

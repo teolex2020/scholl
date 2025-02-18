@@ -501,7 +501,7 @@ export const coursesen = [
 		],
 	},
 	{
-		id: '20310',
+		id: '20311',
 		active: true,
 		course: 'Course',
 		lector: 'Ruslan Bizyaev',

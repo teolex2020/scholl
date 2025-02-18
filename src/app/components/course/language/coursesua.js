@@ -495,7 +495,7 @@ export const coursesua = [
 		],
 	},
 	{
-		id: '20310',
+		id: '20311',
 		active: true,
 		course: 'Курс',
 		lector: 'Руслан Бізяєв',
