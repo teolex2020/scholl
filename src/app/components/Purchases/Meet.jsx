@@ -20,16 +20,14 @@ const Meet = () => {
 	const id = useSelector((state) => state.counter.id)
 	const auth = getAuth()
 	const user = auth.currentUser
-	const [data, setData] = useState(null)
-	const [name, setName] = useState(null)
+	const [data, setData] = useState([]) // Змінюємо на масив, початкове значення - пустий масив
 	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
-		if (user && id && !data) {
+		if (user && id && !data.length) {
+			// Перевірка на пустий масив data
 			setLoading(true)
 			const q = query(collection(db, 'order'), where('id', '==', id))
-
-			
 
 			const unsubscribe = onSnapshot(
 				q,
@@ -39,14 +37,10 @@ const Meet = () => {
 						reason: doc.data().reason,
 					}))
 
-				
-
 					const filterLinks = documents.filter((item) => item.reason === 'Ok')
 					const filterLinksslice = filterLinks.map((item) =>
 						item.orderNumber.slice(-5)
 					)
-
-			
 
 					const filtLinks = await Promise.all(
 						filterLinksslice.map(async (linkId) => {
@@ -63,18 +57,14 @@ const Meet = () => {
 									namelessons: videoDoc.data().namelessons,
 								}
 							}
-						
 							return null
 						})
 					)
 
-				
-
 					const validLinks = filtLinks.filter((link) => link !== null)
 
 					if (validLinks.length > 0) {
-						setData(validLinks[0].url)
-						setName(validLinks[0].namelessons)
+						setData(validLinks) // Зберігаємо весь масив validLinks
 						setActive(true)
 					} else {
 						setActive(false)
@@ -90,7 +80,7 @@ const Meet = () => {
 			// Відписка від прослуховування при розмонтуванні компонента
 			return () => unsubscribe()
 		}
-	}, [user, id, data])
+	}, [user, id, data]) // Змінено залежність data на data.length для перевірки початкового завантаження
 
 	if (loading) {
 		return <Loader />
@@ -102,16 +92,35 @@ const Meet = () => {
 				В даному вікні відображаються всі Ваші зустрічі:
 			</div>
 			{active ? (
-				<div className='flex flex-col md:flex-row gap-5 items-center '>
-					<div className='text-lg text-center md:text-start'>{name}</div>
-					<div>
-						<a href={data}>
-							<button className='border-2 border-zinc-700 rounded-lg px-10 py-2 bg-blur h-16 md:h-12 hover:shadow1 flex items-center gap-6'>
-								Перейти до зустрічі
-								<ArrowLongRightIcon className='w-10 h-10' />
-							</button>
-						</a>
-					</div>
+				<div className='flex flex-col gap-5'>
+					{' '}
+					{/* Змінено на flex-col для вертикального розташування посилань */}
+					{data.map(
+						(
+							link,
+							index // Проходимось по масиву data і рендеримо посилання для кожного елемента
+						) => (
+							<div
+								key={index}
+								className='flex flex-col md:flex-row gap-5  justify-between w-full max-w-5xl pt-5'
+							>
+								<div className='text-lg text-center md:text-start'>
+									{link.namelessons}
+								</div>{' '}
+								{/* Використовуємо link.namelessons */}
+								<div>
+									<a href={link.url} target='_blank' rel='noopener noreferrer'>
+										{' '}
+										{/* Використовуємо link.url */}
+										<button className='border-2 border-zinc-700 rounded-lg px-10 py-2 bg-blur h-12 md:h-12 hover:shadow1 flex items-center gap-6'>
+											Перейти до зустрічі
+											<ArrowLongRightIcon className='w-10 h-10' />
+										</button>
+									</a>
+								</div>
+							</div>
+						)
+					)}
 				</div>
 			) : (
 				<div className='w-full h-full text-center'>
