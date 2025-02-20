@@ -886,4 +886,37 @@ export const coursesen = [
 		duration: 60,
 		active: true,
 	},
+	{
+		id: '20312',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			"First Lecture: 'The Echo of Jutland. 'They Simply Have Nothing to Offer Us'",
+		descriptions:
+			"First Lecture: 'The Echo of Jutland. 'They Simply Have Nothing to Offer Us', or Why the Sea is Calm' from Ruslan Bizyaev’s course 'The Unfinished War: The Hyenas and Herbivores of Europe a Hundred Years Ago'.",
+		price: '999',
+		status: true,
+		image: 'bizaev13.webp',
+		datastart: '',
+		time: '',
+		duration: 30,
+		active: true,
+	},
+	{
+		id: '20313',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title: "Second Lecture: 'The Promised Skies. Four Future Aces of Göring?'",
+		descriptions:
+			"Second Lecture: 'The Promised Skies. Four Future Aces of Göring?' from Ruslan Bizyaev’s course 'The Unfinished War: The Hyenas and Herbivores of Europe a Hundred Years Ago'.",
+		price: '999',
+		status: true,
+		image: 'bizaev14.webp',
+		datastart: '',
+		time: '',
+		duration: 30,
+		active: true,
+	},
 ]
