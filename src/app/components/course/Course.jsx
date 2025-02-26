@@ -91,7 +91,7 @@ const locale = useLocale()
 								</p>
 							</div>
 							<p className='text-sm w-full py-2 text-[#e2a550]'>
-								***{m('link')}***
+								***{t('link')}***
 							</p>
 							<div className='text-sm pt-5 w-full text-start mt-5 '>
 								<div className='flex flex-col md:flex-row md:space-x-5'>
