@@ -574,4 +574,56 @@ export const coursesen = [
 			},
 		],
 	},
+	{
+		id: '20318',
+		active: true,
+		course: 'Course',
+		lector: 'Aleksei Kusch',
+		language: 'Russian',
+		title:
+			'Geopolitical Fault Line – How to Properly Respond to New Historical Challenges.',
+		descriptions:
+			"During this course, you will learn what to expect in the near future in the context of global fragmentation, particularly within the West; how these events will affect Ukraine’s prospects; an analysis of key risks will be conducted; and practical recommendations for personal strategies will be provided. The lectures will highlight the depth of the development project crisis, analyze the transformation of the Ukrainian economy over a 10-year cycle, evaluate political and economic changes, and provide a forecast for the future political cycle and its outcomes. We will assess the prospects of geopolitical transformations and explore which 'safe-haven' assets can protect savings: gold, cryptocurrency, real estate, stocks, bonds. Additionally, we will discuss which 'ark' countries are the best for planning your future and how to build an effective future strategy.",
+		price: '4999',
+		status: true,
+		image: 'kuschnew.webp',
+		datastart: '11.03.2025',
+		dataend: '13.03.2025',
+		time: '19:00',
+		alltime: 3,
+		conclusions: [
+			{
+				title:
+					'— Critically evaluate information, arguments, and policies. Enhance critical thinking skills, identify weaknesses in mainstream theories, and explore alternative perspectives.',
+			},
+			{
+				title:
+					'— Gain a better understanding of global processes for decision-making at macro and micro levels.',
+			},
+			{
+				title: '— Model complex macroeconomic processes.',
+			},
+			{
+				title:
+					'— Analyze modern political events and form an independent view of the real world.',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					'First Lecture: Domestic Political Agenda in Ukraine. Completion of a 10-Year Cycle. (11.03.2025)',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					'Second Lecture: Global Fragmentation of the World or the West? The Future of the European Geopolitical Cluster – A Lone Path or a New Atlantic Synthesis. (12.03.2025)',
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Third Lecture: Building a Personal 'Ark'. How to Diversify Risks During a Period of Global Transformation. (13.03.2025)",
+				duration: '30 minutes',
+			},
+		],
+	},
 ]
