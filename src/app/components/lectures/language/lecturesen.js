@@ -968,4 +968,21 @@ export const coursesen = [
 		duration: 30,
 		active: true,
 	},
+	{
+		id: '20317',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			"Sixth Lecture: 'The Thin Red Line. Why Did the Curzon Line Become a Problem Instead of a Solution?'",
+		descriptions:
+			"Sixth Lecture: 'The Thin Red Line. Why Did the Curzon Line Become a Problem Instead of a Solution?' from Ruslan Bizyaev’s course 'The Unfinished War: The Hyenas and Herbivores of Europe a Hundred Years Ago'.",
+		price: '999',
+		status: true,
+		image: 'bizaev18.webp',
+		datastart: '',
+		time: '',
+		duration: 30,
+		active: true,
+	},
 ]
