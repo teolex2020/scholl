@@ -587,8 +587,8 @@ export const coursesen = [
 		price: '4999',
 		status: true,
 		image: 'kuschnew.webp',
-		datastart: '11.03.2025',
-		dataend: '13.03.2025',
+		datastart: '11.04.2025',
+		dataend: '13.04.2025',
 		time: '19:00',
 		alltime: 3,
 		conclusions: [
@@ -611,17 +611,17 @@ export const coursesen = [
 		courseprogram: [
 			{
 				title:
-					'First Lecture: Domestic Political Agenda in Ukraine. Completion of a 10-Year Cycle. (11.03.2025)',
+					'First Lecture: Domestic Political Agenda in Ukraine. Completion of a 10-Year Cycle. (11.04.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Second Lecture: Global Fragmentation of the World or the West? The Future of the European Geopolitical Cluster – A Lone Path or a New Atlantic Synthesis. (12.03.2025)',
+					'Second Lecture: Global Fragmentation of the World or the West? The Future of the European Geopolitical Cluster – A Lone Path or a New Atlantic Synthesis. (12.04.2025)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					"Third Lecture: Building a Personal 'Ark'. How to Diversify Risks During a Period of Global Transformation. (13.03.2025)",
+					"Third Lecture: Building a Personal 'Ark'. How to Diversify Risks During a Period of Global Transformation. (13.04.2025)",
 				duration: '30 minutes',
 			},
 		],
