@@ -985,4 +985,37 @@ export const coursesen = [
 		duration: 30,
 		active: true,
 	},
+	{
+		id: '20319',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title:
+			'Seventh lecture. "After the Thunderstorm. Attempt to establish relations with neighbors. Was it successful?".',
+		descriptions:
+			'Seventh lecture. "After the Thunderstorm. Attempt to establish relations with neighbors. Was it successful?", of Ruslan Bizyaev\'s course "Unfinished war. Hyenas and herbivores of Europe a hundred years ago".',
+		price: '999',
+		status: true,
+		image: 'bizaev19.webp',
+		datastart: '',
+		time: '',
+		duration: 30,
+		active: true,
+	},
+	{
+		id: '20320',
+		course: 'Lecture',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title: 'Eighth lecture. "Hyena of Europe, or, was that even possible?".',
+		descriptions:
+			'Eighth lecture. "Hyena of Europe, or, was that even possible?", of Ruslan Bizyaev\'s course "Unfinished war. Hyenas and herbivores of Europe a hundred years ago".',
+		price: '999',
+		status: true,
+		image: 'bizaev20.webp',
+		datastart: '',
+		time: '',
+		duration: 30,
+		active: true,
+	},
 ]
