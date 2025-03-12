@@ -49,13 +49,14 @@ const validationSchema = Yup.object({
 		.min(2, 'Your Last Name Needs To Be Valid')
 		.required(),
 	email: Yup.string().email('Invalid email').required(),
-	phone: Yup.number().required(),
+	phone: Yup.string()
+		.matches(/^\d+$/, 'Phone number must contain only digits')
+		.required('Phone number is required'),
 })
 
 const Payments = () => {
 	const [formdata, setFormdata] = useState(() => Date.now())
-	// const [isChecked, setIsChecked] = useState(false)
-	// const [verifData, setVerifData] = useState(false)
+	
 
 	const [loading, setLoading] = useState(false)
 	const [data, setData] = useState('')
@@ -80,37 +81,25 @@ const Payments = () => {
 						data: formdata,
 					}),
 				})
+			
 				if (!response.ok) throw new Error('Network response was not ok')
+
 				const data = await response.json()
 				setMerch(data.signature)
+				
 			} catch (error) {
 				console.error('Error:', error)
-				toast.error('An error occurred while processing your order')
+				if (error.message === 'Network response was not ok') {
+					toast.error('Server error. Please try again later.')
+				} else {
+					toast.error('Unexpected error occurred. Please try again.')
+				}
 			} finally {
 				setLoading(false)
 			}
 		}
 
-	// const confirmForm = async () => {
-	// 	fetch('/api/createorder', {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		},
-	// 		body: JSON.stringify({
-	// 			orderId: current + orderId,
-	// 			price: orderPrice,
-	// 			productName: orderTitle,
-	// 			data: formdata,
-	// 		}),
-	// 	})
-	// 		.then((response) => response.json())
-	// 		.then((data) => setMerch(data.signature))
-	// }
-
-	// const handleCheckboxChange = () => {
-	// 	setIsChecked(!isChecked)
-	// }
+	
 
 	const handleAdd = (values) => {
 		setData(values)
@@ -246,16 +235,8 @@ const Payments = () => {
 							</button>
 						</Form>
 					</Formik>
-					<div className='z-50 flex justify-center  relative '>
-						{!merch && (
-							<></>
-							// <div
-							// 	className=' border-2 rounded-3xl border-red-500 text-red-500 justify-center py-2 flex space-x-16 duration-300  z-50 text-lg lg:text-2xl px-10 max-w-[350px] mt-5 cursor-pointer'
-
-							// >
-							// 	{t('button')}
-							// </div>
-						)}
+					<div className='z-50 flex justify-center  relative '> 
+						
 						{merch && (
 							<PaymentPage
 								merch={merch}
