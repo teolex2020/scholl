@@ -50,8 +50,8 @@ const validationSchema = Yup.object({
 		.required(),
 	email: Yup.string().email('Invalid email').required(),
 	phone: Yup.string()
-		.matches(/^\d+$/, 'Phone number must contain only digits')
-		.required('Phone number is required'),
+		.matches(/^[+]?[\d\s-()]+$/, 'Phone format is invalid')
+		.required('Phone is required'),
 })
 
 const Payments = () => {
@@ -126,7 +126,7 @@ const Payments = () => {
 				confirmForm()
 			})
 			.catch((error) => {
-				toast.error('Error')
+				toast.error(`Error Firestore: ${error.message}`)
 				console.error(error)
 			})
 			.finally(() => {
