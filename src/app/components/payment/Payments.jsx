@@ -22,6 +22,7 @@ import { useTranslations } from 'next-intl'
 import PaymentPage from './PayForm'
 import PopupData from './PopupData'
 
+
 const CustomField = ({ label, name, type }) => (
 	<div className='relative group'>
 		<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg px-2 text-[14px] group-hover:text-blue-200/80'>
@@ -137,7 +138,7 @@ const Payments = () => {
 	return (
 		<div className='min-w-screen h-fit bg-transparent flex  justify-center px-5 mt-10 z-50'>
 			{loading && <Loader />}
-<ToastContainer/>
+			<ToastContainer />
 			<div
 				className={clsx(
 					'w-full mx-auto rounded-lg bg-transparent shadow1 p-5 text-gray-700 flex',
@@ -186,6 +187,8 @@ const Payments = () => {
 							email: '',
 						}}
 						validationSchema={validationSchema}
+						validateOnChange={true}
+						validateOnBlur={true}
 						onSubmit={(values, { setSubmitting }) => {
 							handleAdd(values)
 							setSubmitting(false)
@@ -235,8 +238,7 @@ const Payments = () => {
 							</button>
 						</Form>
 					</Formik>
-					<div className='z-50 flex justify-center  relative '> 
-						
+					<div className='z-50 flex justify-center  relative '>
 						{merch && (
 							<PaymentPage
 								merch={merch}
