@@ -99,7 +99,9 @@
 		"service": "Terms of Service",
 		"policy": " Privacy Policy.",
 		"offer": "Public Offer.",
-		"already": "Already registered?"
+		"already": "Already registered?",
+		"forgot": "Forgot Password?",
+		"reset": " Send Password Reset Email"
 	},
 	"Chat": {
 		"title1": "Your AI guide",

@@ -9,7 +9,7 @@ import { EyeIcon } from '@heroicons/react/24/solid'
 import { EyeSlashIcon } from '@heroicons/react/24/solid'
 import { auth, Providers } from '../../../../firebase/config.js'
 import { signInWithPopup } from 'firebase/auth'
-import { ToastContainer, toast } from 'react-toastify'
+import {  toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
 import { useTranslations } from 'next-intl'
@@ -56,8 +56,7 @@ const Login = () => {
 	}
 
 	return (
-		<div className='flex justify-center items-center  h-screen lg:h-full'>
-			<ToastContainer position='top-right' autoClose={1000} />
+		<div className='flex justify-center   h-screen lg:h-full'>
 			<div className=' flex flex-col gap-3 items-center p-5 '>
 				<Formik
 					initialValues={{ email: '', password: '' }}
@@ -77,6 +76,9 @@ const Login = () => {
 					onSubmit={sign}
 				>
 					<Form className='flex flex-col w-[300px] gap-5 lg:mt-32 '>
+						<p className='w-full text-center text-3xl font-extrabold  text-blue-200/80'>
+							{t('signin')}
+						</p>
 						<div className='relative group '>
 							<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg  px-2 flex justify-center text-[14px] group-hover:text-blue-200/80'>
 								{t('email')}
@@ -129,17 +131,23 @@ const Login = () => {
 				</div>
 				<button
 					onClick={signupWithGoogle}
-					className='bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full  hover:border-blue-200/80 z-10'
+					className='uppercase font-bold bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none  text-slate-400 h-12 w-full  hover:border-blue-200/80 z-10'
 				>
 					{t('signingoogle')}
 				</button>
-				<div className='flex space-x-3'>
-					<p className='text-slate-400 text-[10px]'>{t('accoun')}</p>
-					<Link className='text-blue-200/80 text-[10px] z-10' href='/register'>
+
+				<div className='flex space-x-3 w-full'>
+					<p className='text-slate-400 '>{t('accoun')}</p>
+					<Link className='text-blue-200/80  z-10' href='/register'>
 						{t('signup')}
 					</Link>
 				</div>
-				<div className='text-[10px] text-slate-400 z-10'>
+				<div className=' text-sm z-50 w-full text-blue-200/80'>
+					<Link href={`/forgot-password`} className='underline cursor-pointer'>
+						Forgot password?
+					</Link>
+				</div>
+				{/* <div className='text-[10px] text-slate-400 z-10'>
 					{t('agree')}
 					<div>
 						<Link href='/teamofservise'>
@@ -155,7 +163,7 @@ const Login = () => {
 							<span className='underline cursor-pointer'>{t('offer')}</span>
 						</Link>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)
