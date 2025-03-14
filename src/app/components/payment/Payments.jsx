@@ -156,7 +156,7 @@ const Payments = () => {
 							priority
 						/>
 					</div>
-					<div className='w-full text-center pt-3 text-2xl text-slate-400 font-semibold'>
+					<div className='w-full text-center pt-3  text-slate-400 font-semibold'>
 						{t('title')}{' '}
 						<span className='text-white text-sm'>{current + orderId}</span>
 					</div>
