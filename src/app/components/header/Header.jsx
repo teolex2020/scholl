@@ -14,6 +14,8 @@ import logo from "../../../../public/assets/logo.webp"
 import { BellIcon } from '@heroicons/react/24/solid'
 import Popupbell from './PopupBell'
 import { PopupBell } from '@/store/features/counterSlice'
+import MobileDropdownMenu from '../TestStartPage/MobileDropMenu'
+import Search from '../Search/Search'
 
 
 
@@ -29,7 +31,7 @@ const Header = () => {
 		(state) => state.counter
 	)
 
-	
+	const [searchQuery, setSearchQuery] = useState('') 
  const [isAuthorized, setIsAuthorized] = useState(false)
   const [activeBell, setActiveBell] = useState(false)
 useEffect(() => {
@@ -46,7 +48,7 @@ const popup = () => {
 			{mobilemenu && <MobileMenu />}
 			{popupBell && <Popupbell />}
 			<ButtonChat />
-			<div className='flex  md:justify-between h-[65px] lg:h-24 items-center  '>
+			<div className='flex  md:justify-between h-[65px] lg:h-24 items-center relative '>
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>
 						<Image
@@ -59,8 +61,13 @@ const popup = () => {
 						/>
 					</div>
 				</Link>
+
 				<MobileButon />
-				<Menu />
+				<MobileDropdownMenu />
+				{/* <Menu /> */}
+				<div className='py-3 w-full sm:px-10'>
+					<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+				</div>
 				<div className='flex  justify-center  w-fit'>
 					{' '}
 					<Language />
@@ -69,7 +76,10 @@ const popup = () => {
 				<div className='lg:flex hidden z-30 items-center  mx-5 '>
 					<Button font={gentium.className} />
 				</div>
-				<div className='relative cursor-pointer hover:scale-105 duration-500' onClick={popup}>
+				<div
+					className='relative cursor-pointer hover:scale-105 duration-500'
+					onClick={popup}
+				>
 					<BellIcon className='w-7 h-7 s stroke-zinc-200 fill-none' />
 
 					<div
