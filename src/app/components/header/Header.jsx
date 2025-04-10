@@ -63,11 +63,11 @@ const popup = () => {
 				</Link>
 
 				<MobileButon />
-				<MobileDropdownMenu />
-				{/* <Menu /> */}
-				<div className='py-3 w-full sm:px-10'>
+				{/* <MobileDropdownMenu /> */}
+				<Menu />
+				{/* <div className='py-3 w-full sm:px-10'>
 					<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-				</div>
+				</div> */}
 				<div className='flex  justify-center  w-fit'>
 					{' '}
 					<Language />
