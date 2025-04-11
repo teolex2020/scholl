@@ -20,7 +20,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
 import PaymentPage from './PayForm'
-import PopupData from './PopupData'
+
 
 
 const CustomField = ({ label, name, type }) => (
@@ -57,6 +57,8 @@ const validationSchema = Yup.object({
 
 const Payments = () => {
 	const [formdata, setFormdata] = useState(() => Date.now())
+
+	
 	
 
 	const [loading, setLoading] = useState(false)
@@ -68,6 +70,27 @@ const Payments = () => {
 	const router = useRouter()
 	const t = useTranslations('Order')
 	const { current } = useRef(nanoid())
+
+	const [userData, setUserData] = useState(null)
+
+	
+
+	useEffect(() => {
+		const fetchUserData = async () => {
+			if (authUser) {
+				try {
+					const userRef = doc(db, 'users', id) // або authUser.uid, залежно від збереженої структури
+					const userSnapshot = await getDoc(userRef)
+					if (userSnapshot.exists()) {
+						setUserData(userSnapshot.data())
+					}
+				} catch (error) {
+					console.error('Error fetching user data:', error)
+				}
+			}
+		}
+		fetchUserData()
+	}, [authUser, id])
 
 	 const confirmForm = async () => {
 			try {
@@ -106,10 +129,10 @@ const Payments = () => {
 		setData(values)
 		setLoading(true)
 
-		if (!authUser) {
-			router.push('/login')
-			return
-		}
+		// if (!authUser) {
+		// 	router.push('/login')
+		// 	return
+		// }
 
 		const userDocRef = doc(db, 'order', current + orderId)
 		const userData = {
@@ -181,10 +204,10 @@ const Payments = () => {
 					<Formik
 						enableReinitialize
 						initialValues={{
-							firstName: '',
-							lastName: '',
-							phone: '',
-							email: '',
+							firstName: userData?.firstName || '',
+							lastName: userData?.lastName || '',
+							phone: userData?.phone || '',
+							email: userData?.email || '',
 						}}
 						validationSchema={validationSchema}
 						validateOnChange={true}
