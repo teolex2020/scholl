@@ -58,10 +58,10 @@ const Cart = ({ dataOrder, price, alltime, image, active }) => {
 						</button>
 					)}
 				</div>
-				{/* <p className='z-50 text-red-600 text-base'>
+				<p className='z-50 text-red-600 text-base'>
 					*Запис на онлайн-курс тимчасово призупинено через обмежену кількість
 					місць. Після 14 квітня 2025 року курс буде доступний у записі.
-				</p> */}
+				</p>
 			</div>
 		</div>
 	)

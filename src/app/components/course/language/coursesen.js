@@ -576,7 +576,7 @@ export const coursesen = [
 	},
 	{
 		id: '20318',
-		active: true,
+		active: false,
 		course: 'Course',
 		lector: 'Aleksei Kusch',
 		language: 'Russian',
@@ -584,7 +584,7 @@ export const coursesen = [
 			'Geopolitical Fault Line – How to Properly Respond to New Historical Challenges.',
 		descriptions: `During the course, you will learn what to expect in the near future in the context of global fragmentation and the West in particular; how ongoing events will affect Ukraine’s prospects; a range of key risks will be analyzed, and practical recommendations on personal strategies will be provided. During the lectures, the depth of the project development crisis will be revealed, and the transformation of the Ukrainian economy over a 10-year cycle will be analyzed. We will assess political and economic changes, make a forecast regarding the future political cycle and its outcomes, and examine the prospects for geopolitical transformations. Which "safe haven" assets can help preserve savings? Gold, cryptocurrency, real estate, stocks, bonds – which of them are the most reliable? In which "ark" countries is it better to plan your future? How to develop an effective future strategy?`,
 		price: '4999',
-		status: true,
+		status: false,
 		image: 'kuschnew.webp',
 		datastart: '11.04.2025',
 		dataend: '13.04.2025',
