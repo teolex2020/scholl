@@ -106,10 +106,10 @@ const Payments = () => {
 		setData(values)
 		setLoading(true)
 
-		// if (!authUser) {
-		// 	router.push('/login')
-		// 	return
-		// }
+		if (!authUser) {
+			router.push('/login')
+			return
+		}
 
 		const userDocRef = doc(db, 'order', current + orderId)
 		const userData = {

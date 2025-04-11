@@ -23,6 +23,9 @@ const Purchases = () => {
 	const auth = getAuth()
 	const user = auth.currentUser
 
+	console.log('User:', user)
+	console.log('Order ID from Redux:', id)
+
 	useEffect(() => {
 		const fetchData = async () => {
 			if (user && id && !data) {
@@ -31,16 +34,25 @@ const Purchases = () => {
 				try {
 					const q = query(collection(db, 'order'), where('id', '==', id))
 					const querySnapshot = await getDocs(q)
+					console.log('Number of order documents:', querySnapshot.docs.length)
 
-					const documents = querySnapshot.docs.map((doc) => ({
-						orderNumber: doc.data().orderNumber,
-						reason: doc.data().reason,
-					}))
+					const documents = querySnapshot.docs.map((doc) => {
+						const data = doc.data()
+						console.log('Order doc data:', data)
+						return {
+							orderNumber: data.orderNumber,
+							reason: data.reason,
+						}
+					})
+					console.log('Documents after mapping:', documents)
 
 					const filterVideo = documents.filter((item) => item.reason === 'Ok')
+					console.log('Filtered documents (reason === "Ok"):', filterVideo)
 					const uniqueVideoIds = [
 						...new Set(filterVideo.map((item) => item.orderNumber?.slice(-5))),
 					]
+
+					console.log('Unique Video IDs:', uniqueVideoIds)
 
 					const videoLinks = await Promise.all(
 						uniqueVideoIds.map(async (videoId) => {
