@@ -30,17 +30,57 @@ const Login = () => {
 
 	const sign = async (values) => {
 		let { email, password } = values
-		const { result, error } = await signIn(email, password)
-		if (result) {
-			toast.success('Success Notification !')
-			
-			router.push('/')
-		}
-		if (error) {
-			return toast.error('Email/password accounts are not enabled')
-		}
+		// Можна додати індикатор завантаження, якщо хочете
+		// const loadingToastId = toast.loading("Спроба входу...");
 
-	
+		try {
+			// Припускаємо, що signIn імпортовано і працює як раніше
+			const { result, error } = await signIn(email, password)
+			// toast.dismiss(loadingToastId); // Закрити індикатор завантаження
+
+			if (result) {
+				// Успішний вхід - залишаємо як є
+				toast.success('Вхід виконано успішно!')
+				router.push('/')
+			} else if (error) {
+				// Помилка від Firebase (вже оброблялася, але можна уточнити повідомлення)
+				console.error('Firebase Sign In Error:', error) // Залишаємо для себе в консолі (або для майбутнього логування)
+
+				let userMessage = 'Не вдалося увійти. Перевірте пошту та пароль.' // Базове повідомлення
+
+				// Можна додати більш специфічні повідомлення для поширених помилок, ЯКЩО ЦЕ БЕЗПЕЧНО
+				if (
+					error.code === 'auth/user-not-found' ||
+					error.code === 'auth/wrong-password' ||
+					error.code === 'auth/invalid-credential'
+				) {
+					userMessage = 'Неправильна пошта або пароль. Спробуйте ще раз.'
+				} else if (error.code === 'auth/too-many-requests') {
+					userMessage =
+						'Доступ тимчасово заблоковано через велику кількість спроб. Спробуйте пізніше.'
+				} else {
+					// Для інших помилок Firebase краще залишити загальне повідомлення
+					userMessage =
+						'Під час входу сталася помилка сервера. Спробуйте пізніше.'
+				}
+				toast.error(userMessage) // Показуємо користувачу зрозумілу помилку
+			} else {
+			
+				// Це коли signIn не повернув ні result, ні error
+				console.warn('signIn did not return result or error', { email }) // Для себе в консолі
+				toast.error(
+					"Спроба входу не завершилась. Перевірте з'єднання та спробуйте знову. (Код: NRE)"
+				) // NRE = No Result/Error
+			}
+		} catch (exception) {
+			// toast.dismiss(loadingToastId); // Закрити індикатор завантаження
+
+		
+			console.error('Exception during sign in process:', exception) // Для себе в консолі
+			toast.error(
+				'Під час входу сталася несподівана помилка. Будь ласка, спробуйте ще раз. (Код: EXC)'
+			) // EXC = Exception
+		}
 	}
 
 	const signupWithGoogle = () => {
