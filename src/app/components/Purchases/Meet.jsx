@@ -27,7 +27,7 @@ const Meet = () => {
 		if (user && id && !data.length) {
 			// Перевірка на пустий масив data
 			setLoading(true)
-			const q = query(collection(db, 'order'), where('id', '==', id))
+			const q = query(collection(db, 'order'), where('email', '==', user.email))
 
 			const unsubscribe = onSnapshot(
 				q,
