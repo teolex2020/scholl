@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import bannerImage from '../../../../public/assets/l.webp'
+import bannerImage from '../../../../public/assets/li.png'
 
 const HeroBanner = () => {
 	return (
@@ -27,7 +27,7 @@ const HeroBanner = () => {
 						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
-						className='text-xl sm:text-6xl font-bold text-[#e0a603] max-w-xl leading-tight '
+						className='text-xl sm:text-6xl font-bold text-[#e79622] max-w-xl leading-tight '
 						style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
 					>
 						Навчайся з лідерами
@@ -37,7 +37,7 @@ const HeroBanner = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
-						className='text-gray-200 text-lg  max-w-md pb-10'
+						className='text-gray-200 text-xl  max-w-md pb-10'
 					>
 						Онлайн-курси, лекції та тренінги в зручному форматі
 					</motion.p>
@@ -48,7 +48,7 @@ const HeroBanner = () => {
 						initial={{ opacity: 0, scale: 0.9 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.5, delay: 0.4 }}
-						className='px-6 py-3 border border-[#e0a603] rounded-xl text-[#e0a603] hover:bg-[#e0a603] hover:text-black transition font-semibold hidden sm:block hover:shadow-lg'
+						className='px-6 py-3 border border-[#e79622] rounded-xl text-[#e79622] hover:bg-[#e79622] hover:text-black transition font-semibold hidden sm:block hover:shadow-lg'
 					>
 						Переглянути курси
 					</motion.button>
@@ -66,7 +66,7 @@ const HeroBanner = () => {
 						alt='Hero image'
 						fill
 						sizes='(max-width: 1024px) 100vw, 50vw'
-						className='object-contain drop-shadow-[0_0_3px_#e2a550]'
+						className='object-contain '
 						priority
 					/>
 				</motion.div>
