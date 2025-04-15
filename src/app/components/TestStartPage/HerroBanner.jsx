@@ -61,6 +61,8 @@ const HeroBanner = () => {
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 1 }}
 				>
+					<div className='absolute ml-20  bg-blue-300 w-96 h-full blur-3xl rounded-full opacity-[15%]  '></div>
+					<div className='absolute bg-green-300/30 w-48 h-48 ml-20 blur-3xl rounded-full opacity-[25%] '></div>
 					<Image
 						src={bannerImage}
 						alt='Hero image'
