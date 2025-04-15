@@ -13,7 +13,7 @@ const page = () => {
 			<CoursesSection />
 			<LecturesSection />
 			<AboutUsSection />
-			<TestimonialsCarousel />
+			{/* <TestimonialsCarousel /> */}
 		</main>
 	)
 }
