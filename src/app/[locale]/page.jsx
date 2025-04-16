@@ -24,10 +24,10 @@ const Home = ({ params: { locale } }) => {
 				button={t('button')}
 				info={t('info')}
 			/>
-			{/* <CoursesSection />
+			<CoursesSection />
 			<LecturesSection />
 			<HowToStart />
-			<AboutUsSection /> */}
+			<AboutUsSection />
 		</main>
 	)
 }

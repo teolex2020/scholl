@@ -15,7 +15,9 @@
 		"meeting": "Meetings",
 		"brainstorm": "Brainstorming",
 		"contact": "Contacts",
-		"lecture": "Lectures"
+		"lecture": "Lectures",
+		"explore": "Explore",
+		"viewall": "View all"
 	},
 	"StartPage": {
 		"title": "Bortnik School of Political Analysis",
@@ -142,5 +144,41 @@
 	"Allchoice": {
 		"videos": "Videos of purchased courses/trainings/lectures",
 		"links": "Links to meetings"
+	},
+	"About": {
+	"title": "Why BortnikSchool?",
+	"description": "is a unique combination of classical education and modern technologies. Our instructors are expert practitioners working at the intersection of humanities and artificial intelligence.",
+	"expertise": {
+		"title": "Expertise",
+		"text": "Our lecturers are professionals with years of experience in their fields."
+	},
+	"flexibility": {
+		"title": "Flexibility",
+		"text": "Learn at your own pace — anytime, anywhere."
+	},
+	"aiSupport": {
+		"title": "AI Support",
+		"text": "We integrate AI to personalize the learning experience."
 	}
+},
+"HowTo": {
+	"title": "How to Start Learning",
+	"step1": {
+		"title": "Choose a course/lecture/meeting",
+		"description": "Select a course, lecture, or meeting from the list"
+	},
+	"step2": {
+		"title": "Fill out the form",
+		"description": "Complete a short form to place your order."
+	},
+	"step3": {
+		"title": "Payment",
+		"description": "Pay using a method convenient for you."
+	},
+	"step4": {
+		"title": "Confirmation",
+		"description": "Receive your order confirmation and access to the course."
+	}
+}
+
 }

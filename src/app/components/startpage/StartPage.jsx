@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import ButtonStartPage from '../ui/ButtonStartPage'
 import Image from 'next/image'
@@ -62,9 +62,10 @@ const StartPage = ({ title, name, descriptions, button, info }) => {
 					>
 						<div className={` ${gentium.className}   `}>
 							<p className='text-2xl'>{title}</p>{' '}
-							<p className='colorgold text-5xl '> {name}</p>
+							<p className='colorgold text-3xl sm:text-5xl '> {name}</p>
 						</div>
-						{descriptions}
+						<div className='hidden sm:block'>{descriptions}</div>
+						
 						<ButtonStartPage button={button} />
 						<div className='text-[12px]'>*{info}</div>
 					</motion.div>

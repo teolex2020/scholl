@@ -4,6 +4,8 @@ import { Gentium_Book_Plus } from 'next/font/google'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/navigation'
+import {  Bars3Icon } from '@heroicons/react/24/outline'
+
 
 const gentium = Gentium_Book_Plus({
 	weight: '400',
@@ -33,20 +35,8 @@ const MobileDropdownMenu = () => {
 				className='p-2 border-2 border-zinc-700 rounded-md bg-blur flex items-center gap-2  uppercase text-white font-semibold'
 			>
 				{/* Гамбургер-іконка */}
-				<svg
-					className='w-7 h-7 text-white'
-					fill='none'
-					stroke='currentColor'
-					strokeWidth={2}
-					viewBox='0 0 24 24'
-				>
-					<path
-						strokeLinecap='round'
-						strokeLinejoin='round'
-						d='M4 6h16M4 12h16M4 18h16'
-					/>
-				</svg>
-				<span className='text-base'>Explore</span>
+				<Bars3Icon className='h-5 w-5' />
+				<span className='text-base'> {t('explore')}</span>
 			</button>
 
 			{/* Меню */}
