@@ -31,12 +31,14 @@ const Allcourse = () => {
 
 	return (
 		<div className='container mx-auto '>
-			<div className='w-full text-center text-sm text-slate-400 pt-2'>{t('takeout')}.</div>
+			<div className='w-full text-center text-sm text-slate-400 pt-2'>
+				{t('takeout')}.
+			</div>
 			<div className='py-3'>
 				<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 			</div>
 
-			<div className='lg:p-6  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10  place-items-center '>
+			<div className='lg:p-6  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-0 place-items-center '>
 				{filteredCourses.map((course, i) => (
 					<CartCourse
 						key={i}

@@ -47,22 +47,21 @@ const Allcourse = () => {
 			<div className='py-3'>
 				<Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 			</div>
-			<div className='lg:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10 place-items-center '>
-				{currentItems				
-					.map((course, i) => (
-						<CartCourse
-							key={i}
-							id={course.id}
-							lector={course.lector}
-							title={course.title}
-							description={course.descriptions}
-							price={course.price}
-							status={course.status}
-							image={course.image}
-							course={course.course}
-							active={course.active}
-						/>
-					))}
+			<div className='lg:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-0 place-items-center '>
+				{currentItems.map((course, i) => (
+					<CartCourse
+						key={i}
+						id={course.id}
+						lector={course.lector}
+						title={course.title}
+						description={course.descriptions}
+						price={course.price}
+						status={course.status}
+						image={course.image}
+						course={course.course}
+						active={course.active}
+					/>
+				))}
 			</div>
 			<div className='pagination flex justify-center space-x-2 mt-4 mb-10'>
 				{Array.from({ length: pageCount }, (_, i) => (
