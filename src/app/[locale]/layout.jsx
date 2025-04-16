@@ -33,11 +33,11 @@ export const metadata = {
 
 export default function RootLayout({ children, params: { locale } }) {
 	return (
-		<html className=' elem ' lang={locale}>
+		<html className=' ' lang={locale}>
 			<body className={` `}>
 				<Providers>
 					<main
-						className={`elem lg:min-h-screen  relative scroll flex flex-col justify-between h-full  ${roboto.className}`}
+						className={` lg:min-h-screen  relative scroll flex flex-col justify-between h-full  ${roboto.className}`}
 					>
 						<Image
 							src={bg}
