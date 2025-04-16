@@ -444,7 +444,7 @@ export const coursesen = [
 	},
 	{
 		id: '20292',
-		active: false,
+		active: true,
 		course: 'Course',
 		lector: 'Viktor Savinov',
 		language: 'Russian',

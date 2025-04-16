@@ -446,7 +446,7 @@ export const coursesru = [
 	},
 	{
 		id: '20292',
-		active: false,
+		active: true,
 		course: 'Курс',
 		lector: 'Виктор Савинов',
 		language: 'Русский',

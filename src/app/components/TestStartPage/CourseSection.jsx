@@ -5,6 +5,7 @@ import { coursesua } from '../course/language/coursesua'
 import { coursesen } from '../course/language/coursesen'
 import { coursesru } from '../course/language/coursesru'
 import CartCourse from './CartCourse'
+import Link from 'next/link'
 
 const CoursesSection = () => {
 	const locale = useLocale()
@@ -53,26 +54,29 @@ const CoursesSection = () => {
 						Not found
 					</div>
 				)}
-				<button className='flex items-center justify-center gap-2 text-lg font-semibold text-[#e2a550]  border border-[#e2a550] p-2 rounded-lg hover:bg-[#e2a550] hover:text-white transition-all duration-300  mt-5'>
-					View all{' '}
-					<span>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke-width='1.5'
-							stroke='currentColor'
-							class='size-6'
-						>
-							<path
-								stroke-linecap='round'
-								stroke-linejoin='round'
-								d='M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3'
-							/>
-						</svg>
-					</span>{' '}
-				</button>
 			</div>
+			<Link
+				href='/course'
+				className='flex items-center justify-center gap-2 text-lg font-semibold text-[#e2a550]  border border-[#e2a550] p-2 rounded-lg hover:bg-[#e2a550] hover:text-white transition-all duration-300  mt-5 w-32'
+			>
+				View all{' '}
+				<span>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
+						class='size-6'
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3'
+						/>
+					</svg>
+				</span>{' '}
+			</Link>
 		</section>
 	)
 }

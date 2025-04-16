@@ -5,14 +5,14 @@ import { AcademicCapIcon } from '@heroicons/react/24/solid'
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/navigation'
 
-const CartCourse = ({ lector, price, title, id, image }) => {
+const CartCourse = ({ lector,  title, id, image }) => {
 	const t = useTranslations('BortnikTrain')
 	const route = useRouter()
 
 	return (
 		<div
 			onClick={() => route.push(`/course/${id}`)}
-			className='w-full max-w-[280px] rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-all  hover:scale-105 duration-700'
+			className='w-full max-w-[280px] rounded-xl overflow-hidden shadow-md h-64 cursor-pointer hover:shadow-lg transition-all  hover:scale-105 duration-700'
 		>
 			<div className='relative w-full h-40'>
 				<Image

@@ -4,7 +4,7 @@ import { LightBulbIcon, ScaleIcon, CpuChipIcon } from '@heroicons/react/24/outli
 const AboutUsSection = () => {
 	return (
 		<section className='max-w-[1400px] mx-auto mt-16 rounded-xl bg-blur'>
-			<div className='bg-gradient-to-tr from-[#12181d00] via-[#10151a] to-[#141414]  p-6 sm:p-10 text-center text-gray-200'>
+			<div className='  p-6 sm:p-10 text-center text-gray-200'>
 				<h2 className='text-2xl sm:text-3xl font-bold colorgold mb-4'>
 					Чому саме BortnikSchool?
 				</h2>

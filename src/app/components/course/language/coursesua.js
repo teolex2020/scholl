@@ -438,7 +438,7 @@ export const coursesua = [
 	},
 	{
 		id: '20292',
-		active: false,
+		active: true,
 		course: 'Курс',
 		lector: 'Віктор Савінов',
 		language: 'Російська',
