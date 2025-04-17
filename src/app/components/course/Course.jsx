@@ -29,13 +29,12 @@ const gentium = Gentium_Book_Plus({
 })
 
 const Course = () => {
-
 	const { authUser } = useSelector((state) => state.counter)
 	const router = useRouter()
 	const t = useTranslations('Course')
 	const m = useTranslations('Meeting')
 	const dispatch = useDispatch()
-const locale = useLocale()
+	const locale = useLocale()
 
 	const params = useParams()
 
@@ -113,9 +112,7 @@ const locale = useLocale()
 									</div>
 								</div>
 
-								<div
-									className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '
-																>
+								<div className='text-sm text-zinc-300 flex gap-2 py-3 relative cursor-pointer w-fit '>
 									<CalendarIcon className='w-5 h-5 text-green-500' />
 									<span>{data.datastart} </span>
 									<span>-</span>
@@ -124,7 +121,6 @@ const locale = useLocale()
 									<span className='uppercase'>19.00</span>
 								</div>
 							</div>
-							
 						</div>
 					</div>
 					<div className=' p-2 lg:text-xl  my-3 rounded-md bg-blur min-h-[255px]'>
@@ -165,20 +161,18 @@ const locale = useLocale()
 				</div>
 			</div>
 			<hr className='opacity-10 my-5' />
-			{/* <div className='flex flex-col items-center gap-6'>
-				<div className='text-2xl'>{t('Certificat')}*</div>
-				<div className='w-96 h-64 relative bg-blur'>
-					<Image
-						src={certificat}
-						fill
-						sizes='(min-width: 808px) 50vw, 100vw'
-						alt='certificate'
-						className='object-cover'
-						priority
-					/>
-				</div>
-			</div> */}
-
+			<div className='flex justify-center'>
+			<div className='sm:w-1/2 aspect-video rounded-xl overflow-hidden shadow-lg '>
+				<iframe
+					className='w-full h-full' // займає всю площу контейнера
+					src={`https://www.youtube.com/embed/${data.youtube}`}
+					title='Promo Video'
+					style={{ border: 0 }}
+					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+					allowFullScreen
+				/>
+			</div>
+			</div>
 			<hr className='opacity-10 my-5' />
 			<div className='mb-14 lg:text-xl flex flex-col bg-blur rounded-lg p-2 gap-2'>
 				<div>

@@ -460,6 +460,7 @@ export const coursesru = [
 		dataend: '20.05.2025',
 		time: '19.00',
 		alltime: 10,
+		youtube: 'AnvRSo2Vxuk?rel=0',
 		conclusions: [
 			{
 				title:
