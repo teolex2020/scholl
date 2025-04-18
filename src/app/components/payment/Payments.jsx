@@ -126,17 +126,17 @@ const Payments = () => {
 	
 
 	const handleAdd = (values) => {
-		setData(values)
+	
 		setLoading(true)
 
-		// if (!authUser) {
-		// 	router.push('/login')
-		// 	return
-		// }
-
+		const normalized = {
+			...values,
+			email: values.email.toLowerCase(), // ← приводимо email до нижнього регістру
+		}
+   setData(normalized)
 		const userDocRef = doc(db, 'order', current + orderId)
 		const userData = {
-			...values,
+			...normalized,
 			orderNumber: current + orderId,
 			orderPrice: orderPrice,
 			orderTitle: orderTitle,

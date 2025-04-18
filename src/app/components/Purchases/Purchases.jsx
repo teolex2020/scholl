@@ -31,7 +31,7 @@ const Purchases = () => {
 				try {
 					const q = query(
 						collection(db, 'order'),
-						where('email', '==', user.email)
+						where('email', '==', user.email.toLowerCase())
 					)
 					const querySnapshot = await getDocs(q)
 
