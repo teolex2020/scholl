@@ -12,7 +12,7 @@ import {
 import { Gentium_Book_Plus } from 'next/font/google'
 import { useTranslations } from 'next-intl'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { stripCitations } from './stripCitations'
 
 import { Chats } from '@/store/features/counterSlice'
 import Message from './Message'
@@ -97,7 +97,7 @@ const Chat = () => {
 			<section className='h-full w-full px-10'>
 				<div className='elem scroll my-6 max-h-[400px] overflow-y-scroll lg:max-h-[550px]'>
 					{messages.map(({ role, content }, idx) => (
-						<Message key={idx} role={role} content={content} />
+						<Message key={idx} role={role} content={stripCitations(content)} />
 					))}
 					{status === 'in_progress' && <span>thinking...</span>}
 					{error && <div>{error.message}</div>}
