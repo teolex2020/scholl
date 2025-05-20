@@ -45,7 +45,7 @@ const Button = ({ font }) => {
 			) : (
 				<button
 					onClick={() => router.push('/login')}
-					className={`border-2 rounded-3xl border-zinc-700/50 px-10 py-2 flex  hover:bg-blur space-x-16 ${font} uppercase duration-300`}
+					className={`border-2 rounded-3xl border-zinc-700/50 px-5 py-2 flex  hover:bg-blur space-x-16 ${font} uppercase duration-300`}
 				>
 					<p className='duration-300  text-lg'>{t('button')}</p>
 				</button>
