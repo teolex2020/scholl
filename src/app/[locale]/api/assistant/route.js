@@ -46,7 +46,7 @@ export async function POST(req) {
 						(toolCall) => {
 							const parameters = JSON.parse(toolCall.function.arguments)
 
-              console.log("parameters",parameters)
+             
 
 							switch (toolCall.function.name) {
 								// configure your tool calls here

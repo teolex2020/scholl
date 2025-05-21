@@ -45,8 +45,9 @@ const handleInputChange = (event) => {
 			onChange={handleInputChange}
 			onKeyDown={handleContentKeyDown}
 			onInput={handleInput}
-			style={{ resize: 'none' }}
+			style={{ resize: 'none', width: '100%' }}
 			rows={1}
+			placeholder='Type your message...'
 		/>
 	)
 }

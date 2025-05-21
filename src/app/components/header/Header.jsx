@@ -78,7 +78,7 @@ const Header = () => {
 						/>
 					</form>
 				</div>
-				<div className='flex  justify-center  w-fit'>
+				<div className='flex  justify-center sm:justify-end  w-full absolute sm:relative'>
 					{' '}
 					<Language />
 				</div>

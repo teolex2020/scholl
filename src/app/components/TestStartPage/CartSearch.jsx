@@ -12,7 +12,7 @@ const CartSearch = ({ lector,  title, id, image }) => {
 	return (
 		<div
 			onClick={() => route.push(`/course/${id}`)}
-			className='w-full max-w-[280px] rounded-xl overflow-hidden shadow-md h-64 cursor-pointer hover:shadow-lg transition-all  hover:scale-105 duration-700'
+			className='w-full max-w-[280px] rounded-xl overflow-hidden shadow-md h-64 cursor-pointer hover:shadow-lg transition-all  hover:scale-105 duration-700  z-50'
 		>
 			<div className='relative w-full h-40'>
 				<Image

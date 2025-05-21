@@ -32,10 +32,13 @@ const MobileDropdownMenu = () => {
 		<div className=' relative hidden lg:flex flex-1 lg:text-lg xl:ml-10 z-30'>
 			<button
 				onClick={toggleMenu}
-				className='p-2 border-2 border-zinc-700 rounded-md bg-blur flex items-center gap-2  uppercase text-white font-semibold'
+				className='p-2 border-2 border-zinc-700 rounded-md bg-blur flex justify-center items-center gap-2  uppercase text-white w-44'
 			>
-				{/* Гамбургер-іконка */}
-				<Bars3Icon className='h-5 w-5' />
+				<span>
+					{' '}
+					<Bars3Icon className='h-5 w-5' />
+				</span>
+
 				<span className='text-base'> {t('explore')}</span>
 			</button>
 
@@ -47,7 +50,7 @@ const MobileDropdownMenu = () => {
 				>
 					<div
 						onClick={(e) => e.stopPropagation()}
-						className={`absolute left-0  mt-20 w-48 bg-blur border border-zinc-700 rounded-xl shadow-xl p-4 ml-[17%] ${gentium.className}`}
+						className={`absolute left-0  mt-20 w-48 bg-[#11171c] border border-zinc-700 rounded-xl shadow-xl p-4 ml-[17%] ${gentium.className}`}
 					>
 						<ul className='flex flex-col gap-3 text-lg uppercase text-[#e2a550]'>
 							{menu.map((item) => (

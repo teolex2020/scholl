@@ -50,17 +50,13 @@ const Chat = () => {
 				messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
 			}, [messages])
 
-	// ---------------------------------------------------------------------------
-	// Effects
-	// ---------------------------------------------------------------------------
+
 
 	useEffect(() => {
 		if (error) toast.error(error.message)
 	}, [error])
 
-	// ---------------------------------------------------------------------------
-	// Callbacks
-	// ---------------------------------------------------------------------------
+
 
 	const toggleChat = useCallback(() => dispatch(Chats(chat)), [dispatch, chat])
 
@@ -94,8 +90,8 @@ const Chat = () => {
 			</header>
 
 			{/* Message list */}
-			<section className='h-full w-full px-10'>
-				<div className='elem scroll my-6 max-h-[400px] overflow-y-scroll lg:max-h-[550px]'>
+			<section className='h-full w-full px-10 '>
+				<div className='elem scroll my-6 max-h-[400px] overflow-y-scroll lg:max-h-[550px] '>
 					{messages.map(({ role, content }, idx) => (
 						<Message key={idx} role={role} content={stripCitations(content)} />
 					))}
@@ -111,7 +107,7 @@ const Chat = () => {
 				className={`'w-full p-5' ${chat && 'ml-6'})`}
 			>
 				{/* Controls */}
-				<div className='flex w-full justify-end gap-5 px-5 py-2'>
+				{/* <div className='flex w-full justify-end gap-5 px-5 py-2'>
 					<button
 						type='button'
 						onClick={stop}
@@ -128,19 +124,19 @@ const Chat = () => {
 					>
 						<ArrowPathIcon className='h-6 w-6 fill-none stroke-slate-100 stroke-[1px]' />
 					</button>
-				</div>
+				</div> */}
 
-				<div className='group elem scroll z-20 flex w-full items-center rounded-3xl bg-white py-1 shadow-md'>
+				<div className='group elem scroll z-20 flex  items-center rounded-3xl bg-white py-1 shadow-md  w-[370px]'>
 					<GrowingTextArea
 						onChange={handleInputChange}
 						value={input}
-						className='scroll max-h-[200px] w-full max-w-3xl rounded-lg border-none p-2 px-5 text-black outline-none'
+						className='scroll max-h-[200px] w-full max-w-3xl rounded-lg border-none p-2  text-black outline-none'
 					/>
 					{/* Hidden submit button so Enter works inside textarea */}
 					<button
 						type='submit'
 						aria-label='Send message'
-						className='relative flex w-20 items-center justify-center rounded-r-md py-2 text-base text-[#a1a1a1] hover:text-white'
+						className='relative flex w-2 items-center justify-center rounded-r-md py-2 text-base text-[#a1a1a1] hover:text-white'
 					/>
 				</div>
 			</form>
