@@ -153,7 +153,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 	},
 	{
 		id: '20321',
-		active: true,
+		active: false,
 		course: 'Meeting',
 		lector: 'Mykhailo Chaplyha',
 		Moderator: 'Ruslan Bortnyk',
@@ -162,7 +162,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		descriptions:
 			"Friends, you are invited to a meeting and an open dialogue with Mykhailo Chaplyha — a former public servant, representative of the Ombudsman (2012–2018), political leader, media figure, thinker, and simply a Free Person. 'What Will Happen to Ukraine?' – an honest, no-nonsense, and propaganda-free discussion, yet responsible and well-argued, in a closed room without recording, will be led by one of the most courageous and brightest political orators of modern Ukraine. You will also have the opportunity to ask your questions.",
 		price: '1999',
-		status: true,
+		status: false,
 		image: 'chaplyga1.webp',
 		donat: '',
 		datastart: '19.06.2025',
