@@ -626,4 +626,87 @@ export const coursesen = [
 			},
 		],
 	},
+	{
+		id: '20322',
+		active: true,
+		course: 'Course',
+		lector: 'Ruslan Bizyaev',
+		language: 'Russian',
+		title: 'The Last Peaceful Summer. The Year 1939',
+		descriptions:
+			"The lecture course 'The Unfinished War' is dedicated to the history of the 1930s of the twentieth century. The history of world geopolitics through the prism of the causes of the Second World War. Why do the current world elites so stubbornly repeat the mistakes of their predecessors? Could the bloodiest war in human history have been avoided? Who benefited from it? The course consists of seven cycles and covers the period from the late 1920s to June 22, 1941. Well-known events and little-known facts. An impartial authorial look at the events of that era, its lessons and conclusions. Without ideological blinkers or political expediency. For those who want to learn something new, understand the 'rules of the game' of that era, and avoid repeating its mistakes by seeing certain parallels.",
+		price: '3999',
+		status: true,
+		image: 'bizaev03.webp',
+		datastart: '25.07.2025',
+		dataend: '15.08.2025',
+		time: '19:00',
+		alltime: 3,
+		conclusions: [
+			{
+				title:
+					'— Critically evaluate information, arguments, various historical concepts and politics.',
+			},
+			{
+				title:
+					'— Better understand the historical aspects of global processes in the world, see the logic and patterns of decision-making, methods and ways of manipulation, the impact of history on modern world processes.',
+			},
+			{
+				title:
+					'— Analyze modern political events, form an individual vision of the real world.',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					"Lecture 1: 'How Bobby and John Failed to Share Peace' The great confrontation between Britain and the USA. Political and economic crises as a consequence. (25.07.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 2: 'The Extra Chair'. Who wanted to befriend whom? (28.07.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 3: 'But Intelligence Reported Accurately', or who wanted rapprochement between the USSR and the Third Reich, and most importantly why? (30.07.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 4: 'Ringing Stifling Heat'. Diplomatic pawns in motion. (01.08.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 5: 'Uncle Sam is Also in the Game' or how the USA prevented Europe from reaching agreements with Hitler. (04.08.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 6: 'Aggressors Are Different' or who suggested dividing whom? (06.08.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 7: 'Poor, Poor Yorick' or why the Polish elite believed so much in a good ending? (08.08.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 8: 'Roosevelt's Push' or how the USA deceived Britain and France. (11.08.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 9: 'The Stakes Are Made, Gentlemen' or who is flying to London, and who to Moscow to conclude a new pact. (13.08.2025)",
+				duration: '30 minutes',
+			},
+			{
+				title:
+					"Lecture 10: 'Vanity Fair' or the feast of tomorrow's enemies. (15.08.2025)",
+				duration: '30 minutes',
+			},
+		],
+	},
 ]
