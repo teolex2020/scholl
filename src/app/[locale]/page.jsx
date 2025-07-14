@@ -9,6 +9,7 @@ import HowToStart from '@/app/components/TestStartPage/HowtoStart'
 
 
 import StartPage from '../components/startpage/StartPage.jsx'
+import DiscountBanner from '../components/discountBanner/DiscountBanner.jsx'
 
 const Home = ({ params: { locale } }) => {
 
@@ -17,6 +18,7 @@ const Home = ({ params: { locale } }) => {
 	const t = useTranslations('StartPage')
 	return (
 		<main className='text-white pb-10 container mx-auto md:px-32'>
+			<DiscountBanner/>
 			<StartPage
 				title={t('title')}
 				name={t('name')}
