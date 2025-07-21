@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useCallback, useEffect } from 'react'
+import React, { useRef, useCallback, useEffect, useMemo } from 'react'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useAssistant } from '@ai-sdk/react'
@@ -17,50 +17,35 @@ import { stripCitations } from './stripCitations'
 import { Chats } from '@/store/features/counterSlice'
 import Message from './Message'
 import GrowingTextArea from './Textarea'
-
-
-// -----------------------------------------------------------------------------
-// Fonts
-// -----------------------------------------------------------------------------
+import { loadThread, saveThread } from '@/lib/session-thread'
 
 const gentium = Gentium_Book_Plus({ weight: '400', subsets: ['latin'] })
 
-// -----------------------------------------------------------------------------
-// Component
-// -----------------------------------------------------------------------------
-
 const Chat = () => {
+	const initialThreadId = useMemo(() => loadThread(), [])
 	const dispatch = useDispatch()
-	const { chat } = useSelector((state) => state.counter) 
-	const {
-		error,
-		status,
-		messages,
-		input,
-		submitMessage,
-		handleInputChange,
-		stop,
-		reload,
-	} = useAssistant({ api: '/api/assistant' })
+	const { chat } = useSelector((state) => state.counter)
+	const { error, status, messages, input, submitMessage, handleInputChange } =
+		useAssistant({ api: '/api/assistant', threadId: initialThreadId })
+
+	useEffect(() => {
+		if (!initialThreadId && messages.length) {
+			saveThread(messages[0].threadId)
+		}
+	}, [messages, initialThreadId])
 
 	const t = useTranslations('Chat')
-		const messagesEndRef = useRef (null)
+	const messagesEndRef = useRef(null)
 
-			useEffect(() => {
-				messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-			}, [messages])
-
-
+	useEffect(() => {
+		messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+	}, [messages])
 
 	useEffect(() => {
 		if (error) toast.error(error.message)
 	}, [error])
 
-
-
 	const toggleChat = useCallback(() => dispatch(Chats(chat)), [dispatch, chat])
-
-
 
 	return (
 		<div
@@ -106,26 +91,6 @@ const Chat = () => {
 				onSubmit={submitMessage}
 				className={`'w-full p-5' ${chat && 'ml-6'})`}
 			>
-				{/* Controls */}
-				{/* <div className='flex w-full justify-end gap-5 px-5 py-2'>
-					<button
-						type='button'
-						onClick={stop}
-						aria-label='Stop generation'
-						className='flex cursor-pointer justify-end'
-					>
-						<StopCircleIcon className='h-6 w-6 fill-slate-100 stroke-slate-100 stroke-[1px]' />
-					</button>
-					<button
-						type='button'
-						onClick={reload}
-						aria-label='Reload last message'
-						className='flex cursor-pointer justify-end'
-					>
-						<ArrowPathIcon className='h-6 w-6 fill-none stroke-slate-100 stroke-[1px]' />
-					</button>
-				</div> */}
-
 				<div className='group elem scroll z-20 flex  items-center rounded-3xl bg-white py-1 shadow-md  w-[370px]'>
 					<GrowingTextArea
 						onChange={handleInputChange}

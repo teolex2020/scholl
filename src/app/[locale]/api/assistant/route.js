@@ -9,21 +9,19 @@ const openai = new OpenAI({
 export const maxDuration = 30
 
 export async function POST(req) {
-	// Parse the request body
-	const input = await req.json()
+	const { message, threadId: clientThread } = await req.json()
 
-	// Create a thread if needed
-	const threadId = input.threadId ?? (await openai.beta.threads.create({})).id
+	const threadId = clientThread ?? (await openai.beta.threads.create({})).id
 
 	// Add a message to the thread
-	const createdMessage = await openai.beta.threads.messages.create(threadId, {
+	const msg = await openai.beta.threads.messages.create(threadId, {
 		role: 'user',
-		content: input.message,
+		content: message,
 	})
 
 	return AssistantResponse(
-		{ threadId, messageId: createdMessage.id },
-		async ({ forwardStream, sendDataMessage }) => {
+		{ threadId, messageId: msg.id },
+		async ({ forwardStream }) => {
 			// Run the assistant on the thread
 			const runStream = openai.beta.threads.runs.stream(threadId, {
 				assistant_id:
@@ -45,8 +43,6 @@ export async function POST(req) {
 					runResult.required_action.submit_tool_outputs.tool_calls.map(
 						(toolCall) => {
 							const parameters = JSON.parse(toolCall.function.arguments)
-
-             
 
 							switch (toolCall.function.name) {
 								// configure your tool calls here

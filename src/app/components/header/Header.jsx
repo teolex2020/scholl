@@ -49,7 +49,7 @@ const Header = () => {
 		<div className='lg:container w-full mx-auto  z-40'>
 			{mobilemenu && <MobileMenu />}
 			{popupBell && <Popupbell />}
-			<ButtonChat />
+			{/* <ButtonChat /> */}
 			<div className='flex  md:justify-between h-[65px] lg:h-24 items-center relative '>
 				<Link href='/'>
 					<div className=' flex img w-24 h-24 relative cursor-pointer z-10'>
