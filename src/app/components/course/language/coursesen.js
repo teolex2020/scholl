@@ -628,7 +628,7 @@ export const coursesen = [
 	},
 	{
 		id: '20322',
-		active: true,
+		active: false,
 		course: 'Course',
 		lector: 'Ruslan Bizyaev',
 		language: 'Russian',
@@ -636,7 +636,7 @@ export const coursesen = [
 		descriptions:
 			"The lecture course 'The Unfinished War' is dedicated to the history of the 1930s of the twentieth century. The history of world geopolitics through the prism of the causes of the Second World War. Why do the current world elites so stubbornly repeat the mistakes of their predecessors? Could the bloodiest war in human history have been avoided? Who benefited from it? The course consists of seven cycles and covers the period from the late 1920s to June 22, 1941. Well-known events and little-known facts. An impartial authorial look at the events of that era, its lessons and conclusions. Without ideological blinkers or political expediency. For those who want to learn something new, understand the 'rules of the game' of that era, and avoid repeating its mistakes by seeing certain parallels.",
 		price: '3999',
-		status: true,
+		status: false,
 		image: 'bizaev03.webp',
 		datastart: '25.07.2025',
 		dataend: '15.08.2025',
