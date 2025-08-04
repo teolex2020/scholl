@@ -169,4 +169,22 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		time: '19:00',
 		duration: 90,
 	},
+	{
+		id: '20323',
+		active: true,
+		course: 'Meeting',
+		lector: 'Ruslan Bortnyk',
+		Moderator: 'Ruslan Bortnyk',
+		language: 'Russian, Ukrainian',
+		title: 'What Will Happen to Ukraine – The State and Society – by 2030?',
+		descriptions:
+			'What should we prepare for? Where is the war heading? How and when will it end? What should people (from different social backgrounds) do? What will the political regime, security, education, healthcare, and business be like in 2030? Will Kharkiv, Zaporizhzhia, and Odesa remain Ukrainian? Presentation of a closed research. Answers to your questions. Presented by Ruslan Bortnyk, Director of the Ukrainian Institute of Politics.',
+		price: '2999',
+		status: true,
+		image: 'bortnikmeet.webp',
+		donat: '',
+		datastart: '09.08.2025',
+		time: '19:00',
+		duration: 90,
+	},
 ]
