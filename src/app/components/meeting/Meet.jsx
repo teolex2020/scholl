@@ -81,7 +81,7 @@ if (!data) {
 				<div>
 					<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row rounded-md min-h-80 '>
 						<div className='text-xl lg:text-3xl flex-1  flex items-start justify-start md:p-10 p-3 flex-col'>
-							<h2 className='text-left font-semibold'>{data?.title}</h2>
+							<h2 className='text-left font-semibold'>{data?.title} </h2>
 
 							<div className=' mt-5  rounded-sm flex flex-col items-center justify-center'>
 								<p
@@ -146,6 +146,7 @@ if (!data) {
 						image={data?.image}
 						active={data?.active}
 						donat={data?.donat}
+						title={data?.title}
 					/>
 				</div>
 			</div>

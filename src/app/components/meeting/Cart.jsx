@@ -6,14 +6,14 @@ import { ClockIcon, VideoCameraIcon, AcademicCapIcon, XMarkIcon } from '@heroico
 import { useTranslations } from 'next-intl'
 
 
-const Cart = ({ dataOrder, price, alltime, image, active, donat }) => {
+const Cart = ({ dataOrder, price, alltime, image, active, donat, title }) => {
 	const [isPopupOpen, setIsPopupOpen] = useState(false)
 
 	const togglePopup = () => {
 		setIsPopupOpen(!isPopupOpen)
 	}
 	
-	
+
 	const t = useTranslations('Card')
 	return (
 		<div className=' md:w-96 bg-[#13181d] relative  rounded-lg p-5 '>
@@ -33,9 +33,10 @@ const Cart = ({ dataOrder, price, alltime, image, active, donat }) => {
 				<p className='z-10 text-3xl md:text-5xl'>{price} ₴</p>
 			</div>
 
-			<div className='text-sm text-start px-10 md:mt-5 flex flex-col gap-3 '>
-				<div className='z-10'>
-					<p>{t('course')}</p>
+			<div className='text-sm text-start px-10  flex flex-col gap-3 '>
+				<p className='z-10 text-lg'>{title}</p>
+				{/* <div className='z-10'>
+					// 
 				</div>
 				<div className='flex gap-3 items-center z-10'>
 					<ClockIcon className='h-4 w-4 ' />
@@ -46,7 +47,7 @@ const Cart = ({ dataOrder, price, alltime, image, active, donat }) => {
 				<div className='flex gap-3 items-center z-10'>
 					<VideoCameraIcon className='h-4 w-4 ' />
 					<p> {t('video')}</p>
-				</div>
+				</div> */}
 
 				<div className='w-full flex justify-center '>
 					{active ? (
