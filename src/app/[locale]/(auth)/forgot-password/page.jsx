@@ -108,7 +108,7 @@ const ForgotPasswordPage = () => {
 					>
 						{formik.isSubmitting ? t('loading') : t('resetButton')}
 					</button>
-					<pre className='mt-4 p-4 bg-gray-800 text-white rounded-md text-xs'>
+					{/* <pre className='mt-4 p-4 bg-gray-800 text-white rounded-md text-xs'>
 						<code>
 							formik.isValid: {JSON.stringify(formik.isValid)}
 							<br />
@@ -118,7 +118,7 @@ const ForgotPasswordPage = () => {
 							<br />
 							formik.values: {JSON.stringify(formik.values, null, 2)}
 						</code>
-					</pre>
+					</pre> */}
 				</form>
 			</div>
 		</div>
