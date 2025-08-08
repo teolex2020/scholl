@@ -90,20 +90,40 @@
 		"name": "Ruslan Bortnik's School of Political Analysis"
 	},
 	"Login": {
+		"reset": " Send Password Reset Email",
+		"already": "Already registered?",
 		"user": "Login",
-		"email": "Email",
-		"password": "Password",
-		"signin": "Sign In",
-		"signingoogle": "Sign In with Google",
-		"accoun": "Dont have an account?",
-		"signup": "Sign Up",
-		"agree": "By clicking continue, you agree to our",
 		"service": "Terms of Service",
 		"policy": " Privacy Policy.",
 		"offer": "Public Offer.",
-		"already": "Already registered?",
-		"forgot": "Forgot Password?",
-		"reset": " Send Password Reset Email"
+		"signin": "Sign in",
+		"email": "Email",
+		"password": "Password",
+		"loading": "Signing in...",
+		"or": "or",
+		"signingoogle": "Sign in with Google",
+		"accoun": "Don't have an account?",
+		"signup": "Sign up",
+		"forgotPassword": "Forgot password?",
+		"success": {
+			"login": "Successfully signed in!"
+		},
+		"error": {
+			"invalidCredentials": "Incorrect email or password. Please try again.",
+			"tooManyRequests": "Access temporarily blocked. Please try again later.",
+			"default": "An error occurred during sign-in. Please try again later.",
+			"noResult": "Sign-in attempt failed. Check your connection.",
+			"exception": "An unexpected error occurred. Please try again.",
+			"googleSignInFailed": "Failed to sign in with Google."
+		},
+		"validation": {
+			"emailTooLong": "Email address is too long",
+			"invalidEmail": "Invalid email format",
+			"emailRequired": "Please enter your email",
+			"passwordMinLength": "Password must be at least 8 characters",
+			"passwordPattern": "Password must contain at least one Latin letter",
+			"passwordRequired": "Please enter your password"
+		}
 	},
 	"Chat": {
 		"title1": "Your AI guide",
@@ -186,5 +206,22 @@
 		"copy": "Copy",
 		"copied": "Copied!",
 		"close": "Close banner"
+	},
+	"ForgotPassword": {
+		"title": "Forgot password?",
+		"emailLabel": "Email",
+		"resetButton": "Send reset email",
+		"loading": "Sending...",
+		"success": {
+			"emailSent": "A password reset email has been sent to your inbox!"
+		},
+		"error": {
+			"userNotFound": "No user found with this email address.",
+			"default": "An error occurred. Please try again."
+		},
+		"validation": {
+			"emailInvalid": "Invalid email format.",
+			"emailRequired": "Please enter your email."
+		}
 	}
 }

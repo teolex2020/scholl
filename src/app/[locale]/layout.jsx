@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { Providers } from '@/store/provider'
 import Chat from '../components/chat/Chat'
 import LocaleProvider from './provider'
+import { ToastContainer } from 'react-toastify'
 
 import { GoogleAnalytics } from '@next/third-parties/google'
 
@@ -35,6 +36,12 @@ export default function RootLayout({ children, params: { locale } }) {
 	return (
 		<html className=' ' lang={locale}>
 			<body className={` `}>
+				<ToastContainer
+					position='top-right'
+					autoClose={4000}
+					newestOnTop
+					theme='dark'
+				/>
 				<Providers>
 					<main
 						className={` lg:min-h-screen  relative scroll flex flex-col justify-between h-full  ${roboto.className}`}
