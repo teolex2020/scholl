@@ -171,7 +171,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 	},
 	{
 		id: '20323',
-		active: true,
+		active: false,
 		course: 'Meeting',
 		lector: 'Ruslan Bortnyk',
 		Moderator: 'Ruslan Bortnyk',
@@ -180,7 +180,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		descriptions:
 			'What should we prepare for? Where is the war heading? How and when will it end? What should people (from different social backgrounds) do? What will the political regime, security, education, healthcare, and business be like in 2030? Will Kharkiv, Zaporizhzhia, and Odesa remain Ukrainian? Presentation of a closed research. Answers to your questions. Presented by Ruslan Bortnyk, Director of the Ukrainian Institute of Politics.',
 		price: '2999',
-		status: true,
+		status: false,
 		image: 'bortnikmeet.webp',
 		donat: '',
 		datastart: '09.08.2025',
