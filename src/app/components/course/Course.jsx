@@ -12,7 +12,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import Cart from './Cart'
 import { useParams } from 'next/navigation'
 import { useRouter } from '@/navigation'
-import certificat from '../../../../public/assets/certificat.webp'
+// import certificat from '../../../../public/assets/certificat.webp'
 import { useDispatch, useSelector } from 'react-redux'
 import { OrderTitle, OrderPrice, OrderId } from '@/store/features/counterSlice'
 import ListItem from './ListItem'
@@ -32,7 +32,7 @@ const Course = () => {
 	const { authUser } = useSelector((state) => state.counter)
 	const router = useRouter()
 	const t = useTranslations('Course')
-	const m = useTranslations('Meeting')
+	
 	const dispatch = useDispatch()
 	const locale = useLocale()
 
@@ -47,6 +47,10 @@ const Course = () => {
 	const currentCourses = courses[locale] || coursesua
 
 	const data = currentCourses.find((item) => item.id === params.slug)
+
+	const paragraphs = (data?.descriptions ?? '').trim().split(/\n{2,}/)
+
+	
 
 	const dataOrder = (e) => {
 		if (!authUser) {
@@ -82,12 +86,27 @@ const Course = () => {
 					<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row rounded-md min-h-80 '>
 						<div className='text-xl lg:text-3xl flex-1  flex items-start justify-start md:p-10 p-3 flex-col'>
 							<h2 className='text-left font-semibold'>{data.title}</h2>
-							<div className=' mt-5  rounded-sm flex items-center justify-center'>
-								<p
-									className={`text-lg text-left  font-semibold  ${gentium.className} `}
+							<div className='mt-5 rounded-sm flex items-start justify-start'>
+								<div
+									className={`
+                    text-left leading-7 max-w-3xl
+                    space-y-5                /* відступи між абзацами */
+                    ${gentium.className}
+                  `}
 								>
-									{data.descriptions}
-								</p>
+									{paragraphs.map((p, i) => (
+										<p
+											key={i}
+											className='
+                        text-lg
+                        indent-2 md:indent-2  
+                        hyphens-auto           */
+                      '
+										>
+											{p}
+										</p>
+									))}
+								</div>
 							</div>
 							<p className='text-sm w-full py-2 text-[#e2a550]'>
 								***{t('link')}***
@@ -123,9 +142,9 @@ const Course = () => {
 							</div>
 						</div>
 					</div>
-					<div className=' p-2 lg:text-xl  my-3 rounded-md bg-blur min-h-[255px]'>
+					<div className=' p-2 lg:text-lg  my-3 rounded-md bg-blur min-h-[255px]'>
 						<div className='space-y-3'>
-							<p className='text-xl font-semibold'>{t('aftercourse')}:</p>
+							<p className='text-lg font-semibold'>{t('aftercourse')}:</p>
 							{data.conclusions.map((item, index) => (
 								<ListItem key={index} title={item.title} />
 							))}
@@ -144,7 +163,7 @@ const Course = () => {
 			</div>
 
 			<div className='flex flex-col lg:flex-row'>
-				<div className='flex flex-col lg:text-xl  gap-3 w-full mx-auto md:mt-5 text-start flex-1 '>
+				<div className='flex flex-col lg:text-base  gap-3 w-full mx-auto md:mt-5 text-start flex-1 '>
 					<div>
 						<p className='text-xl font-semibold md:mb-3'>
 							{' '}
@@ -162,21 +181,21 @@ const Course = () => {
 			</div>
 			<hr className='opacity-10 my-5' />
 			<div className='flex justify-center'>
-			<div className='sm:w-1/2 aspect-video rounded-xl overflow-hidden shadow-lg '>
-				<iframe
-					className='w-full h-full' // займає всю площу контейнера
-					src={`https://www.youtube.com/embed/${data.youtube}`}
-					title='Promo Video'
-					style={{ border: 0 }}
-					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-					allowFullScreen
-				/>
-			</div>
+				<div className='sm:w-1/2 aspect-video rounded-xl overflow-hidden shadow-lg '>
+					<iframe
+						className='w-full h-full' // займає всю площу контейнера
+						src={`https://www.youtube.com/embed/${data.youtube}`}
+						title='Promo Video'
+						style={{ border: 0 }}
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+						allowFullScreen
+					/>
+				</div>
 			</div>
 			<hr className='opacity-10 my-5' />
 			<div className='mb-14 lg:text-xl flex flex-col bg-blur rounded-lg p-2 gap-2'>
 				<div>
-					<div className='text-2xl mb-5'>{t('Questions')}</div>
+					<div className='text-lg mb-5'>{t('Questions')}</div>
 				</div>
 				<Accordion title={`${t('Quiz1')}`}>
 					<ul className='text-left flex flex-col gap-3 py-5'>

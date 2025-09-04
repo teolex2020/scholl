@@ -6,7 +6,7 @@ const List = ({ title }) => {
 		<div className='flex gap-5 items-center'>
 			
 
-			<div className='text-start  md:text-lg p-2'>- {title}</div>
+			<div className='text-start   p-2'>- {title}</div>
 		</div>
 	)
 }

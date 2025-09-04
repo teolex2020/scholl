@@ -9,7 +9,7 @@ const ListItem = ({ title }) => {
 				<CheckIcon className='h-6 w-6 text-green-500' />
 			</div>
 
-			<div className='text-start  md:text-lg'> {title}</div>
+			<div className='text-start  md:text-base'> {title}</div>
 		</div>
 	)
 }

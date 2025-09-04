@@ -2,8 +2,7 @@
 import { useState } from 'react'
 import {
 	ChevronDoubleDownIcon,
-	FireIcon,
-	AcademicCapIcon,
+	
 } from '@heroicons/react/24/solid'
 const Accordion = ({ title, children }) => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -11,7 +10,7 @@ const Accordion = ({ title, children }) => {
 	const toggleOpen = () => setIsOpen(!isOpen)
 
 	return (
-		<div className=' flex  items-start flex-col text-left cursor-pointer  z-10'>
+		<div className=' flex  items-start flex-col text-left cursor-pointer  z-10 text-base'>
 			<div className=' flex gap-3 ' onClick={toggleOpen}>
 				<div>
 					<ChevronDoubleDownIcon
@@ -22,7 +21,7 @@ const Accordion = ({ title, children }) => {
 						}`}
 					/>
 				</div>
-				<div className='md:text-lg'>{title}</div>
+				<div className='md:text-base'>{title}</div>
 			</div>
 			<div
 				className={` text-base

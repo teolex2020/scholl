@@ -709,4 +709,126 @@ export const coursesen = [
 			},
 		],
 	},
+	{
+		id: '20324',
+		active: true,
+		course: 'Course',
+		lector: 'Aleksei Kusch',
+		language: 'Russian',
+		title: "The Autumn of the Global World and Ukraine's Prospects",
+		descriptions:
+			"The modern world should be understood as a completely new world-system, born out of the ruins of the 'unipolar world'. Describing ongoing processes using outdated terminology, and especially extrapolating past geopolitical processes to current events, is a key mistake when developing effective personal positioning and an individual development strategy. In our course, we will demonstrate how the conceptual framework of the world is changing and what opportunities this creates at the individual level. We will also learn to interpret current processes based on their real content rather than expectations or false analogies. Additionally, we will continue the important work of modeling an 'individual ark'. Three lectures of 60 minutes each, followed by 60 minutes of Q&A after each lecture.",
+		price: '5999',
+		status: true,
+		image: 'kusch2025.webp',
+		datastart: '17.09.2025',
+		dataend: '19.09.2025',
+		time: '19:00',
+		alltime: 3,
+		conclusions: [
+			{
+				title:
+					'— Critically evaluate information, arguments, and policies. Strengthen your critical thinking skills, identify weaknesses in mainstream theories, and explore non-mainstream perspectives.',
+			},
+			{
+				title:
+					'— Gain a better understanding of global processes for decision-making at both macro and micro levels.',
+			},
+			{ title: '— Model complex macroeconomic processes.' },
+			{
+				title:
+					'— Analyze modern political events and form an individual view of the real world.',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					'First Lecture. Ukraine’s Economic-Political Present and Future (17.09.2025)',
+				duration: '60 minutes',
+				lectures: [
+					{
+						title:
+							"1.1. 'Gas Blackout' – what to expect in the winter of 2025/2026.",
+						duration: '0.1 h',
+					},
+					{
+						title:
+							"1.2. The Shmyhal Government – already a 'temporary government' format or not yet?",
+						duration: '0.1 h',
+					},
+					{
+						title:
+							'1.3. Ending the war – illusion of expectation or real prospect?',
+						duration: '0.1 h',
+					},
+					{
+						title:
+							"1.4. The format of future elections – two scenarios or a 'boxing ring'?",
+						duration: '0.1 h',
+					},
+					{
+						title:
+							"1.5. Recession threat – 'change devaluation' or 'steady decline'.",
+						duration: '0.1 h',
+					},
+				],
+			},
+			{
+				title: "Second Lecture. The Era of the 'Non-Polar World' (18.09.2025)",
+				duration: '60 minutes',
+				lectures: [
+					{
+						title:
+							"2.1. Why the period 2020–2050 is a time for 'preservation' rather than 'risk'.",
+						duration: '0.1 h',
+					},
+					{
+						title:
+							"2.2. New world-system wars: where will it 'die down' and where will it 'explode'.",
+						duration: '0.1 h',
+					},
+					{
+						title: "2.3. The Eurasian pie – time to 'slice it up'.",
+						duration: '0.1 h',
+					},
+					{
+						title: '2.4. The non-polar world – risks and opportunities.',
+						duration: '0.1 h',
+					},
+					{
+						title:
+							"2.5. Prospects of global fragmentation – in which 'fragment' is it better to be.",
+						duration: '0.1 h',
+					},
+				],
+			},
+			{
+				title:
+					"Third Lecture. Growth Points and the 'Individual Ark' (19.09.2025)",
+				duration: '60 minutes',
+				lectures: [
+					{
+						title: "3.1. The US economy – confident growth or a 'mirage'?",
+						duration: '0.1 h',
+					},
+					{ title: '3.2. The EU – a stagnation zone.', duration: '0.1 h' },
+					{
+						title:
+							"3.3. Trump’s cryptocurrency revolution – will the era of 'private digital money' come?",
+						duration: '0.1 h',
+					},
+					{
+						title:
+							"3.4. A new growth cycle or still 'the tail of the old one'?",
+						duration: '0.1 h',
+					},
+					{
+						title:
+							"3.5. Personal portfolio and personal nest – how to form and where to 'settle'?",
+						duration: '0.1 h',
+					},
+				],
+			},
+		],
+	},
 ]
