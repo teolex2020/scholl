@@ -725,6 +725,7 @@ export const coursesen = [
 		dataend: '19.09.2025',
 		time: '19:00',
 		alltime: 3,
+		youtube: 'lSB0j1aHMGs',
 		conclusions: [
 			{
 				title:
