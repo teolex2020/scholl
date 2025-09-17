@@ -794,7 +794,7 @@ export const coursesru = [
 	},
 	{
 		id: '20324',
-		active: false,
+		active: true,
 		course: 'Курс',
 		lector: 'Кущ Алексей',
 		language: 'Русский',
@@ -810,7 +810,7 @@ export const coursesru = [
 Три лекции по 60 минут и после каждой – 60 минут на вопросы и ответы.
  `,
 		price: '5999',
-		status: false,
+		status: true,
 		image: 'kusch2025.webp',
 		datastart: '17.09.2025',
 		dataend: '19.09.2025',

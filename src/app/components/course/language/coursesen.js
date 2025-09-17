@@ -711,7 +711,7 @@ export const coursesen = [
 	},
 	{
 		id: '20324',
-		active: false,
+		active: true,
 		course: 'Course',
 		lector: 'Aleksei Kusch',
 		language: 'Russian',
@@ -719,7 +719,7 @@ export const coursesen = [
 		descriptions:
 			"The modern world should be understood as a completely new world-system, born out of the ruins of the 'unipolar world'. Describing ongoing processes using outdated terminology, and especially extrapolating past geopolitical processes to current events, is a key mistake when developing effective personal positioning and an individual development strategy. In our course, we will demonstrate how the conceptual framework of the world is changing and what opportunities this creates at the individual level. We will also learn to interpret current processes based on their real content rather than expectations or false analogies. Additionally, we will continue the important work of modeling an 'individual ark'. Three lectures of 60 minutes each, followed by 60 minutes of Q&A after each lecture.",
 		price: '5999',
-		status: false,
+		status: true,
 		image: 'kusch2025.webp',
 		datastart: '17.09.2025',
 		dataend: '19.09.2025',
