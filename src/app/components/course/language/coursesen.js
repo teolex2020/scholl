@@ -870,88 +870,88 @@ export const coursesen = [
 			{
 				title: 'Lesson 1. Fundamentals of Artificial Intelligence',
 				duration: '60–90 minutes',
-				lectures: [
-					{
-						title: '1.1. What is AI, ML, DL: simple overview',
-						duration: '0.25 h',
-					},
-					{
-						title: '1.2. Weak vs Strong AI, key terms, ethics & privacy',
-						duration: '0.25 h',
-					},
-					{
-						title: '1.3. Industry use cases + intro to prompt engineering',
-						duration: '0.25 h',
-					},
-					{ title: '1.4. Q&A', duration: '0.15 h' },
-				],
+				// lectures: [
+				// 	{
+				// 		title: '1.1. What is AI, ML, DL: simple overview',
+				// 		duration: '0.25 h',
+				// 	},
+				// 	{
+				// 		title: '1.2. Weak vs Strong AI, key terms, ethics & privacy',
+				// 		duration: '0.25 h',
+				// 	},
+				// 	{
+				// 		title: '1.3. Industry use cases + intro to prompt engineering',
+				// 		duration: '0.25 h',
+				// 	},
+				// 	{ title: '1.4. Q&A', duration: '0.15 h' },
+				// ],
 			},
 			{
 				title: 'Lesson 2. From Idea to Micro Business Plan (via Prompts)',
 				duration: '60–90 minutes',
-				lectures: [
-					{
-						title: '2.1. Prompt process: Problem → Solution → Value → ICP',
-						duration: '0.25 h',
-					},
-					{
-						title: '2.2. Auto-generating Lean Canvas from your answers',
-						duration: '0.25 h',
-					},
-					{
-						title: '2.3. Unit economics draft + short 6-month financial plan',
-						duration: '0.2 h',
-					},
-					{
-						title: '2.4. Summary: Go / No Go / Pivot + 2-week experiment plan',
-						duration: '0.2 h',
-					},
-				],
+				// lectures: [
+				// 	{
+				// 		title: '2.1. Prompt process: Problem → Solution → Value → ICP',
+				// 		duration: '0.25 h',
+				// 	},
+				// 	{
+				// 		title: '2.2. Auto-generating Lean Canvas from your answers',
+				// 		duration: '0.25 h',
+				// 	},
+				// 	{
+				// 		title: '2.3. Unit economics draft + short 6-month financial plan',
+				// 		duration: '0.2 h',
+				// 	},
+				// 	{
+				// 		title: '2.4. Summary: Go / No Go / Pivot + 2-week experiment plan',
+				// 		duration: '0.2 h',
+				// 	},
+				// ],
 			},
 			{
 				title: "Lesson 3. Make.com for Beginners: 'Personal Assistant'",
 				duration: '60–90 minutes',
-				lectures: [
-					{
-						title: '3.1. Triggers, routers, delays, integrations overview',
-						duration: '0.25 h',
-					},
-					{
-						title: '3.2. Practice: form → table/CRM → e-mail/Telegram',
-						duration: '0.35 h',
-					},
-					{
-						title: '3.3. Reminders/follow-ups + error logging',
-						duration: '0.2 h',
-					},
-					{
-						title: '3.4. Homework: adapt for your own business',
-						duration: '0.1 h',
-					},
-				],
+				// lectures: [
+				// 	{
+				// 		title: '3.1. Triggers, routers, delays, integrations overview',
+				// 		duration: '0.25 h',
+				// 	},
+				// 	{
+				// 		title: '3.2. Practice: form → table/CRM → e-mail/Telegram',
+				// 		duration: '0.35 h',
+				// 	},
+				// 	{
+				// 		title: '3.3. Reminders/follow-ups + error logging',
+				// 		duration: '0.2 h',
+				// 	},
+				// 	{
+				// 		title: '3.4. Homework: adapt for your own business',
+				// 		duration: '0.1 h',
+				// 	},
+				// ],
 			},
 			{
 				title: 'Lesson 4. Promotion: AI Content + Basic Market Analysis',
 				duration: '60–90 minutes',
-				lectures: [
-					{
-						title: '4.1. Generating content in ChatGPT: posts, banners, videos',
-						duration: '0.35 h',
-					},
-					{
-						title:
-							'4.2. Essentials for publishing: UTM & basic KPIs (CTR, CPA, conversion)',
-						duration: '0.25 h',
-					},
-					{
-						title: '4.3. Quick market analysis: keywords & competitors',
-						duration: '0.2 h',
-					},
-					{
-						title: '4.4. 7–14 day plan: content calendar + A/B testing',
-						duration: '0.1 h',
-					},
-				],
+				// lectures: [
+				// 	{
+				// 		title: '4.1. Generating content in ChatGPT: posts, banners, videos',
+				// 		duration: '0.35 h',
+				// 	},
+				// 	{
+				// 		title:
+				// 			'4.2. Essentials for publishing: UTM & basic KPIs (CTR, CPA, conversion)',
+				// 		duration: '0.25 h',
+				// 	},
+				// 	{
+				// 		title: '4.3. Quick market analysis: keywords & competitors',
+				// 		duration: '0.2 h',
+				// 	},
+				// 	{
+				// 		title: '4.4. 7–14 day plan: content calendar + A/B testing',
+				// 		duration: '0.1 h',
+				// 	},
+				// ],
 			},
 		],
 	},
