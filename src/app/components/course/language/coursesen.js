@@ -833,7 +833,7 @@ export const coursesen = [
 		],
 	},
 	{
-		id: '20235',
+		id: '20325',
 		active: true,
 		course: 'Course',
 		lector: 'Oleksandr Tepliuk',

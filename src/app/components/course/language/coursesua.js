@@ -829,7 +829,7 @@ export const coursesua = [
 		],
 	},
 	{
-		id: '20235',
+		id: '20325',
 		active: true,
 		course: 'Курс',
 		lector: 'Олександр Теплюк',

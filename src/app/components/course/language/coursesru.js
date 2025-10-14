@@ -930,7 +930,7 @@ export const coursesru = [
 		],
 	},
 	{
-		id: '20235',
+		id: '20325',
 		active: true,
 		course: 'Курс',
 		lector: 'Александр Теплюк',
