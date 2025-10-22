@@ -834,7 +834,7 @@ export const coursesen = [
 	},
 	{
 		id: '20325',
-		active: true,
+		active: false,
 		course: 'Course',
 		lector: 'Oleksandr Tepliuk',
 		language: 'Ukrainian',
@@ -842,7 +842,7 @@ export const coursesen = [
 		descriptions:
 			'A practical four-lesson course: AI fundamentals, turning an idea into a micro business plan, first automation in Make.com (“personal assistant”), and creating content (texts/banners/videos) using modern AI tools. Maximum practice, ready-made templates, and step-by-step guidance.',
 		price: '4199',
-		status: true,
+		status: false,
 		image: 'tepliuk1.webp',
 		datastart: '28.10.2025',
 		dataend: '31.10.2025',
