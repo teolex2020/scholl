@@ -454,8 +454,8 @@ export const coursesen = [
 		price: '34999',
 		status: true,
 		image: 'savinov.webp',
-		datastart: '05.05.2025',
-		dataend: '20.05.2025',
+		datastart: '13.01.2026',
+		dataend: '27.01.2026',
 		time: '19:00',
 		alltime: 10,
 		youtube: 'AnvRSo2Vxuk?rel=0',
@@ -476,27 +476,27 @@ export const coursesen = [
 		courseprogram: [
 			{
 				title:
-					'First lecture. The postmodern era. Historical and philosophical continuum. Paradigmatic transition. History and genealogy. Mythologies. (05.05.2025)',
+					'First lecture. The postmodern era. Historical and philosophical continuum. Paradigmatic transition. History and genealogy. Mythologies. (13.01.2026)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Second lecture. Philosophy of postmodernity. Structuralism and poststructuralism. Deanthropologization. Deconstruction. Rhizoma. Postmodern. Metamodern. (10.05.2025)',
+					'Second lecture. Philosophy of postmodernity. Structuralism and poststructuralism. Deanthropologization. Deconstruction. Rhizoma. Postmodern. Metamodern. (16.01.2026)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Third lecture. Economics and Sociology of Postmodernity. The unfinished project of modernity. Simulacra. Simulation. Imaginer. Desiring machines. The society of consumption. The society of control. Economic cycles.(12.05.2025)',
+					'Third lecture. Economics and Sociology of Postmodernity. The unfinished project of modernity. Simulacra. Simulation. Imaginer. Desiring machines. The society of consumption. The society of control. Economic cycles.(20.01.2026)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Fourth lecture. Postmodern Communication.  The death of the author. The open work.  The logic of meaning. The notion of media. Discursive practices. Psychoanalysis. Methodology. (17.05.2025)',
+					'Fourth lecture. Postmodern Communication.  The death of the author. The open work.  The logic of meaning. The notion of media. Discursive practices. Psychoanalysis. Methodology. (23.01.2026)',
 				duration: '30 minutes',
 			},
 			{
 				title:
-					'Fifth lecture. Postmodern Strategies. Modern military strategy. Types of warfare and objectives. The battlefield. Methods of assessing the effectiveness of military campaigns. Victory. (20.05.2025)',
+					'Fifth lecture. Postmodern Strategies. Modern military strategy. Types of warfare and objectives. The battlefield. Methods of assessing the effectiveness of military campaigns. Victory. (27.01.2026)',
 				duration: '30 minutes',
 			},
 		],
