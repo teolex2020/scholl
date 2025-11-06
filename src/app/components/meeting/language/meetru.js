@@ -215,7 +215,7 @@ F-16 и риски ядерного удара?
 			Только для приглашённых. Конфиденциальный формат.`,
 		price: '3999',
 		status: true,
-		image: 'biz.webp',
+		image: 'biza.webp',
 		donat: '',
 		datastart: '19.11.2025',
 		time: '19:00',
