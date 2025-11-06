@@ -187,4 +187,22 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		time: '19:00',
 		duration: 90,
 	},
+	{
+		id: '20326',
+		active: true,
+		course: 'Meeting',
+		lector: 'Ruslan Biziayev',
+		Moderator: 'Ruslan Bortnyk',
+		language: 'Russian, Ukrainian',
+		title: 'The Russian War and the Ukrainian Peace',
+		descriptions:
+			'An exclusive conversation with a serviceman of the Armed Forces of Ukraine and political expert Ruslan Biziayev. The discussion will cover: • real trends on the frontline and prospects for ending the war; • the current positions of both sides and the state of Ukraine’s Defense Forces; • historical parallels and possible peace scenarios; • negotiation signals and the dialogue between Trump and Putin; • a personal view from inside the system — service, motivation, and challenges; • open Q&A with participants. Invitation only. Confidential format.',
+		price: '3999',
+		status: true,
+		image: 'biz.webp',
+		donat: '',
+		datastart: '19.11.2025',
+		time: '19:00',
+		duration: 90,
+	},
 ]
