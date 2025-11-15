@@ -7,6 +7,22 @@ require('dotenv').config()
 export async function POST(req) {
 	const username = process.env.NEXT_PUBLIC_PERSONAL_EMAIL
 	const password = process.env.NEXT_PUBLIC_BURNER_PASSWORD
+
+    // const usernametest = process.env.PERSONAL_EMAIL
+	// 	const passwordtest = process.env.BURNER_PASSWORD
+
+    //     console.log('usernametest', usernametest)
+    //     console.log('passwordtest', passwordtest)
+
+        if (!username || !password) {
+					console.error('EMAIL env missing')
+					return NextResponse.json(
+						{ error: 'SMTP credentials missing' },
+						{ status: 500 }
+					)
+				}
+
+
 	const emailSentStatus = 'emailSent'
 
 	const {
@@ -17,6 +33,8 @@ export async function POST(req) {
 		email,
 		amount,
 		userdata,
+		firstName,
+		timeStamp,
 	} = await req.json()
 
 	if (reason === 'Cardholder session expired') {
@@ -71,7 +89,7 @@ export async function POST(req) {
                     <tr>
                         <td style="padding: 40px 30px;">
                             <p style="color: #2c3e50; font-size: 18px; margin: 0 0 20px 0; font-weight: 500;">
-                                Шановний(-а) ${clientName},
+                                Шановний(-а) ${firstName},
                             </p>
 
                             <p style="color: #555; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
@@ -98,7 +116,7 @@ export async function POST(req) {
                                 </tr>
                                 <tr>
                                     <td style="color: #666; padding: 12px 15px; border-bottom: 1px solid #e0e0e0;">Дата оплати:</td>
-                                    <td style="color: #2c3e50; font-weight: 600; padding: 12px 15px; border-bottom: 1px solid #e0e0e0; text-align: right;">${processingDate}</td>
+                                    <td style="color: #2c3e50; font-weight: 600; padding: 12px 15px; border-bottom: 1px solid #e0e0e0; text-align: right;">${timeStamp}</td>
                                 </tr>
                                 <tr>
                                     <td style="color: #666; padding: 12px 15px;">Сума:</td>
@@ -117,7 +135,10 @@ export async function POST(req) {
 
                             <!-- CTA Button -->
                             <div style="text-align: center; margin: 35px 0;">
-                                <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://bortnik-school.com'}/uk/profile/purchases" style="display: inline-block; background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 30px; font-size: 16px; font-weight: 600; box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3); transition: all 0.3s;">
+                                <a href="${
+																	process.env.NEXT_PUBLIC_BASE_URL ||
+																	'https://bortnik-school.com'
+																}/uk/profile/purchases" style="display: inline-block; background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 30px; font-size: 16px; font-weight: 600; box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3); transition: all 0.3s;">
                                     🎓 Перейти в особистий кабінет
                                 </a>
                             </div>
@@ -203,8 +224,9 @@ export async function POST(req) {
 			{ merge: true }
 		)
 if(reason === "Ok") {
-	// Send email
-	transporter.sendMail(mailOptions)
+	// console.log('Sending email for', orderReference)
+	await transporter.sendMail(mailOptions)
+	await docRef.update({ [emailSentStatus]: true }, { merge: true })
 }
 	
 		return NextResponse.json(

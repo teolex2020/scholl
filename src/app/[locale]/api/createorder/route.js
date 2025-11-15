@@ -16,7 +16,17 @@ export async function POST(req) {
 	if (isNaN(price)) 
 		{
 				throw new Error('Поле price має бути числом')
+
+
 		}
+
+		// const accounttest = process.env.MERCHANT_ACCOUNT
+		// const merchantDomainNametest = process.env.WAYFORPAY_DOMAIN
+		// const wayforpaySecretKeytest = process.env.MERCHANT_SECRET_KEY
+
+		// console.log('accounttest', accounttest)
+		// console.log('merchantDomainNametest', merchantDomainNametest)
+		// console.log('wayforpaySecretKeytest', wayforpaySecretKeytest)
 
 			const account = process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
 			const merchantDomainName = process.env.NEXT_PUBLIC_WAYFORPAY_DOMAIN
