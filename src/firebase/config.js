@@ -24,6 +24,8 @@ let firebase_app =
 
 export default firebase_app
 export const auth = getAuth(firebase_app)
-export const Providers = new GoogleAuthProvider()
+export const Providers = {
+	google: new GoogleAuthProvider(),
+}
 export const db = getFirestore(firebase_app)
 export const storage = getStorage(firebase_app)
