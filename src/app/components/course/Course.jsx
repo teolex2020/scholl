@@ -90,7 +90,7 @@ const Course = () => {
 								<div
 									className={`
                     text-left leading-7 max-w-3xl
-                    space-y-5                /* відступи між абзацами */
+                    space-y-2                /* відступи між абзацами */
                     ${gentium.className}
                   `}
 								>
