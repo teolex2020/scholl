@@ -48,7 +48,7 @@ const Course = () => {
 
 	const data = currentCourses.find((item) => item.id === params.slug)
 
-	const paragraphs = (data?.descriptions ?? '').trim().split(/\n{2,}/)
+	const paragraphs = (data?.descriptions ?? '').trim().split(/\n+/)
 
 	
 
