@@ -850,20 +850,19 @@ export const coursesen = [
 		alltime: 8,
 		conclusions: [
 			{
-				title:
-					'— Understand AI basics and key use cases for SMEs. (28.10.2025)',
+				title: '— Understand AI basics and key use cases for SMEs. ',
 			},
 			{
 				title:
-					'— Turn your idea into a micro business plan (Lean Canvas) using prompts. (29.10.2025)',
+					'— Turn your idea into a micro business plan (Lean Canvas) using prompts. ',
 			},
 			{
 				title:
-					"— Launch your first automation in Make.com: 'personal assistant'. (30.10.2025)",
+					"— Launch your first automation in Make.com: 'personal assistant'. ",
 			},
 			{
 				title:
-					'— Create AI-based content: texts, banners, short videos, and perform basic market analysis. (31.10.2025)',
+					'— Create AI-based content: texts, banners, short videos, and perform basic market analysis. ',
 			},
 		],
 		courseprogram: [
@@ -952,6 +951,121 @@ export const coursesen = [
 				// 		duration: '0.1 h',
 				// 	},
 				// ],
+			},
+		],
+	},
+	{
+		id: '20327',
+		active: true,
+		course: 'Course',
+		lector: 'Oleh Popenko',
+		language: 'English',
+		title:
+			'Energy and Utilities up to 2030: Survival, Autonomy, Rights Protection. «A Utilities School for Businesses and Families: How to Live and Plan in a New Reality»',
+		descriptions:
+			'Over 3 sessions, participants build a personal or business strategy for utility-related risks:\n• what will happen to energy and utilities during and after the war;\n• which autonomous supply models actually work (electricity / heating);\n• how to legally reduce utility bills;\n• how to protect your rights in conflicts with providers and management companies;\n• how to plan up to 2030 (pricing and service scenarios), including the question «should I keep my apartment?».\nFormat: 3 closed workshops (Zoom / offline), 1.5–2.5 hours each:\n• 60–80 min of practice + case analysis\n• 30–60 min closed Q&A.\nWho this course is for:\nSmall and medium-sized businesses: cafes, restaurants, salons, shops, offices, warehouses, private clinics, service companies, small-scale production (especially energy-intensive).\nMiddle class: apartment and house owners, HOAs, building activists, families who want to understand «what’s next» and avoid paying for inefficiency.\nPaid access includes:\n• 3 closed sessions + recording (optional)\n• materials pack: checklists, templates, decision matrices\n• analysis of 2–3 participant cases at each session\n• course recording\nHomework:\nChoose one problem (home / office) and structure it using a template: facts, documents, evidence, claim, escalation plan.',
+		price: '2999',
+		status: true,
+		image: 'popenko.webp',
+		datastart: '13.02.2026',
+		dataend: '15.02.2026',
+		time: '19.00',
+		alltime: 8,
+		conclusions: [
+			{
+				title:
+					'— Resilience checklist (family / office / shop / warehouse)\n— Decision matrix: basic, intermediate, advanced autonomy levels\n— 30/90-day action plan: what to buy, upgrade, reconnect, verify (no magic — pure pragmatism)',
+			},
+			{
+				title:
+					'— «Utilities financial model to 2030» template (simple but effective)\n— Red flag list: when to expect service deterioration or cost increases\n— Personal conclusion: stay / reformat housing / change property / relocate — based on criteria',
+			},
+			{
+				title:
+					'— Utility billing and service quality audit checklist\n— «Rights protection algorithm» (step-by-step actions)\n— Clear understanding of where you are strong and where the system will try to wear you down',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					'Lesson 1. Infrastructure. Kyiv. Resilience. How city / district / building resilience works under energy shortages and service disruptions, and what solutions are realistically available. (13.02.2026)',
+				duration: '60–90 minutes',
+				lectures: [
+					{
+						title:
+							'1.1. Utility vulnerability map: electricity, heating, water, sewage, communications — where failures start first.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'1.2. Service availability scenarios: short outages vs long disruptions — what to include in planning.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'1.3. Workshop «Your minimum autonomy»: for homes — basic survival level; for businesses — staying operational, protecting revenue, clients, and staff safety.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'1.4. Autonomous energy and heating models: what is worth calculating and what only looks good in marketing.',
+						duration: '0.15 h',
+					},
+					{
+						title:
+							'1.5. Participant case reviews (2–3): weaknesses, priorities, first steps.',
+						duration: '0.15 h',
+					},
+				],
+			},
+			{
+				title:
+					'Lesson 2. Post-war utilities and energy reality: rules of the game until 2030. Building a financial and operational strategy for life and business. (14.02.2026)',
+				duration: '60–90 minutes',
+				lectures: [
+					{
+						title:
+							'2.1. Utility pricing and availability forecast until 2030: tariff logic and key drivers.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'2.2. Living and doing business under these conditions: budgeting utility risks; resilient business types; adjusting operations, logistics, and energy intensity.',
+						duration: '0.35 h',
+					},
+					{
+						title:
+							'2.3. Workshop «Family / business utility budget»: calculating utility burden and survival thresholds; when autonomy pays off.',
+						duration: '0.2 h',
+					},
+					{
+						title:
+							'2.4. Should you leave your apartment now? Rational assessment without panic — criteria, triggers, signals.',
+						duration: '0.1 h',
+					},
+				],
+			},
+			{
+				title:
+					'Lesson 3. Apartment buildings: no one will save you. Cost reduction and rights protection. (15.02.2026)',
+				duration: '60–90 minutes',
+				lectures: [
+					{
+						title:
+							'3.1. How to reduce electricity and utility costs: billing control; where money leaks occur; prioritizing savings by impact.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'3.2. Workshop «Bill and contract audit»: what to check, which questions to ask, what documents to demand.',
+						duration: '0.35 h',
+					},
+					{
+						title:
+							'3.3. Rights protection: action algorithm for inflated bills or poor service; documenting violations; negotiations and collective action.',
+						duration: '0.2 h',
+					},
+				],
 			},
 		],
 	},
