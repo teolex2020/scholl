@@ -86,11 +86,11 @@ const Course = () => {
 					<div className='mb-4 flex bg-blur flex-col-reverse lg:flex-row rounded-md min-h-80 '>
 						<div className='text-xl lg:text-3xl flex-1  flex items-start justify-start md:p-10 p-3 flex-col'>
 							<h2 className='text-left font-semibold'>{data.title}</h2>
-							<div className='mt-5 rounded-sm flex items-start justify-start'>
+							<div className='mt-5 rounded-sm flex items-start justify-start '>
 								<div
 									className={`
                     text-left leading-7 max-w-3xl
-                    space-y-2                /* відступи між абзацами */
+                    
                     ${gentium.className}
                   `}
 								>
@@ -98,7 +98,7 @@ const Course = () => {
 										<p
 											key={i}
 											className='
-                        text-lg
+                        md:text-lg text-sm
                         indent-2 md:indent-2  
                         hyphens-auto           */
                       '
