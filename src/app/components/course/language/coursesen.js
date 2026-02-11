@@ -956,7 +956,7 @@ export const coursesen = [
 	},
 	{
 		id: '20327',
-		active: true,
+		active: false,
 		course: 'Course',
 		lector: 'Oleh Popenko',
 		language: 'English',
@@ -965,7 +965,7 @@ export const coursesen = [
 		descriptions:
 			'Over 3 sessions, participants build a personal or business strategy for utility-related risks:\n• what will happen to energy and utilities during and after the war;\n• which autonomous supply models actually work (electricity / heating);\n• how to legally reduce utility bills;\n• how to protect your rights in conflicts with providers and management companies;\n• how to plan up to 2030 (pricing and service scenarios), including the question «should I keep my apartment?».\nFormat: 3 closed workshops (Zoom / offline), 1.5–2.5 hours each:\n• 60–80 min of practice + case analysis\n• 30–60 min closed Q&A.\nWho this course is for:\nSmall and medium-sized businesses: cafes, restaurants, salons, shops, offices, warehouses, private clinics, service companies, small-scale production (especially energy-intensive).\nMiddle class: apartment and house owners, HOAs, building activists, families who want to understand «what’s next» and avoid paying for inefficiency.\nPaid access includes:\n• 3 closed sessions + recording (optional)\n• materials pack: checklists, templates, decision matrices\n• analysis of 2–3 participant cases at each session\n• course recording\nHomework:\nChoose one problem (home / office) and structure it using a template: facts, documents, evidence, claim, escalation plan.',
 		price: '2999',
-		status: true,
+		status: false,
 		image: 'popenko.webp',
 		datastart: '13.02.2026',
 		dataend: '15.02.2026',

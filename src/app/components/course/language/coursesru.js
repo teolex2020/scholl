@@ -1055,7 +1055,7 @@ export const coursesru = [
 	},
 	{
 		id: '20327',
-		active: true,
+		active: false,
 		course: 'Курс',
 		lector: 'Олег Попенко',
 		language: 'русский',
@@ -1086,7 +1086,7 @@ export const coursesru = [
       Выбрать 1 проблему (дом/офис) и оформить ее по шаблону: факт, документы, фиксация, требование, план эскалации.
 `,
 		price: '2999',
-		status: true,
+		status: false,
 		image: 'popenko.webp',
 		datastart: '13.02.2026',
 		dataend: '15.02.2026',
