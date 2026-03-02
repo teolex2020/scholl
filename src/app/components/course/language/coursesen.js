@@ -1069,4 +1069,120 @@ export const coursesen = [
 			},
 		],
 	},
+	{
+		id: '20328',
+		active: true,
+		course: 'Course',
+		lector: 'Aleksei Kusch',
+		language: 'Russian',
+		title:
+			'"Survive Until 2030" – How to Build an Individual Development Strategy in a Permanently Collapsing World.',
+		descriptions: `The destruction of the basic mainstream development paradigm of recent decades in the form of globalism and a unipolar world has led to structural deformation of the overall world-system and global fragmentation.
+Building an individual development strategy in an externally aggressive environment is only possible through the constant expansion of the knowledge horizon.
+Our course is both a figurative "inverter" of accumulated knowledge and a personal "boost" for your individual development strategy.
+.
+`,
+		price: '3999',
+		status: true,
+		image: 'kusch2026.webp',
+		datastart: '20.03.2026',
+		dataend: '22.03.2026',
+		time: '19.00',
+		alltime: 8,
+		conclusions: [
+			{
+				title: `Upon completing the course, you will gain extensive knowledge on the topics mentioned above, as well as improve your personal skills in using information to enhance the effectiveness of individual decisions.`,
+			},
+			{
+				title: `The world will become more understandable for you, and therefore more favorable for implementing individual plans for developing your personal "ark."`,
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					'Lesson 1. Global Politics Block will include a discussion of the following issues: (20.03.2026)',
+				duration: '60–90 minutes',
+				lectures: [
+					{
+						title:
+							'1.1. Global transformations in 2026 – a path to World War III or a stage of world-system wars on the eve of a "lull."',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'1.2. The US–China confrontation – the key axis of the non-polar world.',
+						duration: '0.25 h',
+					},
+					{
+						title: `1.3. The "breath" of the global crisis – what will become the trigger?`,
+						duration: '0.25 h',
+					},
+					{
+						title: '1.4. "Quiet places" in the world – do they even exist?',
+						duration: '0.15 h',
+					},
+					{
+						title:
+							'1.5. The fate of Europe – an "antique shop," a global donor, or a new mega-cluster of growth.',
+						duration: '0.15 h',
+					},
+				],
+			},
+			{
+				title: 'Lesson 2. Domestic Agenda in Ukraine Block: (21.03.2026)',
+				duration: '60–90 minutes',
+				lectures: [
+					{
+						title:
+							'2.1. The beginning of a personalist political regime for the next 10 years?',
+						duration: '0.25 h',
+					},
+					{
+						title: `2.2. Elections in 2026 – a "carrot dangling before a donkey" or a real prospect.`,
+						duration: '0.35 h',
+					},
+					{
+						title: `2.3. Ukraine's economy – the limits of resilience.`,
+						duration: '0.2 h',
+					},
+					{
+						title:
+							'2.4. Hryvnia exchange rate forecasts, inflation, and growth dynamics.',
+						duration: '0.1 h',
+					},
+					{
+						title: '2.5. Social transformation – "what comes out."',
+						duration: '0.1 h',
+					},
+				],
+			},
+			{
+				title: 'Lesson 3. Building a "Personal Ark" Block: (22.03.2026)',
+				duration: '60–90 minutes',
+				lectures: [
+					{
+						title: `3.1. Leaving the comfort zone – where to?`,
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'3.2. Savings instruments – how not to lose what you have earned.',
+						duration: '0.35 h',
+					},
+					{
+						title: `3.3. A new configuration of a personal investment portfolio.`,
+						duration: '0.2 h',
+					},
+					{
+						title: `3.4. Where to build your "personal ark."`,
+						duration: '0.2 h',
+					},
+					{
+						title: `3.5. Prospects for personal development in the context of the multi-frequency transformation of the world.`,
+						duration: '0.2 h',
+					},
+				],
+			},
+		],
+	},
 ]
