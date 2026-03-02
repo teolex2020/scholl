@@ -1,5 +1,4 @@
 import OpenAI from 'openai';
-import { OpenAIStream, StreamingTextResponse } from 'ai';
 import { NextResponse } from 'next/server'
 
 const openai = new OpenAI({
@@ -17,25 +16,35 @@ export async function POST(req) {
 try {
 	const { messages, prompt } = await req.json()
 
-	
-
 	const response = await openai.chat.completions.create({
 		model: 'gpt-4o-mini',
 		stream: true,
-
 		temperature: 0.3,
 		messages: [
 			{ role: 'system', content: prompt },
 			...messages,
-			// {
-			// 	role: 'assistant',
-			// 	content: 'The Los Angeles Dodgers won the World Series in 2020.',
-			// },
 		],
 	})
-	const stream = OpenAIStream(response)
-	return new StreamingTextResponse(stream)
-	
+
+	const encoder = new TextEncoder()
+	const stream = new ReadableStream({
+		async start(controller) {
+			for await (const chunk of response) {
+				const text = chunk.choices[0]?.delta?.content || ''
+				if (text) {
+					controller.enqueue(encoder.encode(text))
+				}
+			}
+			controller.close()
+		},
+	})
+
+	return new Response(stream, {
+		headers: {
+			'Content-Type': 'text/plain; charset=utf-8',
+		},
+	})
+
 } catch (error) {
 	 return NextResponse.json({ error: error }, { status: 500 })
 }
