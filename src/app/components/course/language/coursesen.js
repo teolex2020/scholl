@@ -1082,13 +1082,13 @@ Building an individual development strategy in an externally aggressive environm
 Our course is both a figurative "inverter" of accumulated knowledge and a personal "boost" for your individual development strategy.
 .
 `,
-		price: '3999',
+		price: '4999',
 		status: true,
 		image: 'kusch2026.webp',
 		datastart: '20.03.2026',
 		dataend: '22.03.2026',
 		time: '19.00',
-		alltime: 8,
+		alltime: 9,
 		conclusions: [
 			{
 				title: `Upon completing the course, you will gain extensive knowledge on the topics mentioned above, as well as improve your personal skills in using information to enhance the effectiveness of individual decisions.`,
