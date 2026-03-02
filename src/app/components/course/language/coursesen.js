@@ -1078,8 +1078,8 @@ export const coursesen = [
 		title:
 			'"Survive Until 2030" – How to Build an Individual Development Strategy in a Permanently Collapsing World.',
 		descriptions: `The destruction of the basic mainstream development paradigm of recent decades in the form of globalism and a unipolar world has led to structural deformation of the overall world-system and global fragmentation.
-Building an individual development strategy in an externally aggressive environment is only possible through the constant expansion of the knowledge horizon.
-Our course is both a figurative "inverter" of accumulated knowledge and a personal "boost" for your individual development strategy.
+    Building an individual development strategy in an externally aggressive environment is only possible through the constant expansion of the knowledge horizon.
+    Our course is both a figurative "inverter" of accumulated knowledge and a personal "boost" for your individual development strategy.
 .
 `,
 		price: '4999',
