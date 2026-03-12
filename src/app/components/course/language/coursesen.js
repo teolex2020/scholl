@@ -1096,6 +1096,7 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 		dataend: '22.03.2026',
 		time: '19.00',
 		alltime: 9,
+		youtube: 'kzuwqVbQ4wg',
 		conclusions: [
 			{
 				title: `Upon completing the course, you will gain extensive knowledge on the topics mentioned above, as well as improve your personal skills in using information to enhance the effectiveness of individual decisions.`,
