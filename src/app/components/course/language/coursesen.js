@@ -1076,11 +1076,18 @@ export const coursesen = [
 		lector: 'Aleksei Kusch',
 		language: 'Russian',
 		title:
-			'"Survive Until 2030" – How to Build an Individual Development Strategy in a Permanently Collapsing World.',
-		descriptions: `The destruction of the basic mainstream development paradigm of recent decades in the form of globalism and a unipolar world has led to structural deformation of the overall world-system and global fragmentation.
-    Building an individual development strategy in an externally aggressive environment is only possible through the constant expansion of the knowledge horizon.
-    Our course is both a figurative "inverter" of accumulated knowledge and a personal "boost" for your individual development strategy.
-.
+			'"Survive to 2030": Your Personal Strategy in a World of Total Chaos.',
+		descriptions: `The world we once knew no longer exists. The old rules of the game—in business, politics, and personal safety—simply don’t work anymore. To do more than just "wait it out" and instead emerge from this crisis as a winner, you don't need a weather forecast; you need an algorithm for action.
+
+This course isn't dry political science. It's your knowledge inverter: we take the chaos of the news cycle and transform it into a clear-cut personal strategy.
+
+In just 3 days, we will build your "Personal Ark" together:
+
+Analysis: Understand where the world is actually heading (minus the propaganda and conspiracy theories).
+
+Forecasting: Learn to identify leverage points where others see only ruins.
+
+Strategy: Receive a step-by-step plan to protect your assets, your family, and your future.
 `,
 		price: '4999',
 		status: true,
