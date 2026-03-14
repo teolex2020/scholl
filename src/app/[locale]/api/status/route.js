@@ -137,8 +137,8 @@ export async function POST(req) {
                             <div style="text-align: center; margin: 35px 0;">
                                 <a href="${
 																	process.env.NEXT_PUBLIC_BASE_URL ||
-																	'https://bortnik-school.com'
-																}/uk/profile/purchases" style="display: inline-block; background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 30px; font-size: 16px; font-weight: 600; box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3); transition: all 0.3s;">
+																	'https://bortnikschool.com'
+																}" style="display: inline-block; background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 30px; font-size: 16px; font-weight: 600; box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3); transition: all 0.3s;">
                                     🎓 Перейти в особистий кабінет
                                 </a>
                             </div>
