@@ -1,140 +1,90 @@
 "use client"
 import React from 'react'
+import { useLocale } from 'next-intl'
+const merchantDomainName = process.env.NEXT_PUBLIC_WAYFORPAY_DOMAIN
+const account = process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
 
-const PaymentPage = ({ paymentData, titleButton }) => {
+
+
+
+const PaymentPage = ({
+	merch,
+	orderId,
+	orderTitle,
+	orderPrice,
+	email,
+	data,
+	titleButton,
+	firstName,
+	lastName,
+}) => {
+
+	const locale = useLocale()
+
+
 	return (
-		<form
-			className='w-full'
-			method='post'
-			action='https://secure.wayforpay.com/pay'
-			acceptCharset='utf-8'
-		>
-			<input
-				name='merchantAccount'
-				value={paymentData.merchantAccount}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='merchantAuthType'
-				value={paymentData.merchantAuthType}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='merchantDomainName'
-				value={paymentData.merchantDomainName}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='orderReference'
-				value={paymentData.orderReference}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='orderDate'
-				value={paymentData.orderDate}
-				readOnly
-				type='hidden'
-			/>
-			<input name='amount' value={paymentData.amount} readOnly type='hidden' />
-			<input
-				name='currency'
-				value={paymentData.currency}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='orderTimeout'
-				value={paymentData.orderTimeout}
-				readOnly
-				type='hidden'
-			/>
-			{paymentData.productName.map((item, index) => (
-				<input
-					key={`product-name-${index}`}
-					name='productName[]'
-					value={item}
-					readOnly
-					type='hidden'
-				/>
-			))}
-			{paymentData.productPrice.map((item, index) => (
-				<input
-					key={`product-price-${index}`}
-					name='productPrice[]'
-					value={item}
-					readOnly
-					type='hidden'
-				/>
-			))}
-			{paymentData.productCount.map((item, index) => (
-				<input
-					key={`product-count-${index}`}
-					name='productCount[]'
-					value={item}
-					readOnly
-					type='hidden'
-				/>
-			))}
-			<input
-				name='clientEmail'
-				value={paymentData.clientEmail}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='defaultPaymentSystem'
-				value={paymentData.defaultPaymentSystem}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='merchantSignature'
-				value={paymentData.merchantSignature}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='serviceUrl'
-				value={paymentData.serviceUrl}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='clientFirstName'
-				value={paymentData.clientFirstName}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='clientLastName'
-				value={paymentData.clientLastName}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='clientPhone'
-				value={paymentData.clientPhone}
-				readOnly
-				type='hidden'
-			/>
-			<input
-				name='orderLifetime'
-				value={paymentData.orderLifetime}
-				readOnly
-				type='hidden'
-			/>
-
-			<button
-				type='submit'
-				className='w-full rounded-2xl border border-[#e2a550] bg-[#e2a550]/10 px-6 py-3 text-lg md:text-xl text-[#e2a550] hover:bg-[#e2a550]/20 duration-300'
+		<div className=' border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16 duration-300 hover:bg-blur z-50 text-lg lg:text-2xl px-10 max-w-[350px] mt-5 cursor-pointer'>
+			<form
+				className=' flex flex-col w-96'
+				method='post'
+				action='https://secure.wayforpay.com/pay'
+				acceptCharset='utf-8'
 			>
-				{titleButton}
-			</button>
-		</form>
+				<input name='merchantAccount' value={account} readOnly type='hidden' />
+				<input
+					name='merchantAuthType'
+					value='SimpleSignature'
+					readOnly
+					type='hidden'
+				/>
+				<input
+					name='merchantDomainName'
+					value={merchantDomainName}
+					readOnly
+					type='hidden'
+				/>
+				<input name='orderReference' value={orderId} readOnly type='hidden' />
+				<input name='orderDate' value={data} readOnly type='hidden' />
+				<input name='amount' value={orderPrice} readOnly type='hidden' />
+				<input name='currency' value='UAH' readOnly type='hidden' />
+				<input name='orderTimeout' value='49000' readOnly type='hidden' />
+				<input name='productName[]' value={orderTitle} readOnly type='hidden' />
+				<input
+					name='productPrice[]'
+					value={orderPrice}
+					readOnly
+					type='hidden'
+				/>
+				<input name='productCount[]' value='1' readOnly type='hidden' />
+				<input name='clientEmail' value={email} readOnly type='hidden' />
+				<input
+					name='defaultPaymentSystem'
+					value='card'
+					readOnly
+					type='hidden'
+				/>
+				<input name='merchantSignature' value={merch} readOnly type='hidden' />
+
+				{/* <input name='returnUrl' value={returnUrl} readOnly type='hidden' /> */}
+				<input
+					name='serviceUrl'
+					value={`https://www.bortnikshool.com/${locale}/api/status`}
+					readOnly
+					type='hidden'
+				/>
+				<input
+					name='clientFirstName'
+					value={firstName}
+					readOnly
+					type='hidden'
+				/>
+				<input name='clientLastName' value={lastName} readOnly type='hidden' />
+
+				<input name='orderLifetime' value='600' readOnly type='hidden' />
+
+				<input type='submit' value={titleButton} readOnly />
+			</form>
+		</div>
 	)
 }
 

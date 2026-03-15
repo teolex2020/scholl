@@ -1,82 +1,73 @@
 import { NextResponse } from 'next/server'
-import crypto from 'crypto'
+const crypto = require('crypto')
+require('dotenv').config()
 
 export async function POST(req) {
 	try {
-		const { orderId, price, productName, data, customer, locale } =
-			await req.json()
+			const { orderId, price, productName, data } = await req.json()
 
-		if (!orderId || !price || !productName || !data || !customer) {
-			throw new Error('Missing required order fields')
+	if (!orderId || !price || !productName || !data) 
+		{
+				throw new Error(
+					'Усі поля (orderId, price, productName, data) є обов’язковими'
+				)
 		}
 
-		const amount = Number(price)
-		if (Number.isNaN(amount)) {
-			throw new Error('Field price must be a number')
+	if (isNaN(price)) 
+		{
+				throw new Error('Поле price має бути числом')
+
+
 		}
 
-		const account = process.env.MERCHANT_ACCOUNT
-		const merchantDomainName = process.env.WAYFORPAY_DOMAIN
-		const wayforpaySecretKey = process.env.MERCHANT_SECRET_KEY
-		const baseUrl =
-			process.env.BASE_URL || `https://${merchantDomainName}` || ''
+		// const accounttest = process.env.MERCHANT_ACCOUNT
+		// const merchantDomainNametest = process.env.WAYFORPAY_DOMAIN
+		// const wayforpaySecretKeytest = process.env.MERCHANT_SECRET_KEY
 
-		if (!account || !merchantDomainName || !wayforpaySecretKey) {
-			throw new Error('Missing WayForPay environment variables')
+		// console.log('accounttest', accounttest)
+		// console.log('merchantDomainNametest', merchantDomainNametest)
+		// console.log('wayforpaySecretKeytest', wayforpaySecretKeytest)
+
+			const account = process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
+			const merchantDomainName = process.env.NEXT_PUBLIC_WAYFORPAY_DOMAIN
+			const wayforpaySecretKey = process.env.NEXT_PUBLIC_MERCHANT_SECRET_KEY
+
+	if (!account || !merchantDomainName || !wayforpaySecretKey)
+		{
+				throw new Error('Відсутні необхідні змінні середовища')
 		}
 
-		const productCount = '1'
-		const currency = 'UAH'
-		const orderReference = String(orderId)
-		const orderDate = String(data)
-		const productTitle = String(productName)
-		const productPrice = amount.toFixed(2)
+				let merchant = account
+				let productName1 = productName
+				let productPrice1 = price
+				let productCount1 = '1'
+				let orderReference = orderId
+				let orderDate = data
+				let prices = price
+				let currency = 'UAH'
+				
+				const message = [
+						merchant,
+						merchantDomainName,
+						orderReference,
+						orderDate,
+						prices,
+						currency,
+						productName1,
+						productCount1,
+						productPrice1,
+					].join(';')
 
-		const signatureBase = [
-			account,
-			merchantDomainName,
-			orderReference,
-			orderDate,
-			productPrice,
-			currency,
-			productTitle,
-			productCount,
-			productPrice,
-		].join(';')
+				const merchantSignature = crypto
+						.createHmac('md5', wayforpaySecretKey)
+						.update(message)
+						.digest('hex')
 
-		const merchantSignature = crypto
-			.createHmac('md5', wayforpaySecretKey)
-			.update(signatureBase)
-			.digest('hex')
-
-		return NextResponse.json({
-			paymentData: {
-				merchantAccount: account,
-				merchantAuthType: 'SimpleSignature',
-				merchantDomainName,
-				orderReference,
-				orderDate,
-				amount: productPrice,
-				currency,
-				orderTimeout: '49000',
-				productName: [productTitle],
-				productPrice: [productPrice],
-				productCount: [productCount],
-				defaultPaymentSystem: 'card',
-				merchantSignature,
-				serviceUrl: `${baseUrl}/${locale || 'uk'}/api/status`,
-				orderLifetime: '600',
-				clientFirstName: customer.firstName ?? '',
-				clientLastName: customer.lastName ?? '',
-				clientEmail: customer.email ?? '',
-				clientPhone: customer.phone ?? '',
-			},
-		})
+				return NextResponse.json({ signature: merchantSignature })
+			
 	} catch (error) {
-		console.error('Error in /api/createorder:', error)
-		return NextResponse.json(
-			{ error: true, message: error.message },
-			{ status: 400 }
-		)
+		console.error('Помилка в /api/createorder:', error);
+    return NextResponse.json({ error: true, message: error.message }, { status: 400 })
 	}
-}
+	}
+
