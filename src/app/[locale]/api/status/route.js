@@ -33,7 +33,6 @@ export async function POST(req) {
 		email,
 		amount,
 		userdata,
-		firstName,
 		timeStamp,
 	} = await req.json()
 
@@ -89,7 +88,7 @@ export async function POST(req) {
                     <tr>
                         <td style="padding: 40px 30px;">
                             <p style="color: #2c3e50; font-size: 18px; margin: 0 0 20px 0; font-weight: 500;">
-                                Шановний(-а) ${firstName},
+                                Шановний(-а) __FIRST_NAME__,
                             </p>
 
                             <p style="color: #555; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
@@ -205,6 +204,8 @@ export async function POST(req) {
 		const docRef = firestore().collection('order').doc(orderReference)
 		const orderDocSnap = await docRef.get()
 
+		const firstName = orderDocSnap.exists ? orderDocSnap.data().firstName : ''
+
 		// Check if the email has already been sent.
 		if (orderDocSnap.exists && orderDocSnap.data()[emailSentStatus]) {
 			return NextResponse.json(
@@ -225,6 +226,7 @@ export async function POST(req) {
 		)
 if(reason === "Ok") {
 	// console.log('Sending email for', orderReference)
+	mailOptions.html = mailOptions.html.replace('__FIRST_NAME__', firstName)
 	await transporter.sendMail(mailOptions)
 	await docRef.update({ [emailSentStatus]: true }, { merge: true })
 }
