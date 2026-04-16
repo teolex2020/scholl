@@ -119,14 +119,14 @@ const Course = () => {
 							<p className='mt-3 md:mt-4 w-full max-w-4xl text-left text-[15px] md:text-xl leading-7 md:leading-relaxed text-zinc-200/90'>
 								{introParagraphs[0]}
 							</p>
-							{introParagraphs[1] && (
+							{/* {introParagraphs[1] && (
 								<p className='mt-2 md:mt-3 w-full max-w-4xl text-left text-sm md:text-lg leading-6 md:leading-relaxed text-zinc-300'>
 									{introParagraphs[1]}
 								</p>
-							)}
+							)} */}
 
 							<div className='mt-5 md:mt-6 grid w-full max-w-4xl gap-2 md:gap-3 md:grid-cols-3'>
-								{bulletHighlights.map((item, index) => (
+								{/* {bulletHighlights.map((item, index) => (
 									<div
 										key={`${item.label}-${index}`}
 										className='rounded-2xl border border-white/8 bg-white/[0.03] p-3 md:p-4'
@@ -138,16 +138,16 @@ const Course = () => {
 											{item.text}
 										</p>
 									</div>
-								))}
+								))} */}
 							</div>
 
-							{strategyParagraph && (
+							{/* {strategyParagraph && (
 								<div className='mt-4 md:mt-5 w-full max-w-4xl rounded-2xl border border-[#e2a550]/20 bg-[#e2a550]/[0.06] p-3 md:p-5'>
 									<p className='text-left text-[13px] md:text-base leading-6 md:leading-relaxed text-zinc-100'>
 										{strategyParagraph}
 									</p>
 								</div>
-							)}
+							)} */}
 
 							<p className='text-xs md:text-sm w-full py-3 md:py-4 text-[#e2a550]'>
 								***{t('link')}***
@@ -210,7 +210,7 @@ const Course = () => {
 				<div className='flex flex-col lg:text-base  gap-3 w-full mx-auto md:mt-5 text-start flex-1 '>
 					<div>
 						<p className='text-xl font-semibold md:mb-3'>
-							{' '}
+							
 							{t('courseprogram')}:
 						</p>
 					</div>

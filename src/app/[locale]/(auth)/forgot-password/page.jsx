@@ -8,7 +8,6 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { sendPasswordResetEmail } from 'firebase/auth'
 import { auth } from '../../../../firebase/config'
-import { useRouter } from '@/navigation' // [ЗМІНА] Використовуємо роутер від next-intl
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTranslations } from 'next-intl'
@@ -25,21 +24,21 @@ const getValidationSchema = (t) =>
 const useForgotPassword = () => {
 	// [ЗМІНА] Створено окремий простір імен для цієї сторінки
 	const t = useTranslations('ForgotPassword')
-	const router = useRouter()
 
 	const handleResetPassword = async (values, { setSubmitting }) => {
 		const { email } = values
 		try {
 			await sendPasswordResetEmail(auth, email)
-			toast.success(t('success.emailSent'))
-			router.push('/login')
+			toast.success('If an account with this email exists, a password reset email will arrive shortly.')
 		} catch (error) {
 			console.error('Password Reset Error:', error)
 			// [ЗМІНА] Покращена обробка помилок
 			const errorMessage =
-				error.code === 'auth/user-not-found'
-					? t('error.userNotFound')
-					: t('error.default')
+				error.code === 'auth/invalid-email'
+					? 'Please enter a valid email address.'
+					: error.code === 'auth/too-many-requests'
+						? 'Too many attempts. Please try again later.'
+						: t('error.default')
 			toast.error(errorMessage)
 		} finally {
 			// [ВИПРАВЛЕНО] Гарантуємо, що кнопка розблокується після запиту
@@ -108,7 +107,8 @@ const ForgotPasswordPage = () => {
 					>
 						{formik.isSubmitting ? t('loading') : t('resetButton')}
 					</button>
-					
+
+					<p className='text-sm text-slate-400'>Check spam or promotions. If the account was created with Google, a reset email may not be available.</p>
 				</form>
 			</div>
 		</div>

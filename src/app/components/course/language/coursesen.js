@@ -1193,4 +1193,126 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 			},
 		],
 	},
+	{
+		id: '20329',
+		active: true,
+		course: 'Course',
+		lector: 'Yaroslav Pashchenko',
+		language: 'Ukrainian',
+		title:
+			'National Mentality: Business Success as a Mechanism for Economic Leap and a Safeguard Against Threats',
+		descriptions:
+			'The world no longer guarantees stability — businesses collapse, rules change, and dependence on external factors only grows. In such conditions, not the strongest survive, but those who can adapt quickly and build systems that function independently of circumstances. This course provides not just knowledge, but a clear strategy: how to protect your capital, build a resilient business, and move beyond local risks into the global economy. A strategy that transforms business into a source of growth and capital protection.',
+		price: '4999',
+		status: true,
+		image: 'paschenko.webp',
+		datastart: '15.05.2026',
+		dataend: '17.05.2026',
+		time: '19.00',
+		alltime: 5,
+		conclusions: [
+			{
+				title:
+					'During the course, you will master practical approaches to building a “business fortress”: from leadership and team development to implementing trustless architecture, tokenizing assets (RWA), and working with global liquidity.',
+			},
+			{
+				title:
+					'The course provides tools for capital protection, risk management, and entry into international markets, forming a systemic vision that allows you not just to survive, but to create a competitive advantage in the new economy.',
+			},
+		],
+		courseprogram: [
+			{
+				title:
+					'Block 1. Viability Practice: Mentality as an Algorithm (Mindset) (15.05.2026)',
+				duration: '60–90 minutes',
+				lectures: [
+					{
+						title:
+							'Module 1. Economy of Exhaustion and the Mathematics of Economic Leap',
+						duration: '0.45 h',
+					},
+					{
+						title:
+							'1.1 The Trap of Centralized Expectation: relying on TradFi injections is strategically ineffective; growth is built through autonomous high-value units.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'1.2 Economy as a Safeguard: scalable global businesses increase national resilience and capital protection.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'Module 2. Three Levels of Protection: systemic leadership approach',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'2.1 Value level: leadership ethics and responsibility prevent degradation and burnout.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'2.2 Cognitive level: flexible teams, leadership without titles, innovation mindset.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'2.3 Physical level: team safety and decentralized protection of assets.',
+						duration: '0.25 h',
+					},
+				],
+			},
+			{
+				title:
+					'Block 2. Business System: From Trustless to RWA (Workshop) (16–17.05.2026)',
+				duration: '60–90 minutes',
+				lectures: [
+					{
+						title: 'Module 3. Trustless Architecture: Code Instead of Trust',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'3.1 Direct governance via smart contracts and algorithmic systems.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'3.2 Algorithmic anti-corruption: eliminating human factor and internal risks.',
+						duration: '0.35 h',
+					},
+					{
+						title:
+							'Module 4. RWA Strategy: Dematerialization and “Digital Armor”',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'4.1 Tokenization of real-world assets: transferring value into decentralized networks.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'4.2 Global liquidity and security: tokenized assets remain protected and liquid.',
+						duration: '0.35 h',
+					},
+					{
+						title:
+							'Module 5. Diversification and Capital Management Principles',
+						duration: '0.25 h',
+					},
+					{
+						title: '5.1 Multi-market approach combining TradFi and Web3 tools.',
+						duration: '0.25 h',
+					},
+					{
+						title:
+							'5.2 Asset management basics and project analysis in TradFi and Web3.',
+						duration: '0.35 h',
+					},
+				],
+			},
+		],
+	},
 ]

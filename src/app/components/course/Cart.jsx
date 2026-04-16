@@ -108,10 +108,10 @@ const Cart = ({
 						<VideoCameraIcon className='h-4 w-4 text-[#f0b356]' />
 						<p>{t('video')}</p>
 					</div>
-					<div className='flex gap-3 items-center'>
+					{/* <div className='flex gap-3 items-center'>
 						<AcademicCapIcon className='h-4 w-4 text-[#f0b356]' />
 						<p>{t('certificate')}</p>
-					</div>
+					</div> */}
 					{datastart && dataend && (
 						<div className='flex gap-3 items-center'>
 							<CalendarDaysIcon className='h-4 w-4 text-[#f0b356]' />
