@@ -46,6 +46,7 @@ const Course = () => {
 	const currentCourses = courses[locale] || coursesua
 
 	const data = currentCourses.find((item) => item.id === params.slug)
+	const lecturerDetail = data?.lecturerInfo || null
 
 	const paragraphs = (data?.descriptions ?? '')
 		.trim()
@@ -181,6 +182,38 @@ const Course = () => {
 									</div>
 								</div>
 							</div>
+							{lecturerDetail && (
+								<div className='mt-4 w-full max-w-4xl overflow-hidden rounded-2xl border border-[#e2a550]/20 bg-gradient-to-r from-[#e2a550]/10 via-black/20 to-black/10 p-4 md:p-5'>
+									<p className='text-xs font-semibold uppercase tracking-[0.18em] text-[#f0b356]'>
+										{lecturerDetail.eyebrow}
+									</p>
+									<div className='mt-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between'>
+										<div className='max-w-2xl'>
+											<p className='text-lg font-semibold text-white md:text-xl'>
+												{lecturerDetail.title}
+											</p>
+											<p className='mt-2 text-sm leading-6 text-zinc-200 md:text-base md:leading-7'>
+												{lecturerDetail.description}
+											</p>
+										</div>
+										<div className='md:max-w-sm'>
+											<p className='text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400'>
+												Публікується у
+											</p>
+											<div className='mt-2 flex flex-wrap gap-2'>
+												{lecturerDetail.publications.map((publication) => (
+													<span
+														key={publication}
+														className='rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-200'
+													>
+														{publication}
+													</span>
+												))}
+											</div>
+										</div>
+									</div>
+								</div>
+							)}
 						</div>
 					</div>
 					<div className='p-4 lg:text-lg my-3 rounded-md bg-blur min-h-[255px] border border-white/5'>

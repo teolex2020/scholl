@@ -1198,12 +1198,24 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 		active: true,
 		course: 'Course',
 		lector: 'Yaroslav Pashchenko',
-		language: 'Ukrainian',
+		language: 'Ukraine',
 		title:
 			'National Mentality: Business Success as a Mechanism for Economic Leap and a Safeguard Against Threats',
 		descriptions:
-			'The world no longer guarantees stability — businesses collapse, rules change, and dependence on external factors only grows. In such conditions, not the strongest survive, but those who can adapt quickly and build systems that function independently of circumstances. This course provides not just knowledge, but a clear strategy: how to protect your capital, build a resilient business, and move beyond local risks into the global economy. A strategy that transforms business into a source of growth and capital protection.',
+			'The world no longer guarantees stability — businesses collapse, rules change, and dependence on external factors continues to grow. In such conditions, it is not the strongest who survive, but those who can quickly adapt and build systems that function independently of circumstances. This course provides not just knowledge, but a clear strategy: how to protect your capital, build a resilient business, and move beyond local risks into the global economy. A strategy that transforms business into a source of growth and capital protection.',
 		price: '4999',
+		lecturerInfo: {
+			eyebrow: 'Lecturer Expertise',
+			title: 'Yaroslav Pashchenko',
+			description:
+				'Author of analytical articles on public administration, economics, social worldview, and global security.',
+			publications: [
+				'Ukrainska Pravda',
+				'Christian World News',
+				'Hvylia',
+				'Korrespondent',
+			],
+		},
 		status: true,
 		image: 'paschenko.webp',
 		datastart: '15.05.2026',
@@ -1213,11 +1225,11 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 		conclusions: [
 			{
 				title:
-					'During the course, you will master practical approaches to building a “business fortress”: from leadership and team development to implementing trustless architecture, tokenizing assets (RWA), and working with global liquidity.',
+					'During the course, you will master practical approaches to building a “business fortress”: from leadership and team development to implementing trustless architecture, asset tokenization (RWA), and working with global liquidity.',
 			},
 			{
 				title:
-					'The course provides tools for capital protection, risk management, and entry into international markets, forming a systemic vision that allows you not just to survive, but to create a competitive advantage in the new economy.',
+					'The course provides tools for capital protection, risk management, and entry into international markets, forming a systemic vision that allows not only survival but also the creation of a competitive advantage in the new economy.',
 			},
 		],
 		courseprogram: [
@@ -1233,12 +1245,12 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 					},
 					{
 						title:
-							'1.1 The Trap of Centralized Expectation: relying on TradFi injections is strategically ineffective; growth is built through autonomous high-value units.',
+							'1.1 The trap of centralized expectation: reliance on TradFi injections (grants, state programs) is strategically ineffective. Growth is built through networks of autonomous high-tech units generating high added value.',
 						duration: '0.25 h',
 					},
 					{
 						title:
-							'1.2 Economy as a Safeguard: scalable global businesses increase national resilience and capital protection.',
+							'1.2 Economy as a safeguard: scalable businesses integrated into global markets increase resilience and capital protection.',
 						duration: '0.25 h',
 					},
 					{
@@ -1248,17 +1260,17 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 					},
 					{
 						title:
-							'2.1 Value level: leadership ethics and responsibility prevent degradation and burnout.',
+							'2.1 Value level: building leadership ethics and responsibility as protection against degradation and burnout.',
 						duration: '0.25 h',
 					},
 					{
 						title:
-							'2.2 Cognitive level: flexible teams, leadership without titles, innovation mindset.',
+							'2.2 Cognitive level: flexible teams, leadership without titles, innovation as competitiveness.',
 						duration: '0.25 h',
 					},
 					{
 						title:
-							'2.3 Physical level: team safety and decentralized protection of assets.',
+							'2.3 Physical level: team safety and decentralized asset protection.',
 						duration: '0.25 h',
 					},
 				],
@@ -1279,7 +1291,7 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 					},
 					{
 						title:
-							'3.2 Algorithmic anti-corruption: eliminating human factor and internal risks.',
+							'3.2 Algorithmic anti-corruption: eliminating human factors and internal risks.',
 						duration: '0.35 h',
 					},
 					{
@@ -1298,8 +1310,7 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 						duration: '0.35 h',
 					},
 					{
-						title:
-							'Module 5. Diversification and Capital Management Principles',
+						title: 'Module 5. Diversification and Capital Management',
 						duration: '0.25 h',
 					},
 					{
@@ -1307,8 +1318,7 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 						duration: '0.25 h',
 					},
 					{
-						title:
-							'5.2 Asset management basics and project analysis in TradFi and Web3.',
+						title: '5.2 Fundamentals of asset management and project analysis.',
 						duration: '0.35 h',
 					},
 				],
