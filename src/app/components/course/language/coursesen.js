@@ -1222,6 +1222,7 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 		dataend: '17.05.2026',
 		time: '19.00',
 		alltime: 5,
+		youtube: '2FgNNcIa5CE',
 		conclusions: [
 			{
 				title:
