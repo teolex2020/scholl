@@ -1326,7 +1326,7 @@ export const coursesru = [
 	},
 	{
 		id: '20329',
-		active: true,
+		active: false,
 		course: 'Курс',
 		lector: 'Ярослав Пащенко',
 		language: 'украинский',
@@ -1347,7 +1347,7 @@ export const coursesru = [
 				'Корреспондент',
 			],
 		},
-		status: true,
+		status: false,
 		image: 'paschenko.webp',
 		datastart: '15.05.2026',
 		dataend: '17.05.2026',

@@ -1203,7 +1203,7 @@ export const coursesua = [
 	},
 	{
 		id: '20329',
-		active: true,
+		active: false,
 		course: 'Курс',
 		lector: 'Ярослав Пащенко',
 		language: 'українська',
@@ -1227,7 +1227,7 @@ export const coursesua = [
 				'Кореспондент',
 			],
 		},
-		status: true,
+		status: false,
 		image: 'paschenko.webp',
 		datastart: '15.05.2026',
 		dataend: '17.05.2026',

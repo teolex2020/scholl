@@ -1195,7 +1195,7 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 	},
 	{
 		id: '20329',
-		active: true,
+		active: false,
 		course: 'Course',
 		lector: 'Yaroslav Pashchenko',
 		language: 'Ukraine',
@@ -1216,7 +1216,7 @@ Strategy: Receive a step-by-step plan to protect your assets, your family, and y
 				'Korrespondent',
 			],
 		},
-		status: true,
+		status: false,
 		image: 'paschenko.webp',
 		datastart: '15.05.2026',
 		dataend: '17.05.2026',
