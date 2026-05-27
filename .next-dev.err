@@ -1,0 +1,81 @@
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+redux-persist failed to create sync storage. falling back to noop storage.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+redux-persist failed to create sync storage. falling back to noop storage.
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\DumpStack.log.tmp'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\pagefile.sys'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\DumpStack.log.tmp'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
+Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\pagefile.sys'
+ ⨯ Failed to generate static paths for /[locale]/meeting/[slug]:
+Error: Cannot find module './vendor-chunks/@opentelemetry.js'
+Require stack:
+- C:\Users\teole\OneDrive\Рабочий стол\school\.next\server\webpack-runtime.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\.next\server\app\[locale]\meeting\[slug]\page.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\load-components.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\build\utils.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+    at C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\.next\\server\\app\\[locale]\\meeting\\[slug]\\page.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /[locale]/meeting/[slug]:
+Error: Cannot find module './vendor-chunks/@opentelemetry.js'
+Require stack:
+- C:\Users\teole\OneDrive\Рабочий стол\school\.next\server\webpack-runtime.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\.next\server\app\[locale]\meeting\[slug]\page.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\load-components.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\build\utils.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+    at C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\.next\\server\\app\\[locale]\\meeting\\[slug]\\page.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}

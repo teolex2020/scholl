@@ -1,0 +1,25 @@
+
+> school@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ○ Compiling /src/middleware ...
+ ✓ Compiled /src/middleware in 1323ms (638 modules)
+ GET /_next/static/webpack/5c8354539e0b8f2c.webpack.hot-update.json 404 in 1585ms
+ ○ Compiling /[locale]/meeting/[slug] ...
+ ✓ Compiled /[locale]/meeting/[slug] in 3.6s (1735 modules)
+ GET /ru/meeting/20330 200 in 4713ms
+ ✓ Compiled in 1144ms (1721 modules)
+ GET /ru/meeting/20330 200 in 147ms
+ GET /ru/meeting/20330 200 in 27ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 620ms (1944 modules)
+ GET /ru/meeting/20330 404 in 888ms
+ GET /ru/meeting/20330?_rsc=45ir6 200 in 571ms
+ GET /ru/meeting/20330?_rsc=45ir6 200 in 27ms
+ GET /_next/static/css/app/%5Blocale%5D/layout.css?v=1779863701567 404 in 78ms

@@ -189,7 +189,7 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 	},
 	{
 		id: '20326',
-		active: true,
+		active: false,
 		course: 'Meeting',
 		lector: 'Ruslan Biziayev',
 		Moderator: 'Ruslan Bortnyk',
@@ -198,11 +198,30 @@ You are waiting for frank insights from: Who will attack and What will be the ch
 		descriptions:
 			'An exclusive conversation with a serviceman of the Armed Forces of Ukraine and political expert Ruslan Biziayev. The discussion will cover: • real trends on the frontline and prospects for ending the war; • the current positions of both sides and the state of Ukraine’s Defense Forces; • historical parallels and possible peace scenarios; • negotiation signals and the dialogue between Trump and Putin; • a personal view from inside the system — service, motivation, and challenges; • open Q&A with participants. Invitation only. Confidential format.',
 		price: '3999',
-		status: true,
+		status: false,
 		image: 'bi.webp',
 		donat: '',
 		datastart: '19.11.2025',
 		time: '19:00',
 		duration: 90,
+	},
+	{
+		id: '20330',
+		active: true,
+		course: 'Meeting',
+		lector: 'Mykhailo Chaplyha',
+		Moderator: 'Ruslan Bortnyk',
+		language: 'Russian',
+		title:
+			'After the Catastrophe: Where the New Ukraine Will Be Born, How to Survive the Crisis, Where to Emigrate, What to Teach Children, and How to Protect Assets',
+		descriptions:
+			'The world we knew is fading away in agony. Ukraine is entering an era of historical transformation — political, economic, social, and demographic. Old models of survival, success, and security no longer work. States are changing, borders of meaning are collapsing, and millions of people are once again forced to answer the question: where and how should we live next?\n\nDuring this closed meeting, Mykhailo Chaplyha will offer a harsh, honest, and максимально pragmatic взгляд on the future of Ukraine and Ukrainians — without propaganda, self-deception, or political censorship.\n\nMain topics of the meeting:\n\n• Where could the “new Ukraine” emerge after the war and crisis?\n• Which countries are becoming new centers of Ukrainian emigration and why?\n• How can an ordinary family survive a period of global instability?\n• What should be done with savings, real estate, and assets?\n• Which professions, skills, and educational models will be in demand in 5–10 years?\n• What should children be taught in an era of collapsing old systems?\n• How is Europe changing, and what place will Ukrainians occupy within it?\n• Why is freedom becoming the main deficit of the 21st century?\n• How can one preserve subjectivity and psychological resilience in a world of total turbulence?\n\nThis is not a motivational lecture or a political show. It is a private conversation about strategies for survival, adaptation, and preserving human dignity in an age of great upheaval.\n\nLimited seats available.',
+		price: '1999',
+		status: true,
+		image: 'chapluga19.webp',
+		donat: '',
+		datastart: '26.06.2026',
+		time: '19:00',
+		duration: 2,
 	},
 ]
