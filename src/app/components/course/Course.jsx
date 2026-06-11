@@ -71,9 +71,6 @@ const Course = () => {
 		})
 
 	const dataOrder = (e) => {
-		if (!authUser) {
-			router.push('/login')
-		}
 		dispatch(OrderPrice(data.price))
 		dispatch(OrderTitle(data.title))
 		dispatch(OrderId(data.id))

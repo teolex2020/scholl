@@ -1,73 +1,82 @@
 import { NextResponse } from 'next/server'
-const crypto = require('crypto')
-require('dotenv').config()
+import crypto from 'crypto'
+import { getProductPrice } from '@/lib/priceCatalog'
 
 export async function POST(req) {
 	try {
-			const { orderId, price, productName, data } = await req.json()
+		const { orderReference, productId, productName, orderDate, locale } =
+			await req.json()
 
-	if (!orderId || !price || !productName || !data) 
-		{
-				throw new Error(
-					'Усі поля (orderId, price, productName, data) є обов’язковими'
-				)
+		if (!orderReference || !productId || !productName || !orderDate) {
+			throw new Error(
+				'Усі поля (orderReference, productId, productName, orderDate) є обов’язковими'
+			)
 		}
 
-	if (isNaN(price)) 
-		{
-				throw new Error('Поле price має бути числом')
-
-
+		// Ціна береться з серверного каталогу за id товару —
+		// значення з клієнта не приймається
+		const amount = getProductPrice(productId)
+		if (!amount) {
+			throw new Error('Невідомий товар або товар недоступний для оплати')
 		}
 
-		// const accounttest = process.env.MERCHANT_ACCOUNT
-		// const merchantDomainNametest = process.env.WAYFORPAY_DOMAIN
-		// const wayforpaySecretKeytest = process.env.MERCHANT_SECRET_KEY
+		const account =
+			process.env.MERCHANT_ACCOUNT || process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
+		const merchantDomainName =
+			process.env.WAYFORPAY_DOMAIN || process.env.NEXT_PUBLIC_WAYFORPAY_DOMAIN
+		// Секретний ключ — тільки серверна змінна, без префікса NEXT_PUBLIC_
+		const wayforpaySecretKey = process.env.MERCHANT_SECRET_KEY
 
-		// console.log('accounttest', accounttest)
-		// console.log('merchantDomainNametest', merchantDomainNametest)
-		// console.log('wayforpaySecretKeytest', wayforpaySecretKeytest)
-
-			const account = process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
-			const merchantDomainName = process.env.NEXT_PUBLIC_WAYFORPAY_DOMAIN
-			const wayforpaySecretKey = process.env.NEXT_PUBLIC_MERCHANT_SECRET_KEY
-
-	if (!account || !merchantDomainName || !wayforpaySecretKey)
-		{
-				throw new Error('Відсутні необхідні змінні середовища')
+		if (!account || !merchantDomainName || !wayforpaySecretKey) {
+			throw new Error('Відсутні необхідні змінні середовища')
 		}
 
-				let merchant = account
-				let productName1 = productName
-				let productPrice1 = price
-				let productCount1 = '1'
-				let orderReference = orderId
-				let orderDate = data
-				let prices = price
-				let currency = 'UAH'
-				
-				const message = [
-						merchant,
-						merchantDomainName,
-						orderReference,
-						orderDate,
-						prices,
-						currency,
-						productName1,
-						productCount1,
-						productPrice1,
-					].join(';')
+		// Колбек статусу від WayForPay. Домен той самий, що в підписі —
+		// для локального тесту через ngrok достатньо виставити WAYFORPAY_DOMAIN
+		// на свій ngrok-домен.
+		const serviceUrl = `https://${merchantDomainName}/${
+			locale || 'uk'
+		}/api/status`
 
-				const merchantSignature = crypto
-						.createHmac('md5', wayforpaySecretKey)
-						.update(message)
-						.digest('hex')
+		const currency = 'UAH'
+		const productCount = '1'
 
-				return NextResponse.json({ signature: merchantSignature })
-			
+		const message = [
+			account,
+			merchantDomainName,
+			orderReference,
+			orderDate,
+			amount,
+			currency,
+			productName,
+			productCount,
+			amount,
+		].join(';')
+
+		const merchantSignature = crypto
+			.createHmac('md5', wayforpaySecretKey)
+			.update(message)
+			.digest('hex')
+
+		// Повертаємо всі підписані поля — форма оплати рендериться саме з цієї
+		// відповіді, тому розбіжність між підписом і формою неможлива
+		return NextResponse.json({
+			signature: merchantSignature,
+			merchantAccount: account,
+			merchantDomainName,
+			orderReference,
+			orderDate,
+			amount,
+			currency,
+			productName,
+			productCount,
+			serviceUrl,
+		})
 	} catch (error) {
-		console.error('Помилка в /api/createorder:', error);
-    return NextResponse.json({ error: true, message: error.message }, { status: 400 })
+		console.error('Помилка в /api/createorder:', error)
+		return NextResponse.json(
+			{ error: true, message: error.message },
+			{ status: 400 }
+		)
 	}
-	}
-
+}

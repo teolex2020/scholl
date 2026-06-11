@@ -1,15 +1,12 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import clsx from 'clsx'
 import {
 	CheckIcon,
-	CreditCardIcon,
-	BookmarkIcon,
+	LockClosedIcon,
+	ShoppingBagIcon,
 } from '@heroicons/react/24/solid'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
-import Image from 'next/image'
-import order from '../../../../public/assets/order.webp'
 import { useSelector } from 'react-redux'
 import { useRouter } from '@/navigation'
 import { getDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'
@@ -18,273 +15,279 @@ import { nanoid } from 'nanoid'
 import Loader from '../Loader/Loader'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import PaymentPage from './PayForm'
 
-
-
-const CustomField = ({ label, name, type }) => (
+const CustomField = ({ label, name, type, autoComplete, inputMode, placeholder }) => (
 	<div className='relative group'>
-		<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg px-2 text-[14px] group-hover:text-blue-200/80'>
+		<p className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg px-2 text-[14px] group-focus-within:text-[#e2a550]'>
 			{label}
 		</p>
 		<Field
 			name={name}
 			type={type}
-			className='bg-inherit border border-slate-500 rounded-sm px-3 outline-none text-slate-200 h-12 w-full text-sm group-hover:border-blue-200/80'
+			autoComplete={autoComplete}
+			inputMode={inputMode}
+			placeholder={placeholder}
+			className='bg-inherit border border-slate-500 rounded-lg px-3 outline-none text-slate-200 h-12 w-full text-base focus:border-[#e2a550] transition-colors placeholder:text-slate-600'
 		/>
 		<ErrorMessage name={name}>
-			{(msg) => <div className='text-red-500 text-sm'>{msg}</div>}
+			{(msg) => <div className='text-red-400 text-xs pt-1 pl-1'>{msg}</div>}
 		</ErrorMessage>
 	</div>
 )
 
-// Validation Schema
-const validationSchema = Yup.object({
-	firstName: Yup.string()
-		.max(15, 'Must be 15 characters or less')
-		.min(2, 'Your First Name Needs To Be Valid')
-		.required(),
-	lastName: Yup.string()
-		.max(20, 'Must be 20 characters or less')
-		.min(2, 'Your Last Name Needs To Be Valid')
-		.required(),
-	email: Yup.string().email('Invalid email').required(),
-	phone: Yup.string()
-		.matches(/^[+]?[\d\s-()]+$/, 'Phone format is invalid')
-		.required('Phone is required'),
-})
-
 const Payments = () => {
-	const [formdata, setFormdata] = useState(() => Date.now())
-
-	
-	
-
+	// orderDate фіксується один раз: це ж значення йде і в підпис, і у форму WayForPay
+	const [orderDate] = useState(() => Date.now())
 	const [loading, setLoading] = useState(false)
-	const [data, setData] = useState('')
-	const [merch, setMerch] = useState(null)
+	const [redirecting, setRedirecting] = useState(false)
+	const [payment, setPayment] = useState(null) // { pay, client } після отримання підпису
 	const { orderPrice, orderTitle, id, authUser, orderId } = useSelector(
 		(state) => state.counter
 	)
 	const router = useRouter()
 	const t = useTranslations('Order')
+	const locale = useLocale()
 	const { current } = useRef(nanoid())
+	const orderReference = current + orderId
 
-	const [userData, setUserData] = useState(null)
-
-	
+	// null = ще вантажиться; форму рендеримо лише після завершення,
+	// щоб довантажені дані не затирали введене користувачем
+	const [prefill, setPrefill] = useState(null)
 
 	useEffect(() => {
+		let active = true
 		const fetchUserData = async () => {
-			if (authUser) {
+			let values = { firstName: '', lastName: '', phone: '', email: '' }
+			if (authUser && id) {
 				try {
-					const userRef = doc(db, 'users', id) // або authUser.uid, залежно від збереженої структури
-					const userSnapshot = await getDoc(userRef)
+					const userSnapshot = await getDoc(doc(db, 'users', id))
 					if (userSnapshot.exists()) {
-						setUserData(userSnapshot.data())
+						const data = userSnapshot.data()
+						values = {
+							firstName: data.firstName || '',
+							lastName: data.lastName || '',
+							phone: data.phone || '',
+							email: data.email || '',
+						}
 					}
 				} catch (error) {
 					console.error('Error fetching user data:', error)
 				}
 			}
+			if (active) setPrefill(values)
 		}
 		fetchUserData()
+		return () => {
+			active = false
+		}
 	}, [authUser, id])
 
-	 const confirmForm = async () => {
-			try {
-				setLoading(true)
-				const response = await fetch('/api/createorder', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({
-						orderId: current + orderId,
-						price: orderPrice,
-						productName: orderTitle,
-						data: formdata,
-					}),
-				})
-			
-				if (!response.ok) throw new Error('Network response was not ok')
+	const validationSchema = Yup.object({
+		firstName: Yup.string()
+			.min(2, t('tooShort'))
+			.max(30, t('tooLong'))
+			.required(t('required')),
+		lastName: Yup.string()
+			.min(2, t('tooShort'))
+			.max(30, t('tooLong'))
+			.required(t('required')),
+		email: Yup.string().email(t('invalidEmail')).required(t('required')),
+		phone: Yup.string()
+			.matches(/^[+]?[\d\s\-()]{9,}$/, t('invalidPhone'))
+			.required(t('required')),
+	})
 
-				const data = await response.json()
-				setMerch(data.signature)
-				
-			} catch (error) {
-				console.error('Error:', error)
-				if (error.message === 'Network response was not ok') {
-					toast.error('Server error. Please try again later.')
-				} else {
-					toast.error('Unexpected error occurred. Please try again.')
-				}
-			} finally {
-				setLoading(false)
-			}
-		}
-
-	
-
-	const handleAdd = (values) => {
-	
+	const handleSubmit = async (values) => {
 		setLoading(true)
+		try {
+			const client = {
+				...values,
+				email: values.email.toLowerCase().trim(),
+				phone: values.phone.trim(),
+			}
 
-		const normalized = {
-			...values,
-			email: values.email.toLowerCase(), // ← приводимо email до нижнього регістру
-		}
-   setData(normalized)
-		const userDocRef = doc(db, 'order', current + orderId)
-		const userData = {
-			...normalized,
-			orderNumber: current + orderId,
-			orderPrice: orderPrice,
-			orderTitle: orderTitle,
-			timeStamp: serverTimestamp(),
-			id: id,
-			emailSent: false,
-		}
+			await setDoc(
+				doc(db, 'order', orderReference),
+				{
+					...client,
+					orderNumber: orderReference,
+					orderPrice: orderPrice,
+					orderTitle: orderTitle,
+					timeStamp: serverTimestamp(),
+					id: id,
+					emailSent: false,
+				},
+				{ merge: true }
+			)
 
-		setDoc(userDocRef, userData, { merge: true })
-			.then(() => {
-				confirmForm()
+			const response = await fetch(`/${locale}/api/createorder`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					orderReference,
+					productId: orderId,
+					productName: orderTitle,
+					orderDate,
+					locale,
+				}),
 			})
-			.catch((error) => {
-				toast.error(`Error Firestore: ${error.message}`)
-				console.error(error)
-			})
-			.finally(() => {
-				setLoading(false)
-			})
+			const pay = await response.json()
+			if (!response.ok || pay.error || !pay.signature) {
+				throw new Error(pay.message || 'Server error')
+			}
+
+			// Рендер PayForm автоматично сабмітить форму та перенаправить на WayForPay.
+			// loading лишається true до самого редіректу
+			setRedirecting(true)
+			setPayment({ pay, client })
+		} catch (error) {
+			console.error('Payment error:', error)
+			toast.error(t('serverError'))
+			setLoading(false)
+		}
+	}
+
+	// Захист від прямого заходу на /payment без обраного товару (напр. після F5)
+	if (!orderId || !orderTitle) {
+		return (
+			<div className='flex flex-col items-center gap-6 mt-20 px-5'>
+				<p className='text-slate-300 text-lg text-center'>{t('empty')}</p>
+				<button
+					onClick={() => router.push('/')}
+					className='border-2 rounded-3xl border-[#e2a550] colorgold py-2 px-10 hover:bg-blur duration-300'
+				>
+					{t('emptyButton')}
+				</button>
+			</div>
+		)
 	}
 
 	return (
-		<div className='min-w-screen h-fit bg-transparent flex  justify-center px-5 mt-10 z-50'>
-			{loading && <Loader />}
+		<div className='relative z-10 w-full min-h-[calc(100vh-80px)] bg-transparent flex flex-col items-center justify-center px-4 py-12'>
+			{redirecting && <Loader />}
 			<ToastContainer />
-			<div
-				className={clsx(
-					'w-full mx-auto rounded-lg bg-transparent shadow1 p-5 text-gray-700 flex',
-					'max-w-sm'
-				)}
-			>
-				<div className='flex-1 relative'>
-					<div className='relative w-full h-48 rounded-xl border-4 border-zinc-800 '>
-						<Image
-							src={order}
-							fill
-							sizes='(min-width: 808px) 50vw, 100vw'
-							alt='course'
-							className=' object-cover rounded-lg'
-							priority
-						/>
-					</div>
-					<div className='w-full text-center pt-3  text-slate-400 font-semibold'>
-						{t('title')}{' '}
-						<span className='text-white text-sm'>{current + orderId}</span>
-					</div>
-					<div className='flex gap-2 py-3 text-[#e2a550]  font-serif font-semibold'>
-						<div>
-							<CheckIcon className='h-6 w-6 text-green-500' />
-						</div>
-						{orderTitle}
-					</div>
-					<div className='text-white space-x-5  flex'>
-						<div>
-							<BookmarkIcon className='h-6 w-6 text-green-500' />
-						</div>
-						<span> {t('quantity')}</span> <span>1 шт.</span>
-					</div>
-					<div className='text-white space-x-5  flex mt-5'>
-						<div>
-							<CreditCardIcon className='h-6 w-6 text-green-500' />
-						</div>
-						<span>{t('price')}</span> <span>{orderPrice} ₴.</span>
-					</div>
-					<Formik
-						enableReinitialize
-						initialValues={{
-							firstName: userData?.firstName || '',
-							lastName: userData?.lastName || '',
-							phone: userData?.phone || '',
-							email: userData?.email || '',
-						}}
-						validationSchema={validationSchema}
-						validateOnChange={true}
-						validateOnBlur={true}
-						onSubmit={(values, { setSubmitting }) => {
-							handleAdd(values)
-							setSubmitting(false)
-						}}
-					>
-						<Form className='flex flex-col pt-10 mx-auto gap-6  justify-start relative'>
-							<CustomField
-								label='First Name*'
-								name='firstName'
-								type='text'
-								placeholder='First Name'
-							/>
-							<CustomField
-								label='Last Name*'
-								name='lastName'
-								type='text'
-								placeholder='Last Name'
-							/>
-							<CustomField
-								label='Phone*'
-								name='phone'
-								type='text'
-								placeholder='Phone'
-							/>
-							<CustomField
-								label='Email*'
-								name='email'
-								type='email'
-								placeholder='Email'
-							/>
+			<div className='w-full max-w-5xl mx-auto'>
+				<h1 className='text-2xl lg:text-3xl text-slate-100 font-semibold text-center mb-2'>
+					{t('checkout')}
+				</h1>
+				<div className='mx-auto mb-10 h-1 w-16 rounded-full bg-[#e2a550]' />
 
-							<button
-								type='submit'
-								className='flex items-center w-full space-x-5  cursor-pointer group'
-								// onClick={() => handleCheckboxChange()}
-							>
-								<div className='border-2 border-zinc-700'>
-									<CheckIcon
-										className={`h-6 w-6  ${
-											merch ? 'text-green-500' : 'opacity-0'
-										} `}
-									/>
-								</div>{' '}
-								<div className=' text-lg  text-slate-400 group-hover:text-slate-300  group-hover:scale-110 duration-500'>
-									{merch ? t('corect') : t('notcorect')}
+				<div className='grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-stretch'>
+					{/* Підсумок замовлення */}
+					<div className='lg:col-span-2 flex flex-col rounded-2xl bg-[#0d1217]/90 border border-zinc-800 shadow1 overflow-hidden'>
+						<div className='bg-gradient-to-br from-[#e2a550]/15 to-transparent p-6 lg:p-8 border-b border-zinc-800'>
+							<div className='flex items-center gap-2 text-[#e2a550] text-xs uppercase tracking-widest mb-4'>
+								<ShoppingBagIcon className='h-4 w-4' />
+								<span>{t('checkout')}</span>
+							</div>
+							<p className='text-slate-100 font-serif font-semibold text-xl lg:text-2xl leading-snug line-clamp-4'>
+								{orderTitle}
+							</p>
+						</div>
+
+						<div className='flex-1 flex flex-col p-6 lg:p-8 gap-5'>
+							<div className='flex justify-between items-end'>
+								<span className='text-slate-400'>{t('price')}</span>
+								<span className='text-white text-4xl font-bold leading-none'>
+									{orderPrice}
+									<span className='text-2xl text-[#e2a550] ml-1'>₴</span>
+								</span>
+							</div>
+
+							<div className='mt-auto space-y-3 pt-5 border-t border-zinc-800'>
+								<div className='flex items-start gap-2 text-sm text-slate-400'>
+									<CheckIcon className='h-5 w-5 shrink-0 text-green-500' />
+									<span>{t('afterPay')}</span>
 								</div>
-							</button>
-						</Form>
-					</Formik>
-					<div className='z-50 flex justify-center  relative '>
-						{merch && (
-							<PaymentPage
-								merch={merch}
-								orderId={current + orderId}
-								orderPrice={orderPrice}
-								orderTitle={orderTitle}
-								firstName={data.firstName}
-								lastName={data.lastName}
-								email={data.email}
-								clientPhone={data.phone}
-								data={formdata}
-								titleButton={t('button')}
-							/>
+								<div className='flex items-start gap-2 text-sm text-slate-400'>
+									<LockClosedIcon className='h-5 w-5 shrink-0 text-green-500' />
+									<span>{t('secure')}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Контактні дані */}
+					<div className='lg:col-span-3 flex flex-col rounded-2xl bg-[#11171c]/90 border border-zinc-800 shadow1 p-6 lg:p-10'>
+						<h2 className='text-slate-200 font-semibold text-lg mb-6'>
+							{t('contacts')}
+						</h2>
+						{prefill === null ? (
+							<div className='flex-1 flex items-center justify-center py-10 text-slate-500 text-sm'>
+								...
+							</div>
+						) : (
+							<Formik
+								initialValues={prefill}
+								validationSchema={validationSchema}
+								onSubmit={handleSubmit}
+							>
+								<Form className='flex flex-col flex-1 gap-6'>
+									<div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+										<CustomField
+											label={t('firstName')}
+											name='firstName'
+											type='text'
+											autoComplete='given-name'
+										/>
+										<CustomField
+											label={t('lastName')}
+											name='lastName'
+											type='text'
+											autoComplete='family-name'
+										/>
+									</div>
+									<CustomField
+										label={t('phone')}
+										name='phone'
+										type='tel'
+										autoComplete='tel'
+										inputMode='tel'
+										placeholder='+380 __ ___ __ __'
+									/>
+									<CustomField
+										label={t('email')}
+										name='email'
+										type='email'
+										autoComplete='email'
+										inputMode='email'
+									/>
+
+									{/* Єдина кнопка: валідація → збереження → підпис → авторедірект */}
+									<button
+										type='submit'
+										disabled={loading || redirecting}
+										className='mt-auto w-full rounded-xl bg-[#e2a550] hover:bg-[#d29440] disabled:opacity-60 disabled:cursor-not-allowed text-black font-bold text-lg py-4 duration-300 flex items-center justify-center gap-2 shadow-lg shadow-[#e2a550]/20'
+									>
+										<LockClosedIcon className='h-5 w-5' />
+										{loading || redirecting
+											? t('redirect')
+											: `${t('button')} · ${orderPrice} ₴`}
+									</button>
+
+									{/* Сигнали довіри */}
+									<div className='flex justify-center text-xs text-slate-500 tracking-wide'>
+										Visa · Mastercard · Google Pay · Apple Pay
+									</div>
+								</Form>
+							</Formik>
+						)}
+
+						{payment && (
+							<PaymentPage pay={payment.pay} client={payment.client} />
 						)}
 					</div>
-					<div className='flex justify-center w-full mt-10'>
-						<button
-							onClick={() => router.back()}
-							className='py-2 flex text-slate-400 z-10 text-center text-lg hover:text-slate-300'
-						>
-							{t('button1')}
-						</button>
-					</div>
+				</div>
+
+				<div className='flex justify-center w-full mt-6'>
+					<button
+						onClick={() => router.back()}
+						className='text-sm text-slate-500 hover:text-slate-300 underline underline-offset-4'
+					>
+						{t('button1')}
+					</button>
 				</div>
 			</div>
 		</div>

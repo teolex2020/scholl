@@ -51,7 +51,7 @@ export default function RootLayout({ children, params: { locale } }) {
 							alt='bg'
 							fill
 							priority={true}
-							className='bg-cover opacity-[0.8%]  '
+							className='bg-cover opacity-[0.8%] pointer-events-none'
 						/>
 
 						<LocaleProvider>

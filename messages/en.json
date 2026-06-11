@@ -150,13 +150,28 @@
 		"recorded": "recorded video"
 	},
 	"Order": {
-		"title": "Your Order:",
+		"title": "Order number:",
 		"quantity": "Quantity:",
-		"price": "Price:",
+		"price": "Total:",
 		"button": "Proceed to Payment",
 		"button1": "Cancel Order",
-		"corect": "The data is correct",
-		"notcorect": "Is the data correct? (Confirm)"
+		"redirect": "Redirecting to the payment page…",
+		"secure": "Secure payment via WayForPay",
+		"firstName": "First Name*",
+		"lastName": "Last Name*",
+		"phone": "Phone*",
+		"email": "Email*",
+		"required": "This field is required",
+		"tooShort": "Too short",
+		"tooLong": "Too long",
+		"invalidEmail": "Invalid email format",
+		"invalidPhone": "Invalid phone format",
+		"serverError": "Something went wrong. Please try again or contact us.",
+		"empty": "Order not found. Please choose a course again.",
+		"emptyButton": "Go to Home",
+		"checkout": "Checkout",
+		"contacts": "Your contact details",
+		"afterPay": "After payment, the course will automatically appear in your account"
 	},
 	"Purchase": {
 		"title": "You have no purchases ...."

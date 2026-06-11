@@ -1,81 +1,111 @@
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
 Browserslist: caniuse-lite is outdated. Please run:
   npx update-browserslist-db@latest
   Why you should do it regularly: https://github.com/browserslist/update-db#readme
 redux-persist failed to create sync storage. falling back to noop storage.
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
 redux-persist failed to create sync storage. falling back to noop storage.
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\DumpStack.log.tmp'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\pagefile.sys'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\DumpStack.log.tmp'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
-Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\pagefile.sys'
- ⨯ Failed to generate static paths for /[locale]/meeting/[slug]:
-Error: Cannot find module './vendor-chunks/@opentelemetry.js'
-Require stack:
-- C:\Users\teole\OneDrive\Рабочий стол\school\.next\server\webpack-runtime.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\.next\server\app\[locale]\meeting\[slug]\page.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\load-components.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\build\utils.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\dev\static-paths-worker.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\compiled\jest-worker\processChild.js
-    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
-    at C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require-hook.js:55:36
-    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
-    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
-    at Function._load (node:internal/modules/cjs/loader:1211:37)
-    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
-    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
-    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
-    at mod.require (C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require-hook.js:65:28)
-    at require (node:internal/modules/helpers:135:16) {
-  type: 'Error',
-  code: 'MODULE_NOT_FOUND',
-  requireStack: [
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\.next\\server\\webpack-runtime.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\.next\\server\\app\\[locale]\\meeting\\[slug]\\page.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\require.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\load-components.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\build\\utils.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
-  ]
-}
- ⨯ Failed to generate static paths for /[locale]/meeting/[slug]:
-Error: Cannot find module './vendor-chunks/@opentelemetry.js'
-Require stack:
-- C:\Users\teole\OneDrive\Рабочий стол\school\.next\server\webpack-runtime.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\.next\server\app\[locale]\meeting\[slug]\page.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\load-components.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\build\utils.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\dev\static-paths-worker.js
-- C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\compiled\jest-worker\processChild.js
-    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
-    at C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require-hook.js:55:36
-    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
-    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
-    at Function._load (node:internal/modules/cjs/loader:1211:37)
-    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
-    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
-    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
-    at mod.require (C:\Users\teole\OneDrive\Рабочий стол\school\node_modules\next\dist\server\require-hook.js:65:28)
-    at require (node:internal/modules/helpers:135:16) {
-  type: 'Error',
-  code: 'MODULE_NOT_FOUND',
-  requireStack: [
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\.next\\server\\webpack-runtime.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\.next\\server\\app\\[locale]\\meeting\\[slug]\\page.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\require.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\load-components.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\build\\utils.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
-    'C:\\Users\\teole\\OneDrive\\Рабочий стол\\school\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
-  ]
-}
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+redux-persist failed to create sync storage. falling back to noop storage.
+ ⨯ ./src/app/components/meeting/language/meetua.js
+Error: 
+  [31mx[0m Unterminated string constant
+     ,-[[36;1;4mC:\Users\teole\OneDrive\Рабочий стол\school\src\app\components\meeting\language\meetua.js[0m:230:1]
+ [2m230[0m | 			'Після катастрофи: де народжуватиметься нова Україна, як пережити кризу, куди емігрувати, чому вчити дітей і як зберегти активи',
+ [2m231[0m | 		descriptions:
+ [2m232[0m | 			'Світ, який ми знали, відходить у агонії. Україна входить в епоху історичної трансформації — політичної, економічної, соціальної та демографічної. Старі моделі виживання, успіху та безпеки більше не працюють. Держави змінюються, кордони сенсів руйнуються, а мільйони людей змушені знову відповідати на питання: де і як жити далі?\n\nПід час цієї закритої зустрічі Михайло Чаплига запропонує жорсткий, відвертий і максимально прагматичний погляд на майбутнє України та українців — без пропаганди, самообману та політичної цензури.\n\nГоловні питання зустрічі:\n\n• Де може формуватися «нова Україна» після війни та кризи?\n• Які країни стають новими центрами української еміграції і чому?\n• Як звичайній родині пережити період глобальної нестабільності?\n• Що робити із заощадженнями, нерухомістю та активами?\n• Які професії, навички та моделі освіти будуть затребувані через 5–10 років?\n• Чому навчати дітей в епоху розпаду старих систем?\n• Як змінюється Європа і яке місце в ній займуть українці?\n• Чому свобода стає головним дефіцитом XXI століття?\n• Як зберегти суб’єктність і психологічну стійкість у світі тотальної турбулентності?\n\nЦе не мотиваційна лекція і не політичне шоу. Це закрита розмова про стратегії виживання, адаптації та збереження людської гідності в епоху великих потрясінь.\n\nКількість місць обмежена.',
+ [2m233[0m | 		price: ',
+     : [31;1m         ^^[0m
+ [2m234[0m | 		status: true,
+ [2m235[0m | 		image: 'bi.webp',
+ [2m235[0m | 		donat: '',
+     `----
+
+  [31mx[0m Expected ',', got 'status'
+     ,-[[36;1;4mC:\Users\teole\OneDrive\Рабочий стол\school\src\app\components\meeting\language\meetua.js[0m:231:1]
+ [2m231[0m | 		descriptions:
+ [2m232[0m | 			'Світ, який ми знали, відходить у агонії. Україна входить в епоху історичної трансформації — політичної, економічної, соціальної та демографічної. Старі моделі виживання, успіху та безпеки більше не працюють. Держави змінюються, кордони сенсів руйнуються, а мільйони людей змушені знову відповідати на питання: де і як жити далі?\n\nПід час цієї закритої зустрічі Михайло Чаплига запропонує жорсткий, відвертий і максимально прагматичний погляд на майбутнє України та українців — без пропаганди, самообману та політичної цензури.\n\nГоловні питання зустрічі:\n\n• Де може формуватися «нова Україна» після війни та кризи?\n• Які країни стають новими центрами української еміграції і чому?\n• Як звичайній родині пережити період глобальної нестабільності?\n• Що робити із заощадженнями, нерухомістю та активами?\n• Які професії, навички та моделі освіти будуть затребувані через 5–10 років?\n• Чому навчати дітей в епоху розпаду старих систем?\n• Як змінюється Європа і яке місце в ній займуть українці?\n• Чому свобода стає головним дефіцитом XXI століття?\n• Як зберегти суб’єктність і психологічну стійкість у світі тотальної турбулентності?\n\nЦе не мотиваційна лекція і не політичне шоу. Це закрита розмова про стратегії виживання, адаптації та збереження людської гідності в епоху великих потрясінь.\n\nКількість місць обмежена.',
+ [2m233[0m | 		price: ',
+ [2m234[0m | 		status: true,
+     : [31;1m  ^^^^^^[0m
+ [2m235[0m | 		image: 'bi.webp',
+ [2m236[0m | 		donat: '',
+ [2m236[0m | 		datastart: '26.06.2026',
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/meeting/language/meetua.js
+./src/app/components/meeting/AllMeeting.jsx
+ ⨯ ./src/app/components/meeting/language/meetua.js
+Error: 
+  [31mx[0m Unterminated string constant
+     ,-[[36;1;4mC:\Users\teole\OneDrive\Рабочий стол\school\src\app\components\meeting\language\meetua.js[0m:230:1]
+ [2m230[0m | 			'Після катастрофи: де народжуватиметься нова Україна, як пережити кризу, куди емігрувати, чому вчити дітей і як зберегти активи',
+ [2m231[0m | 		descriptions:
+ [2m232[0m | 			'Світ, який ми знали, відходить у агонії. Україна входить в епоху історичної трансформації — політичної, економічної, соціальної та демографічної. Старі моделі виживання, успіху та безпеки більше не працюють. Держави змінюються, кордони сенсів руйнуються, а мільйони людей змушені знову відповідати на питання: де і як жити далі?\n\nПід час цієї закритої зустрічі Михайло Чаплига запропонує жорсткий, відвертий і максимально прагматичний погляд на майбутнє України та українців — без пропаганди, самообману та політичної цензури.\n\nГоловні питання зустрічі:\n\n• Де може формуватися «нова Україна» після війни та кризи?\n• Які країни стають новими центрами української еміграції і чому?\n• Як звичайній родині пережити період глобальної нестабільності?\n• Що робити із заощадженнями, нерухомістю та активами?\n• Які професії, навички та моделі освіти будуть затребувані через 5–10 років?\n• Чому навчати дітей в епоху розпаду старих систем?\n• Як змінюється Європа і яке місце в ній займуть українці?\n• Чому свобода стає головним дефіцитом XXI століття?\n• Як зберегти суб’єктність і психологічну стійкість у світі тотальної турбулентності?\n\nЦе не мотиваційна лекція і не політичне шоу. Це закрита розмова про стратегії виживання, адаптації та збереження людської гідності в епоху великих потрясінь.\n\nКількість місць обмежена.',
+ [2m233[0m | 		price: 1',
+     : [31;1m          ^^[0m
+ [2m234[0m | 		status: true,
+ [2m235[0m | 		image: 'bi.webp',
+ [2m235[0m | 		donat: '',
+     `----
+
+  [31mx[0m Expected ',', got 'string literal (,, ',)'
+     ,-[[36;1;4mC:\Users\teole\OneDrive\Рабочий стол\school\src\app\components\meeting\language\meetua.js[0m:230:1]
+ [2m230[0m | 			'Після катастрофи: де народжуватиметься нова Україна, як пережити кризу, куди емігрувати, чому вчити дітей і як зберегти активи',
+ [2m231[0m | 		descriptions:
+ [2m232[0m | 			'Світ, який ми знали, відходить у агонії. Україна входить в епоху історичної трансформації — політичної, економічної, соціальної та демографічної. Старі моделі виживання, успіху та безпеки більше не працюють. Держави змінюються, кордони сенсів руйнуються, а мільйони людей змушені знову відповідати на питання: де і як жити далі?\n\nПід час цієї закритої зустрічі Михайло Чаплига запропонує жорсткий, відвертий і максимально прагматичний погляд на майбутнє України та українців — без пропаганди, самообману та політичної цензури.\n\nГоловні питання зустрічі:\n\n• Де може формуватися «нова Україна» після війни та кризи?\n• Які країни стають новими центрами української еміграції і чому?\n• Як звичайній родині пережити період глобальної нестабільності?\n• Що робити із заощадженнями, нерухомістю та активами?\n• Які професії, навички та моделі освіти будуть затребувані через 5–10 років?\n• Чому навчати дітей в епоху розпаду старих систем?\n• Як змінюється Європа і яке місце в ній займуть українці?\n• Чому свобода стає головним дефіцитом XXI століття?\n• Як зберегти суб’єктність і психологічну стійкість у світі тотальної турбулентності?\n\nЦе не мотиваційна лекція і не політичне шоу. Це закрита розмова про стратегії виживання, адаптації та збереження людської гідності в епоху великих потрясінь.\n\nКількість місць обмежена.',
+ [2m233[0m | 		price: 1',
+     : [31;1m          ^^[0m
+ [2m234[0m | 		status: true,
+ [2m235[0m | 		image: 'bi.webp',
+ [2m235[0m | 		donat: '',
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/meeting/language/meetua.js
+./src/app/components/meeting/AllMeeting.jsx
+ ⨯ ./src/app/components/meeting/language/meetua.js
+Error: 
+  [31mx[0m Unterminated string constant
+     ,-[[36;1;4mC:\Users\teole\OneDrive\Рабочий стол\school\src\app\components\meeting\language\meetua.js[0m:230:1]
+ [2m230[0m | 			'Після катастрофи: де народжуватиметься нова Україна, як пережити кризу, куди емігрувати, чому вчити дітей і як зберегти активи',
+ [2m231[0m | 		descriptions:
+ [2m232[0m | 			'Світ, який ми знали, відходить у агонії. Україна входить в епоху історичної трансформації — політичної, економічної, соціальної та демографічної. Старі моделі виживання, успіху та безпеки більше не працюють. Держави змінюються, кордони сенсів руйнуються, а мільйони людей змушені знову відповідати на питання: де і як жити далі?\n\nПід час цієї закритої зустрічі Михайло Чаплига запропонує жорсткий, відвертий і максимально прагматичний погляд на майбутнє України та українців — без пропаганди, самообману та політичної цензури.\n\nГоловні питання зустрічі:\n\n• Де може формуватися «нова Україна» після війни та кризи?\n• Які країни стають новими центрами української еміграції і чому?\n• Як звичайній родині пережити період глобальної нестабільності?\n• Що робити із заощадженнями, нерухомістю та активами?\n• Які професії, навички та моделі освіти будуть затребувані через 5–10 років?\n• Чому навчати дітей в епоху розпаду старих систем?\n• Як змінюється Європа і яке місце в ній займуть українці?\n• Чому свобода стає головним дефіцитом XXI століття?\n• Як зберегти суб’єктність і психологічну стійкість у світі тотальної турбулентності?\n\nЦе не мотиваційна лекція і не політичне шоу. Це закрита розмова про стратегії виживання, адаптації та збереження людської гідності в епоху великих потрясінь.\n\nКількість місць обмежена.',
+ [2m233[0m | 		price: 1999,',
+     : [31;1m              ^^[0m
+ [2m234[0m | 		status: true,
+ [2m235[0m | 		image: 'bi.webp',
+ [2m235[0m | 		donat: '',
+     `----
+
+  [31mx[0m Unexpected token `status`. Expected identifier
+     ,-[[36;1;4mC:\Users\teole\OneDrive\Рабочий стол\school\src\app\components\meeting\language\meetua.js[0m:231:1]
+ [2m231[0m | 		descriptions:
+ [2m232[0m | 			'Світ, який ми знали, відходить у агонії. Україна входить в епоху історичної трансформації — політичної, економічної, соціальної та демографічної. Старі моделі виживання, успіху та безпеки більше не працюють. Держави змінюються, кордони сенсів руйнуються, а мільйони людей змушені знову відповідати на питання: де і як жити далі?\n\nПід час цієї закритої зустрічі Михайло Чаплига запропонує жорсткий, відвертий і максимально прагматичний погляд на майбутнє України та українців — без пропаганди, самообману та політичної цензури.\n\nГоловні питання зустрічі:\n\n• Де може формуватися «нова Україна» після війни та кризи?\n• Які країни стають новими центрами української еміграції і чому?\n• Як звичайній родині пережити період глобальної нестабільності?\n• Що робити із заощадженнями, нерухомістю та активами?\n• Які професії, навички та моделі освіти будуть затребувані через 5–10 років?\n• Чому навчати дітей в епоху розпаду старих систем?\n• Як змінюється Європа і яке місце в ній займуть українці?\n• Чому свобода стає головним дефіцитом XXI століття?\n• Як зберегти суб’єктність і психологічну стійкість у світі тотальної турбулентності?\n\nЦе не мотиваційна лекція і не політичне шоу. Це закрита розмова про стратегії виживання, адаптації та збереження людської гідності в епоху великих потрясінь.\n\nКількість місць обмежена.',
+ [2m233[0m | 		price: 1999,',
+ [2m234[0m | 		status: true,
+     : [31;1m  ^^^^^^[0m
+ [2m235[0m | 		image: 'bi.webp',
+ [2m236[0m | 		donat: '',
+ [2m236[0m | 		datastart: '26.06.2026',
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/meeting/language/meetua.js
+./src/app/components/meeting/AllMeeting.jsx

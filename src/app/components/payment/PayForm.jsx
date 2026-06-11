@@ -1,91 +1,106 @@
-"use client"
-import React from 'react'
-import { useLocale } from 'next-intl'
-const merchantDomainName = process.env.NEXT_PUBLIC_WAYFORPAY_DOMAIN
-const account = process.env.NEXT_PUBLIC_MERCHANT_ACCOUNT
+'use client'
+import { useEffect, useRef } from 'react'
 
+// Прихована форма WayForPay. Всі підписані поля приходять з /api/createorder
+// одним об'єктом `pay`, тому вони гарантовано збігаються з підписом.
+// Форма сабмітиться автоматично одразу після рендеру — другий клік не потрібен.
+const PayForm = ({ pay, client }) => {
+	const formRef = useRef(null)
 
-
-
-const PaymentPage = ({
-	merch,
-	orderId,
-	orderTitle,
-	orderPrice,
-	email,
-	data,
-	titleButton,
-	firstName,
-	lastName,
-}) => {
-
-	const locale = useLocale()
-
+	useEffect(() => {
+		formRef.current?.submit()
+	}, [])
 
 	return (
-		<div className=' border-2 rounded-3xl border-[#e2a550] colorgold hover:font-semibold justify-center py-2 flex space-x-16 duration-300 hover:bg-blur z-50 text-lg lg:text-2xl px-10 max-w-[350px] mt-5 cursor-pointer'>
-			<form
-				className=' flex flex-col w-96'
-				method='post'
-				action='https://secure.wayforpay.com/pay'
-				acceptCharset='utf-8'
-			>
-				<input name='merchantAccount' value={account} readOnly type='hidden' />
-				<input
-					name='merchantAuthType'
-					value='SimpleSignature'
-					readOnly
-					type='hidden'
-				/>
-				<input
-					name='merchantDomainName'
-					value={merchantDomainName}
-					readOnly
-					type='hidden'
-				/>
-				<input name='orderReference' value={orderId} readOnly type='hidden' />
-				<input name='orderDate' value={data} readOnly type='hidden' />
-				<input name='amount' value={orderPrice} readOnly type='hidden' />
-				<input name='currency' value='UAH' readOnly type='hidden' />
-				<input name='orderTimeout' value='49000' readOnly type='hidden' />
-				<input name='productName[]' value={orderTitle} readOnly type='hidden' />
-				<input
-					name='productPrice[]'
-					value={orderPrice}
-					readOnly
-					type='hidden'
-				/>
-				<input name='productCount[]' value='1' readOnly type='hidden' />
-				<input name='clientEmail' value={email} readOnly type='hidden' />
-				<input
-					name='defaultPaymentSystem'
-					value='card'
-					readOnly
-					type='hidden'
-				/>
-				<input name='merchantSignature' value={merch} readOnly type='hidden' />
+		<form
+			ref={formRef}
+			method='post'
+			action='https://secure.wayforpay.com/pay'
+			acceptCharset='utf-8'
+			className='hidden'
+		>
+			<input
+				name='merchantAccount'
+				value={pay.merchantAccount}
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='merchantAuthType'
+				value='SimpleSignature'
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='merchantDomainName'
+				value={pay.merchantDomainName}
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='orderReference'
+				value={pay.orderReference}
+				readOnly
+				type='hidden'
+			/>
+			<input name='orderDate' value={pay.orderDate} readOnly type='hidden' />
+			<input name='amount' value={pay.amount} readOnly type='hidden' />
+			<input name='currency' value={pay.currency} readOnly type='hidden' />
+			<input name='orderTimeout' value='49000' readOnly type='hidden' />
+			<input
+				name='productName[]'
+				value={pay.productName}
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='productPrice[]'
+				value={pay.amount}
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='productCount[]'
+				value={pay.productCount}
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='merchantSignature'
+				value={pay.signature}
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='defaultPaymentSystem'
+				value='card'
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='serviceUrl'
+				value={pay.serviceUrl}
+				readOnly
+				type='hidden'
+			/>
+			<input name='orderLifetime' value='3600' readOnly type='hidden' />
 
-				{/* <input name='returnUrl' value={returnUrl} readOnly type='hidden' /> */}
-				<input
-					name='serviceUrl'
-					value={`https://www.bortnikshool.com/${locale}/api/status`}
-					readOnly
-					type='hidden'
-				/>
-				<input
-					name='clientFirstName'
-					value={firstName}
-					readOnly
-					type='hidden'
-				/>
-				<input name='clientLastName' value={lastName} readOnly type='hidden' />
-
-				<input name='orderLifetime' value='600' readOnly type='hidden' />
-
-				<input type='submit' value={titleButton} readOnly />
-			</form>
-		</div>
+			<input name='clientEmail' value={client.email} readOnly type='hidden' />
+			<input
+				name='clientFirstName'
+				value={client.firstName}
+				readOnly
+				type='hidden'
+			/>
+			<input
+				name='clientLastName'
+				value={client.lastName}
+				readOnly
+				type='hidden'
+			/>
+			<input name='clientPhone' value={client.phone} readOnly type='hidden' />
+		</form>
 	)
 }
 
-export default PaymentPage
+export default PayForm

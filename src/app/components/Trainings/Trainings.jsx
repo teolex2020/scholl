@@ -49,9 +49,6 @@ const Trainings = () => {
 	const dispatch = useDispatch()
 
 	const dataOrder = (price, title, id) => {
-		if (!authUser) {
-			router.push('/login')
-		}
 		dispatch(OrderPrice(price))
 		dispatch(OrderTitle(title))
 		dispatch(OrderId(id))
