@@ -222,7 +222,7 @@ F-16 и риски ядерного удара?
 	},
 	{
 		id: '20330',
-		active: true,
+		active: false,
 		course: 'Встреча',
 		lector: 'Михаил Чаплыга',
 		Moderator: 'Руслан Бортник',
@@ -249,7 +249,7 @@ F-16 и риски ядерного удара?
 
 Количество мест ограничено.`,
 		price: '1999',
-		status: true,
+		status: false,
 		image: 'chapluga19.webp',
 		donat: '',
 		datastart: '26.06.2026',
