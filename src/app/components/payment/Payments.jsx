@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import {
 	CheckIcon,
+	ClipboardDocumentIcon,
 	LockClosedIcon,
 	ShoppingBagIcon,
 } from '@heroicons/react/24/solid'
@@ -36,6 +37,83 @@ const CustomField = ({ label, name, type, autoComplete, inputMode, placeholder }
 		</ErrorMessage>
 	</div>
 )
+
+const BANK_DETAILS = {
+	recipient: 'ФОП Бортнік Руслан Олегович',
+	iban: 'UA 10 322001 00000 2600 1340 0456 00',
+	taxId: '2914901871',
+	bank: 'Акціонерне товариство УНІВЕРСАЛ БАНК',
+	mfo: '322001',
+	bankCode: '21133352',
+}
+
+const BankDetailRow = ({ label, value, copyValue }) => {
+	const handleCopy = async () => {
+		if (!navigator?.clipboard) return
+		await navigator.clipboard.writeText(copyValue || value)
+		toast.success('Скопійовано')
+	}
+
+	return (
+		<div className='rounded-lg border border-zinc-800 bg-black/10 p-3'>
+			<div className='mb-1 text-xs uppercase tracking-wide text-slate-500'>
+				{label}
+			</div>
+			<div className='flex items-start justify-between gap-3'>
+				<div className='break-words text-sm font-semibold text-slate-100'>
+					{value}
+				</div>
+				<button
+					type='button'
+					onClick={handleCopy}
+					className='shrink-0 rounded-md border border-[#e2a550]/40 p-2 text-[#e2a550] transition hover:bg-[#e2a550]/10'
+					aria-label={`Скопіювати ${label}`}
+				>
+					<ClipboardDocumentIcon className='h-4 w-4' />
+				</button>
+			</div>
+		</div>
+	)
+}
+
+const BankTransferBlock = ({ orderTitle, orderPrice }) => {
+	const paymentPurpose = `Оплата за ${orderTitle}. Вкажіть ПІБ та email/телефон платника.`
+
+	return (
+		<div className='rounded-2xl border border-[#e2a550]/35 bg-[#0d1217]/80 p-5 lg:p-6'>
+			<div className='mb-4 flex flex-col gap-1'>
+				<h3 className='text-lg font-semibold text-slate-100'>
+					Альтернативна оплата на рахунок ФОП
+				</h3>
+				<p className='text-sm leading-relaxed text-slate-400'>
+					Після переказу доступ надається після підтвердження оплати. У
+					призначенні платежу обов&apos;язково вкажіть, за що саме платите.
+				</p>
+			</div>
+
+			<div className='grid gap-3'>
+				<BankDetailRow label='Отримувач' value={BANK_DETAILS.recipient} />
+				<BankDetailRow
+					label='IBAN'
+					value={BANK_DETAILS.iban}
+					copyValue={BANK_DETAILS.iban.replace(/\s/g, '')}
+				/>
+				<BankDetailRow label='ІПН/ЄДРПОУ' value={BANK_DETAILS.taxId} />
+				<BankDetailRow label='Банк' value={BANK_DETAILS.bank} />
+				<div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
+					<BankDetailRow label='МФО' value={BANK_DETAILS.mfo} />
+					<BankDetailRow label='ЄДРПОУ банку' value={BANK_DETAILS.bankCode} />
+				</div>
+				<BankDetailRow label='Сума' value={`${orderPrice} ₴`} />
+				<BankDetailRow
+					label='Призначення платежу'
+					value={paymentPurpose}
+					copyValue={paymentPurpose}
+				/>
+			</div>
+		</div>
+	)
+}
 
 const Payments = () => {
 	// orderDate фіксується один раз: це ж значення йде і в підпис, і у форму WayForPay
@@ -294,6 +372,10 @@ const Payments = () => {
 							<PaymentPage pay={payment.pay} client={payment.client} />
 						)}
 					</div>
+				</div>
+
+				<div className='mt-6'>
+					<BankTransferBlock orderTitle={orderTitle} orderPrice={orderPrice} />
 				</div>
 
 				<div className='flex justify-center w-full mt-6'>
