@@ -267,6 +267,21 @@ const Payments = () => {
 											: `${t('button')} · ${orderPrice} ₴`}
 									</button>
 
+									<p className='text-center text-xs leading-relaxed text-slate-400'>
+										Оплачуючи участь, ви погоджуєтесь з{' '}
+										<a
+											href='/publicofer'
+											target='_blank'
+											rel='noreferrer'
+											className='text-[#e2a550] underline underline-offset-4 hover:text-[#d29440]'
+										>
+											Публічною офертою
+										</a>
+										. У разі неявки на зустріч у погоджений час кошти не
+										повертаються, якщо доступ до зустрічі був наданий належним
+										чином.
+									</p>
+
 									{/* Сигнали довіри */}
 									<div className='flex justify-center text-xs text-slate-500 tracking-wide'>
 										Visa · Mastercard · Google Pay · Apple Pay
