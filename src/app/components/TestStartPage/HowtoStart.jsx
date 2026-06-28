@@ -33,7 +33,10 @@ const HowToStart = () => {
 	]
 
 	return (
-		<section className='max-w-[1400px] mx-auto rounded-xl py-5 sm:py-12'>
+		<section
+			id='how-to-start'
+			className='max-w-[1400px] mx-auto rounded-xl py-5 sm:py-12 scroll-mt-24'
+		>
 			<div className='px-6 sm:px-10 text-center text-gray-200'>
 				<h2 className='text-2xl sm:text-3xl font-bold colorgold mb-4'>
 					{t('title')}

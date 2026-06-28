@@ -16,6 +16,8 @@ import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 import signUp from '../../../../firebase/auth/singup.js'
 import { auth, Providers } from '../../../../firebase/config.js'
 import { signInWithPopup } from 'firebase/auth'
+import AuthShell from '@/app/components/auth/AuthShell'
+import GoogleIcon from '@/app/components/auth/GoogleIcon'
 
 // [НОВЕ] Схема валідації винесена в окрему функцію для чистоти коду та i18n
 const getRegisterValidationSchema = (t) =>
@@ -110,116 +112,116 @@ const Register = () => {
 		handleGoogleSignIn,
 	} = useRegister()
 
+	const inputClass =
+		'bg-inherit border border-slate-600 rounded-lg px-3 outline-none text-slate-200 h-12 w-full text-base focus:border-[#e2a550] transition-colors'
+	const labelClass =
+		'absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg px-2 text-[14px] group-focus-within:text-[#e2a550]'
+
 	return (
-		<div className='flex justify-center h-screen lg:h-full'>
-			<div className='flex flex-col gap-3 items-center p-5'>
-				<form
-					onSubmit={formik.handleSubmit}
-					className='flex flex-col w-[300px] gap-5 lg:mt-32'
-				>
-					<p className='w-full text-center text-3xl font-extrabold text-blue-200/80'>
-						{t('signup')}
-					</p>
+		<AuthShell t={t}>
+			<div className='mb-8'>
+				<h1 className='text-3xl font-bold text-slate-100'>{t('signup')}</h1>
+				<p className='text-slate-400 text-sm mt-2'>{t('registerSubtitle')}</p>
+			</div>
 
-					{/* Поле Ім'я */}
-					<div className='relative group'>
-						<label
-							htmlFor='name'
-							className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg px-2 text-[14px] group-hover:text-blue-200/80'
-						>
-							{t('user')}
-						</label>
-						<input
-							id='name'
-							type='text'
-							className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none text-slate-400 h-12 w-full group-hover:border-blue-200/80'
-							{...formik.getFieldProps('name')}
-						/>
-						{formik.touched.name && formik.errors.name && (
-							<div className='text-red-500 text-sm'>{formik.errors.name}</div>
-						)}
-					</div>
-
-					{/* Поле Email */}
-					<div className='relative group'>
-						<label
-							htmlFor='email'
-							className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg px-2 text-[14px] group-hover:text-blue-200/80'
-						>
-							{t('email')}
-						</label>
-						<input
-							id='email'
-							type='email'
-							className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none text-slate-400 h-12 w-full group-hover:border-blue-200/80'
-							{...formik.getFieldProps('email')}
-						/>
-						{formik.touched.email && formik.errors.email && (
-							<div className='text-red-500 text-sm'>{formik.errors.email}</div>
-						)}
-					</div>
-
-					{/* Поле Пароль */}
-					<div className='relative group'>
-						<label
-							htmlFor='password'
-							className='absolute -top-3 left-4 text-slate-400 bg-[#11171c] rounded-lg px-2 text-[14px] group-hover:text-blue-200/80'
-						>
-							{t('password')}
-						</label>
-						<div
-							onClick={togglePasswordVisibility}
-							className='absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer opacity-60'
-						>
-							{isPasswordVisible ? (
-								<EyeSlashIcon className='h-5 w-5 stroke-slate-100 fill-none stroke-[1.4px]' />
-							) : (
-								<EyeIcon className='h-5 w-5 stroke-slate-100 fill-none stroke-[1.4px]' />
-							)}
+			<form onSubmit={formik.handleSubmit} className='flex flex-col gap-6'>
+				{/* Поле Ім'я */}
+				<div className='relative group'>
+					<label htmlFor='name' className={labelClass}>
+						{t('user')}
+					</label>
+					<input
+						id='name'
+						type='text'
+						autoComplete='name'
+						className={inputClass}
+						{...formik.getFieldProps('name')}
+					/>
+					{formik.touched.name && formik.errors.name && (
+						<div className='text-red-400 text-xs pt-1 pl-1'>
+							{formik.errors.name}
 						</div>
-						<input
-							id='password'
-							type={isPasswordVisible ? 'text' : 'password'}
-							className='bg-transparent border border-slate-500 rounded-sm px-3 outline-none text-slate-400 h-12 w-full group-hover:border-blue-200/80'
-							{...formik.getFieldProps('password')}
-						/>
-						{formik.touched.password && formik.errors.password && (
-							<div className='text-red-500 text-sm'>
-								{formik.errors.password}
-							</div>
+					)}
+				</div>
+
+				{/* Поле Email */}
+				<div className='relative group'>
+					<label htmlFor='email' className={labelClass}>
+						{t('email')}
+					</label>
+					<input
+						id='email'
+						type='email'
+						autoComplete='email'
+						className={inputClass}
+						{...formik.getFieldProps('email')}
+					/>
+					{formik.touched.email && formik.errors.email && (
+						<div className='text-red-400 text-xs pt-1 pl-1'>
+							{formik.errors.email}
+						</div>
+					)}
+				</div>
+
+				{/* Поле Пароль */}
+				<div className='relative group'>
+					<label htmlFor='password' className={labelClass}>
+						{t('password')}
+					</label>
+					<div
+						onClick={togglePasswordVisibility}
+						className='absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-60 hover:opacity-100'
+					>
+						{isPasswordVisible ? (
+							<EyeSlashIcon className='h-5 w-5 text-slate-300' />
+						) : (
+							<EyeIcon className='h-5 w-5 text-slate-300' />
 						)}
 					</div>
-
-					<button
-						type='submit'
-						disabled={formik.isSubmitting}
-						className='opacity-100 disabled:opacity-60 disabled:cursor-not-allowed bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none text-slate-400 h-12 w-full hover:border-blue-200/80 z-10'
-					>
-						{formik.isSubmitting ? t('loading') : t('signup')}
-					</button>
-				</form>
-
-				<div className='w-full text-ms flex justify-center items-center gap-3 text-slate-500'>
-					<hr className='border-1 border-slate-600 w-full' />
-					{t('or')}
-					<hr className='border-1 border-slate-600 w-full' />
+					<input
+						id='password'
+						type={isPasswordVisible ? 'text' : 'password'}
+						autoComplete='new-password'
+						className={`${inputClass} pr-12`}
+						{...formik.getFieldProps('password')}
+					/>
+					{formik.touched.password && formik.errors.password && (
+						<div className='text-red-400 text-xs pt-1 pl-1'>
+							{formik.errors.password}
+						</div>
+					)}
 				</div>
 
 				<button
-					onClick={handleGoogleSignIn}
-					className='uppercase font-bold bg-transparent border border-slate-500 hover:border-slate-300 rounded-sm px-3 outline-none text-slate-400 h-12 w-[300px] hover:border-blue-200/80 z-10'
+					type='submit'
+					disabled={formik.isSubmitting}
+					className='w-full rounded-xl bg-[#e2a550] hover:bg-[#d29440] disabled:opacity-60 disabled:cursor-not-allowed text-black font-bold text-lg py-3.5 duration-300'
 				>
-					{t('signingoogle')}
+					{formik.isSubmitting ? t('loading') : t('signup')}
 				</button>
+			</form>
 
-				<div className='flex space-x-3 w-full'>
-					<p className='text-slate-400'>{t('already')}</p>
-					<Link className='text-blue-200/80 z-10' href='/login'>
-						{t('signin')}
-					</Link>
-				</div>
+			<div className='flex items-center gap-3 text-slate-500 text-sm my-6'>
+				<hr className='border-zinc-700 w-full' />
+				{t('or')}
+				<hr className='border-zinc-700 w-full' />
 			</div>
-		</div>
+
+			<button
+				onClick={handleGoogleSignIn}
+				className='w-full flex items-center justify-center gap-3 rounded-xl border border-slate-600 hover:border-slate-400 hover:bg-white/5 text-slate-200 font-semibold h-12 duration-300'
+			>
+				<GoogleIcon />
+				{t('signingoogle')}
+			</button>
+
+			<p className='text-center text-sm text-slate-400 mt-8'>
+				{t('already')}{' '}
+				<Link className='text-[#e2a550] font-semibold hover:underline' href='/login'>
+					{t('signin')}
+				</Link>
+			</p>
+		</AuthShell>
 	)
 }
 

@@ -30,7 +30,7 @@ body {
 	font-family: 'Gentium Book Plus', serif;
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
-	@apply text-white bg-[#12181d]  antialiased;
+	@apply text-white bg-[#0e0f12]  antialiased;
 }
 /* bg-[#181f24]  */
 
@@ -291,6 +291,13 @@ select {
 	.tilt-image {
 		transition: transform 0.2s; /* Плавний перехід */
 		display: block; /* Або інший відповідний тип дисплею */
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
 	}
 }
 .shadow2 {

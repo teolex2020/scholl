@@ -23,7 +23,9 @@ const Home = ({ params: { locale } }) => {
 				title={t('title')}
 				name={t('name')}
 				descriptions={t('descriptions')}
+				benefits={[t('benefit1'), t('benefit2'), t('benefit3')]}
 				button={t('button')}
+				buttonSecondary={t('buttonSecondary')}
 				info={t('info')}
 			/>
 			<CoursesSection />

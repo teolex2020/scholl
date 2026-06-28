@@ -27,7 +27,7 @@ const Button = ({ font }) => {
 
 			{authUser ? (
 				<div
-					className={`border-2 rounded-3xl border-zinc-700/50 w-12 h-12 flex  bg-blur cursor-pointer relative`}
+					className={`border-2 rounded-full border-[#e2a550]/50 hover:border-[#e2a550] w-12 h-12 flex bg-blur cursor-pointer relative duration-300`}
 					onClick={popup}
 				>
 					<Image
@@ -36,7 +36,7 @@ const Button = ({ font }) => {
 						alt='user'
 						sizes='(min-width: 808px) 50vw, 100vw'
 						priority
-						className='object-cover'
+						className='object-cover rounded-full'
 					/>
 					<div className='-bottom-1 -right-1 absolute border border-zinc-700/50 rounded-full bg-zinc-500'>
 						<ChevronDownIcon className='h-4 w-4 ' />
@@ -45,9 +45,9 @@ const Button = ({ font }) => {
 			) : (
 				<button
 					onClick={() => router.push('/login')}
-					className={`border-2 rounded-3xl min-w-24   border-zinc-700/50  py-2 flex justify-center  hover:bg-blur  ${font} uppercase duration-300`}
+					className={`rounded-3xl min-w-24 px-6 py-2.5 flex justify-center bg-[#e2a550] hover:bg-[#d29440] text-black font-bold ${font} uppercase duration-300`}
 				>
-					<p className='duration-300  text-lg'>{t('button')}</p>
+					<p className='duration-300 text-base'>{t('button')}</p>
 				</button>
 			)}
 		</div>

@@ -1,6 +1,7 @@
 {
 	"Header": {
-		"button": "Sign in"
+		"button": "Sign in",
+		"searchPlaceholder": "Search courses, lectures..."
 	},
 	"Popup": {
 		"button": "Log out",
@@ -20,11 +21,16 @@
 		"viewall": "View all"
 	},
 	"StartPage": {
-		"title": "Bortnik School of Political Analysis",
-		"name": "Ruslan Bortnik",
-		"descriptions": "25 years of experience in information and political analysis and companies, a unique author's methodology, cool examples and global clients, success and fame in a competitive environment! With us, you will reach true Freedom in society and open the way to personal Success. You will learn to think outside the box and act in the interests of your life. You will understand the essence of ongoing political, social and economic processes, and how to make the right life decisions!",
-		"button": "our courses",
-		"info": "Trainings and courses are held in ONLINE format "
+		"badge": "Bortnik School of Political Analysis",
+		"title": "Learn to understand politics",
+		"name": "and make the right decisions",
+		"descriptions": "An author's analysis methodology from a practitioner with 25 years of experience. Stop getting lost in the news flow — learn to see the essence of events, predict risks, and protect your business, assets, and family.",
+		"benefit1": "Understand what is really happening — without propaganda",
+		"benefit2": "Predict events and make decisions ahead of time",
+		"benefit3": "Online format, learn at your own pace",
+		"button": "Choose a course",
+		"buttonSecondary": "How it works",
+		"info": "Instant access after payment — no registration"
 	},
 	"Course": {
 		"lectorname": "Teacher:",
@@ -105,6 +111,13 @@
 		"accoun": "Don't have an account?",
 		"signup": "Sign up",
 		"forgotPassword": "Forgot password?",
+		"loginSubtitle": "Welcome back. Sign in to continue learning.",
+		"registerSubtitle": "Create an account in a minute and get access to courses.",
+		"brandTitle": "School of Political Analysis",
+		"brandText": "Courses, lectures and trainings by Ruslan Bortnik and leading experts from Ukraine and abroad.",
+		"benefit1": "Access your purchased courses anytime",
+		"benefit2": "Meeting recordings and materials in your account",
+		"benefit3": "New lectures and trainings every month",
 		"success": {
 			"login": "Successfully signed in!"
 		},

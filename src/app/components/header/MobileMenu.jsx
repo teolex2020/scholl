@@ -59,12 +59,13 @@ const MobileMenu = () => {
 			})
 	}
 
+	const itemClass =
+		'w-full h-12 flex justify-center items-center rounded-xl border border-white/10 bg-white/5 hover:border-[#e2a550]/50 hover:bg-white/10 cursor-pointer transition-all duration-300 text-slate-200'
+
 	return (
-		<div className='fixed bg-menublur  w-screen h-screen top-0 -right-30 z-50 md:hidden '>
-			<div className=' items-center   gap-10 text-xl mt-[18%] '>
-				<ul
-					className={`  px-10 py-2 flex flex-col  text-center gap-8  uppercase`}
-				>
+		<div className='fixed inset-0 w-screen h-screen z-50 md:hidden bg-[#0b1015]/95 backdrop-blur-xl'>
+			<div className='items-center gap-10 text-lg mt-[20%]'>
+				<ul className='px-8 py-2 flex flex-col text-center gap-4 uppercase'>
 					{menu.map((item) => (
 						<Link
 							locale={locale}
@@ -72,49 +73,45 @@ const MobileMenu = () => {
 							href={item.url}
 							onClick={() => dispatch(MobileMenus(mobilemenu))}
 						>
-							<li
-								className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center`}
-							>
-								{t(item.title)}
-							</li>
+							<li className={itemClass}>{t(item.title)}</li>
 						</Link>
 					))}
 
-					<hr className='border-2 rounded-3xl border-zinc-500/50' />
-					<div className='relative '>
+					<hr className='border-white/10 my-2' />
+					<div className='relative'>
 						{authUser ? (
-							<div className={` cursor-pointer relative`}>
+							<div className='cursor-pointer relative flex flex-col gap-4'>
 								<Link href={`/cabinet/${id}`}>
 									<div
 										onClick={() => dispatch(MobileMenus(mobilemenu))}
-										className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center`}
+										className={itemClass}
 									>
-										<div>{b('title')}</div>
+										{b('title')}
 									</div>
 								</Link>
 								<Link href={`/purchases/${id}`}>
 									<div
 										onClick={() => dispatch(MobileMenus(mobilemenu))}
-										className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-5`}
+										className={itemClass}
 									>
-										<div>{b('title1')}</div>
+										{b('title1')}
 									</div>
 								</Link>
 
 								<div
-									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-20 `}
+									className='w-full h-12 flex justify-center items-center rounded-xl bg-[#e2a550] hover:bg-[#d29440] text-black font-bold cursor-pointer transition-colors duration-300 mt-8'
 									onClick={() => singout()}
 								>
-									<div>{b('button')} </div>
+									{b('button')}
 								</div>
 							</div>
 						) : (
-							<Link href='/login' className=''>
+							<Link href='/login'>
 								<button
 									onClick={() => dispatch(MobileMenus(mobilemenu))}
-									className={`border-2 rounded-3xl border-zinc-700/50 w-full h-12 flex  bg-blur cursor-pointer relative  justify-center items-center mt-20`}
+									className='w-full h-12 flex justify-center items-center rounded-xl bg-[#e2a550] hover:bg-[#d29440] text-black font-bold cursor-pointer transition-colors duration-300 mt-8'
 								>
-									<p className='duration-300  text-lg'>{b('buton')}</p>
+									<p className='text-lg'>{b('buton')}</p>
 								</button>
 							</Link>
 						)}

@@ -46,12 +46,20 @@ export default function RootLayout({ children, params: { locale } }) {
 					<main
 						className={` lg:min-h-screen  relative scroll flex flex-col justify-between h-full  ${roboto.className}`}
 					>
+						{/* Делікатне тепле сяйво вгорі + ледь помітна текстура — глибина без синього відтінку */}
+						<div
+							className='fixed inset-0 pointer-events-none -z-10'
+							style={{
+								background:
+									'radial-gradient(120% 80% at 50% -10%, rgba(226,165,80,0.07), transparent 55%), #0e0f12',
+							}}
+						/>
 						<Image
 							src={bg}
-							alt='bg'
+							alt=''
 							fill
 							priority={true}
-							className='bg-cover opacity-[0.8%] pointer-events-none'
+							className='object-cover opacity-[0.02] pointer-events-none -z-10'
 						/>
 
 						<LocaleProvider>
